@@ -15,3 +15,5 @@ génération de «C.py».
 
 [exemple_5_generateur_python](exemple_5_generateur_python) est un générateur de code par rétro-ingénierie évolué sur
 l'exemple 4 qui passe d'un à deux paramètres sur la fonction «print».
+
+[exemple_6_generateur_python](exemple_6_generateur_python) est un générateur de générateur de code.
