@@ -24,6 +24,7 @@ dirname_to = os.path.join(
         os.path.basename(os.path.dirname(__file__)),
     ),
 )
+base_dirname_to = os.path.basename(dirname_to)
 filename_to = os.path.join(dirname_to, filename)
 filename_generateur_to = os.path.join(dirname_to, filename_generateur)
 print(f"Copié '{dirname_to}'")
@@ -33,11 +34,23 @@ print("Étudier")
 # ## Lire
 with open(filename_to, "r") as f:
     code = f.read()
+# ## Documentation
+README_file = os.path.normpath(
+    os.path.join(os.path.dirname(__file__), "..", "README.md")
+)
+with open(README_file, "r") as f:
+    str_update = f"\n[{base_dirname_to}]({base_dirname_to}) est une copie!\n"
+    doc = f.read()
+    if str_update not in doc:
+        doc += str_update
+with open(README_file, "w") as f2:
+    f2.writelines(doc)
 # # Modifier
 print("Modifier")
 with open(filename_generateur, "w") as f:
     f.write(generator_generator(code))
 subprocess.run(["black", dirname_to], check=True)
+subprocess.run(["isort", "--profile", "black", "-l", "79", dirname_to], check=True)
 # # Utiliser
 print("Utiliser")
 subprocess.run(["python", filename_generateur_to], cwd=dirname_to, check=True)
