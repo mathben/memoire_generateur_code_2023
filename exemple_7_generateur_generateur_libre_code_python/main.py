@@ -29,7 +29,7 @@ base_dirname_to = os.path.basename(dirname_to)
 filename_to = os.path.join(dirname_to, filename)
 main_to = os.path.join(dirname_to, os.path.basename(__file__))
 filename_generateur_to = os.path.join(dirname_to, filename_generateur)
-print(f"Copié '{dirname_to}'")
+print(f"Copier '{dirname_to}'")
 shutil.copytree(dirname, dirname_to, dirs_exist_ok=True)
 # # Étudier
 print("Étudier")
@@ -43,7 +43,7 @@ README_file = os.path.normpath(
 with open(README_file, "r") as f:
     str_update = f"\n[{base_dirname_to}]({base_dirname_to}) est une copie de [{base_dirname}]({base_dirname})!\n"
     doc = f.read()
-    if str_update not in doc:
+    if base_dirname_to not in doc:
         doc += str_update
 with open(README_file, "w") as f2:
     f2.writelines(doc)
