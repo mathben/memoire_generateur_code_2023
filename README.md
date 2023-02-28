@@ -19,3 +19,6 @@ génération de «C.py».
 l'exemple 4 qui passe d'un à deux paramètres sur la fonction «print».
 
 [exemple_6_generateur_python](exemple_6_generateur_python) est un générateur de générateur de code.
+
+[exemple_7_generateur_python](exemple_7_generateur_python) est un copieur de générateur de générateur libre de code libre, il suit ses 4 libertés i.e. copier, lire, modifier, utiliser.
+Le libre vient avec de la qualité!
