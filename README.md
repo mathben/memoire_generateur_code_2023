@@ -26,3 +26,5 @@ Le libre vient avec de la qualité!
 [exemple_8_generateur_generateur_libre_code_python](exemple_8_generateur_generateur_libre_code_python) est une copie de [exemple_7_generateur_generateur_libre_code_python](exemple_7_generateur_generateur_libre_code_python)!
 
 [exemple_9_generateur_generateur_libre_code_python](exemple_9_generateur_generateur_libre_code_python) est un modificateur d'un copieur, l'auto-generateur de deuxième niveau.
+
+[exemple_10_generateur_generateur_libre_code_python](exemple_10_generateur_generateur_libre_code_python) est un modificateur d'un copieur, l'auto-generateur de deuxième niveau.
