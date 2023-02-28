@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import json
 
 with open("uC.json") as f:

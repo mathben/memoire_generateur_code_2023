@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 filename = "C.py"
 
 with open(filename, "r") as f:

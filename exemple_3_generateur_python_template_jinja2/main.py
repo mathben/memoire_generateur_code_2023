@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 import json
+
 from jinja2 import Template
 
 with open("template") as f:

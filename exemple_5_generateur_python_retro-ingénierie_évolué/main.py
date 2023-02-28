@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import ast
 
 with open("C.py", "r") as f:
@@ -11,12 +12,11 @@ if (
     and isinstance(node.value, ast.Call)
     and isinstance(node.value.func, ast.Name)
 ):
-    fct_arg = ""
+    args = []
     for arg in node.value.args:
         if isinstance(arg, ast.Str):
-            fct_arg = arg.s
-            break
-    resultat = f"""{node.value.func.id}("{fct_arg}")"""
+            args.append(arg.s)
+    resultat = f"""{node.value.func.id}("{'", "'.join(args)}")\n"""
 
 with open("C.py", "w") as f:
     f.write(resultat)

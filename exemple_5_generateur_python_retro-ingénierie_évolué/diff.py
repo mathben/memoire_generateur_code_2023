@@ -1,6 +1,6 @@
-import subprocess
-import re
 import os
+import re
+import subprocess
 
 filename = "main.py"
 dirname = os.path.join(os.path.dirname(__file__), filename)
@@ -11,7 +11,8 @@ dirname_to = os.path.join(
         r"(\d+)",
         lambda m: str(int(m.group(1)) - 1),
         os.path.basename(os.path.dirname(__file__)),
-    ), filename
+    ),
+    filename,
 )
 
 subprocess.run(["diff", dirname, dirname_to])

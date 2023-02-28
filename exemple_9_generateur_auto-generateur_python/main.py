@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import re
 import shutil
@@ -57,5 +58,5 @@ subprocess.run(["isort", "--profile", "black", "-l", "79", dirname_to], check=Tr
 print("Utiliser")
 subprocess.run(["python3", filename_generateur_to], cwd=dirname_to, check=True)
 # TODO changer filename_to pour main_to
-output = subprocess.check_output(["python3", main_to], cwd=dirname_to)
+output = subprocess.check_output(["python3", filename_to], cwd=dirname_to)
 print(output.decode("utf-8"))
