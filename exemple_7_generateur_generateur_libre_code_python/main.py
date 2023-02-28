@@ -24,8 +24,10 @@ dirname_to = os.path.join(
         os.path.basename(os.path.dirname(__file__)),
     ),
 )
+base_dirname = os.path.basename(dirname)
 base_dirname_to = os.path.basename(dirname_to)
 filename_to = os.path.join(dirname_to, filename)
+main_to = os.path.join(dirname_to, os.path.basename(__file__))
 filename_generateur_to = os.path.join(dirname_to, filename_generateur)
 print(f"Copié '{dirname_to}'")
 shutil.copytree(dirname, dirname_to, dirs_exist_ok=True)
@@ -39,7 +41,7 @@ README_file = os.path.normpath(
     os.path.join(os.path.dirname(__file__), "..", "README.md")
 )
 with open(README_file, "r") as f:
-    str_update = f"\n[{base_dirname_to}]({base_dirname_to}) est une copie!\n"
+    str_update = f"\n[{base_dirname_to}]({base_dirname_to}) est une copie de [{base_dirname}]({base_dirname})!\n"
     doc = f.read()
     if str_update not in doc:
         doc += str_update
@@ -53,6 +55,7 @@ subprocess.run(["black", dirname_to], check=True)
 subprocess.run(["isort", "--profile", "black", "-l", "79", dirname_to], check=True)
 # # Utiliser
 print("Utiliser")
-subprocess.run(["python", filename_generateur_to], cwd=dirname_to, check=True)
-output = subprocess.check_output(["python", filename_to], cwd=dirname_to)
+subprocess.run(["python3", filename_generateur_to], cwd=dirname_to, check=True)
+# TODO changer filename_to pour main_to
+output = subprocess.check_output(["python3", filename_to], cwd=dirname_to)
 print(output.decode("utf-8"))
