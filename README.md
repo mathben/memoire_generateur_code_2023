@@ -20,7 +20,7 @@ l'exemple 4 qui passe d'un à deux paramètres sur la fonction «print».
 
 [exemple_6_generateur_generateur_code_python](exemple_6_generateur_generateur_code_python) est un générateur de générateur de code Python 3.
 
-[exemple_7_generateur_generateur_libre_code_python](exemple_7_generateur_generateur_libre_code_python) est un copieur de générateur de générateur libre de code libre, il suit ses 4 libertés i.e. copier, lire, modifier, utiliser.
+[exemple_7_generateur_generateur_libre_code_python](exemple_7_generateur_generateur_libre_code_python) est un copieur de générateur de générateur libre de code libre, il suit ses 4 libertés i.e. copier, étudier, modifier, utiliser.
 Le libre vient avec de la qualité!
 
 [exemple_8_generateur_generateur_libre_code_python](exemple_8_generateur_generateur_libre_code_python) est une copie de [exemple_7_generateur_generateur_libre_code_python](exemple_7_generateur_generateur_libre_code_python)!

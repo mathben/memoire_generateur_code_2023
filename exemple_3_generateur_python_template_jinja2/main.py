@@ -9,12 +9,12 @@ with open("template") as f:
 with open("uC.json") as f:
     metadata = json.load(f)
 
-resultat = template.render(
+result = template.render(
     fonction=metadata.get("fonction"), argument=metadata.get("argument")
 )
 
 with open("C.py", "w") as f:
-    f.write(resultat)
+    f.write(result)
     f.write("\n")
 
-print(resultat)
+print(result)

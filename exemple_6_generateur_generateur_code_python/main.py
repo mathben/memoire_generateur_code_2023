@@ -2,7 +2,7 @@
 filename = "C.py"
 
 with open(filename, "r") as f:
-    code = f.read()
+    s_code = f.read()
 
 
 def generator_generator(s_code):
@@ -13,4 +13,4 @@ def generator_generator(s_code):
 
 
 with open("generateur.py", "w") as f:
-    f.write(generator_generator(code))
+    f.write(generator_generator(s_code))

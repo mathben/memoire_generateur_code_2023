@@ -16,7 +16,9 @@ if (
     for arg in node.value.args:
         if isinstance(arg, ast.Str):
             args.append(arg.s)
-    resultat = f"""{node.value.func.id}("{'", "'.join(args)}")\n"""
+    result = f"""{node.value.func.id}("{'", "'.join(args)}")\n"""
 
 with open("C.py", "w") as f:
-    f.write(resultat)
+    f.write(result)
+
+print(result)

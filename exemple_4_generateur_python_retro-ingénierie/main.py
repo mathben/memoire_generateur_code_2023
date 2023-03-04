@@ -17,7 +17,9 @@ if (
         if isinstance(arg, ast.Str):
             fct_arg = arg.s
             break
-    resultat = f"""{node.value.func.id}("{fct_arg}")"""
+    result = f"""{node.value.func.id}("{fct_arg}")\n"""
 
 with open("C.py", "w") as f:
-    f.write(resultat)
+    f.write(result)
+
+print(result)

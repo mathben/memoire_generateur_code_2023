@@ -11,7 +11,7 @@ dirname_to = os.path.join(
         r"(\d+)",
         lambda m: str(int(m.group(1)) - 1),
         os.path.basename(os.path.dirname(__file__)),
-    ),
+    ).strip("_évolué"),
     filename,
 )
 
