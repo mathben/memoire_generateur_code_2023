@@ -9,4 +9,4 @@ result = f"{metadata.get('fonction')}({metadata.get('argument')})\n"
 with open("C.py", "w") as f:
     f.write(result)
 
-print(resultat)
+print(result)
