@@ -11,13 +11,14 @@
 %%
 %%  Contexte et problématique
 %%
+
 \section{Contexte et problématique}
 
-La valeur du marché des solutions ERP s'établissait autour de 40 milliards USD mondialement en 2020 \cite{mordorintelligence_erp_2023,bigbang_erp_2023}. Le coût moyen par utilisateur, sur 5 ans, s'élevait à 9 000\$, pour une PME, en 2022 \cite{softwarepath_erp_2023}.
+La valeur du marché des solutions \texttt{ERP} s'établissait autour de 40 milliards \texttt{USD} mondialement en 2020 \cite{mordorintelligence_erp_2023,bigbang_erp_2023}. Le coût moyen par utilisateur, sur 5 ans, s'élevait à 9 000\$, pour une \texttt{PME}, en 2022 \cite{softwarepath_erp_2023}.
 
-Le développement de système ERP est complexe, nécessite une maintenance exigeante et le risque d’introduire des erreurs est important. Comment accélérer le développement de fonctionnalités de la plateforme ERP Odoo 12 communautaire?
+Le développement de système \texttt{ERP} est complexe, nécessite une maintenance exigeante et le risque d’introduire des erreurs est important. Comment accélérer le développement de fonctionnalités de la plateforme \texttt{ERP} \texttt{Odoo} 12 communautaire?
 
-La plateforme ERPLibre a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo 12 communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet logiciel libre.
+La plateforme \texttt{ERPLibre} a été créée dans l’objectif d’accélérer le développement de la plateforme \texttt{Odoo} 12 communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet logiciel libre.
 
 % TODO point de départ : «Code projet initial générateur de code» et donner REF
 
@@ -29,10 +30,257 @@ La plateforme ERPLibre a été créée dans l’objectif d’accélérer le dév
 
 % Combien ça prend de temps pour développer la migration pour autant de fonctionnalités? Ajouter des champs, migrer des champs en changeant leur nature.
 
-\subsection{Choix de la plateforme}
+\subsection{Choix de la plateforme \texttt{ERP}}
 
-Regarder l’évolution des modules dans OCA, en prenant leur nom de module, pour chaque version d’Odoo, selon une date déterminée, regarder le nombre de fois qu’il se répète. Ceci va indiquer la vitesse de migration des modules dans la communauté.
+Choisir une plateforme \texttt{ERP} libre peut offrir des avantages significatifs en termes de coût, de flexibilité, de sécurité, de communauté et d'indépendance. \texttt{Odoo} a été choisi puisqu'il répondait à ces critères, cependant quelle est la version qui offre le plus de fonctionnalité?
 
+\begin{table}
+\caption{Tableau des dates de lancement du logiciel \texttt{Odoo}}
+\centering
+\begin{tabular}{|c|c|l|l|}
+
+\hline
+Légende & \cellcolor[HTML]{d9ead3}{\shortstack[l]{Version actuelle}} & \cellcolor[HTML]{fff2cc}{\shortstack[l]{Anciennes versions avec \\ maintenance étendu}} & \cellcolor[HTML]{f4cccc}{\shortstack[l]{Anciennes versions ou \\ fin de maintenance}}\\\hline
+
+\hline\rowcolor[gray]{0.8}\color{black}
+\texttt{Odoo} version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
+\cellcolor[HTML]{f4cccc}6.0/6.1 & octobre 2009 & \multicolumn{2}{|l|}{Première publication sous \texttt{AGPL}, premier client web}\\\hline
+\cellcolor[HTML]{f4cccc}7.0 & décembre 2012 & \multicolumn{2}{|l|}{} \\\hline
+\cellcolor[HTML]{f4cccc}8.0 & septembre 2014 & \multicolumn{2}{|l|}{\shortstack[l]{Changement de nom pour \texttt{Odoo}, anciennement \\ \texttt{OpenERP}}}\\\hline
+\cellcolor[HTML]{f4cccc}9.0 & novembre 2015 & \multicolumn{2}{|l|}{\shortstack[l]{Première publication des éditions \texttt{Community} sous \\ licence \texttt{LGPLV3} et \texttt{Enterprise} sous licence \\ propriétaire.}}\\\hline
+\cellcolor[HTML]{f4cccc}10.0 & octobre 2016 & \multicolumn{2}{|l|}{} \\\hline
+\cellcolor[HTML]{f4cccc}11.0 & octobre 2017 & \multicolumn{2}{|l|}{} \\\hline
+\cellcolor[HTML]{f4cccc}12.0 & octobre 2018 & \multicolumn{2}{|l|}{Version utilisé dans \texttt{ERPLibre} 1.5.0}\\\hline
+\cellcolor[HTML]{fff2cc}13.0 & octobre 2019 & \multicolumn{2}{|l|}{}\\\hline
+\cellcolor[HTML]{fff2cc}14.0 & octobre 2020 & \multicolumn{2}{|l|}{} \\\hline
+\cellcolor[HTML]{fff2cc}15.0 & octobre 2021 & \multicolumn{2}{|l|}{} \\\hline
+\cellcolor[HTML]{d9ead3}16.0 & octobre 2022 & \multicolumn{2}{|l|}{} \\\hline
+\end{tabular}
+\label{tab:choix_plateform_erp}
+\end{table}
+
+% Regarder l’évolution des modules dans \texttt{OCA}, en prenant leur nom de module, pour chaque version d’\texttt{Odoo}, selon une date déterminée, regarder le nombre de fois qu’il se répète. Ceci va indiquer la vitesse de migration des modules dans la communauté.
+
+En janvier 2023, les versions 9.0 à 12.0 ne sont plus supportées officiellement par la compagnie \texttt{Odoo}, voir tableau \ref{tab:choix_plateform_erp}, mais elles le sont encore par \texttt{OCA}. La version 16.0 est la version stable actuelle. La démonstration commence à partir de 9.0, là où débute la divergence entre une version communautaire et entreprise.
+
+Au printemps 2020, \texttt{Odoo} version 12.0 a été choisi par \texttt{ERPLibre}\footnote{Première version de \texttt{ERPLibre} : \url{https://github.com/ERPLibre/ERPLibre/releases/tag/v0.1.0}.}. Une recherche de module par version d'\texttt{Odoo} a été effectué sur 11 Go de code et de données sur le projet \texttt{ERPLibre} version 1.5.0, voir le tableau \ref{tab:nb_module_version_odoo}. Ainsi, en date du 1 janvier 2023, la version 12.0 est encore le bon choix avec 2 977 modules, puisqu'il est celui qu'il a le plus de module sur les 133 répertoires gérés par \texttt{ERPLibre}. Cette tendance pourrait changer en 2024 selon l’évolution.
+
+Pour obtenir les résultats du tableau \ref{tab:nb_module_version_odoo}, un script a été développé pour chercher la quantité de modules en cherchant dans les 133 répertoires \texttt{Git}, puis pour toutes les versions d'\texttt{Odoo}, pour tous les modules qui contiennent le fichier «manifest» et que ceux-ci inclus le paramètre qu'il est installable, à date précédente du 1 janvier de chaque année.
+% le fichier «\_\_openerp\_\_.py» ou «\_\_manifest\_\_.py»
+
+Des fois, la quantité de module diminue d'une année à l'autre. Il y a création d'une nouvelle branche lors d'une nouvelle version qui est la suite de la version précédente. Par exemple, dans le tableau \ref{tab:nb_module_version_odoo}, la version 10.0 entre 2017 et 2018, il y a une réduction de 171 modules dans les répertoires d'entreprise, mais il y a eu seulement 4 mois pour faire le nettoyage, les méthodes de mises à jours ont évolués depuis.
+
+De plus, les chiffres du tableau \ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'\texttt{Odoo} sont plus populaire que les versions impaires. Cependant la communauté d'\texttt{Odoo} est bien plus grosse que 133 répertoires.
+
+Dans la section total du tableau \ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du 1 janvier 2023, il y a au total 17 309 modules, mais 6 063 modules uniques. Ça signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
+
+% Prochain tableau
+\begin{table}
+\caption{Nombre de modules par version \texttt{Odoo} à partir du 1 janvier minuit par année sur la plateforme \texttt{ERPLibre} 1.5.0.}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+
+Légende & \multicolumn{2}{|l|}{\shortstack[l]{Total\\\textcolor[HTML]{274e13}{OCA}\\\textcolor[HTML]{4c1130}{Entreprise}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{d9ead3}{\shortstack[l]{Version \\ actuelle}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{fff2cc}{\shortstack[l]{Anciennes \\ versions avec \\ maintenance \\ étendu}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{f4cccc}{\shortstack[l]{Anciennes \\ versions ou \\ fin de \\ maintenance}}}\\\hline
+
+\multicolumn{9}{|l|}{\shortstack[l]{17309/\textcolor[HTML]{274e13}{10728}/\textcolor[HTML]{4c1130}{6581} modules à supporter le 1 janvier 2023 \\ 17465/\textcolor[HTML]{274e13}{10952}/\textcolor[HTML]{4c1130}{6513} modules le 15 février 2023 \\ 156/\textcolor[HTML]{274e13}{132}/\textcolor[HTML]{4c1130}{24} nouveaux modules en 31 jours durant janvier 2023}}\\\hline
+
+\texttt{Odoo} version & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 \\\hline
+
+6.1 &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{295 \\ \textcolor[HTML]{274e13}{269} \\ \textcolor[HTML]{4c1130}{26}}} & 
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{29}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{29}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{36}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{36}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{36}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{36}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{299 \\ \textcolor[HTML]{274e13}{270} \\ \textcolor[HTML]{4c1130}{36}}} \\\hline
+
+7.0 &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{637 \\ \textcolor[HTML]{274e13}{597} \\ \textcolor[HTML]{4c1130}{40}}} & 
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{633 \\ \textcolor[HTML]{274e13}{592} \\ \textcolor[HTML]{4c1130}{41}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{634 \\ \textcolor[HTML]{274e13}{593} \\ \textcolor[HTML]{4c1130}{41}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{635 \\ \textcolor[HTML]{274e13}{594} \\ \textcolor[HTML]{4c1130}{41}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{669 \\ \textcolor[HTML]{274e13}{619} \\ \textcolor[HTML]{4c1130}{50}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{669 \\ \textcolor[HTML]{274e13}{619} \\ \textcolor[HTML]{4c1130}{50}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{669 \\ \textcolor[HTML]{274e13}{619} \\ \textcolor[HTML]{4c1130}{50}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{671 \\ \textcolor[HTML]{274e13}{619} \\ \textcolor[HTML]{4c1130}{52}}} \\\hline
+
+8.0 &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{741 \\ \textcolor[HTML]{274e13}{597} \\ \textcolor[HTML]{4c1130}{144}}} & 
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1092 \\ \textcolor[HTML]{274e13}{907} \\ \textcolor[HTML]{4c1130}{185}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1215 \\ \textcolor[HTML]{274e13}{996} \\ \textcolor[HTML]{4c1130}{219}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1265 \\ \textcolor[HTML]{274e13}{1027} \\ \textcolor[HTML]{4c1130}{238}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1290 \\ \textcolor[HTML]{274e13}{1036} \\ \textcolor[HTML]{4c1130}{254}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1297 \\ \textcolor[HTML]{274e13}{1043} \\ \textcolor[HTML]{4c1130}{254}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1340 \\ \textcolor[HTML]{274e13}{1049} \\ \textcolor[HTML]{4c1130}{291}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1341 \\ \textcolor[HTML]{274e13}{1050} \\ \textcolor[HTML]{4c1130}{291}}} \\\hline
+
+9.0 &
+\cellcolor[HTML]{d9ead3}{\shortstack[r]{135 \\ \textcolor[HTML]{274e13}{46} \\ \textcolor[HTML]{4c1130}{89}}} & 
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{456 \\ \textcolor[HTML]{274e13}{346} \\ \textcolor[HTML]{4c1130}{110}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{725 \\ \textcolor[HTML]{274e13}{602} \\ \textcolor[HTML]{4c1130}{123}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{776 \\ \textcolor[HTML]{274e13}{643} \\ \textcolor[HTML]{4c1130}{133}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{796 \\ \textcolor[HTML]{274e13}{659} \\ \textcolor[HTML]{4c1130}{137}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{803 \\ \textcolor[HTML]{274e13}{666} \\ \textcolor[HTML]{4c1130}{137}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{844 \\ \textcolor[HTML]{274e13}{666} \\ \textcolor[HTML]{4c1130}{178}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{850 \\ \textcolor[HTML]{274e13}{669} \\ \textcolor[HTML]{4c1130}{181}}} \\\hline
+
+10.0 &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{d9ead3}{\shortstack[r]{523 \\ \textcolor[HTML]{274e13}{111} \\ \textcolor[HTML]{4c1130}{412}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{954 \\ \textcolor[HTML]{274e13}{713} \\ \textcolor[HTML]{4c1130}{241}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 537 \\ \textcolor[HTML]{274e13}{953} \\ \textcolor[HTML]{4c1130}{584}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 647 \\ \textcolor[HTML]{274e13}{1 047} \\ \textcolor[HTML]{4c1130}{600}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1 685 \\ \textcolor[HTML]{274e13}{1 085} \\ \textcolor[HTML]{4c1130}{600}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1 754 \\ \textcolor[HTML]{274e13}{1 109} \\ \textcolor[HTML]{4c1130}{645}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1 765 \\ \textcolor[HTML]{274e13}{1 120} \\ \textcolor[HTML]{4c1130}{645}}} \\\hline
+
+11.0 &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{d9ead3}{\shortstack[r]{288 \\ \textcolor[HTML]{274e13}{77} \\ \textcolor[HTML]{4c1130}{211}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 398 \\ \textcolor[HTML]{274e13}{658} \\ \textcolor[HTML]{4c1130}{740}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 710 \\ \textcolor[HTML]{274e13}{929} \\ \textcolor[HTML]{4c1130}{781}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 797 \\ \textcolor[HTML]{274e13}{1 000} \\ \textcolor[HTML]{4c1130}{797}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1 860 \\ \textcolor[HTML]{274e13}{1 023} \\ \textcolor[HTML]{4c1130}{837}}} &
+\cellcolor[HTML]{f4cccc}{\shortstack[r]{1 869 \\ \textcolor[HTML]{274e13}{1 032} \\ \textcolor[HTML]{4c1130}{864}}} \\
+
+\noalign{\hrule height 2pt}
+\multicolumn{1}{!{\vrule width 2pt}l!{\vrule width 1pt}}{\textbf{12.0}} &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\multicolumn{1}{!{\vrule width 2pt}r!{\vrule width 1pt}}{\textbf{\cellcolor[HTML]{d9ead3}{\shortstack[r]{784 \\ \textcolor[HTML]{274e13}{137} \\ \textcolor[HTML]{4c1130}{647}}}}} &
+\multicolumn{1}{!{\vrule width 2pt}r!{\vrule width 1pt}}{\textbf{\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 837 \\ \textcolor[HTML]{274e13}{993} \\ \textcolor[HTML]{4c1130}{844}}}}} &
+\multicolumn{1}{!{\vrule width 2pt}r!{\vrule width 1pt}}{\textbf{\cellcolor[HTML]{fff2cc}{\shortstack[r]{2 503 \\ \textcolor[HTML]{274e13}{1 464} \\ \textcolor[HTML]{4c1130}{1 039}}}}} &
+\multicolumn{1}{!{\vrule width 2pt}r!{\vrule width 1pt}}{\textbf{\cellcolor[HTML]{fff2cc}{\shortstack[r]{2 851 \\ \textcolor[HTML]{274e13}{1 633} \\ \textcolor[HTML]{4c1130}{1 218}}}}} &
+\multicolumn{1}{!{\vrule width 2pt}r!{\vrule width 1pt}}{\textbf{\cellcolor[HTML]{f4cccc}{\shortstack[r]{2 977 \\ \textcolor[HTML]{274e13}{1 693} \\ \textcolor[HTML]{4c1130}{1 284}}}}} \\
+\noalign{\hrule height 2pt}
+
+13.0 &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{d9ead3}{\shortstack[r]{617 \\ \textcolor[HTML]{274e13}{115} \\ \textcolor[HTML]{4c1130}{502}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 445 \\ \textcolor[HTML]{274e13}{844} \\ \textcolor[HTML]{4c1130}{601}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{2 024 \\ \textcolor[HTML]{274e13}{1 310} \\ \textcolor[HTML]{4c1130}{714}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{2 241 \\ \textcolor[HTML]{274e13}{1 506} \\ \textcolor[HTML]{4c1130}{735}}} \\\hline
+
+14.0 &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{d9ead3}{\shortstack[r]{906 \\ \textcolor[HTML]{274e13}{129} \\ \textcolor[HTML]{4c1130}{777}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{2 150 \\ \textcolor[HTML]{274e13}{1 143} \\ \textcolor[HTML]{4c1130}{1 007}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{2 648 \\ \textcolor[HTML]{274e13}{1 698} \\ \textcolor[HTML]{4c1130}{950}}} \\\hline
+
+15.0 &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{d9ead3}{\shortstack[r]{786 \\ \textcolor[HTML]{274e13}{96} \\ \textcolor[HTML]{4c1130}{690}}} &
+\cellcolor[HTML]{fff2cc}{\shortstack[r]{1 669 \\ \textcolor[HTML]{274e13}{865} \\ \textcolor[HTML]{4c1130}{804}}} \\\hline
+
+16.0 &
+\cellcolor[HTML]{cccccc}{} & 
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{cccccc}{} &
+\cellcolor[HTML]{d9ead3}{\shortstack[l]{972 \\ \textcolor[HTML]{274e13}{206} \\ \textcolor[HTML]{4c1130}{766}}} \\\hline
+
+\multicolumn{9}{|c|}{Total}\\\hline
+
+Somme &
+\shortstack[r]{1 808 \\ \textcolor[HTML]{274e13}{1 509} \\ \textcolor[HTML]{4c1130}{299}} & 
+\shortstack[r]{3 003 \\ \textcolor[HTML]{274e13}{2 226} \\ \textcolor[HTML]{4c1130}{777}} &
+\shortstack[r]{4 115 \\ \textcolor[HTML]{274e13}{3 251} \\ \textcolor[HTML]{4c1130}{864}} &
+\shortstack[r]{6 701 \\ \textcolor[HTML]{274e13}{4 282} \\ \textcolor[HTML]{4c1130}{2 419}} &
+\shortstack[r]{8 872 \\ \textcolor[HTML]{274e13}{5 668} \\ \textcolor[HTML]{4c1130}{3 204}} &
+\shortstack[r]{11 411 \\ \textcolor[HTML]{274e13}{7 120} \\ \textcolor[HTML]{4c1130}{4 291}} &
+\shortstack[r]{14 584 \\ \textcolor[HTML]{274e13}{8 918} \\ \textcolor[HTML]{4c1130}{5 666}} &
+\shortstack[r]{17 309 \\ \textcolor[HTML]{274e13}{10 728} \\ \textcolor[HTML]{4c1130}{6 581}} \\\hline
+
+Support \texttt{Odoo} &
+\shortstack[r]{1 808 \\ \textcolor[HTML]{274e13}{1 509} \\ \textcolor[HTML]{4c1130}{299}} & 
+\shortstack[r]{2 704 \\ \textcolor[HTML]{274e13}{1 956} \\ \textcolor[HTML]{4c1130}{748}} &
+\shortstack[r]{3 182 \\ \textcolor[HTML]{274e13}{2 388} \\ \textcolor[HTML]{4c1130}{794}} &
+\shortstack[r]{4 495 \\ \textcolor[HTML]{274e13}{2 391} \\ \textcolor[HTML]{4c1130}{2 104}} &
+\shortstack[r]{5 811 \\ \textcolor[HTML]{274e13}{3 084} \\ \textcolor[HTML]{4c1130}{2 727}} &
+\shortstack[r]{6 651 \\ \textcolor[HTML]{274e13}{3 437} \\ \textcolor[HTML]{4c1130}{3 214}} &
+\shortstack[r]{7 811 \\ \textcolor[HTML]{274e13}{4 182} \\ \textcolor[HTML]{4c1130}{3 629}} &
+\shortstack[r]{7 530 \\ \textcolor[HTML]{274e13}{4 275} \\ \textcolor[HTML]{4c1130}{3 255}} \\\hline
+
+Unique &
+\shortstack[r]{1 244 \\ \textcolor[HTML]{274e13}{1 047} \\ \textcolor[HTML]{4c1130}{197}} & 
+\shortstack[r]{1 995 \\ \textcolor[HTML]{274e13}{1 435} \\ \textcolor[HTML]{4c1130}{560}} &
+\shortstack[r]{2 260 \\ \textcolor[HTML]{274e13}{1 845} \\ \textcolor[HTML]{4c1130}{415}} &
+\shortstack[r]{3 214 \\ \textcolor[HTML]{274e13}{2 172} \\ \textcolor[HTML]{4c1130}{1 042}} &
+\shortstack[r]{3 927 \\ \textcolor[HTML]{274e13}{2 610} \\ \textcolor[HTML]{4c1130}{1 317}} &
+\shortstack[r]{4 676 \\ \textcolor[HTML]{274e13}{3 080} \\ \textcolor[HTML]{4c1130}{1 596}} &
+\shortstack[r]{5 452 \\ \textcolor[HTML]{274e13}{3 572} \\ \textcolor[HTML]{4c1130}{1 880}} &
+\shortstack[r]{6 063 \\ \textcolor[HTML]{274e13}{3 980} \\ \textcolor[HTML]{4c1130}{2 083}} \\\hline
+
+\multicolumn{9}{|l|}{\shortstack[l]{133/\textcolor[HTML]{274e13}{72}/\textcolor[HTML]{4c1130}{61} répertoires de modules dans \texttt{ERPLibre} 1.5.0}}\\\hline
+
+\end{tabular}
+\label{tab:nb_module_version_odoo}
+\end{table}
+
+\newpage
+\subsection{Introduction Accorderie}
+
+\subsection{Introduction Portail CEPPP}
+
+\section{Définitions et concepts}
+
+\subsection{Caractéristique de la plateforme Odoo}
+
+\subsubsection{Internationalization et localisation}
+
+\subsubsection{Architecture MVC}
+
+\subsubsection{Website builder}
+
+\subsubsection{Architecture ORM}
+
+\subsubsection{Architecture modulaire par héritage}
+
+\subsubsection{Fonctionnalité du hook lors de l’installation d’un module}
+
+\subsubsection{ERPLibre}
+
+\subsection{Communauté de développement}
+
+\subsubsection{Générateur de code accessible dans la communauté Odoo}
+
+\subsection{Cadre conceptuel}
+
+\subsection{Exemples illustratifs d’Auto-reproducteur}
+
+% \subsubsection{test}
+
+% fds
+% fds
+% \paragraph{test2}
+
+% fds
+% fds
+
+% \subparagraph{test3}
+
+
+% fds
 
 % Exemple
 % Texte en \emph{italique}, \textsc{petites majuscules}, mot \mbox{insécable}.\\
