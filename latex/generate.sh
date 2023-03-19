@@ -15,4 +15,6 @@ sed -i 's/%\\color\[rgb\]{0.5,0.5,0.5}/\\color\[rgb\]{0.5,0.5,0.5}/g' "Mémoire 
 
 mv "Mémoire robot codeur Libre sur ERPLibre/Document.pdf" ./memoire_robot_codeur_libre_erplibre.pdf
 
+./change_text_pdf.sh
+
 xdg-open "./memoire_robot_codeur_libre_erplibre.pdf"
