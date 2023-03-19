@@ -531,6 +531,52 @@ Lorsqu'on veut faire de la rétro-ingénierie\footnote{\url{https://fr.wikipedia
 \label{fig:retro_re_ing}
 \end{figure}
 
+Dans le code~\ref{lst:gen_code_retro_m}, la bibliothèque AST est utilisée pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logiciel entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en \texttt{PEP8\footnote{\url{https://peps.python.org/pep-0008/}}}.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py}, label={lst:gen_code_retro_c}]
+print(                     "Hello, World!"                         )
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M qui extrait µ$_C$ pour générer C.py}, label={lst:gen_code_retro_m}]
+import ast
+
+with open("C.py", "r") as f:
+   code = f.read()
+
+# Extraction du AST
+tree = ast.parse(code)
+node = tree.body[0]
+
+if (
+   isinstance(node, ast.Expr)
+   and isinstance(node.value, ast.Call)
+   and isinstance(node.value.func, ast.Name)
+):
+   # Si une expression executable de type function est trouve
+   fct_arg = ""
+   for arg in node.value.args:
+       if isinstance(arg, ast.Str):
+           # Cherche un parametre
+           fct_arg = arg.s
+           break
+   # Template
+   result = f"""{node.value.func.id}("{fct_arg}")\n"""
+
+with open("C.py", "w") as f:
+   f.write(result)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={C corrigé - fichier C.py}, label={lst:gen_code_retro_new_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\subsection{Tester un générateur de code}
+
+Il existe le test «Output comparison testing»\footnote{\url{https://en.wikipedia.org/wiki/Software_testing}} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuel.
+
+Pour valider si le générateur utilise sa pleine capacité, il suffit de faire des tests de toutes les combinaisons de ses techniques de génération et d'utiliser un outil de couverture de code pour déterminer les lignes qui sont opérés.
+
+
 % Exemple
 % Texte en \emph{italique}, \textsc{petites majuscules}, mot \mbox{insécable}.\\
 % Texte \ul{souligné}, \hl{surligné}, \textbf{gras}.\\
