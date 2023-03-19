@@ -63,18 +63,18 @@ Odoo version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
 
 % Regarder l’évolution des modules dans \texttt{OCA}, en prenant leur nom de module, pour chaque version d’Odoo, selon une date déterminée, regarder le nombre de fois qu’il se répète. Ceci va indiquer la vitesse de migration des modules dans la communauté.
 
-En janvier 2023, les versions 9.0 à 12.0 ne sont plus supportées officiellement par la compagnie Odoo, voir tableau \ref{tab:choix_plateform_erp}, mais elles le sont encore par \texttt{OCA}. La version 16.0 est la version stable actuelle. La démonstration commence à partir de 9.0, là où débute la divergence entre une version communautaire et entreprise.
+En janvier 2023, les versions 9.0 à 12.0 ne sont plus supportées officiellement par la compagnie Odoo, voir tableau~\ref{tab:choix_plateform_erp}, mais elles le sont encore par \texttt{OCA}. La version 16.0 est la version stable actuelle. La démonstration commence à partir de 9.0, là où débute la divergence entre une version communautaire et entreprise.
 
-Au printemps 2020, Odoo version 12.0 a été choisi par ERPLibre\footnote{Première version de ERPLibre : \url{https://github.com/ERPLibre/ERPLibre/releases/tag/v0.1.0}.}. Une recherche de module par version d'Odoo a été effectué sur 11 Go de code et de données sur le projet ERPLibre version 1.5.0, voir le tableau \ref{tab:nb_module_version_odoo}. Ainsi, en date du 1 janvier 2023, la version 12.0 est encore le bon choix avec 2 977 modules, puisqu'il est celui qu'il a le plus de module sur les 133 répertoires gérés par ERPLibre. Cette tendance pourrait changer en 2024 selon l’évolution.
+Au printemps 2020, Odoo version 12.0 a été choisi par ERPLibre\footnote{Première version de ERPLibre : \url{https://github.com/ERPLibre/ERPLibre/releases/tag/v0.1.0}.}. Une recherche de module par version d'Odoo a été effectué sur 11 Go de code et de données sur le projet ERPLibre version 1.5.0, voir le tableau~\ref{tab:nb_module_version_odoo}. Ainsi, en date du 1 janvier 2023, la version 12.0 est encore le bon choix avec 2 977 modules, puisqu'il est celui qu'il a le plus de module sur les 133 répertoires gérés par ERPLibre. Cette tendance pourrait changer en 2024 selon l’évolution.
 
-Pour obtenir les résultats du tableau \ref{tab:nb_module_version_odoo}, un script a été développé pour chercher la quantité de modules en cherchant dans les 133 répertoires Git\footnote{Logiciel de gestion de versions décentralisé}, puis pour toutes les versions d'Odoo, pour tous les modules qui contiennent le fichier «manifest» et que ceux-ci inclus le paramètre qu'il est installable, à date précédente du 1 janvier de chaque année.
+Pour obtenir les résultats du tableau~\ref{tab:nb_module_version_odoo}, un script a été développé pour chercher la quantité de modules en cherchant dans les 133 répertoires Git\footnote{Logiciel de gestion de versions décentralisé}, puis pour toutes les versions d'Odoo, pour tous les modules qui contiennent le fichier «manifest» et que ceux-ci inclus le paramètre qu'il est installable, à date précédente du 1 janvier de chaque année.
 % le fichier «\_\_openerp\_\_.py» ou «\_\_manifest\_\_.py»
 
-Des fois, la quantité de module diminue d'une année à l'autre. Il y a création d'une nouvelle branche lors d'une nouvelle version qui est la suite de la version précédente. Par exemple, dans le tableau \ref{tab:nb_module_version_odoo}, la version 10.0 entre 2017 et 2018, il y a une réduction de 171 modules dans les répertoires d'entreprise, mais il y a eu seulement 4 mois pour faire le nettoyage, les méthodes de mises à jours ont évolués depuis.
+Des fois, la quantité de module diminue d'une année à l'autre. Il y a création d'une nouvelle branche lors d'une nouvelle version qui est la suite de la version précédente. Par exemple, dans le tableau~\ref{tab:nb_module_version_odoo}, la version 10.0 entre 2017 et 2018, il y a une réduction de 171 modules dans les répertoires d'entreprise, mais il y a eu seulement 4 mois pour faire le nettoyage, les méthodes de mises à jours ont évolués depuis.
 
-De plus, les chiffres du tableau \ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'Odoo sont plus populaire que les versions impaires. Cependant la communauté d'Odoo est bien plus grosse que 133 répertoires.
+De plus, les chiffres du tableau~\ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'Odoo sont plus populaire que les versions impaires. Cependant la communauté d'Odoo est bien plus grosse que 133 répertoires.
 
-Dans la section total du tableau \ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du 1 janvier 2023, il y a au total 17 309 modules, mais 6 063 modules uniques. Ça signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
+Dans la section total du tableau~\ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du 1 janvier 2023, il y a au total 17 309 modules, mais 6 063 modules uniques. Ça signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
 
 % Prochain tableau
 \begin{table}
@@ -325,7 +325,7 @@ Au moment de l’installation d’un module Odoo, il y a des opérations qui peu
 
 Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créés causant une divergence sur les fonctionnalités créant le modèle d'affaires «Open Core»\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un \texttt{ERP} est complexe et nécessite l'intervention d'un ou des experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme au réalité de l'organisation. Bien que l'\texttt{OCA} travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseau d'entraides à pouvoir se débrouiller de manière souveraine.
 
-La plateforme ERPLibre a ainsi été créé en début 2020 encapsulant la version Odoo 12.0 sous licence AGPLv3 en offrant une alternative 100\% libre, et dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible à la même endroit toutes l'information nécessaire à la gestion de son ERP pour une organisation.
+La plateforme ERPLibre a ainsi été créé en début 2020 encapsulant la version Odoo 12.0 sous licence AGPLv3 en offrant une alternative 100\% libre, et dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible à la même endroit toutes l'information nécessaire à la gestion de son ERP pour une organisation.
 
 % \subsection{Communauté de développement}
 
@@ -339,7 +339,7 @@ La plateforme ERPLibre a ainsi été créé en début 2020 encapsulant la versio
 
 \subsection{Cadre conceptuel}
 
-Nous proposons un modèle formel de la génération de code qui guide le travail proposé dans ce mémoire. Soit C, un code informatique exécutable (qui pourrait aussi être un script interprétable), soit µ$_C$ les méta-données du code, et soit M, une machine disposant de deux modes d’opération : $M^d$ le mode direct, et $M^i$ le mode inverse, voir figure \ref{fig:mode_direct_inverse}. Lorsque M opère en mode direct sur µ$_C$, on doit obtenir C; en opérant en mode inverse sur C, on doit obtenir µ$_C$.
+Nous proposons un modèle formel de la génération de code qui guide le travail proposé dans ce mémoire. Soit C, un code informatique exécutable (qui pourrait aussi être un script interprétable), soit µ$_C$ les méta-données du code, et soit M, une machine disposant de deux modes d’opération : $M^d$ le mode direct, et $M^i$ le mode inverse, voir figure~\ref{fig:mode_direct_inverse}. Lorsque M opère en mode direct sur µ$_C$, on doit obtenir C; en opérant en mode inverse sur C, on doit obtenir µ$_C$.
 
 On peut représenter symbolique ces deux processus par les équations
 $M^d$(µC)=C et \\ $M^i$(C)=µC. La machine peut alors être représentée par M = \{$M^d$,$M^i$\}.
@@ -355,27 +355,181 @@ L’ingénierie de génération est le mode direct. La rétro-ingénierie, le mo
 
 Pour concrétiser le sens de ce modèle formel, nous allons proposer quelques exemples simples. Ayant pour but de faciliter la compréhension, ces exemples sont triviaux et ne présentent pas le plein potentiel de notre approche. L’interpréteur Python 3.6 et + est utilisé pour les exemples de codes.
 
-Pour la plupart des exemples, le C, représenté par «C.py», sera le code «Hello, World!» voir Listing ~\ref{lst:hello_world}.
+Pour la plupart des exemples, le C, représenté par «C.py», est le code «Hello, World!», voir Listing~\ref{lst:hello_world}.
 
-\begin{lstlisting}[language=Python, caption={Exemple de code Hello, World!}, label={lst:hello_world}]
+\begin{lstlisting}[language=Python, upquote=true, caption={Exemple de code Hello, World!}, label={lst:hello_world}]
 print("Hello, World!")
 \end{lstlisting}
 
-\subsection{Exemples illustratifs d’Auto-reproducteur}
+\subsection{Exemples illustratifs d’auto-reproducteur}
 
-% \subsubsection{test}
+\subsubsection{Le Quine}
 
-% fds
-% fds
-% \paragraph{test2}
-
-% fds
-% fds
-
-% \subparagraph{test3}
+«Un quine\cite{sarkar2020quines} (ou programme auto-reproducteur, self-reproducing en anglais) est un programme informatique qui imprime son propre code source»\footnote{\url{https://fr.wikipedia.org/wiki/Quine_(informatique)}} sans se lire lui-même. Il doit contenir une logique d’écriture de code et contenir ses méta-données de génération. Il est ainsi un générateur de premier niveau.
 
 
-% fds
+Voir l'exemple de Code~\ref{lst:exemple_quine}, la sortie textuelle dans le console lors de l'exécution est le même que son code.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={Exemple de code Quine}, label={lst:exemple_quine}]
+a='a=%r;print(a%%a)';print(a%a)
+\end{lstlisting}
+
+Cependant, le Quine ne sait rien faire d’autre que de s’auto-générer. Ce qui pourrait apporter une contribution serait de faire un auto-reproducteur qui permet de dériver vers d’autres fonctionnalités et ainsi intégrer l’amélioration continue sur son propre développement.
+
+\subsection{Exemples illustratifs de générateur de code}
+
+La génération de code est un des moyens pour supporter le développeur dans son développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps.
+
+\subsubsection{Technique de génération de code basique}
+
+Dans le code~\ref{lst:gen_code_basique_c},~\ref{lst:gen_code_basique_uc},~\ref{lst:gen_code_basique_m}, la fonction «eval» en Python est dynamique, c'est-à-dire qu’il permet l’exécution à partir d’une chaîne de caractère, ce type de génération de code ne permet pas une évolution efficace ou une simplification du développement. Ça revient à lire un fichier et à l'imprimer, il n’a pas de capacité dynamique d’adaptation.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={C}, label={lst:gen_code_basique_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$}, label={lst:gen_code_basique_uc}]
+print('print("Hello, World!")')
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$)}, label={lst:gen_code_basique_m}]
+eval("""print('print("Hello, World!")')""")
+\end{lstlisting}
+
+Dans le code~\ref{lst:gen_code_basique_2_c},~\ref{lst:gen_code_basique_2_uc},~\ref{lst:gen_code_basique_2_m}, cette technique basique est paramétrable, contrairement à la première exemple~\ref{lst:gen_code_basique_m}. Le f-strings fait office de template et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py}, label={lst:gen_code_basique_2_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json}, label={lst:gen_code_basique_2_uc}]
+{
+ "fonction": "print",
+ "argument": "\"Hello, World!\""
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$)}, label={lst:gen_code_basique_2_m}]
+import json
+
+with open("uC.json") as f:
+   metadata = json.load(f)
+
+result = f"{metadata.get('fonction')}({metadata.get('argument')})\n"
+
+with open("C.py", "w") as f:
+   f.write(result)
+\end{lstlisting}
+
+\subsubsection{Technique de génération de code par template}
+
+Un moteur de template est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet Web.
+
+La génération de code par template est une technique de développement de logiciels qui permet de produire du code source à partir de modèles prédéfinis appelés templates.
+
+Le code~\ref{lst:gen_code_template_c},~\ref{lst:gen_code_template_uc},~\ref{lst:gen_code_template_template},~\ref{lst:gen_code_template_m} utilise la bibliothèque «Jinjer2». C'est un mécanisme similaire à code~\ref{lst:gen_code_basique_2_m}, cependant la logique est intégré directement dans le fichier template.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py}, label={lst:gen_code_template_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json}, label={lst:gen_code_template_uc}]
+{
+ "fonction": "print",
+ "argument": "\"Hello, World!\""
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={template - fichier template}, label={lst:gen_code_template_template}]
+{{ fonction }}({{ argument }})
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$)}, label={lst:gen_code_template_m}]
+import json
+
+from jinja2 import Template
+
+with open("template") as f:
+   template = Template(f.read())
+
+with open("uC.json") as f:
+   metadata = json.load(f)
+
+result = template.render(
+   fonction=metadata.get("fonction"), argument=metadata.get("argument")
+)
+
+with open("C.py", "w") as f:
+   f.write(result)
+\end{lstlisting}
+
+Les avantages du template~\ref{lst:gen_code_template_template_2} pour cette approche sont : une productivité accrue, une réduction des erreurs de codage, une meilleure cohérence du code et une réduction du temps de développement. Cette technique peut également faciliter la maintenance du code, puisque les modifications apportées aux templates sont automatiquement propagées à tout le code généré.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={Exemple de template avec logique}, label={lst:gen_code_template_template_2}]
+{% for student in students %}
+  <li>
+	{% if student.score > 80 %}:){% else %}:({% endif %}
+	<em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
+  </li>
+{% endfor %}
+\end{lstlisting}
+
+\subsubsection{Générateur de code par template avec Odoo 12}
+
+La technique utilisée par Odoo 12 est le «scaffold», il gère 2 types de template : un module de base «default» et un module thème «theme».
+
+Dans le code~\ref{lst:odoo_scaffold_default}, tout est presque commenté, rien n’est utilisable, mais nous avons la structure \texttt{MVC}. Le gain d’accélération au développement est minime.
+
+\begin{lstlisting}[language=Python, upquote=true, caption={Commande Odoo pour générer un module avec le Scaffold}, label={lst:odoo_scaffold_default}]
+> ./odoo/odoo-bin scaffold module_default ./
+> tree module_default/
+controllers
+    controllers.py
+    __init__.py
+demo
+    demo.xml
+__init__.py
+__manifest__.py
+models
+    __init__.py
+    models.py
+security
+    ir.model.access.csv
+views
+    templates.xml
+	views.xml
+\end{lstlisting}
+
+Cette fois-ci, dans le code~\ref{lst:odoo_scaffold_theme}, tout est vide, le module «theme\_module» fait une erreur à l'installation. Il est plus efficace copier et modifier un thème existant que d'utiliser le «scaffold».
+
+\begin{lstlisting}[language=Python, upquote=true, caption={Commande Odoo pour générer un thème avec le Scaffold}, label={lst:odoo_scaffold_theme}]
+> /odoo/odoo-bin scaffold -t theme theme_module ./
+> tree theme_module/
+demo
+    pages.xml
+__init__.py
+__manifest__.py
+static
+    src
+        scss
+            custom.scss
+views
+    options.xml
+    snippets.xml
+\end{lstlisting}
+
+Le gain d’accélération au développement est minime, tellement que c’est négligeable. Copier un module fonctionnel et le modifier en enlevant ce qu’on ne veut pas est plus efficace que d’utiliser cette technique. Disons que cette technique est utile pour un débutant pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel.
+
+\subsubsection{Technique de génération de code par rétro-ingénierie}
+
+Lorsqu'on veut faire de la rétro-ingénierie\footnote{\url{https://fr.wikipedia.org/wiki/Rétro-ingénierie_en_informatique}} avec un générateur le code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir figure~\ref{fig:retro_re_ing}. %\footnote{Modification de l'image source : \href{https://fr.wikipedia.org/wiki/Rétro-ingénierie_en_informatique#/media/Fichier:Retroingenierie_-_Byrne.svg}}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=5in]{images/Retroingenierie_-_Byrne.png}
+\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie.}
+\label{fig:retro_re_ing}
+\end{figure}
 
 % Exemple
 % Texte en \emph{italique}, \textsc{petites majuscules}, mot \mbox{insécable}.\\
