@@ -1,6 +1,6 @@
 \Chapter{MÉTHODE}\label{sec:Theme1} \label{chapitre_methode}
 
-L’objectif général de ce projet a été de créer et de valider le fonctionnement d’un automate générateur de code qui servir à l’implantation d’un ERP libre. Plus spécifiquement, les travaux ont été concentré sur les cinq sous-objectifs suivants:
+L’objectif général de ce projet a été de créer et de valider le fonctionnement d’un automate générateur de code qui sert à l’implantation d’un ERP libre. Plus spécifiquement, les travaux ont été concentré sur les cinq sous-objectifs suivants:
 
 \textbf{SO-1} développer un générateur de code de module sur Odoo,
 
@@ -8,9 +8,15 @@ L’objectif général de ce projet a été de créer et de valider le fonctionn
 
 \textbf{SO-3} développer une interface permettant de paramétrer la génération de code,
 
-\textbf{SO-4} développer un système de gestion de communauté.
+\textbf{SO-4} développer un système de distribution,
 
-Nous adoptons une méthodologie Agile pour le développement de ces composantes d'un automate générateur de code. Les fonctionnalités de génération de code seront validées par des tests de comparaison entre les codes générés et les codes révisés par l’humain.
+\textbf{SO-5} développer un système de gestion de communauté.
+
+La méthodologie Agile a été adopté pour le développement de ces composantes d'un automate générateur de code. Les fonctionnalités de génération de code ont été validées par des tests de comparaison entre les codes générés et les codes révisés par le développeur.
+
+% TODO mettre à jour avec les nouveaux résultats
+% TODO mettre au passé
+% TODO mettre en texte les étapes en dessous
 
 \section{SO-1 - Générateur}
 Développer une logique d’écriture de module sur une architecture de \texttt{MVC} avec support de plateforme web. Mise en place d’un concept de gabarit de code qui génère du code. Mise en place de la génération de code à partir de données. Générer un module à partir d’une base de données externes.
@@ -28,8 +34,8 @@ Développer un système de distribution de l’automate.
 Documenter les processus de développement pour amener les utilisateurs à contribuer et les faire participer à la maintenance. Mettre des guides pour permettre le sentiment d'appartenance. Mettre en place une politique tolérance zéro avec un système de communication non violente et créer un lieu de discussion public. Élaboration du prototype pour les spécifications du réseau de l’Accorderie du Canada. Élaboration du prototype pour les spécifications de l’organisme CEPPP du Canada.
 
 \section{Environnement informatique}
-La plateforme ERPLibre 1.5.0 contenant Odoo 12 communauté, qui utilise les langages Python 3.7, XML, Javascript et SCSS. Nos tests et développement ont été effectués sur le système d’exploitation Ubuntu 20.04.
-Pour les temps d’exécution des tests, ils ont été effectués sur une machine avec le CPU AMD Ryzen 9 5950X, mémoire ram 2x«32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 2667 MHz (0.4 ns)», et disque 1To wd-black-sn850-nvme.
+La plateforme ERPLibre 1.5.0 contenant Odoo 12 communauté, qui utilise les langages Python 3.7, \texttt{XML}, Javascript et \texttt{SCSS}. Nos tests et développement ont été effectués sur le système d’exploitation Ubuntu 20.04.
+Pour les temps d’exécution des tests, ils ont été effectués sur une machine avec le \texttt{CPU} \texttt{AMD} Ryzen 9 5950X, mémoire \texttt{ram} 2x«32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 2667 MHz (0.4 ns)», et disque 1To wd-black-sn850-nvme.
 Toutes les commandes utilisées sont faites à partir de la racine du projet ERPLibre.
 
 \section{Méthodologie de test}
