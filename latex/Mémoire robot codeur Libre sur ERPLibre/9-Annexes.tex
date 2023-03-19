@@ -31,7 +31,7 @@
 
 \Annexe{Test couverture technique générateur de code} \label{annexe_test_generateur_code}
 
-\begin{table}
+\begin{table}[htb]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
 
@@ -40,11 +40,11 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb modèle simple}} & Succès & 27 & 2 983 & 41\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ modèle simple}} & Succès & 27 & 2 983 & 41\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb modèle simple avec \\ héritage}} & Succès & 26 & 3 452 & 32\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ modèle simple avec \\ héritage}} & Succès & 26 & 3 452 & 32\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Exportation ucb données «helpdesk»}} & Succès & 28 & 3 900 & 23\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Exportation µ$_C^B$ données «helpdesk»}} & Succès & 28 & 3 900 & 23\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -57,21 +57,21 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Auto-génération uc0}} & Succès & 17 & 4 683 & 22\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Auto-génération µ$_C^0$}} & Succès & 17 & 4 683 & 22\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Nouveau projet uc0 uca ucb \\ «Hello World»}} & Succès & 39 & 4 610 & 23\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Nouveau projet µ$_C^0$ µ$_C^A$ µ$_C^B$ \\ «Hello World»}} & Succès & 39 & 4 610 & 23\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca portail}} & Succès & 44 & 3 638 & 39\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ portail}} & Succès & 44 & 3 638 & 39\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca modèle simple}} & Succès & 33 & 3 982 & 33\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ modèle simple}} & Succès & 33 & 3 982 & 33\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca modèle simple avec \\ héritage}} & Succès & 32 & 4 027 & 33\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ modèle simple avec \\ héritage}} & Succès & 32 & 4 027 & 33\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Exportation ucb données «website»}} & Succès & 28 & 3 900 & 23\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Exportation µ$_C^B$ données «website»}} & Succès & 28 & 3 900 & 23\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb du générateur de \\ code}} & Échec & 20 & 3 529 & 41\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ du générateur de \\ code}} & Échec & 20 & 3 529 & 41\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca du générateur de \\ code}} & Échec & 29 & 3 690 & 38\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ du générateur de \\ code}} & Échec & 29 & 3 690 & 38\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -84,7 +84,7 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca «auto\_backup»}} & Succès & 36 & 3 422 & 44\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ «auto\_backup»}} & Succès & 36 & 3 422 & 44\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -97,7 +97,7 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb exemple MariaDB \\ \texttt{SQL}}} & Succès & 80 & 3 104 & 46\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ exemple MariaDB \\ \texttt{SQL}}} & Succès & 80 & 3 104 & 46\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -110,7 +110,7 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb thème «website»}} & Succès & 27 & 3 938 & 26\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ thème «website»}} & Succès & 27 & 3 938 & 26\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -123,22 +123,22 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb individuel \\ «website\_snippet»}} & Succès & 26 & 4 284 & 24\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ individuel \\ «website\_snippet»}} & Succès & 26 & 4 284 & 24\\\hline
 
-% \end{tabular}
-% \end{table}
-% \begin{table}
-% \centering
-% \begin{tabular}{|l|l|l|l|l|l|}
-% \hline
+\end{tabular}
+\end{table}
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
 
 \cellcolor[HTML]{d9d9d9}{\textbf{Technique}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\shortstack[l]{base + portal + \\ «website\_snippet»}}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\textbf{\# instruction}}} & \cellcolor[HTML]{d9d9d9}{6 329}\\\hline
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb multiple \\ «website\_snippet»}} & Succès & 36 & 2 898 & 54\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ multiple \\ «website\_snippet»}} & Succès & 36 & 2 898 & 54\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb portail}} & Succès & 34 & 3 173 & 50\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ portail}} & Succès & 34 & 3 173 & 50\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -147,24 +147,24 @@
 % \begin{tabular}{|l|l|l|l|l|l|}
 % \hline
 
-\cellcolor[HTML]{d9d9d9}{\textbf{Technique}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{base + portal + «extern\_db»}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\textbf{\# instruction}}} & \cellcolor[HTML]{d9d9d9}{6 559}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Technique}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{base + portal + «Migration DB»}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\textbf{\# instruction}}} & \cellcolor[HTML]{d9d9d9}{6 559}\\\hline
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
 \multicolumn{2}{|l|}{\shortstack[l]{Génération migration MariaDB \\ \texttt{SQL}}} & Succès & 121 & 3 267 & 50\\\hline
 
-\end{tabular}
-\end{table}
-\begin{table}
-\centering
-\begin{tabular}{|l|l|l|l|l|l|}
+% \end{tabular}
+% \end{table}
+% \begin{table}
+% \centering
+% \begin{tabular}{|l|l|l|l|l|l|}
 
 \hline
 \cellcolor[HTML]{d9d9d9}{\textbf{Technique}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{base + hook + portal}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\textbf{\# instruction}}} & \cellcolor[HTML]{d9d9d9}{6 699}\\\hline
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca MariaDB \\ \texttt{SQL}}} & Succès & 78 & 4 315 & 36\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ MariaDB \texttt{SQL}}} & Succès & 78 & 4 315 & 36\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -177,7 +177,7 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération uca «auto\_backup»}} & Succès & 36 & 3 422 & 44\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^A$ «auto\_backup»}} & Succès & 36 & 3 422 & 44\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -190,7 +190,7 @@
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 
-\multicolumn{2}{|l|}{\shortstack[l]{Génération ucb \\ «website\_snippet\_leaflet»}} & Succès & 33 & 3 259 & 40\\\hline
+\multicolumn{2}{|l|}{\shortstack[l]{Génération µ$_C^B$ \\ «website\_snippet\_leaflet»}} & Succès & 33 & 3 259 & 40\\\hline
 
 % \end{tabular}
 % \end{table}
@@ -199,7 +199,7 @@
 % \begin{tabular}{|l|l|l|l|l|l|}
 % \hline
 
-\cellcolor[HTML]{d9d9d9}{\textbf{Technique}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\shortstack[l]{base + cron + hook + \\ «extern\_db» + geoengine + \\ portal + «theme\_website» + \\ «website\_snippet» + \\ «website\_leaflet»}}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\textbf{\# instruction}}} & \cellcolor[HTML]{d9d9d9}{8 746}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Technique}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\shortstack[l]{base + cron + hook + \\ «Migration DB» + geoengine + \\ portal + «theme\_website» + \\ «website\_snippet» + \\ «website\_leaflet»}}} & \multicolumn{2}{|l|}{\cellcolor[HTML]{d9d9d9}{\textbf{\# instruction}}} & \cellcolor[HTML]{d9d9d9}{8 746}\\\hline
 
 \multicolumn{2}{|l|}{\cellcolor[HTML]{efefef}{\textbf{Description du test}}} & \cellcolor[HTML]{efefef}{\textbf{Status}} & \cellcolor[HTML]{efefef}{\textbf{Durée (s)}} & \cellcolor[HTML]{efefef}{\textbf{\# de Miss}} & \cellcolor[HTML]{efefef}{\textbf{Cover (\%)}}\\\hline
 

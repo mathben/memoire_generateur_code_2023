@@ -102,7 +102,7 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 % TODO manque le load de https://fr.wikipedia.org/wiki/Extract-transform-load
 % ça devient discussion
 
-La migration de données à partir de \texttt{SQL} était déjà supporté dans la version initiale, cependant il y a eu des améliorations : 
+La migration de données à partir de \texttt{SQL} était déjà supporté dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations : 
 
 \begin{enumerate}
     \item Ajout de type de données, dont ceux utilisé par le projet Accorderie
@@ -179,3 +179,224 @@ Le Javascript, le HTML et le \texttt{XML} sont mises en forme avec l’outil «p
 De plus, le générateur force le déplacement des classes dans leur propre fichier respectif pour faire une classe par fichier.
 
 Les champs pour chaque modèle sont déplacés en ordre alphabétique, mais le premier est celui qui est utilisé pour représenter le modèle\footnote{Référence à l'attribut «\_rec\_name»}.
+
+\section{Résultats propres à SO-3}
+
+\subsection{Classification des techniques développés}
+
+En référence à la figure~\ref{fig:dia_architecture_automate}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques.
+
+% TODO faire un diagramme des dépendances
+Les techniques :
+\begin{enumerate}
+    \item Contrôleur;
+    \item Cron;
+    \item Exportation des données;
+    \item Géospatiale (dépend de Modèle);
+    \item Héritage;
+    \item Hook;
+    \item Migration DB\footnote{importation des données par DB};
+    \item Modèle;
+    \item Portal;
+    \item Sécurité;
+    \item Snippet;
+    \item Thème;
+    \item Vue web;
+    \begin{enumerate}
+        \item Activity;
+        \item Calendar;
+        \item Diagram;
+        \item Form;
+        \item Graph;
+        \item Kanban;
+        \item Pivot;
+        \item Search;
+        \item Timeline;
+        \item Tree;
+    \end{enumerate}
+    \item «website\_leaflet» (dépend de Snippet et Géospatiale);
+    \item Wizard;
+\end{enumerate}
+
+\subsection{Interface du générateur de code}
+
+\paragraph{L'interface graphique}
+
+ existait déjà dans la version initiale~\cite{bluiksnot_repo}, elle a été améliorée pour afficher plus d'informations par rapport aux développements. Elle sert à faciliter la paramétrisation du générateur de code. Elle n’a pas été priorisée et elle manque de fonctionnalité comparé à ce qui peut être supporté via la technique «code hooks» avec µ$_C^A$ et µ$_C^B$.
+
+Ce qui fonctionne : 
+\begin{enumerate}
+    \item Créer module;
+    \item Renommer un module;
+    \item Ajouter des modèles et des champs;
+    \item Ajouter des menus;
+    \item Ajouter la sécurité;
+    \item Changer les icônes;
+    \item Changer les informations sur les propriétés «manifest» du module;
+    \item Ajouter du code;
+    \item Modification des «hooks»;
+    \item Etc.
+\end{enumerate}
+
+\paragraph{L'interface «code hook»}
+
+% TODO on montre un exemple de code hook?
+
+permettent d’accéder à la totalité des fonctionnalités de l’automate via µ$_C^A$ et µ$_C^B$, elles ont été utilisés pour toutes les démonstrations qui servent de test, elles contiennent la paramétrisation pour des modules désirés.
+
+\section{Résultats propres à SO-4}
+
+\subsection{Utilisation d’un conteneur Docker}
+
+Puisque l’automate fait partie de ERPLibre, la version 1.5.0 contient les modules de génération de code. Le déploiement se fait rapidement en utilisant le logiciel Docker, le générateur de code permet l’utilisation de l’interface graphique pour générer des modules Odoo.
+
+\section{Résultats propres à SO-5}
+
+\subsection{Guide créer une communauté autour d’une technologie pour un réseau d’entraide libre}
+
+Un guide hybride a été produit pour comprendre les aspects cités du démarrage d’un projet, de gestion d’une communauté autour d’un projet libre et des règles d'hébergement libres.
+
+\subsection{Démarrage d’un projet}
+
+Le guide du tableau~\ref{tab:demarrer_projet_7_etape} permet de démarrer rapidement un projet et s'assurer que les membres impliqués du réseau d'entraide comprennent les mêmes enjeux et s'aligne dans la même direction.
+
+% TODO adapté selon le libre?
+
+\begin{table}[htb]
+\caption{Les 7 étapes pour démarrer un projet dans un réseau d'entraide}
+\centering
+\begin{tabular}{|l|l|}
+
+\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Étape}} &\cellcolor[HTML]{d9d9d9}{Description}\\\hline
+
+\shortstack[l]{Mission} & \shortstack[l]{Trouver votre mission, vos indicateurs
+% \footnote{\url{https://www.tresor.gouv.qc.ca/fileadmin/PDF/cadre_gestion/guide_indicateur.pdf}} 
+et les objectifs associés.}\\\hline
+
+\shortstack[l]{Processus} & \shortstack[l]{Déterminer les étapes pour du développement informatique, de \\ l'assemblage des travaux, des méthodes pour faire des services et de \\ l'amélioration continue.
+\\Avoir conscience des gaspillages
+% \footnote{\url{https://fr.wikipedia.org/wiki/Lean_(production)}}
+}\\\hline
+
+\shortstack[l]{Connexion} & \shortstack[l]{Mécanisme d'animation du suivi des tâches, des services.}\\\hline
+
+\shortstack[l]{Valeurs} & \shortstack[l]{Trouver les valeurs qui vont guider la façon de gérer l'équipe, la \\ communauté, sans être exclusifs ou figées dans le temps. Ils sont \\ un point de repère et aide pour prendre les grandes orientations.}\\\hline
+
+\shortstack[l]{Vision} & \shortstack[l]{Détailler un plan stratégique pour la communauté. C'est une \\ projection dans le futur pour permettre de comprendre la direction \\ sur la longue durée.}\\\hline
+
+\shortstack[l]{Prochaines \\ étapes} & \shortstack[l]{Passer à l'action en mode itératif avec des méthodologies agiles.}\\\hline
+
+\end{tabular}
+\label{tab:demarrer_projet_7_etape}
+\end{table}
+
+\subsection{Intégration d’un membre}
+
+\begin{enumerate}
+    \item Amener les utilisateurs à faire des contributions pour ensuite qu'ils participent à la maintenance en facilitant chaque étape;
+    \item Rendre disponible des tâches pour les nouveaux membres;
+    \begin{enumerate}
+        \item Permettre d'utiliser des étiquettes de classement adaptés sur des initiatives proposé par des nouveaux, tels que «suggestion», «problème» ou «question».
+    \end{enumerate}
+    \item Remercier la personne pour son intérêt qui veut participer au projet;
+    \item Répondre en moins de 24 heures pour accueillir le membre;
+    \item Définir les types de contributions nécessaires et la manière qu'on examine une contribution;
+    \item Mettre en place un sentiment d'appartenance :
+    \begin{enumerate}
+        \item Lorsqu'un problème est reporté, demander gentiment s'il peut avoir une contribution;
+        \item Mettre la liste des contributeurs dans un fichier du projet;
+        \item Remercier les contributeurs dans une infolettre.
+    \end{enumerate}
+    \item Émettre des dates de rencontres officielles pour parler du projet par vidéo-conférence pour des communautés locales, qui ont la même langue.
+\end{enumerate}
+
+\subsection{Comportement en communauté}
+
+\begin{enumerate}
+    \item Proposer un guide sur les comportements désirés;
+    \item Réagir publiquement pour chaque message sur la plateforme;
+    \item Encourager de publier les notes de réunions et même le menus commandés des repas pour promouvoir la transparence;
+    \item Développer une culture de développement ouvert.
+\end{enumerate}
+
+\subsection{Outils de développement public}
+
+\begin{enumerate}
+    \item Mettre en place un site web de développement en lien avec l'organisation créé;
+    \item Documenter publiquement le processus de développement;
+    \item Permettre de voir l'avancement des tâches en lien avec les processus;
+    \begin{enumerate}
+        \item Permettre de proposer des changements avec un système d'acceptation par les pairs.
+    \end{enumerate}
+    \item Montrer la feuille de route du projet, des livrables prévues;
+    \item Encourager la publication du travail brouillon avec un état de travail en progression;
+    \item Déployer un moyen de discussion public et éviter de répondre en privé.
+\end{enumerate}
+
+\subsection{Résolution de problème}
+
+\begin{enumerate}
+    \item Mise en place d'un arbre décisionnel avec description des décisions sur un type de problème;
+    \item Documenter la résolution d'un problème de développement logiciel;
+    \item Permettre aux développeurs de prendre des décisions sur des choix impopulaires basés sur leur ressentiment;
+    \item Éviter les débats réguliers sur des aspects triviaux;
+    \item Concentrer les discussions vers la résolution d'un problème qui mène vers une action.
+    \begin{enumerate}
+        \item Quel serait la prochaine étape à prendre?
+        \item Suggérer des conditions pour de nouveaux progrès, offrir un itinéraire, un chemin à suivre pour obtenir les résultats désirés.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Documentation}
+
+\begin{enumerate}
+    \item Rendre accessible les documentations :
+    \begin{enumerate}
+        \item Fonctionnelles pour les utilisateurs;
+        \item Technique pour le développement;
+        \item Hébergement pour le déploiement;
+        \item Fichier «README» pour l'utilisation rapide du logiciel;
+        \item Fichier «CONTRIBUTE» pour comment faire de la contribution;
+        \item Fichier «GOVERNANCE» pour le départage décisionnel.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Sécurité}
+
+\begin{enumerate}
+    \item Montrer le niveau de sécurité de l'application;
+    \item Mettre en place un système de communication des mises à jours nécessaires;
+    \item Informer comment sécuriser les clés d'authentification, les données et les configurations personnelles.
+\end{enumerate}
+
+\subsection{Développement libre}
+
+\begin{enumerate}
+    \item Suivre les règles d'hébergement de logiciel libre pour permettre l'inclusion;
+    \item Expliquer l'importance du choix de la licence libre ainsi que les différences. Expliquer pourquoi d'autres choix ne sont pas proposés et restreindre l'utilisation de logiciel libre si la licence n'est pas acceptée;
+    \item Rendre accessible la documentation sur le logiciel libre en lien avec la localité administrative de l'organisation\footnote{Exemple, un document du Québec : \url{https://www.tresor.gouv.qc.ca/fileadmin/PDF/ressources_informationnelles/logiciels_libres/ll.pdf}};
+    \item Toujours proposer des licences libres avec un guide explicatif, ne pas permettre d'utiliser des licences non compatible au libre :
+    \begin{enumerate}
+%        \item LGPL;
+%        \item GPL;
+        \item AGPL\footnote{\url{https://www.gnu.org/licenses/agpl-3.0.en.html}};
+        \item CC0\footnote{\url{https://creativecommons.org/share-your-work/public-domain/cc0/}};
+        \item LiLiQ-R+\footnote{Licence libre restrictive au Québec : \url{https://forge.gouv.qc.ca/licence/}};
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Communication}
+
+\begin{enumerate}
+    \item Faire un suivi des émotions/sentiments des membres lors des réunions (hebdomadaires) par rapport au projet;
+    \item Mettre en place des outils favorisant la communication non violente.
+\end{enumerate}
+
+\section{Projet diverse}
+
+\subsection{Projet module «auto\_backup»}
+
+Le module «auto\_backup» est le premier module de la communauté à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré et de la qualité a été appliqué causant une différence avec la version communautaire dans l’organisation OCA et leur répertoire «server-tools».
+
+Ainsi, la technique de gestion des «Cron», puisqu’il lance des sauvegardes par \texttt{SSH} ou en local à des moments spécifiques dans le temps.
