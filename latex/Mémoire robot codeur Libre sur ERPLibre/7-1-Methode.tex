@@ -1,2 +1,43 @@
-\Chapter{MÉTHODE}\label{sec:Theme1}
-% Texte / Text.
+\Chapter{MÉTHODE}\label{sec:Theme1} \label{chapitre_methode}
+
+L’objectif général de ce projet a été de créer et de valider le fonctionnement d’un automate générateur de code qui servir à l’implantation d’un ERP libre. Plus spécifiquement, les travaux ont été concentré sur les cinq sous-objectifs suivants:
+
+\textbf{SO-1} développer un générateur de code de module sur Odoo,
+
+\textbf{SO-2} développer une logique d'amélioration continue sur l'écriture du code,
+
+\textbf{SO-3} développer une interface permettant de paramétrer la génération de code,
+
+\textbf{SO-4} développer un système de gestion de communauté.
+
+Nous adoptons une méthodologie Agile pour le développement de ces composantes d'un automate générateur de code. Les fonctionnalités de génération de code seront validées par des tests de comparaison entre les codes générés et les codes révisés par l’humain.
+
+\section{SO-1 - Générateur}
+Développer une logique d’écriture de module sur une architecture de \texttt{MVC} avec support de plateforme web. Mise en place d’un concept de gabarit de code qui génère du code. Mise en place de la génération de code à partir de données. Générer un module à partir d’une base de données externes.
+
+\section{SO-2 - Rétro-ingénierie}
+Développer la capacité de comprendre une structure de code et de la reproduire. Définir ce que c’est de l’amélioration continue et son application dans un contexte d’automatisation. Mise en place de test de validation de code sur des critères de qualité mesurables. Intégration de règles de codage standardisées pour favoriser le réseau d’entraide.
+
+\section{SO-3 - Interface}
+Proposer une classification des techniques que l’automate peut réaliser en programmation. Développer un interface permettant le contrôle de l’automate pour l’orienter dans la programmation de fonctionnalités. Rendre disponible une interface \texttt{LCNC} pour permettre aux utilisateurs de programmer leurs fonctionnalités.
+
+\section{SO-4 - Déploiement}
+Développer un système de distribution de l’automate.
+
+\section{SO-5 - Réseau d’entraide}
+Documenter les processus de développement pour amener les utilisateurs à contribuer et les faire participer à la maintenance. Mettre des guides pour permettre le sentiment d'appartenance. Mettre en place une politique tolérance zéro avec un système de communication non violente et créer un lieu de discussion public. Élaboration du prototype pour les spécifications du réseau de l’Accorderie du Canada. Élaboration du prototype pour les spécifications de l’organisme CEPPP du Canada.
+
+\section{Environnement informatique}
+La plateforme ERPLibre 1.5.0 contenant Odoo 12 communauté, qui utilise les langages Python 3.7, XML, Javascript et SCSS. Nos tests et développement ont été effectués sur le système d’exploitation Ubuntu 20.04.
+Pour les temps d’exécution des tests, ils ont été effectués sur une machine avec le CPU AMD Ryzen 9 5950X, mémoire ram 2x«32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 2667 MHz (0.4 ns)», et disque 1To wd-black-sn850-nvme.
+Toutes les commandes utilisées sont faites à partir de la racine du projet ERPLibre.
+
+\section{Méthodologie de test}
+Les tests ont été codés directement dans ERPLibre dans un script Python avec un ensemble de script pour valider les différences dans le Git après exécution, et cacher des différences.
+
+Le tout a été programmé avec la technique parallélisme avec la bibliothèque Asyncio et des nouveaux processus et non des «thread»\footnote{Processus légé}. Seul le test de nouveau projet est exécuté après le parallélisme ajouter plus de temps à l’exécution.
+
+Puisque le test d’un générateur de code consiste à valider ce qu’il a généré, ainsi vérifier la couverture de code est un bon indicateur pour déterminer le code utilisé et validé ce qui est déprécié dans le générateur.
+
+\subsection{Couverture du code}
+La couverture du code a été faite avec la bibliothèque «Coverage» version 7.0.1 en Python et configurée sur le répertoire qui contient le générateur de code pour faire le suivi des lignes exécuter dans la machine. Ça devient une métrique de la performance d’utilisation sur la quantité de fonctionnalité généré.

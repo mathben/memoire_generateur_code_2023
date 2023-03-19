@@ -18,7 +18,7 @@ La valeur du marché des solutions \texttt{ERP} s'établissait autour de 40 mill
 
 Le développement de système \texttt{ERP} est complexe, nécessite une maintenance exigeante et le risque d’introduire des erreurs est important. Comment accélérer le développement de fonctionnalités de la plateforme \texttt{ERP} Odoo\footnote{Anciennement OpenERP, ERP libre web, lien du projet \url{https://github.com/OCA/OCB}} 12 communautaire?
 
-La plateforme ERPLibre\footnote{Projet automatisé v1.5.0 contenant Odoo 12.0 \url{https://erplibre.ca}} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo 12 communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet logiciel libre.
+La plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo 12 communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet logiciel libre.
 
 % TODO problématique de devoir adapter les processus de l'entreprise aux capacité du ERP au lieu de donner un processus personnalisé
 
@@ -49,7 +49,7 @@ Odoo version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
 \cellcolor[HTML]{f4cccc}6.0/6.1 & octobre 2009 & \multicolumn{2}{|l|}{Première publication sous \texttt{AGPL}, premier client web}\\\hline
 \cellcolor[HTML]{f4cccc}7.0 & décembre 2012 & \multicolumn{2}{|l|}{} \\\hline
 \cellcolor[HTML]{f4cccc}8.0 & septembre 2014 & \multicolumn{2}{|l|}{\shortstack[l]{Changement de nom pour Odoo, anciennement \\ OpenERP}}\\\hline
-\cellcolor[HTML]{f4cccc}9.0 & novembre 2015 & \multicolumn{2}{|l|}{\shortstack[l]{Première publication des éditions «Community» sous \\ licence \texttt{LGPLV3} et «Enterprise» sous licence \\ propriétaire.}}\\\hline
+\cellcolor[HTML]{f4cccc}9.0 & novembre 2015 & \multicolumn{2}{|l|}{\shortstack[l]{Première publication des éditions «Community» \\ sous licence \texttt{LGPLV3} et «Enterprise» sous licence \\ propriétaire.}}\\\hline
 \cellcolor[HTML]{f4cccc}10.0 & octobre 2016 & \multicolumn{2}{|l|}{} \\\hline
 \cellcolor[HTML]{f4cccc}11.0 & octobre 2017 & \multicolumn{2}{|l|}{} \\\hline
 \cellcolor[HTML]{f4cccc}12.0 & octobre 2018 & \multicolumn{2}{|l|}{Version utilisé dans ERPLibre 1.5.0}\\\hline
@@ -268,7 +268,7 @@ Nous avons décelé que le présent projet pourrait répondre à leur besoin ave
 
 % what
 
-Le CEPPP, Centre d’excellence sur le partenariat avec les patients et le public, était à la recherche d'une plateforme pour la gestion du partenariat avec les patients et le public. Le Portail des partenaires (“Portail”) du Centre d’excellence sur le partenariat avec les patients et le public (CEPPP) est issu de la fusion de communautés de patients partenaires, entre autres de la Direction collaboration et partenariat patient (DCPP) de la Faculté de médecine de l’Université de Montréal, et celle du CEPPP du Centre de recherche du Centre Hospitalier de l’Université de Montréal (CR-CHUM). Le Portail est un outil qui vient soutenir les activités de recrutement et de recherche sur les pratiques de partenariat. Ils avaient donc déjà une solution\footnote{Lien du projet Git CEPPP CRM \url{https://github.com/lerenardprudent/ceppp_crm/tree/master}}, mais elle était incomplète, il manquait la gestion de l'anonymisation et l'interface ne répondait pas à des critères esthétiques.
+Le CEPPP, Centre d’excellence sur le partenariat avec les patients et le public, était à la recherche d'une plateforme pour la gestion du partenariat avec les patients et le public. Le Portail des partenaires (“Portail”) du Centre d’excellence sur le partenariat avec les patients et le public (CEPPP) est issu de la fusion de communautés de patients partenaires, entre autres de la Direction collaboration et partenariat patient (DCPP) de la Faculté de médecine de l’Université de Montréal, et celle du CEPPP du Centre de recherche du Centre Hospitalier de l’Université de Montréal (CR-CHUM). Le Portail est un outil qui vient soutenir les activités de recrutement et de recherche sur les pratiques de partenariat. Ils avaient donc déjà une solution~\cite{github_ceppp_crm}, mais elle était incomplète, il manquait la gestion de l'anonymisation et l'interface ne répondait pas à des critères esthétiques.
 
 Le présent projet venait pallier aux problèmes rencontrés en facilitant le développement, en accélérant ce dernier, en permettant une personnalisation et en développant l'anonymisation des données. À l'instar de l'Accorderie, cela permettait aussi un cas réel d'utilisation empirique du projet afin d'améliorer et de comprendre ce dont le générateur de code a besoin. 
 
@@ -283,7 +283,7 @@ Le présent projet venait pallier aux problèmes rencontrés en facilitant le d�
 
 \subsubsection{Internationalization et localisation}
 
-Dans un réseau d'entraide, il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard \texttt{i18n}, qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\footnote{Wikipédia \url{https://fr.wikipedia.org/wiki/Internationalisation_et_localisation}}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou \texttt{XML}. Le système permet de générer un fichier «pot» qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier «pot» pour faire un fichier «po» sous la nomenclature \texttt{i18n} et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier «po» avec les traductions déjà connu par le système, il suffit de le mettre à jour.
+Dans un réseau d'entraide, il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard \texttt{i18n}, qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\cite{wikipedia_i18n}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou \texttt{XML}. Le système permet de générer un fichier «pot» qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier «pot» pour faire un fichier «po» sous la nomenclature \texttt{i18n} et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier «po» avec les traductions déjà connu par le système, il suffit de le mettre à jour.
 
 \subsubsection{Architecture \texttt{MVC}}
 
@@ -337,7 +337,7 @@ La plateforme ERPLibre a ainsi été créé en début 2020 encapsulant la versio
 % % TODO REF
 % % Il permet de générer un module simple dans Odoo et faire son modèle de données et vue de base admin
 
-\subsection{Cadre conceptuel}
+\subsection{Cadre conceptuel} \label{subsection_cadre_conceptuel}
 
 Nous proposons un modèle formel de la génération de code qui guide le travail proposé dans ce mémoire. Soit C, un code informatique exécutable (qui pourrait aussi être un script interprétable), soit µ$_C$ les méta-données du code, et soit M, une machine disposant de deux modes d’opération : $M^d$ le mode direct, et $M^i$ le mode inverse, voir figure~\ref{fig:mode_direct_inverse}. Lorsque M opère en mode direct sur µ$_C$, on doit obtenir C; en opérant en mode inverse sur C, on doit obtenir µ$_C$.
 
@@ -522,16 +522,16 @@ Le gain d’accélération au développement est minime, tellement que c’est n
 
 \subsubsection{Technique de génération de code par rétro-ingénierie}
 
-Lorsqu'on veut faire de la rétro-ingénierie\footnote{\url{https://fr.wikipedia.org/wiki/Rétro-ingénierie_en_informatique}} avec un générateur le code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir figure~\ref{fig:retro_re_ing}. %\footnote{Modification de l'image source : \href{https://fr.wikipedia.org/wiki/Rétro-ingénierie_en_informatique#/media/Fichier:Retroingenierie_-_Byrne.svg}}.
+Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur le code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir figure~\ref{fig:retro_re_ing}.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=5in]{images/Retroingenierie_-_Byrne.png}
-\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie.}
+\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie. Image modifiée~\cite{wikipedia_image_retroingenierie}}
 \label{fig:retro_re_ing}
 \end{figure}
 
-Dans le code~\ref{lst:gen_code_retro_m}, la bibliothèque AST est utilisée pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logiciel entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en \texttt{PEP8\footnote{\url{https://peps.python.org/pep-0008/}}}.
+Dans le code~\ref{lst:gen_code_retro_m}, la bibliothèque AST est utilisée pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logiciel entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en \texttt{PEP8~\cite{python_pep8}}.
 
 \begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py}, label={lst:gen_code_retro_c}]
 print(                     "Hello, World!"                         )
@@ -572,10 +572,11 @@ print("Hello, World!")
 
 \subsection{Tester un générateur de code}
 
-Il existe le test «Output comparison testing»\footnote{\url{https://en.wikipedia.org/wiki/Software_testing}} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuel.
+Il existe le test «Output comparison testing»~\cite{wikipedia_test_informatique} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuel.
 
 Pour valider si le générateur utilise sa pleine capacité, il suffit de faire des tests de toutes les combinaisons de ses techniques de génération et d'utiliser un outil de couverture de code pour déterminer les lignes qui sont opérés.
 
+% TODO missing auto-ingénierie, auto-amélioration, évolution technique rétro
 
 % Exemple
 % Texte en \emph{italique}, \textsc{petites majuscules}, mot \mbox{insécable}.\\
