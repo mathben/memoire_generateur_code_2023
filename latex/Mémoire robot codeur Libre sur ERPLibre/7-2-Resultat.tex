@@ -87,12 +87,12 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 \begin{enumerate}
 % TODO define Wizard
  \item Ajout de bouton qui ouvre des «Wizard» pour générer les «Views», les «Models» et les «Controllers». Ainsi le développeur peut les configurer et demander de générer les méta-données associées.
-\begin{figure}[htb]
-\centering
-\includegraphics[width=3in]{images/GUI_MVC.png}
-\caption{Architecture de l'automate}
-\label{fig:dia_gui_mvc}
-\end{figure}
+    \begin{figure}[htb]
+    \centering
+    \includegraphics[width=3in]{images/GUI_MVC.png}
+    \caption{Architecture de l'automate}
+    \label{fig:dia_gui_mvc}
+    \end{figure}
  \item Les règles de sécurité sont ajustées selon les configurations et personnalisables par la suite.
 \end{enumerate}
 
@@ -228,13 +228,13 @@ Ce qui fonctionne :
 \begin{enumerate}
     \item Créer module;
     \item Renommer un module;
-    \item Ajouter des modèles et des champs;
+    \item Ajouter des modèles, voir Annexe~\ref{annexe_cg_gui_model}, et des champs, voir Annexe~\ref{annexe_cg_gui_champs};
     \item Ajouter des menus;
     \item Ajouter la sécurité;
     \item Changer les icônes;
     \item Changer les informations sur les propriétés «manifest» du module;
-    \item Ajouter du code;
-    \item Modification des «hooks»;
+    \item Ajouter du code, voir Annexe~\ref{annexe_cg_gui_code};
+    \item Modification des «hooks», voir Annexe~\ref{annexe_cg_gui_hook};
     \item Etc.
 \end{enumerate}
 
@@ -397,6 +397,57 @@ et les objectifs associés.}\\\hline
 
 \subsection{Projet module «auto\_backup»}
 
-Le module «auto\_backup» est le premier module de la communauté à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré et de la qualité a été appliqué causant une différence avec la version communautaire dans l’organisation OCA et leur répertoire «server-tools».
+Le module «auto\_backup» est le premier module de la communauté à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré et de la qualité a été appliqué causant une différence avec la version communautaire dans l’organisation \texttt{OCA} et leur répertoire «server-tools».
 
 Ainsi, la technique de gestion des «Cron», puisqu’il lance des sauvegardes par \texttt{SSH} ou en local à des moments spécifiques dans le temps.
+
+\subsection{Projet module workflow design}
+
+C’est un module de gestion de projet généré par l’automate qui permet de faire le suivi sur les opportunités, les menaces, les forces, les faiblesses et les objectifs. Il a été utilisé dans le projet Accorderie.
+
+\subsection{Projet module STARS}
+
+Le module STARS dépend de l’application Projet, il permet de configurer une procédure associable à un nouveau projet pour suivre les étapes de STARS, voir Figure~\ref{fig:workflow_stars}.
+
+\begin{figure}
+\centering
+\includegraphics[width=6.535in]{workflow_stars.png}
+\caption{Procédure STARS dans l'application Projet vue Diagramme}
+\label{fig:workflow_stars}
+\end{figure}
+
+Ainsi, on peut créer un nouveau projet et suivre cette procédure en ajoutant des tâches d'amélioration continue de son organisation, voir Figure~\ref{fig:kanban_stars}.
+
+\begin{figure}
+\centering
+\includegraphics[width=6.535in]{kanban_stars.png}
+\caption{Suivi des tâches de projet avec procédure STARS en vue Kanban}
+\label{fig:kanban_stars}
+\end{figure}
+
+\subsection{Projet module SRS}
+
+C’est un module de gestion de projet généré par le générateur de code qui permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et finalement définir les requis fonctionnelles d’un projet. Il a été utilisé en autre pour le projet Accorderie et le projet Portail CEPPP.
+
+\section{Projet espace Accorderie}
+
+Le projet a débuté par l'élaboration d'une analyse des besoins et fonctionnelles, puis un ensemble de requis logicielles ont été rédigé avec un membre du Réseau de l'Accorderie. % TODO faire annexe, voir annexe OIU.
+
+Le générateur de code a permis créer un module Odoo 12.0 avec leurs modèles de données basé sur leur base de données en \texttt{SQL} de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
+
+Plusieurs corrections ont été effectué avant la migration : correction des noms des champs pour les uniformisés; correction des types de champs (exemple le «True» était exprimé par la valeur «-1» dans un type «int», ainsi ce type a été transformé en booléen); enlever les double dépendances par changement de l’architecture; correction des données erronés (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçue pour de l’automatisation, mais plutôt pour que les échanges de service soient validés par des membres de la communauté.
+
+Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculé avec le projet libre \texttt{OSRM}, etc...
+
+La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données \texttt{XML}. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migré vers une mise en production.
+
+Un portail a été généré, pour remplacer les formulaires utilisés par l'ancienne plateforme \texttt{PHP} et ainsi visualiser les entrées. Cependant, cette fonctionnalité a été abandonné puisque cette technologie ne plaisait pas
+
+Une maquette a été conçue pour un nouvel espace membre. Ainsi, on a utilisé la technique «website\_snippet» pour afficher des données sur le site web et créer des formulaires. Cette base a permis d’accélérer la création de code de communication entre le client et le serveur. À force de faire l’intégration et la personnalisation de cette maquette, il n’y a plus vraiment de code qui provient du générateur de code.
+
+Le générateur de code a permis d’aider à créer un diagramme pour afficher le processus d’échange de temps, voir Annexe~\ref{annexe_processus_accorderie_2023}, puis une application en Javascript avec AngularJS a été développé pour afficher ce processus à l’utilisateur, une machine à état qui permet de revenir selon des paramètres à un état du processus.
+
+Dû à des limitations humaines et de temps, tout le reste du projet a dû être fait manuellement puisqu’on a changé de technologie pour faciliter le développement de l’interface.
+
+\section{Projet Portail CEPPP}
+
