@@ -451,3 +451,37 @@ Dû à des limitations humaines et de temps, tout le reste du projet a dû être
 
 \section{Projet Portail CEPPP}
 
+L'objectif est de faire une section portail pour les patients et une section administratif pour les recruteurs, les partenaires et les administrateurs de la plateforme, rendre accessible des formulaires et anonymiser les données. Le mandat était de migrer les fonctionnalités de la plateforme qui a été développé sur SuiteCRM en \texttt{PHP}.
+
+Un module d'extraction de \texttt{PHP} a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exporté en \texttt{CSV} et un module d'exportation des données a été développé.
+
+Extraction : 
+\begin{enumerate}
+    \item 23 fichiers analysés;
+    \item 2851 données extraites;
+    \item Capacité de faire la traduction anglais-français sur les données, mais cette fonctionnalité annulé puisque les données ont été modifié dans la ré-ingénierie.
+\end{enumerate}
+
+Voici les statistiques~\ref{tab:stat_code_portail_ceppp} du code après ré-ingénierie et adaptation des fonctionnalités, livraison de la plateforme en début septembre 2023\footnote{\url{https://portailppp.ca}}.
+
+\begin{table}[htb]
+\caption{L'évolution entre la génération et la ré-ingénierie des statistiques sur les langages du portail CEPPP}
+\centering
+\begin{tabular}{|l|l|l|l|}
+
+\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\# Ligne extrait} & \cellcolor[HTML]{d9d9d9}{\# Ligne personnalisé} & \cellcolor[HTML]{d9d9d9}{\# Diff}\\\hline
+
+\texttt{XML} & 6 861 & 3 856 & - 3 005\\\hline
+Python & 567 & 1 564 & + 997\\\hline
+Javascript & 0 & 68 & + 68\\\hline
+\texttt{CSV} & 25 & 51 & + 26\\\hline
+
+\end{tabular}
+\label{tab:stat_code_portail_ceppp}
+\end{table}
+
+L'anonymisation n'est pas supporté par le générateur de code, puis la personnalisation enlève beaucoup de champs mis de manière générique dans les fichier \texttt{XML}. 
+
+Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{annexe_db_ceppp_2022}. L'interface administrateur~\ref{annexe_form_ceppp_2022} contient la fiche du patient, que les partenaires ont accès seulement qu'à la partie anonymisée~\ref{annexe_form_anonyme_ceppp_2022}.
+
