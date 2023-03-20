@@ -17,6 +17,29 @@
     url = {https://journals.tubitak.gov.tr/elektrik/vol28/iss3/37}
 }
 
+@article{open_interop_2011,
+    author = {Fernando Almeida and José Oliveira and José Cruz},
+    title = {OPEN STANDARDS AND OPEN SOURCE: ENABLING INTEROPERABILITY},
+    journal = {International Journal of Software Engineering \& Applications (IJSEA)},
+    year = {2011},
+    volume = {2},
+    number = {1},
+    month = {1 janvier},
+    doi = {10.5121/ijsea.2011.2101},
+    url = {https://airccse.org/journal/ijsea/papers/0111ijsea01.pdf}
+}
+
+@mastersthesis{uqam_erp_benefice_2008,
+    author = {OLIVIER BRAUD},
+    title = {FACTEURS DECISIONNELS POUR L'IMPLANTATION D'UN ERP DANS LES PME: LE ROLE DE L'EVALUATION DES BENEFICES TANGIBLES ET INTANGIBLES},
+    school = {Université du Québec à Montréal},
+    year = {2008},
+    month = {avril},
+    address = {Montréal, QC},
+    type = {mémoire de maîtrise},	
+    url = {http://archipel.uqam.ca/id/eprint/1229}
+}
+
 @article{erudit_accorderie_2014,
     author = {Michaud, Myriam and Audebrand, Luc K.},
     title = {Les paradoxes de la transformation d’une association en coopérative de solidarité : le cas de l’Accorderie de Québec},
@@ -132,9 +155,35 @@
     url = {https://fr.wikipedia.org/wiki/Rétro-ingénierie_en_informatique}
 } 
 
+@electronic{gnu_critere_hebergement_2022,
+    author = {Free Software Foundation, Inc},
+    title = {Critères éthiques de GNU concernant l'hébergement de logiciel},
+    year = {2022},
+    month = {6 mai},
+    url = {https://www.gnu.org/software/repo-criteria.fr.html}
+} 
+
 @electronic{wikipedia_image_retroingenierie,
     title = {Image altération du code via la rétro-ingénierie et la ré-ingénierie},
     year = {2021},
     month = {18 juin},
     url = {https://fr.wikipedia.org/wiki/Rétro-ingénierie_en_informatique#/media/Fichier:Retroingenierie_-_Byrne.svg}
 } 
+
+@inproceedings{violation_libre_2017,
+author = {Duan, Ruian and Bijlani, Ashish and Xu, Meng and Kim, Taesoo and Lee, Wenke},
+title = {Identifying Open-Source License Violation and 1-Day Security Risk at Large Scale},
+year = {2017},
+isbn = {9781450349468},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3133956.3134048},
+doi = {10.1145/3133956.3134048},
+abstract = {With millions of apps available to users, the mobile app market is rapidly becoming very crowded. Given the intense competition, the time to market is a critical factor for the success and profitability of an app. In order to shorten the development cycle, developers often focus their efforts on the unique features and workflows of their apps and rely on third-party Open Source Software (OSS) for the common features. Unfortunately, despite their benefits, careless use of OSS can introduce significant legal and security risks, which if ignored can not only jeopardize security and privacy of end users, but can also cause app developers high financial loss. However, tracking OSS components, their versions, and interdependencies can be very tedious and error-prone, particularly if an OSS is imported with little to no knowledge of its provenance.We therefore propose OSSPolice, a scalable and fully-automated tool for mobile app developers to quickly analyze their apps and identify free software license violations as well as usage of known vulnerable versions of OSS. OSSPolice introduces a novel hierarchical indexing scheme to achieve both high scalability and accuracy, and is capable of efficiently comparing similarities of app binaries against a database of hundreds of thousands of OSS sources (billions of lines of code). We populated OSSPolice with 60K C/C++ and 77K Java OSS sources and analyzed 1.6M free Google Play Store apps. Our results show that 1) over 40K apps potentially violate GPL/AGPL licensing terms, and 2) over 100K of apps use known vulnerable versions of OSS. Further analysis shows that developers violate GPL/AGPL licensing terms due to lack of alternatives, and use vulnerable versions of OSS despite efforts from companies like Google to improve app security. OSSPolice is available on GitHub.},
+booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {2169–2185},
+numpages = {17},
+keywords = {application security, code clone detection, license violation},
+location = {Dallas, Texas, USA},
+series = {CCS '17}
+}

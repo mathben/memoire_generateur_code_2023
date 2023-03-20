@@ -12,7 +12,7 @@ Le noyau prend les paramètres issus de l’interface pour créer des méta-donn
 
 \subsection{Développement et amélioration continue}
 
-Dans la figure~\ref{fig:dia_sequence_gc}, µ$_C^0$, µ$_C^A$, µ$_C^B$, C et M sont tous des modules installables sur Odoo. $M^i$ et $M^d$ sont des sections de code dans le module M. µ$_C^0$, µ$_C^A$ et µ$_C^B$ dépendent de M. µ$_C^A$, c’est les macro-méta-données, que µ$_C^B$, c’est les micro-méta-données.
+Dans la Figure~\ref{fig:dia_sequence_gc}, µ$_C^0$, µ$_C^A$, µ$_C^B$, C et M sont tous des modules installables sur Odoo. $M^i$ et $M^d$ sont des sections de code dans le module M. µ$_C^0$, µ$_C^A$ et µ$_C^B$ dépendent de M. µ$_C^A$, c’est les macro-méta-données, que µ$_C^B$, c’est les micro-méta-données.
 
 \begin{figure}[htb]
 \centering
@@ -33,7 +33,7 @@ La livraison sert à générer le i18n. C’est Odoo qui le génère, mais le g�
 
 \subsection{Architecture}
 
-La figure~\ref{fig:dia_architecture_automate}, elle démontre un développeur qui utilise l'interface de la machine qui opère dans le noyau de la machine.
+La Figure~\ref{fig:dia_architecture_automate}, elle démontre un développeur qui utilise l'interface de la machine qui opère dans le noyau de la machine.
 
 \begin{figure}[htb]
 \centering
@@ -184,7 +184,7 @@ Les champs pour chaque modèle sont déplacés en ordre alphabétique, mais le p
 
 \subsection{Classification des techniques développés}
 
-En référence à la figure~\ref{fig:dia_architecture_automate}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques.
+En référence à la Figure~\ref{fig:dia_architecture_automate}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques.
 
 % TODO faire un diagramme des dépendances
 Les techniques :
@@ -378,10 +378,12 @@ et les objectifs associés.}\\\hline
     \item Rendre accessible la documentation sur le logiciel libre en lien avec la localité administrative de l'organisation\footnote{Exemple, un document du Québec : \url{https://www.tresor.gouv.qc.ca/fileadmin/PDF/ressources_informationnelles/logiciels_libres/ll.pdf}};
     \item Toujours proposer des licences libres avec un guide explicatif, ne pas permettre d'utiliser des licences non compatible au libre :
     \begin{enumerate}
-%        \item LGPL;
-%        \item GPL;
-        \item AGPL\footnote{\url{https://www.gnu.org/licenses/agpl-3.0.en.html}};
-        \item CC0\footnote{\url{https://creativecommons.org/share-your-work/public-domain/cc0/}};
+        \item LGPL3 et + - elle est acceptable, mais non désiré;
+        \item GPL3 et + - pour toutes machines sans communication;
+        \item AGPL3 et +\footnote{\url{https://www.gnu.org/licenses/agpl-3.0.en.html}};
+        \item CC0\footnote{\url{https://creativecommons.org/share-your-work/public-domain/cc0/}}, ne protège pas l'oeuvre;
+        \item CC-BY\footnote{\url{https://creativecommons.org/licenses/by/4.0/}};
+        \item CC-BY-SA\footnote{\url{https://creativecommons.org/licenses/by-sa/4.0/}}, protège l'oeuvre;
         \item LiLiQ-R+\footnote{Licence libre restrictive au Québec : \url{https://forge.gouv.qc.ca/licence/}};
     \end{enumerate}
 \end{enumerate}
