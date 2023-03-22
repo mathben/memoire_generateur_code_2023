@@ -90,7 +90,7 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
     \begin{figure}[htb]
     \centering
     \includegraphics[width=3in]{images/GUI_MVC.png}
-    \caption{Architecture de l'automate}
+    \caption{Exemple support MVC dans GUI du générateur de code}
     \label{fig:dia_gui_mvc}
     \end{figure}
  \item Les règles de sécurité sont ajustées selon les configurations et personnalisables par la suite.
@@ -102,7 +102,7 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 % TODO manque le load de https://fr.wikipedia.org/wiki/Extract-transform-load
 % ça devient discussion
 
-La migration de données à partir de \texttt{SQL} était déjà supporté dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations : 
+La migration de données à partir de SQL était déjà supporté dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations : 
 
 \begin{enumerate}
     \item Ajout de type de données, dont ceux utilisé par le projet Accorderie
@@ -125,12 +125,12 @@ L’automate est une machine qui grâce à son interface «code hook», il se fa
 
 De la macro et micro extraction a été réalisé avec plusieurs techniques combinées.
 
-Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération direct de générer le code qui a été copié. L’utilisation de l’\texttt{AST} a servi à déterminer quelle ligne de code était à découper pour les recopier.
+Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération direct de générer le code qui a été copié. L’utilisation de l’AST a servi à déterminer quelle ligne de code était à découper pour les recopier.
 
 Cependant il était nécessaire dans certain contexte de faire de la micro extraction, comme : 
 \begin{enumerate}
     \item L’extraction des noms des constantes, ils sont transformés en valeur lors de l’exécution;
-    \item L’extraction des commentaires, qui n’est pas supporté dans la bibliothèque \texttt{AST} de Python 3.7;
+    \item L’extraction des commentaires, qui n’est pas supporté dans la bibliothèque AST de Python 3.7;
     \item L’extraction des décorateurs;
     \item L’extraction des paramètres et nom des méthodes/fonctions;
     \item Les méta-informations d’un modèle (description, nom, etc.)
@@ -149,7 +149,7 @@ C'est en développent les techniques de génération de code qu'on réalise la r
 
 Grâce à l’extraction des méta-données, dès que la technique de génération est bien développé avec les méta-données, le code est automatiquement généré avec des bonnes pratiques logicielles corrigeant automatiquement les problèmes.
 
-L’intérêt de passer par Odoo pour lire le module valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python ou les \texttt{XML} étaient bien construits).
+L’intérêt de passer par Odoo pour lire le module valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python ou les XML étaient bien construits).
 
 Ainsi, pour un module désiré, nous utilisons les outils pour générer µ$_C^A$ et µ$_C^B$, puis en avançant dans le développement, nous bouclons entre le 3 et 4 sur Figure~\ref{fig:dia_sequence_gc}.
 
@@ -163,7 +163,7 @@ Il y a plusieurs types de test :
     \item Valider que µ$_C^B$ génère bien le module cible sans différence dans le code;
     \item Valider que µ$_C^A$ génère bien µ$_C^B$ sans différence dans le code;
     \item L’extraction des paramètres et nom des méthodes/fonctions;
-    \item Valider que la migration d’une base de données \texttt{SQL} se fait sans différence dans le code.
+    \item Valider que la migration d’une base de données SQL se fait sans différence dans le code.
 \end{enumerate}
 
 En exécutant tous les tests, voir annexe~\ref{annexe_test_generateur_code}, une couverture de 84\% est obtenu, tous les tests présents sont un succès, sauf ceux sur l’auto-générateur.
@@ -172,9 +172,9 @@ En exécutant tous les tests, voir annexe~\ref{annexe_test_generateur_code}, une
 
 Au moment de générer les fichiers, toutes les sorties textes sont traitées par des outils de mise en forme suivant des règles de codage standardisées.
 
-Pour le Python, l’outil «black» est utilisé pour la mise en forme, suivant le standard \texttt{PEP8} avec «isort» pour réordonner les importations. «black» donne une mise en forme non naturel comparé à l’écriture de code pour un humain, cependant son résultat facilite la lecture et le suivi des différences pour les futurs ajouts.
+Pour le Python, l’outil «black» est utilisé pour la mise en forme, suivant le standard PEP8 avec «isort» pour réordonner les importations. «black» donne une mise en forme non naturel comparé à l’écriture de code pour un humain, cependant son résultat facilite la lecture et le suivi des différences pour les futurs ajouts.
 
-Le Javascript, le HTML et le \texttt{XML} sont mises en forme avec l’outil «prettier».
+Le Javascript, le HTML et le XML sont mises en forme avec l’outil «prettier».
 
 De plus, le générateur force le déplacement des classes dans leur propre fichier respectif pour faire une classe par fichier.
 
@@ -399,9 +399,9 @@ et les objectifs associés.}\\\hline
 
 \subsection{Projet module «auto\_backup»}
 
-Le module «auto\_backup» est le premier module de la communauté à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré et de la qualité a été appliqué causant une différence avec la version communautaire dans l’organisation \texttt{OCA} et leur répertoire «server-tools».
+Le module «auto\_backup» est le premier module de la communauté à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré et de la qualité a été appliqué causant une différence avec la version communautaire dans l’organisation OCA et leur répertoire «server-tools».
 
-Ainsi, la technique de gestion des «Cron», puisqu’il lance des sauvegardes par \texttt{SSH} ou en local à des moments spécifiques dans le temps.
+Ainsi, la technique de gestion des «Cron», puisqu’il lance des sauvegardes par SSH ou en local à des moments spécifiques dans le temps.
 
 \subsection{Projet module workflow design}
 
@@ -435,15 +435,15 @@ C’est un module de gestion de projet généré par le générateur de code qui
 
 Le projet a débuté par l'élaboration d'une analyse des besoins et fonctionnelles, puis un ensemble de requis logicielles ont été rédigé avec un membre du Réseau de l'Accorderie. % TODO faire annexe, voir annexe OIU.
 
-Le générateur de code a permis créer un module Odoo 12.0 avec leurs modèles de données basé sur leur base de données en \texttt{SQL} de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
+Le générateur de code a permis créer un module Odoo 12.0 avec leurs modèles de données basé sur leur base de données en SQL de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
 
 Plusieurs corrections ont été effectué avant la migration : correction des noms des champs pour les uniformisés; correction des types de champs (exemple le «True» était exprimé par la valeur «-1» dans un type «int», ainsi ce type a été transformé en booléen); enlever les double dépendances par changement de l’architecture; correction des données erronés (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçue pour de l’automatisation, mais plutôt pour que les échanges de service soient validés par des membres de la communauté.
 
-Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculé avec le projet libre \texttt{OSRM}, etc...
+Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculé avec le projet libre OSRM, etc...
 
-La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données \texttt{XML}. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migré vers une mise en production.
+La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migré vers une mise en production.
 
-Un portail a été généré, pour remplacer les formulaires utilisés par l'ancienne plateforme \texttt{PHP} et ainsi visualiser les entrées. Cependant, cette fonctionnalité a été abandonné puisque cette technologie ne plaisait pas
+Un portail a été généré, pour remplacer les formulaires utilisés par l'ancienne plateforme PHP et ainsi visualiser les entrées. Cependant, cette fonctionnalité a été abandonné puisque cette technologie ne plaisait pas
 
 Une maquette a été conçue pour un nouvel espace membre. Ainsi, on a utilisé la technique «website\_snippet» pour afficher des données sur le site web et créer des formulaires. Cette base a permis d’accélérer la création de code de communication entre le client et le serveur. À force de faire l’intégration et la personnalisation de cette maquette, il n’y a plus vraiment de code qui provient du générateur de code.
 
@@ -453,9 +453,9 @@ Dû à des limitations humaines et de temps, tout le reste du projet a dû être
 
 \section{Projet Portail CEPPP}
 
-L'objectif est de faire une section portail pour les patients et une section administratif pour les recruteurs, les partenaires et les administrateurs de la plateforme, rendre accessible des formulaires et anonymiser les données. Le mandat était de migrer les fonctionnalités de la plateforme qui a été développé sur SuiteCRM en \texttt{PHP}.
+L'objectif est de faire une section portail pour les patients et une section administratif pour les recruteurs, les partenaires et les administrateurs de la plateforme, rendre accessible des formulaires et anonymiser les données. Le mandat était de migrer les fonctionnalités de la plateforme qui a été développé sur SuiteCRM en PHP.
 
-Un module d'extraction de \texttt{PHP} a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exporté en \texttt{CSV} et un module d'exportation des données a été développé.
+Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exporté en CSV et un module d'exportation des données a été développé.
 
 Extraction : 
 \begin{enumerate}
@@ -474,16 +474,16 @@ Voici les statistiques~\ref{tab:stat_code_portail_ceppp} du code après ré-ing�
 \hline
 \cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\# Ligne extrait} & \cellcolor[HTML]{d9d9d9}{\# Ligne personnalisé} & \cellcolor[HTML]{d9d9d9}{\# Diff}\\\hline
 
-\texttt{XML} & 6 861 & 3 856 & - 3 005\\\hline
+XML & 6 861 & 3 856 & - 3 005\\\hline
 Python & 567 & 1 564 & + 997\\\hline
 Javascript & 0 & 68 & + 68\\\hline
-\texttt{CSV} & 25 & 51 & + 26\\\hline
+CSV & 25 & 51 & + 26\\\hline
 
 \end{tabular}
 \label{tab:stat_code_portail_ceppp}
 \end{table}
 
-L'anonymisation n'est pas supporté par le générateur de code, puis la personnalisation enlève beaucoup de champs mis de manière générique dans les fichier \texttt{XML}. 
+L'anonymisation n'est pas supporté par le générateur de code, puis la personnalisation enlève beaucoup de champs mis de manière générique dans les fichier XML. 
 
 Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{annexe_db_ceppp_2022}. L'interface administrateur~\ref{annexe_form_ceppp_2022} contient la fiche du patient, que les partenaires ont accès seulement qu'à la partie anonymisée~\ref{annexe_form_anonyme_ceppp_2022}.
 
