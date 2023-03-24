@@ -5,10 +5,36 @@
 
 La définition de robot logiciel est «Agent intelligent programmé afin d'imiter les capacités d'un être humain dans un système informatique ou afin d'effectuer un ensemble de tâches prédéterminées de manière automatique.»~\cite{robot_logiciel_oqlf_2018} Les autres termes suggérés est «robot informatique» et «robot». Ainsi, un robot développeur, est un robot logiciel orienté au développement logiciel. En anglais, il pourrait être nommé un «DevBot».
 
-
 La référence à l'aspect social d'un robot logiciel développeur est par exemple l'outillage aux développeurs autour d'un éditeur asynchrone en temps réel tel que CodeBuddy~\cite{10.1145/3287324.3293750} ou CodePilot~\cite{10.5555/1030453.1030540} dans leur développement collaboratif.
 
 Le robot logiciel développeur idéal est «un développeur de logiciels artificiels qui est autonome, adaptable et possède des compétences techniques ainsi que sociales.»~\cite{8823643} Seulement les éléments des compétences techniques et sociales seront discutés dans ce mémoire, le tout orienté sur la plateforme ERPLibre avec de l'amélioration continue sur un réseau d'entraide.
+
+\section{Génération de code}
+
+Utiliser un générateur de code dans un contexte d'application web est efficace, l'auteur Uyanik.B, et a. de l'article «A template-based code generator for web applications»~\cite{SAHIN2020} obtient un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code.
+
+Dans un autre projet de l'auteur Pichidtienthum.S et a. de l'article «»~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, on obtient 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeur peuvent utiliser cet outil pour faire des modules. Ce projet est très similaire à celui expérimenté dans ce mémoire, sauf l'aspect de la rétro-ingénierie qui est manquante avec l'amélioration continue et la gestion d'un réseau d'entraide.
+
+\section{Logiciel Libre et Open Source}
+
+Actuellement, une méthode utilisée pour accélérer le développement, c'est le partage de bibliothèques : une fonctionnalité aurait déjà été programmé et le rendre accessible publiquement permet la réduction d’écriture du code pour réaliser une fonctionnalité souhaitée.
+
+L’Open Source permet aussi de supporter l'interopérabilité~\cite{open_interop_2011}, c’est la capacité de différents logiciels d'interagir et communiquer efficacement entre eux de manière transparente et harmonieuse sans entraves ni obstacles, même s’ils ont été développés par différentes organisations.
+
+D'ailleurs, comme le mentionne l'auteur Hertel.G et a. de l'article «Motivation of software developers in Open Source projects: an Internet-based survey of contributors to the Linux kernel»~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associé à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans leur développement.
+
+% \section{Logiciel Libre}
+% Le logiciel libre entrave l’interopérabilité seulement pour les systèmes non compatibles avec la copyleft. Bien qu’elle prône la liberté du code, elle est restrictive.
+
+% Cette restriction est nécessaire à la protection du développeur et de la communauté. 
+
+\section{Sécurité}
+
+«La morale de l'article~\cite{thompson_trusting_1984}, alors, est assez simple : il est impossible de fonctionner\footnote{D'utiliser et d'avoir confiance sur des technologies} sans faire confiance à quelqu'un. À moins que vous n'ayez écrit tout le code (et je veux dire TOUT le code) vous-même, vous devrez faire confiance à la sécurité d'une partie du processus de traitement du programme.»~\cite{discussion_reflection_trusting_2020} L'automate codeur doit apprendre à développer toute les étapes de programmation sur une machine.
+
+Hors, s'il est nécessaire de faire confiance, peut-on faire confiance lorsqu'on observe des problème de compatibilité de licence libre~\cite{pfeiffer2022license}\cite{8667977}? Le développeur utilise des bibliothèques libres qui utilisent d'autre bibliothèques pas nécessairement libres et qui peuvent contenir des failles de sécurités~\cite{10.1145/3133956.3134048}, sans en être conscient. Le robot codeur doit ainsi être en mesure de faire du développement sur les bibliothèques utilisés.
+
+«Cela suggère que tant que nous ne sommes pas en mesure de rétroconception\footnote{Faire de la rétro-ingénierie sur un développement.} et de contrôler pleinement la fonctionnalité des réseaux neuronaux, il existera un risque inhérent. Même si nous parvenons à résoudre le problème d'alignement et à rendre l'IA conviviale pour l'homme, les attaquants qui obtiennent un accès en écriture aux poids\footnote{Un poids est la valeur numérique d'une neurone dans un réseau de neurones.} pourront implanter leurs portes dérobées.»~\cite{discussion_reflection_trusting_ia_2023} L'automate doit être en mesure de comprendre le fonctionnement du logiciel pour l'étudier.
 
 \section{Les complexités de développer ERP}
 % TODO voir article erp en entreprise
@@ -50,18 +76,18 @@ Autour de ça, il faut mettre en place une gestion du changement et adapter le d
 
 Plusieurs de ces étapes ne sont pas prises au sérieux, tel que le financement. De plus, l’implantation se fait sur une longue période de temps.
 
-Dans Odoo, le nombre de modules augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectué pour réduire le temps de développement à éviter de réinventer la roue.
+Dans Odoo, le nombre de modules augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et à éviter de réinventer la roue.
 
 Il faut adapter les processus des organisations aux fonctionnalités existantes, sinon il est trop coûteux de tout recréer selon les processus de l’entreprise.
 
-En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet, ça devient un processus lourd qui doit durer dans le temps.
+En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet, cela rend le processus lourd en plus de durer dans le temps.
 
 
 \section{Logiciel no-code / low-code}
 
 Logiciel no-code / low-code = LCNC
 
-Basé sur des templates de code et un interface qui permet au besoin la configuration par du code.
+Basé sur des templates de code et une interface qui, au besoin, permet la configuration par du code.
 
 C’est un concept qui permet à l’utilisateur de développer une plateforme en utilisant pas ou peu de code.
 
@@ -134,19 +160,6 @@ Critère de qualité d’une plateforme LCNC :
     \item Logiciel pour construire des mécanismes;
     \item Support au déploiement;
 \end{enumerate}
-
-\section{Génération de code}
-TODO
-
-\section{Logiciel Open Source}
-Actuellement, une méthode utilisée pour accélérer le développement est le partage de bibliothèque, une fonctionnalité aurait déjà été programmé et le rendre accessible publiquement permet la réduction d’écriture du code pour réaliser une fonctionnalité souhaitée.
-
-L’Open Source permet aussi de supporter l'interopérabilité~\cite{open_interop_2011}, c’est la capacité de différents logiciels d'interagir et communiquer efficacement entre eux sans entraves ni obstacles, il permet à différents systèmes de fonctionner ensemble de manière transparente et harmonieuse même s’ils ont été développés par différentes organisations.
-
-% \section{Logiciel Libre}
-% Le logiciel libre entrave l’interopérabilité seulement pour les systèmes non compatibles avec la copyleft. Bien qu’elle prône la liberté du code, elle est restrictive.
-
-% Cette restriction est nécessaire à la protection du développeur et de la communauté. 
 
 % \section{Dev ops}
 % Démontrer outil
@@ -256,7 +269,7 @@ Le maintien de sa propre organisation signifie l'auto-production, voir exemple i
 Un système est de l'autopoïèse~\cite{tatsuya_computational_autopoiesis_2000} dans le contexte qu'il est : 
 \begin{enumerate}
     \item \textbf{Autonome} : il doit être capable d'apporter des changements variés pour maintenir son organisation;
-    \item \textbf{Individuel} : il doit être indépendant dans sa définition, par sa prise de décision par rapport aux observateurs externes, en reproduisant à répétition et maintenant son organisation;
+    \item \textbf{Individuel} : il doit être indépendant dans sa définition, par sa prise de décision par rapport aux observateurs externes, en reproduisant à répétition et en maintenant son organisation;
     \item \textbf{Connaissant et établis ses limites} : il doit être capable d'établir ses limites dans son processus de reproduction par lui même sans se faire affecter des limites établis par les observateurs externes;
     \item \textbf{Absent d'entrant et de sortant} : Les stimulis externes doivent être interprété dans un contexte d'observation pour en retirer de l'amélioration continue, elles ne doivent pas impacter la maintenance de l'organisation directement, mais son évolution doit en prendre compte.
 \end{enumerate}
@@ -270,20 +283,20 @@ Le concept de vue sur les entrants et sortants d'un système est une perception 
 La conception d'un système autopoïèse\cite{tatsuya_computational_autopoiesis_2000} devrait comporter les points suivants : 
 
 \begin{enumerate}
-    \item Les composantes du système sont déterminé par les opération du système;
-    \item Les opérations du système sont produites avant les conditions initiaux;
-    \item Les opérations du système sont seulement exécutés pour leur propre réussite et non pour réaliser la production d'un produit;
-    \item Dans les opérations du système, ce qui se passent à l'intérieur du système est clairement différent des jugements des observateurs externes.
+    \item Les composantes du système sont déterminés par les opérations du système;
+    \item Les opérations du système sont produites avant les conditions initiales;
+    \item Les opérations du système sont seulement exécutées pour leur propre réussite et non pour réaliser la production d'un produit;
+    \item Dans les opérations du système, ce qui se passe à l'intérieur du système est clairement différent des jugements des observateurs externes.
 \end{enumerate}
 
 % TODO La Technopoïèse doit être différent de l'autopoïèse, bien qu'il doit être autonome dans son évolution, il doit suivre des principes moraux et respecter des règles de société.
 
 %  L'autopoïèse s'applique aussi à l'être humain, tant en sociologie\footnote{\url{https://fr.wikipedia.org/wiki/Sociologie}}, la science cognitive\footnote{\url{https://fr.wikipedia.org/wiki/Sciences_cognitives}}, la philosophie\footnote{\url{https://fr.wikipedia.org/wiki/Philosophie}} et la psychopathologie\footnote{\url{https://fr.wikipedia.org/wiki/Psychopathologie}}.
 
-Appliquer l'autopoïèse sur un système est de forcer un changement de point de vue vers l'intérieur du système, puisque l'extérieur est matière à interprétation par la distinction de son environnement. En science naturelle, ce changement de point de vue est difficilement acceptable puisque le point de vue est fait par des observateurs externes.
+Appliquer l'autopoïèse sur un système est de forcer un changement de point de vue vers l'intérieur du système, puisque l'extérieur est matière à interprétation par la distinction de son environnement. En sciences naturelles, ce changement de point de vue est difficilement acceptable puisque le point de vue est fait par des observateurs externes.
 
 Des modèles mathématiques sont expliqués dans l'article~\cite{tatsuya_computational_autopoiesis_2000} tel un système de réparation du métabolisme ((M,R) systems), introduit par Rosen, pour démontrer le «Quasi-Autopoietic Systems».
-Puis il y a des modèle d'apprentissage automatique qui ont été inspiré de l'autopoïèse pour effectuer des tâches de reconnaissance de formes. Pour pouvoir représenter l'autopoïèse en mathématique ou en modèle informatique, il est nécessaire de trouver un mécanisme d'un système qui crée son espace avec ses limites et son environnement, par soi-même.
+Puis il y a des modèles d'apprentissage automatique qui ont été inspirés de l'autopoïèse pour effectuer des tâches de reconnaissance de formes. Pour pouvoir représenter l'autopoïèse en mathématique ou en modèle informatique, il est nécessaire de trouver un mécanisme d'un système qui crée son espace avec ses limites et son environnement, par soi-même.
 
 % TODO documentation intéressante : https://www.researchgate.net/publication/228784157_A_Computational_Aspect_of_Autopoiesis
 
@@ -334,12 +347,3 @@ Pour faire des améliorations technologiques dans la société, sur des réseaux
 % Luhmann, N. (1986). The autopoiesis of social systems. John Wiley & Sons.
 % Castells, M. (1996). The rise of the network society. Blackwell Publishers.
 % Ahrweiler, P. (2012). Innovation in complex social systems. Routledge.
-
-\section{Sécurité}
-
-«La morale de l'article~\cite{thompson_trusting_1984}, alors, est assez simple : il est impossible de fonctionner sans faire confiance à quelqu'un. À moins que vous n'ayez écrit tout le code (et je veux dire TOUT le code) vous-même, vous devrez faire confiance à la sécurité d'une partie du processus de traitement du programme.»~\cite{discussion_reflection_trusting_2020} L'automate codeur doit apprendre à développer toute les étapes de programmation sur une machine.
-
-«Cela suggère que tant que nous ne sommes pas en mesure de rétroconception\footnote{Faire de la rétro-ingénierie sur un développement.} et de contrôler pleinement la fonctionnalité des réseaux neuronaux, il existera un risque inhérent. Même si nous parvenons à résoudre le problème d'alignement et à rendre l'IA conviviale pour l'homme, les attaquants qui obtiennent un accès en écriture aux poids\footnote{Un poids est la valeur numérique d'une neurone dans un réseau de neurones.} pourront implanter leurs portes dérobées.»~\cite{discussion_reflection_trusting_ia_2023} L'automate doit être en mesure de comprendre le fonctionnement d'une machine pour l'étudier.
-
-Problème de sécurité lorsque utilisation de fausse représentation de la licence libre.
-% YODO ref agpl sécurité
