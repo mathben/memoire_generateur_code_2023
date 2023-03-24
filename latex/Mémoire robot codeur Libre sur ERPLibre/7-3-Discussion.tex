@@ -97,6 +97,18 @@ La signification que le nombre de lignes de XML aurait diminué, c’est que l�
 
 Après la première migration par l’extraction du modèle de données par PHP, le client a pu testé la plateforme pour avoir une idée à quoi ressemblerait l’utilisation dans l’espace administration de leur modèle de données et ils ont fait des demandes de changement. Une analyse a été effectuée, nous avons utilisé le générateur de code pour générer les vues portails et fait une ré-ingénierie manuelle du modèle et des vues pour obtenir le résultat désiré. Une des fonctionnalités implémentés est l’anonymisation des données pour certains groupes d’utilisateurs, pour pouvoir visualiser des données sans avoir d’information personnelle sur le patient.
 
+\subsection{Dévelopement autour du robot}
+
+Avec la figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine lorsque est en dehors des techniques maîtrisés par le robot codeur. Le développement est au centre d'un réseau d'entraide avec des guides pour gérer son projet technologique.
+
+\begin{figure}
+\centering
+\includegraphics[height=8.5in]{images/auto_machine_discussion.drawio.png}
+\caption{Architecture de l'automate}
+\label{fig:dia_auto_machine_discussion}
+\end{figure}
+
+
 \section{Forces et limitations}
 % TODO dire en quoi ce que tu as fait améliore l’état de l’art décrit dans la littérature
 % TODO décrire les limitations/faiblesses de ce que tu as produit comme logiciel/résultats
