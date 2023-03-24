@@ -97,9 +97,32 @@ La signification que le nombre de lignes de XML aurait diminué, c’est que l�
 
 Après la première migration par l’extraction du modèle de données par PHP, le client a pu testé la plateforme pour avoir une idée à quoi ressemblerait l’utilisation dans l’espace administration de leur modèle de données et ils ont fait des demandes de changement. Une analyse a été effectuée, nous avons utilisé le générateur de code pour générer les vues portails et fait une ré-ingénierie manuelle du modèle et des vues pour obtenir le résultat désiré. Une des fonctionnalités implémentés est l’anonymisation des données pour certains groupes d’utilisateurs, pour pouvoir visualiser des données sans avoir d’information personnelle sur le patient.
 
-\subsection{Dévelopement autour du robot}
+\subsection{Avancement de la technopoïèse}
 
 Avec la figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine lorsque est en dehors des techniques maîtrisés par le robot codeur. Le développement est au centre d'un réseau d'entraide avec des guides pour gérer son projet technologique.
+
+\subsection{Réalisation du robot générateur de code}
+
+Dans la revue littérature section~\ref{robot_logiciel_developpeur_revue}, nous avons déterminé 4 critères pour définir un robot codeur :
+\paragraph{Autonomie}
+Nous avons des résultats qui démontrent 100\% d'autonomie dans quelques contextes, voir les résultats sur les tests de validation section~\ref{test_validation_generation_code_resultat}. Cependant, le robot codeur n'est pas 100\% autonome pour tous les contextes, il a besoin d'intervention humaine pour des personnalisations ou des techniques non supportés.
+
+% TODO une fois qu'on aura supporté plus de technique et l'autopoïèse entière, la prochaine étape serait de le faire fonctionner en continue. Bien qu'il soit capable via l'interface graphique, les efforts n'ont pas été effectué pour cette capacité.
+
+\paragraph{Adaptable}
+Le robot codeur est adaptable, il génère 6 composantes, voir résultat d'architecture section~\ref{architecture_result} : web, website, portail, snippet, migration de données entrants et migration de modèle de données entrants. De plus, il est capable d'interagir avec des technologies en dehors d'Odoo telles que d'extraire du code externe en PHP du logiciel SuiteCRM et des bases de données externes (MySQL/SQL Server/PostgreSQL) pour importer des modèles de données et migrer des données.
+
+% TODO il faudrait supporter la génération de technologies externes, nous travaillons présentement à générer des applications mobiles natives, ou même générer des modules sur d'autres plateforme ERP tel que Tryton ou NextERP.
+
+\paragraph{Compétences techniques}
+Le robot codeur contient plusieurs compétences techniques qui sont décrites dans les résultats section~\ref{result_technique_developpe}. De plus, il permet la personnalisation pour chacune des composantes du nombre de champs, des types de champs et du type d'affichage associé aux champs.
+
+% TODO les techniques ont été développés comme preuve de concept, il manque de mâturité et de personnalisation. 
+
+\paragraph{Compétences socials}
+Le robot codeur donne accès à des outils pour le développeur. Il y a un interface graphique LCNC qui permet la paramétrisation pour la génération de code. Il y a aussi un interface de code pour paramétrer le fonctionnement de la génération accompagné de la rétro-ingénierie et il permet d'accompagner le développeur dans l'évolution de son module. Il contient aussi une fonctionnalité pour afficher les différences de code, créer des statistiques sur les lignes de codes, montrer la couverture de code, etc.
+
+% TODO manque l'outil en temps réel, ce n'est pas supporté dans Odoo, il faut utiliser une application tierce tel que Etherpad et ajouter les méthodes de synchronisation des mises à jour sur les données. Il manque l'accès directe aux script à la racine du projet ERPLibre pour contrôler les outils de contrôle de la qualité. Collaboration, conscience professionnelle, résolutions de problèmes en équipe, communication efficace, adaptivité sur les livrables et exigences clientes
 
 \begin{figure}
 \centering
@@ -107,7 +130,6 @@ Avec la figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuell
 \caption{Architecture de l'automate}
 \label{fig:dia_auto_machine_discussion}
 \end{figure}
-
 
 \section{Forces et limitations}
 % TODO dire en quoi ce que tu as fait améliore l’état de l’art décrit dans la littérature

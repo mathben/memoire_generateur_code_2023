@@ -31,7 +31,7 @@ La livraison sert à générer le i18n. C’est Odoo qui le génère, mais le g�
 
 % TODO mettre dans discussion : Dans un contexte où l’ingénierie et la rétro-ingénierie serait parfaite, on n’aura pas besoin de mémoriser µ$_C^A$ et µ$_C^B$. Entre-temps, il y a une intervention humaine sur chacun de ces modules pour accélérer le développement. L’outil Git est utilisé pour faire des comparaisons entre les états d’itérations, seul ce qui est commité contient le bon contenu.
 
-\subsection{Architecture}
+\subsection{Architecture}\label{architecture_result}
 
 La Figure~\ref{fig:dia_architecture_automate}, elle démontre un développeur qui utilise l'interface de la machine qui opère dans le noyau de la machine.
 
@@ -153,7 +153,7 @@ L’intérêt de passer par Odoo pour lire le module valide déjà certains fonc
 
 Ainsi, pour un module désiré, nous utilisons les outils pour générer µ$_C^A$ et µ$_C^B$, puis en avançant dans le développement, nous bouclons entre le 3 et 4 sur Figure~\ref{fig:dia_sequence_gc}.
 
-\subsection {Test de validation de génération de codes}
+\subsection {Test de validation de génération de codes}\label{test_validation_generation_code_resultat}
 
 Pour tester ce générateur de code, la technique du test de comparaisons des sorties de la génération a été utilisé. Pour procéder, un développeur valide via l'outil Git ce qui est commité\footnote{Un terme dans l'outil Git pour valider le code en créant un état dans l'historique.}. Ainsi, un script a été développé pour lancer en parallèle les tests et valider les différences de génération avec ce qui a été commité précédemment. Aucune différence est un succès.
 
@@ -182,7 +182,7 @@ Les champs pour chaque modèle sont déplacés en ordre alphabétique, mais le p
 
 \section{Résultats propres à SO-3}
 
-\subsection{Classification des techniques développés}
+\subsection{Classification des techniques développés}\label{result_technique_developpe}
 
 En référence à la Figure~\ref{fig:dia_architecture_automate}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques.
 
