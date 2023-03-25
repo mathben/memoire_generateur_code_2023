@@ -1,6 +1,6 @@
 \Chapter{OBJECTIFS ET MÉTHODOLOGIE}\label{sec:Theme1} \label{chapitre_methode}
 
-L’objectif général de ce projet a été de créer et de valider le fonctionnement d’un automate générateur de code qui sert à l’implantation d’un ERP libre. Plus spécifiquement, les travaux ont été concentrés sur les cinq sous-objectifs suivants:
+L’objectif général de ce projet a été de créer et de valider le fonctionnement d’un robot logiciel générateur de code qui sert à l’implantation d’un ERP libre. Plus spécifiquement, nous allons nous concentrer sur les cinq sous-objectifs suivants:
 
 \textbf{SO-1} développer un générateur de code de module sur Odoo,
 
@@ -12,31 +12,55 @@ L’objectif général de ce projet a été de créer et de valider le fonctionn
 
 \textbf{SO-5} développer un système de gestion de communauté.
 
-La méthodologie Agile a été adoptée pour le développement de ces composantes d'un automate générateur de code. Les fonctionnalités de génération de code ont été validées par des tests de comparaison entre les codes générés et les codes révisés par le développeur.
+La méthodologie Agile a été adoptée pour le développement de ces composantes d'un automate générateur de code. Les fonctionnalités de génération de code ont été validées par des tests de comparaison entre les codes générés et les codes révisés par le développeur. Dans les recherches de solution existante, le générateur de code développé par Luis.B~\cite{bluiksnot_repo} a été publié sur Github, cependant il a nécessité des modifications qui seront détaillés dans les résultats.
 
 % TODO mettre à jour avec les nouveaux résultats
 % TODO mettre au passé
 % TODO mettre en texte les étapes en dessous
 
 \section{SO-1 - Générateur}
-Développer une logique d’écriture de module sur une architecture de MVC avec support de plateforme web. Mise en place d’un concept de gabarit de code qui génère du code. Mise en place de la génération de code à partir de données. Générer un module à partir d’une base de données externes.
+Cette section sert à la partie de génération de code, génération de module et génération de modèles de données :
+\begin{enumerate}
+    \item Développer une logique d’écriture de module sur une architecture de MVC avec support de plateforme web;
+    \item Mise en place d’un concept de gabarit de code qui génère du code;
+    \item Mise en place de la génération de code à partir de données;
+    \item Générer un module à partir d’une base de données externes.
+\end{enumerate}
 
 \section{SO-2 - Rétro-ingénierie}
-Développer la capacité de comprendre une structure de code et de la reproduire. Définir ce qui est de l’amélioration continue et son application dans un contexte d’automatisation. Mise en place de test de validation de code sur des critères de qualité mesurables. Intégration de règles de codage standardisées pour favoriser le réseau d’entraide.
+Cette section sert à la partie rétro-ingénierie, l'amélioration continue et la qualité logiciel :
+\begin{enumerate}
+    \item Développer la capacité de comprendre une structure de code et de la reproduire;
+    \item Définir ce qui est de l’amélioration continue et son application dans un contexte d’automatisation;
+    \item Mise en place de test de validation de code sur des critères de qualité mesurables;
+    \item Intégration de règles de codage standardisées pour favoriser le réseau d’entraide.
+\end{enumerate}
 
 \section{SO-3 - Interface}
-Proposer une classification des techniques que l’automate peut réaliser en programmation. Développer une interface permettant le contrôle de l’automate pour l’orienter dans la programmation de fonctionnalités. Rendre disponible une interface LCNC pour permettre aux utilisateurs de programmer leurs fonctionnalités.
+Cette section sert à la partie interface utilisateur :
+\begin{enumerate}
+    \item Proposer une classification des techniques que le robot logiciel codeur peut réaliser en programmation;
+    \item Développer une interface permettant le contrôle du robot logiciel codeur pour l’orienter dans la programmation de fonctionnalités;
+    \item Rendre disponible une interface LCNC pour permettre aux utilisateurs de programmer leurs fonctionnalités.
+\end{enumerate}
 
 \section{SO-4 - Déploiement}
-Développer un système de distribution de l’automate.
+Pour la section déploiement, il faut développer un système de distribution du robot logiciel codeur.
 
 \section{SO-5 - Réseau d’entraide}
-Documenter les processus de développement pour amener les utilisateurs à contribuer et les faire participer à la maintenance. Mettre des guides pour permettre le sentiment d'appartenance. Mettre en place une politique tolérance zéro avec un système de communication non violente et créer un lieu de discussion public. Élaboration du prototype pour les spécifications du réseau de l’Accorderie du Canada. Élaboration du prototype pour les spécifications de l’organisme CEPPP du Canada.
+Cette section sert à la partie gestion du développeur, ainsi que les projets d'études :
+\begin{enumerate}
+    \item Documenter les processus de développement pour amener les utilisateurs à contribuer et les faire participer à la maintenance;
+    \item Mettre des guides pour permettre le sentiment d'appartenance;
+    \item Mettre en place une politique tolérance zéro avec un système de communication non violente et créer un lieu de discussion public;
+    \item Élaboration du prototype pour les spécifications du réseau de l’Accorderie du Canada;
+    \item Élaboration du prototype pour les spécifications de l’organisme CEPPP du Canada;
+\end{enumerate}
 
 \section{Environnement informatique}
 La plateforme ERPLibre 1.5.0 contenant Odoo 12 communauté, qui utilise les langages Python 3.7, XML, Javascript et SCSS. Nos tests et développements ont été effectués sur le système d’exploitation Ubuntu 20.04.
 Pour les temps d’exécution des tests, ils ont été effectués sur une machine avec le CPU AMD Ryzen 9 5950X, mémoire ram 2x«32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 2667 MHz (0.4 ns)», et disque 1To wd-black-sn850-nvme.
-Toutes les commandes utilisées sont faites à partir de la racine du projet ERPLibre.
+
 
 \section{Méthodologie de test}
 Les tests ont été codés directement dans ERPLibre dans un script Python avec un ensemble de scripts pour valider les différences dans le Git après exécution, et cacher des différences.

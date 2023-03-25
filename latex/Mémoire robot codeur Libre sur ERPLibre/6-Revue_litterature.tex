@@ -5,19 +5,19 @@
 
 Dans ce mémoire, le terme robot logiciel va revenir à quelques fois, ainsi sa définition est «Agent intelligent programmé afin d'imiter les capacités d'un être humain dans un système informatique ou afin d'effectuer un ensemble de tâches prédéterminées de manière automatique.»~\cite{robot_logiciel_oqlf_2018} Les autres termes suggérés est «robot informatique» et «robot». Ainsi, un robot logiciel codeur est une intelligence artificielle orienté au développement logiciel. En anglais, il pourrait être nommé un «DevBot»~\cite{8823643}.
 
-Selon l'auteur Erlenhov.L et a. de l'article «Current and future bots in software development»~\cite{8823643}, le robot logiciel développeur idéal est un développeur de logiciels artificiels qui est autonome, adaptable et possède des compétences techniques ainsi que sociales. La référence à l'aspect social d'un robot logiciel développeur est par exemple l'outillage aux développeurs autour d'un éditeur asynchrone en temps réel tel que CodeBuddy~\cite{10.1145/3287324.3293750} ou CodePilot~\cite{10.5555/1030453.1030540} dans leur développement collaboratif.
+Selon l'auteur Erlenhov.L et al. de l'article «Current and future bots in software development»~\cite{8823643}, le robot logiciel développeur idéal est un développeur de logiciels artificiels qui est autonome, adaptable et possède des compétences techniques ainsi que sociales. La référence à l'aspect social d'un robot logiciel développeur est par exemple l'outillage aux développeurs autour d'un éditeur asynchrone en temps réel tel que CodeBuddy~\cite{10.1145/3287324.3293750} ou CodePilot~\cite{10.5555/1030453.1030540} dans leur développement collaboratif.
 
 \section{Génération de code}
 
-Utiliser un générateur de code dans un contexte d'application web est efficace, comme le démontre l'auteur Uyanik.B, et a. de l'article «A template-based code generator for web applications»~\cite{SAHIN2020}, ils obtiennent un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code.
+Utiliser un générateur de code dans un contexte d'application web est efficace, comme le démontre l'auteur Uyanik.B, et al. de l'article «A template-based code generator for web applications»~\cite{SAHIN2020}, ils obtiennent un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code.
 
-Dans un autre projet de l'auteur Pichidtienthum.S et a. de l'article «Developing module generation for odoo using concept of low-code development platform and automation systems»~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, ils obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeur peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celui expérimenté dans ce mémoire, sauf l'aspect de la rétro-ingénierie qui est manquante.
+Dans un autre projet de l'auteur Pichidtienthum.S et al. de l'article «Developing module generation for odoo using concept of low-code development platform and automation systems»~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, ils obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeur peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celui expérimenté dans ce mémoire, sauf l'aspect de la rétro-ingénierie qui est manquante.
 
 \section{Logiciel Libre et Open Source}
 
 Le partage de bibliothèque Open Source est une méthode utilisée pour accélérer le développement permettant la réutilisation de code. L’Open Source permet aussi de supporter l'interopérabilité~\cite{open_interop_2011}, c’est la capacité de différents logiciels d'interagir et communiquer efficacement entre eux de manière transparente et harmonieuse sans entraves ni obstacles, même s’ils ont été développés par différentes organisations.
 
-D'ailleurs, comme le mentionne l'auteur Hertel.G et a. de l'article «Motivation of software developers in Open Source projects: an Internet-based survey of contributors to the Linux kernel»~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associé à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans leur développement.
+D'ailleurs, comme le mentionne l'auteur Hertel.G et al. de l'article «Motivation of software developers in Open Source projects: an Internet-based survey of contributors to the Linux kernel»~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associé à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans leur développement.
 
 % \section{Logiciel Libre}
 % Le logiciel libre entrave l’interopérabilité seulement pour les systèmes non compatibles avec la copyleft. Bien qu’elle prône la liberté du code, elle est restrictive.
@@ -26,15 +26,19 @@ D'ailleurs, comme le mentionne l'auteur Hertel.G et a. de l'article «Motivation
 
 \section{Sécurité}
 
-«La morale de l'article~\cite{thompson_trusting_1984}, alors, est assez simple : il est impossible de fonctionner\footnote{D'utiliser et d'avoir confiance sur des technologies} sans faire confiance à quelqu'un. À moins que vous n'ayez écrit tout le code (et je veux dire TOUT le code) vous-même, vous devrez faire confiance à la sécurité d'une partie du processus de traitement du programme.»~\cite{discussion_reflection_trusting_2020} L'automate codeur doit apprendre à développer toute les étapes de programmation sur une machine.
+Bien qu'il y a plusieurs aspects à la sécurité, ce qui nous intéresse ici est la sécurité logiciel via son développement et ses dépendances.
 
-Hors, s'il est nécessaire de faire confiance, peut-on faire confiance lorsqu'on observe des problème de compatibilité de licence libre~\cite{pfeiffer2022license}\cite{8667977}? Le développeur utilise des bibliothèques libres qui utilisent d'autre bibliothèques pas nécessairement libres et qui peuvent contenir des failles de sécurités~\cite{10.1145/3133956.3134048}, sans en être conscient. Le robot codeur doit ainsi être en mesure de faire du développement sur les bibliothèques utilisés.
+Thompson.K démontre dans l'article «Reflections on trusting trust»~\cite{thompson_trusting_1984} qu'il est possible d'injecter du code malveillant dans les outils de compilations d'un logiciel pour créer une faille de sécurité dans l'exécutable. Shah.M explique dans son blog~\cite{discussion_reflection_trusting_2020}, que la morale est assez simple : il est impossible de fonctionner\footnote{D'utiliser et d'avoir confiance sur des technologies} sans faire confiance à quelqu'un. À moins que vous n'ayez écrit tout le code (et je veux dire TOUT le code) vous-même, vous devrez faire confiance à la sécurité d'une partie du processus de traitement du programme.
 
-«Cela suggère que tant que nous ne sommes pas en mesure de rétroconception\footnote{Faire de la rétro-ingénierie sur un développement.} et de contrôler pleinement la fonctionnalité des réseaux neuronaux, il existera un risque inhérent. Même si nous parvenons à résoudre le problème d'alignement et à rendre l'IA conviviale pour l'homme, les attaquants qui obtiennent un accès en écriture aux poids\footnote{Un poids est la valeur numérique d'une neurone dans un réseau de neurones.} pourront implanter leurs portes dérobées.»~\cite{discussion_reflection_trusting_ia_2023} L'automate doit être en mesure de comprendre le fonctionnement du logiciel pour l'étudier.
+Hors, s'il est nécessaire de faire confiance, comment peut-on faire confiance lorsqu'on observe des problème de compatibilité de licence libre~\cite{pfeiffer2022license}\cite{8667977}? Le développeur utilise des bibliothèques libres qui utilisent d'autre bibliothèques pas nécessairement libres et qui peuvent contenir des failles de sécurités~\cite{10.1145/3133956.3134048}, sans en être conscient. 
+
+Pour revenir à l'article de Thompson.K, comme le mentionne Yona.L dans son blog, cela suggère que tant que nous ne sommes pas en mesure de rétroconception\footnote{Faire de la rétro-ingénierie sur un développement.} et de contrôler pleinement la fonctionnalité des réseaux neuronaux, il existera un risque inhérent. Même si nous parvenons à résoudre le problème d'alignement et à rendre l'IA conviviale pour l'homme, les attaquants qui obtiennent un accès en écriture aux poids\footnote{Un poids est la valeur numérique d'une neurone dans un réseau de neurones.} pourront implanter leurs portes dérobées.~\cite{discussion_reflection_trusting_ia_2023}
+
+Ainsi, il serait pertinent de développer un robot codeur qui soit en mesure de faire de la rétro-ingénierie sur une application et ses bibliothèques. Le générateur pourra comprendre le fonctionnement de cette chaîne de dépendance et générer le code idéal pour la remplacer par une nouvelle application digne de confiances en validant la propriété intellectuelle libre.
 
 \section{Les complexités de développer ERP}
 
-Le développement d’une solution ERP doit supporter plusieurs niveaux~\cite{uqam_erp_benefice_2008} : 
+L'auteur Pitetti.F mentionne dans son article «L’implémentation d’un ERP libre implique-t-elle nécessairement une réduction des coûts ?» : «Le choix d’un ERP libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{Ré-ingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet.»~\cite{pitetti2010implementation} C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement. Les étapes suivantes ont été définis par l'auteur Braud.O dans son mémoire «Facteurs decisionnels pour l’implantation d’un erp dans les pme : Le role de l’evaluation des benefices tangibles et intangibles»~\cite{uqam_erp_benefice_2008} telles que :
 \begin{enumerate}
     \item Évaluation des besoins;
     \item Préparation du projet;
@@ -62,28 +66,29 @@ Le développement d’une solution ERP doit supporter plusieurs niveaux~\cite{uq
     \item Mise en production et support;
     \begin{enumerate}
         \item Déploiement des modules ERP;
-        \item Améliorer et élargir les systèmes ERP de façon continue;
+        \item Améliorer et élargir les systèmes ERP de façon continue.
     \end{enumerate}
 \end{enumerate}
 
-Autour de ça, il faut mettre en place une gestion du changement et adapter le développement des affaires.
+Un autre facteur complexe, c'est l'association des processus d'affaires actuels à la ré-ingénierie vers un nouveau modèle de processus d'affaires adapté aux contraintes technologiques, ainsi que les fonctionnalités déjà existantes sur la plateforme choisie. Comme on peut le constater dans le travail de l'auteur Medjek.M et al. dans le mémoire «Conception et réalisation d’un module ERP pour le suivi des patients sur le plan médical et financier au niveau de la clinique EL DJOUHER»~\cite{kenza2018conception}, un travail a été effectué pour énumérer les fonctionnalités de la plateforme, ainsi que de faire du développement personnalisé avec tous les diagrammes de conception génie logiciel.
 
-Plusieurs de ces étapes ne sont pas prises au sérieux, tel que le financement. De plus, l’implantation se fait sur une longue période de temps.
+Dans Odoo, le nombre de module augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et à éviter de réinventer la roue. En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet pour des adaptations futures aux nouveaux processus de l'entreprise.
 
-Dans Odoo, le nombre de modules augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et à éviter de réinventer la roue.
+% Autour de ça, il faut mettre en place une gestion du changement et adapter le développement des affaires.
 
-Il faut adapter les processus des organisations aux fonctionnalités existantes, sinon il est trop coûteux de tout recréer selon les processus de l’entreprise.
+% Plusieurs de ces étapes ne sont pas prises au sérieux, tel que le financement. De plus, l’implantation se fait sur une longue période de temps.
 
-En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet, cela rend le processus lourd en plus de durer dans le temps.
+% Dans Odoo, le nombre de modules augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et à éviter de réinventer la roue.
 
+% Il faut adapter les processus des organisations aux fonctionnalités existantes, sinon il est trop coûteux de tout recréer selon les processus de l’entreprise.
+
+% En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet, cela rend le processus lourd en plus de durer dans le temps.
 
 \section{Logiciel no-code / low-code}
 
 % Basé sur des templates de code et une interface qui, au besoin, permet la configuration par du code.
 
-C’est un concept qui permet à l’utilisateur de développer une plateforme ou des bouts d'application en utilisant pas ou peu de code.
-
-Selon l'auteur Bock.A.C de l'article «Low-Code Platform»~\cite{LC_bock_2021}, le LCNC a besoin de : 
+Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des bouts d'application en utilisant pas ou peu de code. Selon l'auteur Bock.A.C de l'article «Low-Code Platform»~\cite{LC_bock_2021}, le LCNC a besoin de : 
 \begin{enumerate}
     \item Aspect général;
     \begin{enumerate}
@@ -151,6 +156,8 @@ L'auteur Apurvanand.S poursuit en mentionnant les besoins de niveau supérieur d
     \item Support au déploiement;
 \end{enumerate}
 
+Hors, en supportant l'ensemble de ces mécanismes et éléments techniques, nous devrions obtenir un LCNC intégré dans le robot logiciel codeur.
+
 % \section{Dev ops}
 % Démontrer outil
 % TODO image dev ops
@@ -161,17 +168,18 @@ L'auteur Apurvanand.S poursuit en mentionnant les besoins de niveau supérieur d
 
 \subsection{Communication non violente}
 
-Réduire les frictions entre les participants du réseau d’entraide. C’est avec la mise en place d’une méthode de communication non violente~\footnote{\url{https://fr.wikipedia.org/wiki/Communication_non_violente}} formalisée par Marshall B. Rosenberg, voir Figure~\ref{fig:communication_non_violente}.
+La mise en place d’une méthode de communication non violente~\footnote{\url{https://fr.wikipedia.org/wiki/Communication_non_violente}} formalisée par Marshall B. Rosenberg, voir Figure~\ref{fig:communication_non_violente}, permettrait de réduire les frictions et faciliter l'intégration entre les participants du réseau d’entraide.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{OSBD_en_CNV.jpg}
-\caption{Communication non violente en 4 étapes et 2 modes}
+\caption{Communication non violente en 4 étapes et 2 modes. Dessin réalisé par Célia Portail~\cite{wikipedia_image_non_violente}}
 \label{fig:communication_non_violente}
 \end{figure}
 
 \subsection{Guide construire une communauté Open Source}
-Guide en 4 sections avec des titres indicateurs d’orientation pour un gestionnaire de communauté :
+
+Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés enn 4 sections avec des titres indicateurs d’orientation :
 
 \begin{enumerate}
     \item Mise en place de votre projet pour le succès;
@@ -189,26 +197,24 @@ Il faut :
 \end{enumerate}
 % TODO supporter les autres pages https://opensource.guide/fr/metrics/
 
-Ils n'intègrent ni les aspects de génie industriel qui est vulgarisé avec le guide fusée et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
+Il y a beaucoup d'autres guides, mais en général, ils n'intègrent ni les aspects de génie industriel qui est vulgarisé avec le guide fusée et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
 
 \subsection{Guide fusée}
 
-Un guide en 7 étapes~\ref{fig:guide_fusee} pour les gestionnaires de projet. Il vous permet de démarrer un projet rapidement qui nécessite une équipe de personnes pour les rendre efficaces dans la réalisation de leurs participations dans le réseau d’entraide.
+Un guide en 7 étapes, voir Figure ~\ref{fig:guide_fusee} pour les gestionnaires de projet. Il vous permet de démarrer un projet rapidement qui nécessite une équipe de personnes pour les rendre efficaces dans la réalisation de leurs participations dans le réseau d’entraide.
 
 % REF guide fusée polylabac/cimarlab
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{guide_fusee_definition.png}
-\caption{Guide fusée de CimarLab}
+\caption{Guide fusée en 7 étapes pour démarrer un projet pour un gestionnaire de communauté, de CimarLab~\cite{guide_fusee}}
 \label{fig:guide_fusee}
 \end{figure}
 
 \subsection{Critères éthiques de GNU concernant l'hébergement de logiciel}
 
-La licence AGPLv3 n’est pas toujours bien respectée~\cite{violation_libre_2017}.
-
-Les critères éthiques concernant l'hébergement de logiciel~\cite{gnu_critere_hebergement_2022} doivent être accessibles sur les projets de réseau d’entraide. Un guide avec des critères mesurables pour les services destinées à tous ceux qui veulent utiliser un service pour héberger publiquement du code source libre, ainsi qu'éventuellement des programmes exécutables. Ces critères se concentrent sur la protection de la vie privée, le fonctionnement sans JavaScript non libre\footnote{\url{https://www.fsf.org/campaigns/freejs}} , la compatibilité avec les licences à copyleft et leur philosophie, et l'absence de discrimination contre les utilisateurs, quels qu'ils soient.  Les questions à répondre : 
+La licence AGPLv3 n’est pas toujours bien respectée~\cite{violation_libre_2017}. Il est important d'assister le développeur dans ses choix de licence et compréhension des licences des bibliothèques tierces. Cependant, une fois que le logiciel est prêt à être mise en production, il y a des critères éthiques concernant l'hébergement de logiciel~\cite{gnu_critere_hebergement_2022} qui doit être accessibles sur les projets du réseau d’entraide. Un guide avec des critères mesurables pour les services destinées à tous ceux qui veulent utiliser un service pour héberger publiquement du code source libre, ainsi qu'éventuellement des programmes exécutables. Ces critères se concentrent sur la protection de la vie privée, le fonctionnement sans JavaScript non libre\footnote{\url{https://www.fsf.org/campaigns/freejs}}, la compatibilité avec les licences à copyleft et leur philosophie, et l'absence de discrimination contre les utilisateurs, quels qu'ils soient.  Les questions à répondre : 
 
 \begin{enumerate}
     \item Est-ce que l'hébergeur fournit l'accès au code source des programmes qu'il héberge?
@@ -235,10 +241,9 @@ Les termes «Allopoïèse», «Autopoïèse», «Sympoïèse» ont été invent�
 
 \subsection{Allopoïèse}
 
-Un système qui développe\footnote{production/fabrication : Utiliser sans limitation, Modifier pour adapter, Étudier pour comprendre le fonctionnement et Copier pour reproduire.} quelques choses avec des composantes externes.
+L'Allopoïèse peut être décrit comme un système qui développe\footnote{production/fabrication : Utiliser sans limitation, Modifier pour adapter, Étudier pour comprendre le fonctionnement et Copier pour reproduire.} quelques choses avec des composantes externes.
 
-«L'allopoïèse est le processus par lequel un système produit quelque chose qui n'est pas le système lui-même. Ceci est le contraire de l'autopoïèse.[...] La plupart des processus de production industrielle sont allopoïétiques : une chaîne de montage peut produire des voitures mais pas les machines utilisées dans cette forme de production. [...] La reproduction n'est pas une auto-production.»~\cite{wiki_allopoiesis_2018}~\cite{vuc_allopoiesis_2018}
-
+Sur Wikipédia, «L'allopoïèse est le processus par lequel un système produit quelque chose qui n'est pas le système lui-même. Ceci est le contraire de l'autopoïèse.[...] La plupart des processus de production industrielle sont allopoïétiques : une chaîne de montage peut produire des voitures mais pas les machines utilisées dans cette forme de production. [...] La reproduction n'est pas une auto-production.»~\cite{wiki_allopoiesis_2018}~\cite{vuc_allopoiesis_2018}
 
 % «une définition qui est proche de celle d’une machine abstraite et qui décrit la machine comme autopoïétique, autoproductrice d’elle-même et reproduisant en permanence ses composantes tel un système sans input ni output. Varella développe assez loin cette théorie. Il oppose dans sa conception, l’autopoïèse qu’il rapporte essentiellement aux êtres vivants biologiques, à une allopoïèse où la machine va chercher ses composantes à l’extérieur d’elle-même. En fait, dans son concept d’allopoïèse il range les systèmes sociaux, les machines techniques et, pour finir, tous les systèmes machiniques qui ne sont pas des systèmes vivants.»
 % «Les machines allopoïétiques se trouvent toujours en adjacence à des machines autopoïétiques et il faut donc prendre en considération les agencements qui les font vivre ensemble.»
@@ -250,13 +255,13 @@ Un système qui développe\footnote{production/fabrication : Utiliser sans limit
 
 \subsection{Autopoïèse}
 
-Un système qui se développe par soi même avec seulement ses composantes internes.
+L'autopoïèse peut être définir comme un système qui se développe par soi même avec seulement ses composantes internes.
 
 «L'autopoïèse est la propriété d'un système de se produire lui-même, en permanence et en interaction avec son environnement, et ainsi de maintenir son organisation (structure) malgré son changement de composants (matériaux) et d'informations (données).[...]le maintien de sa propre organisation (auto-production)»~\cite{wiki_autopoiesis_2022}.
 
-Le maintien de sa propre organisation signifie l'auto-production, voir exemple illustratif auto-reproducteur~\ref{exemple_illustratif_auto_reproducteur}.
+Le maintien de sa propre organisation signifie l'auto-production, voir exemple illustratif auto-reproducteur du code~\ref{exemple_illustratif_auto_reproducteur}.
 
-Un système est de l'autopoïèse~\cite{tatsuya_computational_autopoiesis_2000} dans le contexte qu'il est : 
+Selon l'article «A computational aspect of autopoiesis»~\cite{tatsuya_computational_autopoiesis_2000} de l'auteur Nomura.T, un système est de l'autopoïèse dans le contexte qu'il est : 
 \begin{enumerate}
     \item \textbf{Autonome} : il doit être capable d'apporter des changements variés pour maintenir son organisation;
     \item \textbf{Individuel} : il doit être indépendant dans sa définition, par sa prise de décision par rapport aux observateurs externes, en reproduisant à répétition et en maintenant son organisation;
@@ -270,7 +275,7 @@ Le concept de vue sur les entrants et sortants d'un système est une perception 
 
 % TODO Alors comment fait-il pour se produire lui même en interaction avec son environnement s'il n'a pas d'entrant et sortant?
 
-La conception d'un système autopoïèse\cite{tatsuya_computational_autopoiesis_2000} devrait comporter les points suivants : 
+La conception d'un système autopoïèse, de l'article \cite{tatsuya_computational_autopoiesis_2000}, devrait comporter les points suivants : 
 
 \begin{enumerate}
     \item Les composantes du système sont déterminés par les opérations du système;
@@ -292,15 +297,13 @@ Puis il y a des modèles d'apprentissage automatique qui ont été inspirés de 
 
 \subsection{Sympoïèse}
 
-Un système qui développe en collectivité. Caractéristique d'une technologie qui fait de la poïèse.
+La sympoïèse peut être défini comme un système qui se développe en collectivité. C'est un concept utilisée en écologie et en théorie des systèmes pour décrire les processus de production collective et collaborative dans les écosystèmes. Elle se distingue de l'autopoïèse, qui est le processus par lequel un système produit et reproduit ses propres composants de manière autonome. Par exemple, les coraux sont des collectifs d'organismes en interaction qui produisent des structures complexes telles que des récifs, qui ont des effets bénéfiques sur l'écosystème dans son ensemble.
 
-La sympoïèse est un concept utilisée en écologie et en théorie des systèmes pour décrire les processus de production collective et collaborative dans les écosystèmes. Elle se distingue de l'autopoïèse, qui est le processus par lequel un système produit et reproduit ses propres composants de manière autonome. Par exemple, les coraux sont des collectifs d'organismes en interaction qui produisent des structures complexes telles que des récifs, qui ont des effets bénéfiques sur l'écosystème dans son ensemble.
-
-«La nature est une puissance d’engendrement qui surgit et s’autoproduit. Donna Haraway a récemment proposé de remplacer le concept "d’autoproduction" par celui de "sympoïèse" qui désigne la coproduction du milieu par des espèces en interrelations plutôt que l’activité autonome de certains organismes isolés.»~\cite{guillibert:tel-02929676}
+Selon Guillibert.P, «La nature est une puissance d’engendrement qui surgit et s’autoproduit. Donna Haraway a récemment proposé de remplacer le concept "d’autoproduction" par celui de "sympoïèse" qui désigne la coproduction du milieu par des espèces en interrelations plutôt que l’activité autonome de certains organismes isolés.»~\cite{guillibert:tel-02929676}
 
 \subsection{Technopoïèse}
 
-Un système technologique qui développe. Caractéristique d'une technologie qui fait de la poïèse.
+% Un système technologique qui développe. Caractéristique d'une technologie qui fait de la poïèse.
 
 % Un système technologique qui travaille pour la poïèse en mettant en place plusieurs caractéristiques, par exemple : l'«Allo» et l'«Auto».
 
@@ -310,17 +313,15 @@ Pour éviter que la machine prend le dessus, il faut l'orienter vers la technopo
 
 %«Our main claim in this study is to underline that the biopoetic process organizing technopoiesis involves at least four levels, with emergences and constrains between the levels. Furthermore, we see technopoiesis as the dynamics between these four levels based on mechanisms expressing the relation between biology, poetics and external representations that cognitively and socio-culturally ground the evolution of technology.»~\cite{10553_41343}
 
-La relation entre la sympoïèse et la technopoïèse permettrait de concevoir des technologies plus durables et écologiquement responsables, qui favorisent la production collective et collaborative dans les écosystèmes.
+Ainsi, le terme «technopoïèse» fait référence à la capacité de l'humanité à créer et à façonner la technologie pour répondre à ses besoins et à ses désirs. La relation entre la sympoïèse et la technopoïèse permettrait de concevoir des technologies plus durables et écologiquement responsables, qui favorisent la production collective et collaborative dans les écosystèmes. 
 
-Ainsi, le terme «technopoïèse» fait référence à la capacité de l'humanité à créer et à façonner la technologie pour répondre à ses besoins et à ses désirs. 
-
-\subsection{Autotechnopoïèse}
+% \subsection{Autotechnopoïèse}
 
 % TODO source chatgpt
 
 % L'auto-technopoïèse étend cette idée, de la technopoïèse, en suggérant que les systèmes technologiques peuvent devenir autonomes et se réguler eux-mêmes sans l'intervention humaine.
 
-L'autotechnopoïèse est un concept qui décrit la capacité des systèmes technologiques à s'auto-organiser et à s'autoréguler. Plus précisément, l'autotechnopoïèse se réfère à la capacité des systèmes technologiques à maintenir leur propre structure, leur fonctionnement et leur évolution, en utilisant des mécanismes internes de régulation et d'adaptation.
+% L'autotechnopoïèse est un concept qui décrit la capacité des systèmes technologiques à s'auto-organiser et à s'autoréguler. Plus précisément, l'autotechnopoïèse se réfère à la capacité des systèmes technologiques à maintenir leur propre structure, leur fonctionnement et leur évolution, en utilisant des mécanismes internes de régulation et d'adaptation.
 
 % Le terme "technopoïèse" fait référence à la capacité de l'humanité à créer et à façonner la technologie pour répondre à ses besoins et à ses désirs. L'auto-technopoïèse étend cette idée en suggérant que les systèmes technologiques peuvent devenir autonomes et se réguler eux-mêmes sans l'intervention humaine.
 
@@ -328,7 +329,7 @@ L'autotechnopoïèse est un concept qui décrit la capacité des systèmes techn
 
 % En résumé, l'auto-technopoïèse est un concept qui décrit la capacité des systèmes technologiques à s'auto-organiser et à s'auto-réguler. Cette capacité est de plus en plus importante à mesure que les systèmes technologiques deviennent plus complexes et interconnectés.
 
-Pour faire des améliorations technologiques dans la société, sur des réseaux d'entraide, il faut orienter l'autotechnopoïèse dans de la R\&D~\cite{innovation_complex_social_system_2010} orienté aux besoins technologiques dans la gestion de cas d'urgence humanitaire, par exemple le «mouvement des villes en transition»~\cite{MOUV_063_0130}\footnote{\url{https://fr.wikipedia.org/wiki/Ville_en_transition}}, en lien avec la sympoïèse.
+% Pour faire des améliorations technologiques dans la société, sur des réseaux d'entraide, il faut orienter l'autotechnopoïèse dans de la R\&D~\cite{innovation_complex_social_system_2010} orienté aux besoins technologiques dans la gestion de cas d'urgence humanitaire, par exemple le «mouvement des villes en transition»~\cite{MOUV_063_0130}\footnote{\url{https://fr.wikipedia.org/wiki/Ville_en_transition}}, en lien avec la sympoïèse.
 
 % https://transitionlibre.ca
 

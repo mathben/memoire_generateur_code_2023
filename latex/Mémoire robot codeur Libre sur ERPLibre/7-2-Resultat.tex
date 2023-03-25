@@ -1,6 +1,6 @@
 \Chapter{RÉSULTAT EXPÉRIMENTAUX}\label{sec:Theme2}
 
-Les résultats sont présentés en commençant d’abord par décrire l’implémentation du modèle conceptuel d’automate présenté dans la sous-section~\ref{subsection_cadre_conceptuel}. Ensuite, ce sera présenté successivement les résultats propres à chacun des sous-objectifs décrits dans le chapitre~\ref{chapitre_methode}.
+Nous présentons les résultats en commençant d’abord par décrire l’implémentation du modèle conceptuel du robot logiciel codeur présenté dans la sous-section~\ref{subsection_cadre_conceptuel}. Ensuite, nous présenterons successivement les résultats propres à chacun des sous-objectifs décrits dans le chapitre~\ref{chapitre_methode}.
 
 \section{Implémentation: du modèle conceptuel au modèle opérationnel}
 
@@ -38,7 +38,7 @@ La Figure~\ref{fig:dia_architecture_automate}, elle démontre un développeur qu
 \begin{figure}[htb]
 \centering
 \includegraphics[width=6.535in]{images/architecture_machine.drawio.png}
-\caption{Architecture de l'automate}
+\caption{Architecture du générateur de code dans son ensemble, nommé machine. Le développeur peut modifier le code source directement ou utiliser l'interface de la machine qui passe par un ensemble de composantes.}
 \label{fig:dia_architecture_automate}
 \end{figure}
 
@@ -115,7 +115,7 @@ La migration de données à partir de SQL était déjà supporté dans la versio
 
 La capacité de prendre les données via les interfaces utilisateurs telles que la GUI et le «Code hook» est de la génération de code par des données. Cela permet de personnaliser pour obtenir un logiciel adapté à ce que l’utilisateur est capable d’exprimer.
 
-L’automate est une machine qui grâce à son interface «code hook», il se fait commander par deux couches de méta-données paramétrable par l’humain. Les deux couches s’interfèrent entre eux pour permettre l’évolution de la fonctionnalité désirée.
+le robot logiciel codeur est une machine qui grâce à son interface «code hook», il se fait commander par deux couches de méta-données paramétrable par l’humain. Les deux couches s’interfèrent entre eux pour permettre l’évolution de la fonctionnalité désirée.
 
 % TODO diagramme de couche entrée de l’utilisateur et sortie des fonctionnalités.
 
@@ -207,7 +207,7 @@ Le générateur de code est accompagné de tests de validation en reproduisant l
 La génération de code applique des règles de codage standardisées.
 
 \paragraph{SO-2 Feuille de route}
-Finaliser l’implémentation de l'auto génération sur l’automate.\\
+Finaliser l’implémentation de l'auto génération sur le robot logiciel codeur.\\
 Mise à jour des tests pour atteindre une couverture de code à 100\%.\\
 Ajout de test sur les techniques d’extractions de code tel que le PHP.
 
@@ -273,14 +273,14 @@ Ce qui fonctionne :
 
 % TODO on montre un exemple de code hook?
 
-permettent d’accéder à la totalité des fonctionnalités de l’automate via µ$_C^A$ et µ$_C^B$, elles ont été utilisés pour toutes les démonstrations qui servent de test, elles contiennent la paramétrisation pour des modules désirés.
+permettent d’accéder à la totalité des fonctionnalités du robot logiciel codeur via µ$_C^A$ et µ$_C^B$, elles ont été utilisés pour toutes les démonstrations qui servent de test, elles contiennent la paramétrisation pour des modules désirés.
 
 \subsection{Interprétation des résultats de SO-3}
 
 \paragraph{SO-3 Accomplissements}
 Ajout de nouvelles techniques et une classification de ceux-ci.\\
 Rendre accessible une interface graphique pour paramétrer la génération de code.\\
-Rendre accessible une interface de programmation pour utiliser toutes les fonctionnalités de l’automate.
+Rendre accessible une interface de programmation pour utiliser toutes les fonctionnalités du robot logiciel codeur.
 
 \paragraph{SO-3 Feuille de route}
 Ajout de paramètres pour faire plus de personnalisation sur les techniques et les séparer une par module.\\
@@ -291,7 +291,7 @@ Support l’accès à la création de méta-données par la rétro-ingénierie v
 
 \subsection{Utilisation d’un conteneur Docker}
 
-Puisque l’automate fait partie de ERPLibre, la version 1.5.0 contient les modules de génération de code. Le déploiement se fait rapidement en utilisant le logiciel Docker, le générateur de code permet l’utilisation de l’interface graphique pour générer des modules Odoo.
+Puisque le robot logiciel codeur fait partie de ERPLibre, la version 1.5.0 contient les modules de génération de code. Le déploiement se fait rapidement en utilisant le logiciel Docker, le générateur de code permet l’utilisation de l’interface graphique pour générer des modules Odoo.
 
 \subsection{Interprétation des résultats de SO-4}
 
@@ -301,9 +301,9 @@ Intégration dans un système de distribution via un Docker.
 \paragraph{SO-4 Feuille de route}
 Développer une synchronisation entre les instances pour permettre de la redondance.\\
 Développer une gestion de son infrastructure via le générateur de code.\\
-Faire participer l’automate à la maintenance de l’infrastructure de déploiement.\\
+Faire participer le robot logiciel codeur à la maintenance de l’infrastructure de déploiement.\\
 Utiliser d’autres systèmes de conteneur en distribution qui sont libres comme «Pod»~\footnote{\url{https://podman.io/}}.\\
-L’automate doit avoir la capacité de valider techniquement si le logiciel est AGPLv3 au moment de l’exécution
+le robot logiciel codeur doit avoir la capacité de valider techniquement si le logiciel est AGPLv3 au moment de l’exécution
 
 \section{Résultats propres à SO-5}
 
@@ -459,7 +459,7 @@ Le projet Accorderie a bénéficié du générateur de code pour la migration de
 Le projet Portail CEPPP a bénéficié du générateur de code pour la migration du code PHP vers Odoo, ainsi que de l’aide au développement de la section Portail.
 
 \paragraph{SO-5 Feuille de route}
-L’automate doit supporter la demande de «Pull Request» sur les projets Git respectif lorsqu’il y a une amélioration. Il doit faire le suivi et s’assurer de suivre les règles de contributions de la communauté.\\
+le robot logiciel codeur doit supporter la demande de «Pull Request» sur les projets Git respectif lorsqu’il y a une amélioration. Il doit faire le suivi et s’assurer de suivre les règles de contributions de la communauté.\\
 Développer d’autres modules de gestion de projet pour l’accompagnement dans le développement de projet client.\\
 Développer des modules de gestion de communauté sur des projets logiciels libres.\\
 Développer le suivi du développement des modules communautaires avec une traçabilité sur les résultats avec des métriques de génie logiciel.
@@ -474,7 +474,7 @@ Ainsi, la technique de gestion des «Cron», puisqu’il lance des sauvegardes p
 
 \subsection{Projet module workflow design}
 
-C’est un module de gestion de projet généré par l’automate qui permet de faire le suivi sur les opportunités, les menaces, les forces, les faiblesses et les objectifs. Il a été utilisé dans le projet Accorderie.
+C’est un module de gestion de projet généré par le robot logiciel codeur qui permet de faire le suivi sur les opportunités, les menaces, les forces, les faiblesses et les objectifs. Il a été utilisé dans le projet Accorderie.
 
 \subsection{Projet module STARS}
 
@@ -561,18 +561,25 @@ Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{a
 Le réseau d’entraide a besoin d’un support technologie libre, puisque permettre aux participants de respecter leur 4 libertés vont permettre de pouvoir s’adapter à des situations d’urgence et apporter des solutions rapidement.
 
 \paragraph{Étudier}
-La rétro-ingénierie a permis à l’automate de comprendre certaines fonctionnalités pour pouvoir recréer les méta-données adéquatement pour la reproduction.
+La rétro-ingénierie a permis à le robot logiciel codeur de comprendre certaines fonctionnalités pour pouvoir recréer les méta-données adéquatement pour la reproduction.
 
 \paragraph{Copier}
-L’auto-générateur a été mis en place, il reste à auto-reproduire l’automate par son module principale de générateur de code.
+L’auto-générateur a été mis en place, il reste à auto-reproduire le robot logiciel codeur par son module principale de générateur de code.
 
 \paragraph{Modifier}
 Rend accessible la rétro-ingénierie tout en exécutant des mises en forme de code et validation de qualité logiciel.
 
 \paragraph{Utiliser}
-L’automate a la capacité d’utiliser ses fonctionnalités générées et d’exécuter des scripts d’automatisation à des périodes de temps adaptable.
+le robot logiciel codeur a la capacité d’utiliser ses fonctionnalités générées et d’exécuter des scripts d’automatisation à des périodes de temps adaptable.
 
+\section{Avancement sur le réseau d'entraide}
 
+\begin{figure}
+\centering
+\includegraphics[width=6.535in]{images/developpeur_outil_developpement.drawio.png}
+\caption{Intéraction entre le développeur et les outils de développement dans un réseau d'entraide}
+\label{fig:dia_outil_dev_reseau_entraide}
+\end{figure}
 
 \section{Avancement de la technopoïèse}
 % TODO résultat, séparer réseau d'entraide en développement
@@ -604,7 +611,7 @@ Le robot codeur donne accès à des outils pour le développeur. Il y a un inter
 \begin{figure}
 \centering
 \includegraphics[height=8.5in]{images/auto_machine_discussion.drawio.png}
-\caption{Architecture de l'automate}
+\caption{Architecture du générateur de code}
 \label{fig:dia_auto_machine_discussion}
 \end{figure}
 
@@ -617,7 +624,7 @@ Le robot codeur donne accès à des outils pour le développeur. Il y a un inter
 
 % \subsection{Réseau d’entraide}
 
-% Il doit y avoir un responsable pour chaque localité accompagné de l’automate pour répondre à ses besoins de numérisations via une souveraineté numérique. C’est le gestionnaire de communauté.
+% Il doit y avoir un responsable pour chaque localité accompagné du robot logiciel codeur pour répondre à ses besoins de numérisations via une souveraineté numérique. C’est le gestionnaire de communauté.
 
 % Chaque projet d’urgence doit être capable d’avoir une équipe en charge pour accélérer la résolution de problèmes locaux.
 
