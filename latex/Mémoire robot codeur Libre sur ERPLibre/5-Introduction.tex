@@ -346,8 +346,7 @@ La plateforme ERPLibre a ainsi été créé en début 2020 en encapsulant la ver
 
 Nous proposons un modèle formel de la génération de code qui guide le travail proposé dans ce mémoire. Soit C, un code informatique exécutable (qui pourrait aussi être un script interprétable), soit µ$_C$ les méta-données du code, et soit M, une machine disposant de deux modes d’opération : $M^d$ le mode direct, et $M^i$ le mode inverse, voir Figure~\ref{fig:mode_direct_inverse}. Lorsque M opère en mode direct sur µ$_C$, on doit obtenir C; en opérant en mode inverse sur C, on doit obtenir µ$_C$.
 
-On peut représenter ces deux processus par les équations
-$M^d$(µC)=C et \\ $M^i$(C)=µC. La machine peut alors être représentée par M = \{$M^d$,$M^i$\}.
+On peut représenter ces deux processus par les équations $M^d$(µC)=C et \\ $M^i$(C)=µC. La machine peut alors être représentée par M = \{$M^d$,$M^i$\}.
 
 L’ingénierie de génération est le mode direct. La rétro-ingénierie, le mode inverse, est le processus qui consiste à examiner et à analyser un système existant pour en comprendre le fonctionnement et les spécifications. Cette boucle va permettre d’intégrer des concepts d’amélioration continue sur l’évolution du code.
 
@@ -360,11 +359,16 @@ L’ingénierie de génération est le mode direct. La rétro-ingénierie, le mo
 
 Pour concrétiser le sens de ce modèle formel, nous allons proposer quelques exemples simples. Ayant pour but de faciliter la compréhension, ces exemples sont triviaux et ne présentent pas le plein potentiel de notre approche. L’interpréteur Python 3.6 et + est utilisé pour les exemples de codes.
 
-Pour la plupart des exemples, le C, représenté par «C.py», est le code «Hello, World!», voir Listing~\ref{lst:hello_world}.
+Pour la plupart des exemples, le C, représenté par «C.py», est le code «Hello, World!», voir Figure~\ref{fig:exemple_code_hello_world}.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={Exemple de code Hello, World!}, label={lst:hello_world}]
+% \begin{lstlisting}[language=Python, upquote=false, caption={Exemple de code Hello, World!}, label={lst:exemple_code_hello_world}]
+\begin{figure}
+\begin{lstlisting}[language=Python]
 print("Hello, World!")
 \end{lstlisting}
+\caption{Exemple de code Hello, World!}
+\label{fig:exemple_code_hello_world}
+\end{figure}
 
 De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui est parfois représenté par «machine», cela fait référence à un ensemble de module. Lorsque nous utilisons le terme robot logiciel codeur, nous faisons référence au «générateur de code» qui y est intégré, mais aussi à un ensemble de scripts dans ERPLibre, puisque le robot doit avoir un contrôle sur son projet en entier jusqu'au déploiement de celui-ci. Ainsi, la machine est au niveau conceptuel théorique, le générateur de code est au niveau composante logicielle, et le robot logiciel codeur est au niveau de solution logicielle.
 
@@ -375,48 +379,57 @@ De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui 
 «Un quine\cite{sarkar2020quines} (ou programme auto-reproducteur, self-reproducing en anglais) est un programme informatique qui imprime son propre code source»\footnote{\url{https://fr.wikipedia.org/wiki/Quine_(informatique)}} sans se lire lui-même. Il doit contenir une logique d’écriture de code et contenir ses méta-données de génération. Il est ainsi un générateur de premier niveau.
 
 
-Voir l'exemple de Code~\ref{lst:exemple_quine}, la sortie textuelle dans la console lors de l'exécution est le même que son code.
+Voir Figure\ref{fig:exemple_quine}, la sortie textuelle dans la console lors de l'exécution est le même que son code.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={Exemple de code Quine}, label={lst:exemple_quine}]
+\begin{figure}
+\begin{lstlisting}[language=Python]
 a='a=%r;print(a%%a)';print(a%a)
 \end{lstlisting}
+\caption{Exemple de code Quine}
+\label{fig:exemple_quine}
+\end{figure}
 
 Cependant, le Quine ne sait rien faire d’autre que de s’auto-générer. Ce qui pourrait apporter une contribution serait de faire un auto-reproducteur qui permet de dériver vers d’autres fonctionnalités et ainsi intégrer l’amélioration continue sur son propre développement.
 
 \subsection{Exemples illustratifs de générateur de code}
 
-La génération de code est un des moyens pour soutenir le développeur dans son développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps.
+La génération de code est un des moyens pour soutenir le développeur dans son développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps~\ref{devops_ref}.
 
 \subsubsection{Technique de génération de code basique}
 
-Dans le code~\ref{lst:gen_code_basique_c},~\ref{lst:gen_code_basique_uc},~\ref{lst:gen_code_basique_m}, la fonction «eval» en Python est dynamique, c'est-à-dire qu’il permet l’exécution à partir d’une chaîne de caractère, ce type de génération de code ne permet pas une évolution efficace ou une simplification du développement. Ça revient à lire un fichier et à l'imprimer, il n’a pas de capacité dynamique d’adaptation.
+Dans Figure~\ref{fig:exemple_gen_code_basique}, la fonction «eval» en Python est dynamique, c'est-à-dire qu’il permet l’exécution à partir d’une chaîne de caractère, ce type de génération de code ne permet pas une évolution efficace ou une simplification du développement. Ça revient à lire un fichier et à l'imprimer, il n’a pas de capacité dynamique d’adaptation.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={C}, label={lst:gen_code_basique_c}]
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_c}]
 print("Hello, World!")
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$}, label={lst:gen_code_basique_uc}]
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_uc}]
 print('print("Hello, World!")')
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$)}, label={lst:gen_code_basique_m}]
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_m}]
 eval("""print('print("Hello, World!")')""")
 \end{lstlisting}
+\caption{Exemple de technique de génération de code basique d'un «Hello World»}
+\label{fig:exemple_gen_code_basique}
+\end{figure}
 
-Dans le code~\ref{lst:gen_code_basique_2_c},~\ref{lst:gen_code_basique_2_uc},~\ref{lst:gen_code_basique_2_m}, cette technique basique est paramétrable, contrairement à la première exemple~\ref{lst:gen_code_basique_m}. Le f-strings fait office de template et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
+Dans Figure~\ref{fig:exemple_gen_code_basique_2}, cette technique basique est paramétrable, contrairement à la première exemple Figure~\ref{fig:exemple_gen_code_basique}. Le f-strings fait office de template et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py}, label={lst:gen_code_basique_2_c}]
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_c}]
 print("Hello, World!")
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json}, label={lst:gen_code_basique_2_uc}]
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_uc}]
 {
  "fonction": "print",
  "argument": "\"Hello, World!\""
 }
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$)}, label={lst:gen_code_basique_2_m}]
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_m}]
 import json
 
 with open("uC.json") as f:
@@ -427,6 +440,9 @@ result = f"{metadata.get('fonction')}({metadata.get('argument')})\n"
 with open("C.py", "w") as f:
    f.write(result)
 \end{lstlisting}
+\caption{Exemple de technique de génération de code basique paramétrable d'un «Hello World»}
+\label{fig:exemple_gen_code_basique_2}
+\end{figure}
 
 \subsubsection{Technique de génération de code par template}
 
@@ -434,24 +450,25 @@ Un moteur de template est un outil de modèle structurel qui simplifie la syntax
 
 La génération de code par template est une technique de développement de logiciels qui permet de produire du code source à partir de modèles prédéfinis appelés templates.
 
-Le code~\ref{lst:gen_code_template_c},~\ref{lst:gen_code_template_uc},~\ref{lst:gen_code_template_template},~\ref{lst:gen_code_template_m} utilise la bibliothèque «Jinjer2». C'est un mécanisme similaire à code~\ref{lst:gen_code_basique_2_m}, cependant la logique est intégré directement dans le fichier template.
+Le code de La Figure~\ref{fig:exemple_gen_code_basique_template} utilise la bibliothèque «Jinja2». C'est un mécanisme similaire à Figure~\ref{fig:exemple_gen_code_basique_2}, cependant la logique est intégré directement dans le fichier template.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py}, label={lst:gen_code_template_c}]
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_c}]
 print("Hello, World!")
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json}, label={lst:gen_code_template_uc}]
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_uc}]
 {
  "fonction": "print",
  "argument": "\"Hello, World!\""
 }
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={template - fichier template}, label={lst:gen_code_template_template}]
+\begin{lstlisting}[language=Python, upquote=true, caption={template - fichier template de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_template}]
 {{ fonction }}({{ argument }})
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$)}, label={lst:gen_code_template_m}]
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_m}]
 import json
 
 from jinja2 import Template
@@ -469,10 +486,14 @@ result = template.render(
 with open("C.py", "w") as f:
    f.write(result)
 \end{lstlisting}
+\caption{Exemple de technique de génération de code par template avec Jinja2 d'un «Hello World»}
+\label{fig:exemple_gen_code_basique_template}
+\end{figure}
 
-Les avantages du template~\ref{lst:gen_code_template_template_2} pour cette approche sont : une productivité accrue, une réduction des erreurs de codage, une meilleure cohérence du code et une réduction du temps de développement. Cette technique peut également faciliter la maintenance du code, puisque les modifications apportées aux templates sont automatiquement propagées à tout le code généré.
+% Les avantages du template~\ref{fig:gen_code_template_template_2} pour cette approche sont : une productivité accrue, une réduction des erreurs de codage, une meilleure cohérence du code et une réduction du temps de développement. Cette technique peut également faciliter la maintenance du code, puisque les modifications apportées aux templates sont automatiquement propagées à tout le code généré.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={Exemple de template avec logique}, label={lst:gen_code_template_template_2}]
+\begin{figure}
+\begin{lstlisting}[language=Python]
 {% for student in students %}
   <li>
 	{% if student.score > 80 %}:){% else %}:({% endif %}
@@ -480,14 +501,19 @@ Les avantages du template~\ref{lst:gen_code_template_template_2} pour cette appr
   </li>
 {% endfor %}
 \end{lstlisting}
+\caption{Exemple de template Jinja2 avec logique}
+\label{fig:gen_code_template_template_2}
+\end{figure}
+
 
 \subsubsection{Générateur de code par template avec Odoo 12}
 
 La technique utilisée par Odoo 12 est le «scaffold», il gère 2 types de template : un module de base «default» et un module thème «theme».
 
-Dans le code~\ref{lst:odoo_scaffold_default}, tout est presque commenté, rien n’est utilisable, mais nous avons la structure MVC. Le gain d’accélération au développement est minime.
+Dans Figure~\ref{fig:exemple_odoo_scaffold_module}, tout est presque commenté, rien n’est utilisable, mais nous avons la structure MVC. Le gain d’accélération au développement est minime.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={Commande Odoo pour générer un module avec le Scaffold}, label={lst:odoo_scaffold_default}]
+\begin{figure}
+\begin{lstlisting}[language=Python]
 > ./odoo/odoo-bin scaffold module_default ./
 > tree module_default/
 controllers
@@ -506,10 +532,14 @@ views
     templates.xml
 	views.xml
 \end{lstlisting}
+\caption{Exemple de génération de module MVC Odoo avec la technique du Scaffold}
+\label{fig:exemple_odoo_scaffold_module}
+\end{figure}
 
-Cette fois-ci, dans le code~\ref{lst:odoo_scaffold_theme}, tout est vide, le module «theme\_module» fait une erreur à l'installation. Il est plus efficace copier et modifier un thème existant que d'utiliser le «scaffold».
+Cette fois-ci, dans Figure~\ref{fig:exemple_odoo_scaffold_theme}, tout est vide, le module «theme\_module» fait une erreur à l'installation. Il est plus efficace copier et modifier un thème existant que d'utiliser le «scaffold».
 
-\begin{lstlisting}[language=Python, upquote=true, caption={Commande Odoo pour générer un thème avec le Scaffold}, label={lst:odoo_scaffold_theme}]
+\begin{figure}
+\begin{lstlisting}[language=Python]
 > /odoo/odoo-bin scaffold -t theme theme_module ./
 > tree theme_module/
 demo
@@ -524,6 +554,9 @@ views
     options.xml
     snippets.xml
 \end{lstlisting}
+\caption{Exemple de génération de module thème Odoo avec la technique du Scaffold}
+\label{fig:exemple_odoo_scaffold_theme}
+\end{figure}
 
 Le gain d’accélération au développement est si minime, qu'il peut être considéré comme négligeable. Copier un module fonctionnel et le modifier en enlevant ce qu’on ne veut pas est plus efficace que d’utiliser cette technique. Disons que cette technique est utile pour un débutant pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel.
 
@@ -538,13 +571,14 @@ Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} a
 \label{fig:retro_re_ing}
 \end{figure}
 
-Dans le code~\ref{lst:gen_code_retro_m}, la bibliothèque AST est utilisée pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logiciel entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
+Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque AST pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logiciel entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
 
-\begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py}, label={lst:gen_code_retro_c}]
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_c}]
 print(                     "Hello, World!"                         )
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={M qui extrait µ$_C$ pour générer C.py}, label={lst:gen_code_retro_m}]
+\begin{lstlisting}[language=Python, upquote=true, caption={M qui extrait µ$_C$ pour générer C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_m}]
 import ast
 
 with open("C.py", "r") as f:
@@ -573,9 +607,12 @@ with open("C.py", "w") as f:
    f.write(result)
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, upquote=true, caption={C corrigé - fichier C.py}, label={lst:gen_code_retro_new_c}]
+\begin{lstlisting}[language=Python, upquote=true, caption={C corrigé - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_new_c}]
 print("Hello, World!")
 \end{lstlisting}
+\caption{Exemple de technique de génération de code avec rétro-ingénierie d'un «Hello World»}
+\label{fig:exemple_gen_code_retro}
+\end{figure}
 
 \subsection{Tester un générateur de code}
 
