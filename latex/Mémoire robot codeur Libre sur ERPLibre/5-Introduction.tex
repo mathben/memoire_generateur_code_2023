@@ -20,7 +20,7 @@ La plateforme Odoo a réussi à devenir l'un des principaux fournisseurs d'ERP o
 
 Comment accélérer le développement de fonctionnalités de la plateforme ERP Odoo\footnote{Anciennement OpenERP, ERP libre web, lien du projet \url{https://github.com/OCA/OCB}} 12 communautaire?
 
-La plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet logiciel libre, une solution développé pour complémenter la plateforme ERPLibre.
+La plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet de logiciel libre, une solution développée, démontré dans ce mémoire, pour complémenter la plateforme ERPLibre.
 
 % TODO problématique de devoir adapter les processus de l'entreprise aux capacité du ERP au lieu de donner un processus personnalisé
 
@@ -75,9 +75,9 @@ Pour obtenir les résultats du tableau~\ref{tab:nb_module_version_odoo}, un scri
 
 Des fois, la quantité de modules diminue d'une année à l'autre. Il y a création d'une nouvelle branche lors d'une nouvelle version qui est la suite de la version précédente. Par exemple, dans le tableau~\ref{tab:nb_module_version_odoo}, la version 10.0 entre 2017 et 2018, il y a une réduction de 171 modules dans les répertoires d'entreprise, mais il y a eu seulement 4 mois pour faire le nettoyage. Les méthodes de mises à jours ont évolués depuis.
 
-De plus, les chiffres du tableau~\ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'Odoo sont plus populaires que les versions impaires. Cependant la communauté d'Odoo est bien plus grosse que 133 répertoires.
+De plus, les chiffres du tableau~\ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'Odoo sont plus populaires que les versions impaires. Cependant, la communauté d'Odoo est bien plus grosse que 133 répertoires.
 
-Dans la section somme du tableau~\ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du premier janvier 2023, il y a eu au total 17 309 modules, dont 6 063 modules uniques. Cela signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
+Dans la section «total» du tableau~\ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du premier janvier 2023, il y a eu au total 17 309 modules, dont 6 063 modules uniques. Cela signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
 
 % Prochain tableau
 \begin{table}
@@ -259,7 +259,7 @@ L'Accorderie, un réseau d'entraide Québécois, était à la recherche d'une pl
 
 % L’objectif du projet en collaboration avec l’Accorderie est de faire une plateforme améliorée avec des technologies plus récentes pour contrer l’effet des réseaux sociaux qui est devenu un intermédiaire intéressant pour échanger entre les membres, ainsi que d’automatiser les processus d’échange de temps, qui demande actuellement une gestion manuelle.
 
-  Nous avons décelé que le présent projet pourrait répondre à leur besoin avec l'automate programmeur qui permet de faciliter, entre autres la maintenance dans le temps. De plus, la plateforme a le potentiel de leur éviter des coûts sur les licences, du développement redondant et leur donner des fonctionnalités personnalisées. Ainsi, nous avons obtenu accès au code source PHP de la plateforme Espace Membre dont le copyright mentionne l’année 2007 par la compagnie GRF Ressource Informatique. De plus, nous avons aussi eu accès à la base de données et selon les archives, le premier échange tracé est le premier janvier 2003. «Le 3 juin 2002, l’Accorderie de Québec est officiellement constituée en tant qu’organisme à but non lucratif. Sa mission : lutter contre la pauvreté et l’exclusion sociale ainsi que favoriser la mixité sociale»\cite{erudit_accorderie_2014}. La plateforme aurait eu plusieurs mises à jour au fil du temps. Cela nous donnait un cas réel empirique, avec des données et des utilisateurs réels, pour rendre concret une plateforme d'échange de temps dont le présent mémoire fait objet comme premier cas pratique d'étude.
+Nous avons décelé que le présent projet pourrait répondre à leur besoin avec le générateur de module Odoo qui permet de faciliter, entre autres la maintenance dans le temps. De plus, la plateforme ERPLibre a le potentiel de leur éviter des coûts sur les licences, du développement redondant et leur donner des fonctionnalités personnalisées. Ainsi, nous avons obtenu accès au code source PHP de la plateforme Espace Membre dont le copyright mentionne l’année 2007 par la compagnie GRF Ressource Informatique. De plus, nous avons aussi eu accès à la base de données et selon les archives, le premier échange tracé est le premier janvier 2003. «Le 3 juin 2002, l’Accorderie de Québec est officiellement constituée en tant qu’organisme à but non lucratif. Sa mission : lutter contre la pauvreté et l’exclusion sociale ainsi que favoriser la mixité sociale»\cite{erudit_accorderie_2014}. La plateforme aurait eu plusieurs mises à jour au fil du temps. Cela nous donnait un cas réel empirique, avec des données et des utilisateurs réels, pour rendre concret une plateforme d'échange de temps dont le présent mémoire fait objet comme premier cas pratique d'étude.
 
 \subsection{Introduction CEPPP}
 
@@ -269,7 +269,7 @@ L'Accorderie, un réseau d'entraide Québécois, était à la recherche d'une pl
 
 % what
 
-Le CEPPP, Centre d’excellence sur le partenariat avec les patients et le public, était à la recherche d'une plateforme pour la gestion du partenariat avec les patients et le public. Le Portail des partenaires (“Portail”) du CEPPP est issu de la fusion de communautés de patients partenaires, entre autres de la Direction collaboration et partenariat patient (DCPP) de la Faculté de médecine de l’Université de Montréal, et celle du Centre de recherche du Centre Hospitalier de l’Université de Montréal (CR-CHUM). Le Portail est un outil qui vient soutenir les activités de recrutement et de recherche sur les pratiques de partenariat. Ils avaient donc déjà une solution~\cite{github_ceppp_crm}, mais elle était incomplète, il manquait la gestion de l'anonymisation et l'interface demandait beaucoup de navigation pour atteindre l'information et un clic de souris pour chaque champs par section.
+Le CEPPP, Centre d’excellence sur le partenariat avec les patients et le public, était à la recherche d'une plateforme pour la gestion du partenariat avec les patients et le public. Le Portail des partenaires (“Portail”) du CEPPP est issu de la fusion de communautés de patients partenaires, entre autres de la Direction collaboration et partenariat patient (DCPP) de la Faculté de médecine de l’Université de Montréal, et celle du Centre de recherche du Centre Hospitalier de l’Université de Montréal (CR-CHUM). Le Portail est un outil qui vient soutenir les activités de recrutement et de recherche sur les pratiques de partenariat. Ils avaient donc déjà une solution~\cite{github_ceppp_crm}, mais elle était incomplète. Cette solution manquait la gestion de l'anonymisation et l'interface demandait beaucoup de navigation pour atteindre l'information et un clic de souris pour chaque champs par section.
 
 Le présent projet venait pallier aux problèmes rencontrés en facilitant et en accélérant le développement, en permettant une personnalisation et en développant l'anonymisation des données, comme second cas pratique d'étude.
 
@@ -293,7 +293,7 @@ Pour générer des modules Odoo, le générateur de code a besoin de s'appuyer s
 L’architecture MVC permet de séparer les composantes logicielles comme suit : 
 \begin{enumerate}
     \item Le modèle : représente les données et les règles de l’application. Le modèle est responsable de la manipulation des données, de leur stockage et de leur récupération.
-    \item La vue : représente la présentation de la donnée. La vue est responsable de l’affichage des données stockées dans le modèle à l’utilisateur final.
+    \item La vue : représente la présentation des données. La vue est responsable de l’affichage des données stockées dans le modèle à l’utilisateur final.
     \item Le contrôleur : gère les interactions entre le modèle et la vue. Le contrôleur est responsable de la réception des demandes de l’utilisateur et de leur transmission au modèle, puis de la récupération des données du modèle pour les transmettre à la vue.
 \end{enumerate}
 Il est possible de modifier une de ces composantes sans affecter les autres composantes, ce qui facilite la maintenance.
@@ -346,7 +346,7 @@ La plateforme ERPLibre a ainsi été créé en début 2020 en encapsulant la ver
 
 Nous proposons un modèle formel de la génération de code qui guide le travail proposé dans ce mémoire. Soit C, un code informatique exécutable (qui pourrait aussi être un script interprétable), soit µ$_C$ les méta-données du code, et soit M, une machine disposant de deux modes d’opération : $M^d$ le mode direct, et $M^i$ le mode inverse, voir Figure~\ref{fig:mode_direct_inverse}. Lorsque M opère en mode direct sur µ$_C$, on doit obtenir C; en opérant en mode inverse sur C, on doit obtenir µ$_C$.
 
-On peut représenter ces deux processus par les équations $M^d$(µC)=C et \\ $M^i$(C)=µC. La machine peut alors être représentée par M = \{$M^d$,$M^i$\}.
+On peut représenter ces deux processus par les équations $M^d$(µC)=C et $M^i$(C)=µC. La machine peut alors être représentée par M = \{$M^d$,$M^i$\}.
 
 L’ingénierie de génération est le mode direct. La rétro-ingénierie, le mode inverse, est le processus qui consiste à examiner et à analyser un système existant pour en comprendre le fonctionnement et les spécifications. Cette boucle va permettre d’intégrer des concepts d’amélioration continue sur l’évolution du code.
 
@@ -376,10 +376,9 @@ De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui 
 
 \subsubsection{Le Quine}
 
-«Un quine\cite{sarkar2020quines} (ou programme auto-reproducteur, self-reproducing en anglais) est un programme informatique qui imprime son propre code source»\footnote{\url{https://fr.wikipedia.org/wiki/Quine_(informatique)}} sans se lire lui-même. Il doit contenir une logique d’écriture de code et contenir ses méta-données de génération. Il est ainsi un générateur de premier niveau.
+«Un quine~\cite{sarkar2020quines} (ou programme auto-reproducteur, self-reproducing en anglais) est un programme informatique qui imprime son propre code source»~\cite{wiki_quine} sans se lire lui-même. Il doit contenir une logique d’écriture de code et contenir ses méta-données de génération. Il est ainsi un générateur de premier niveau.
 
-
-Voir Figure\ref{fig:exemple_quine}, la sortie textuelle dans la console lors de l'exécution est le même que son code.
+Voir Figure~\ref{fig:exemple_quine}, la sortie textuelle dans la console lors de l'exécution est le même que son code.
 
 \begin{figure}
 \begin{lstlisting}[language=Python]
@@ -446,11 +445,11 @@ with open("C.py", "w") as f:
 
 \subsubsection{Technique de génération de code par template}
 
-Un moteur de template est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet Web.
+Un moteur de template est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet web.
 
 La génération de code par template est une technique de développement de logiciels qui permet de produire du code source à partir de modèles prédéfinis appelés templates.
 
-Le code de La Figure~\ref{fig:exemple_gen_code_basique_template} utilise la bibliothèque «Jinja2». C'est un mécanisme similaire à Figure~\ref{fig:exemple_gen_code_basique_2}, cependant la logique est intégré directement dans le fichier template.
+Le code de La Figure~\ref{fig:exemple_gen_code_basique_template} utilise la bibliothèque «Jinja2». C'est un mécanisme similaire à Figure~\ref{fig:exemple_gen_code_basique_2}, cependant la logique est intégrée directement dans le fichier template.
 
 \begin{figure}
 \begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_c}]
@@ -558,7 +557,7 @@ views
 \label{fig:exemple_odoo_scaffold_theme}
 \end{figure}
 
-Le gain d’accélération au développement est si minime, qu'il peut être considéré comme négligeable. Copier un module fonctionnel et le modifier en enlevant ce qu’on ne veut pas est plus efficace que d’utiliser cette technique. Disons que cette technique est utile pour un débutant pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel.
+Le gain d’accélération au développement est si minime, qu'il peut être considéré comme négligeable. Copier un module fonctionnel et le modifier en enlevant ce qu’on ne veut pas est plus efficace que d’utiliser cette technique. Disons que cette technique est utile pour un débutant pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel ou lire la documentation officiel sur comment développer un module Odoo.
 
 \subsubsection{Technique de génération de code par rétro-ingénierie}
 
