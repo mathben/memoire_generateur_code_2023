@@ -33,13 +33,13 @@ La livraison sert à générer le i18n. C’est Odoo qui le génère, mais le g�
 
 \subsection{Architecture}\label{architecture_result}
 
-La Figure~\ref{fig:dia_architecture_automate} démontre un développeur qui utilise l'interface de la machine qui opère dans le noyau de la machine.
+La Figure~\ref{fig:dia_architecture} démontre un développeur qui utilise l'interface de la machine qui opère dans le noyau de la machine.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=6.535in]{images/architecture_machine.drawio.png}
 \caption{Architecture du générateur de code dans son ensemble, nommé machine. Le développeur peut modifier le code source directement ou utiliser l'interface de la machine qui passe par un ensemble de composantes.}
-\label{fig:dia_architecture_automate}
+\label{fig:dia_architecture}
 \end{figure}
 
 \begin{enumerate}
@@ -215,7 +215,7 @@ Ajout de test sur les techniques d’extractions de code tel que le PHP.
 
 \subsection{Classification des techniques développées}\label{result_technique_developpe}
 
-En référence à la Figure~\ref{fig:dia_architecture_automate}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques.
+En référence à la Figure~\ref{fig:dia_architecture}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques.
 
 % TODO faire un diagramme des dépendances
 Les techniques :
@@ -512,9 +512,9 @@ Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations 
 
 La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migré vers une mise en production.
 
-Un portail a été généré, pour remplacer les formulaires utilisés par l'ancienne plateforme PHP pour visualiser les entrées. Cependant, cette fonctionnalité a été abandonnée puisque cette technologie ne plaisait pas
+Un portail a été généré, pour remplacer les formulaires utilisés par l'ancienne plateforme PHP pour visualiser les entrées. Cependant, cette fonctionnalité a été abandonnée puisque cette technologie ne plaisait pas.
 
-Une maquette a été conçue pour un nouvel espace membre. Ainsi, on a utilisé la technique «website\_snippet» pour afficher des données sur le site web et créer des formulaires. Cette base a permis d’accélérer la création de code de communication entre le client et le serveur. À force de faire l’intégration et la personnalisation de cette maquette, il n’y a plus vraiment de code qui provient du générateur de code.
+Une maquette a été conçue pour un nouvel espace membre. Ainsi, nous avons utilisé la technique «website\_snippet» pour afficher des données sur le site web et créer des formulaires. Cette base a permis d’accélérer la création de code de communication entre le client et le serveur. À force de faire l’intégration et la personnalisation de cette maquette, il n’y a plus vraiment de code qui provient du générateur de code.
 
 Le générateur de code a permis d’aider à créer un diagramme pour afficher le processus d’échange de temps, voir Annexe~\ref{annexe_processus_accorderie_2023}, puis une application en Javascript avec AngularJS a été développé pour afficher ce processus à l’utilisateur, une machine à état qui permet de revenir selon des paramètres à un état du processus.
 
@@ -541,7 +541,7 @@ Voici les statistiques~\ref{tab:stat_code_portail_ceppp} du code après ré-ing�
 \begin{tabular}{|l|l|l|l|}
 
 \hline
-\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\# Ligne extrait} & \cellcolor[HTML]{d9d9d9}{\# Ligne personnalisé} & \cellcolor[HTML]{d9d9d9}{\# Diff}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Ligne extrait}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Ligne personnalisé}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Diff}}\\\hline
 
 XML & 6 861 & 3 856 & - 3 005\\\hline
 Python & 567 & 1 564 & + 997\\\hline
@@ -556,6 +556,7 @@ L'anonymisation n'est pas supportée par le générateur de code, puis la person
 
 Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{annexe_db_ceppp_2022}. L'interface administrateur~\ref{annexe_form_ceppp_2022} contient la fiche du patient, que les partenaires ont accès seulement qu'à la partie anonymisée~\ref{annexe_form_anonyme_ceppp_2022}.
 
+La signification que le nombre de lignes de XML aurait diminué, c’est que le générateur de code génère de base toutes les vues de tous les champs. Au moment de la ré-ingénierie, il y a eu beaucoup de nettoyage et de données XML effacées. Cependant, le développeur va mettre plus de code Python pour développer des logiques qui ne sont pas supportées par le robot codeur. Le Javascript ajouté sert à supporter les dates dans le portail. L’ajout de CSV sert pour l’ajout de permissions et rôles pour l’anonymisation.
 
 \section{Comment les résultats obtenus soutiennent-ils le libre?}
 Le réseau d’entraide a besoin d’un support technologie libre, puisque permettre aux participants de respecter leur 4 libertés vont permettre de pouvoir s’adapter à des situations d’urgence et apporter des solutions rapidement. Les 4 libertés sont :
