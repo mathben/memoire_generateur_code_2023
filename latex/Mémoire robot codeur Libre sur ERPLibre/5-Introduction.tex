@@ -20,7 +20,7 @@ La plateforme Odoo a réussi à devenir l'un des principaux fournisseurs d'ERP o
 
 Comment accélérer le développement de fonctionnalités de la plateforme ERP Odoo\footnote{Anciennement OpenERP, ERP libre web, lien du projet \url{https://github.com/OCA/OCB}} 12 communautaire?
 
-La plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté dans un contexte d’un projet de logiciel libre, une solution développée, démontré dans ce mémoire, pour complémenter la plateforme ERPLibre.
+La plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo communautaire. Ce mémoire va mettre l’accent sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté, dans un contexte d’un projet de logiciel libre, une solution développée, démontrée dans ce mémoire, pour complémenter la plateforme ERPLibre.
 
 % TODO problématique de devoir adapter les processus de l'entreprise aux capacité du ERP au lieu de donner un processus personnalisé
 
@@ -36,7 +36,7 @@ La plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d�
 
 \subsection{Choix de la plateforme ERP}
 
-Choisir une plateforme ERP libre peut offrir des avantages significatifs en termes de coût, de flexibilité, de sécurité, de communauté et d'indépendance. Odoo a été choisi puisqu'il répondait à ces critères, cependant quelle est la version qui offre le plus de fonctionnalité?
+Choisir une plateforme ERP libre peut offrir des avantages significatifs en terme de coût, de flexibilité, de sécurité, de communauté et d'indépendance. Odoo a été choisi puisqu'il répondait à ces critères, cependant, quelle est la version qui offre le plus de fonctionnalités?
 
 \begin{table}
 \caption{Tableau des dates de lancement du logiciel Odoo à partir de la version 6.0}
@@ -44,7 +44,7 @@ Choisir une plateforme ERP libre peut offrir des avantages significatifs en term
 \begin{tabular}{|c|c|l|l|}
 
 \hline
-Légende & \cellcolor[HTML]{d9ead3}{\shortstack[l]{Version actuelle}} & \cellcolor[HTML]{fff2cc}{\shortstack[l]{Anciennes versions avec \\ maintenance étendu}} & \cellcolor[HTML]{f4cccc}{\shortstack[l]{Anciennes versions ou \\ fin de maintenance}}\\\hline
+Légende & \cellcolor[HTML]{d9ead3}{\shortstack[l]{Version actuelle}} & \cellcolor[HTML]{fff2cc}{\shortstack[l]{Anciennes versions avec \\ maintenance étendue}} & \cellcolor[HTML]{f4cccc}{\shortstack[l]{Anciennes versions ou \\ fin de maintenance}}\\\hline
 
 \hline\rowcolor[gray]{0.8}\color{black}
 Odoo version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
@@ -54,7 +54,7 @@ Odoo version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
 \cellcolor[HTML]{f4cccc}9.0 & novembre 2015 & \multicolumn{2}{|l|}{\shortstack[l]{Première publication des éditions «Community» \\ sous licence LGPLv3 et «Enterprise» sous licence \\ propriétaire.}}\\\hline
 \cellcolor[HTML]{f4cccc}10.0 & octobre 2016 & \multicolumn{2}{|l|}{} \\\hline
 \cellcolor[HTML]{f4cccc}11.0 & octobre 2017 & \multicolumn{2}{|l|}{} \\\hline
-\cellcolor[HTML]{f4cccc}12.0 & octobre 2018 & \multicolumn{2}{|l|}{Version utilisé dans ERPLibre 1.5.0}\\\hline
+\cellcolor[HTML]{f4cccc}12.0 & octobre 2018 & \multicolumn{2}{|l|}{Version utilisée dans ERPLibre 1.5.0}\\\hline
 \cellcolor[HTML]{fff2cc}13.0 & octobre 2019 & \multicolumn{2}{|l|}{}\\\hline
 \cellcolor[HTML]{fff2cc}14.0 & octobre 2020 & \multicolumn{2}{|l|}{} \\\hline
 \cellcolor[HTML]{fff2cc}15.0 & octobre 2021 & \multicolumn{2}{|l|}{} \\\hline
@@ -65,30 +65,30 @@ Odoo version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
 
 % Regarder l’évolution des modules dans OCA, en prenant leur nom de module, pour chaque version d’Odoo, selon une date déterminée, regarder le nombre de fois qu’il se répète. Ceci va indiquer la vitesse de migration des modules dans la communauté.
 
-Odoo a été créé initialement sous le nom de «Tiny ERP» en février 2005, cette plateforme a évolué au fil du temps, il a été renommé pour OpenERP autour d'octobre 2009 passant sous licence AGPL.
+Odoo a été créé initialement sous le nom de «Tiny ERP», en février 2005, cette plateforme a évolué au fil du temps, elle a été renommée pour OpenERP autour d'octobre 2009, passant sous licence AGPL.
 
 En janvier 2023, les versions 9.0 à 12.0 ne sont plus supportées officiellement par la compagnie Odoo, voir tableau~\ref{tab:choix_plateform_erp}, mais elles le sont encore par OCA. La version 16.0 est la version stable actuelle. La recherche de modules commence à partir de la version 9.0, là où débute la divergence entre une version communautaire et entreprise.
 
-Au printemps 2020, Odoo version 12.0 a été choisi par ERPLibre\footnote{Première version de ERPLibre : \url{https://github.com/ERPLibre/ERPLibre/releases/tag/v0.1.0}.}. Une recherche de module par version d'Odoo a été effectué sur 11 Go de code et de données sur le projet ERPLibre version 1.5.0, voir le tableau~\ref{tab:nb_module_version_odoo}. Ainsi, en date du premier janvier 2023, la version 12.0 est encore le bon choix avec 2 977 modules, puisqu'elle est celle qui a le plus de modules sur les 133 répertoires gérés par ERPLibre. Cette tendance pourrait changer en 2024 selon l’évolution.
+Au printemps 2020, Odoo version 12.0 a été choisi par ERPLibre\footnote{Première version de ERPLibre : \url{https://github.com/ERPLibre/ERPLibre/releases/tag/v0.1.0}.}. Une recherche de modules, par version d'Odoo, a été effectuée sur 11 Go de code et de données, sur le projet ERPLibre version 1.5.0, voir le tableau~\ref{tab:nb_module_version_odoo}. Ainsi, en date du premier janvier 2023, la version 12.0 est encore le bon choix avec 2 977 modules, puisqu'elle est celle qui a le plus de modules sur les 133 répertoires gérés par ERPLibre. Cette tendance pourrait changer en 2024, selon l’évolution.
 
-Pour obtenir les résultats du tableau~\ref{tab:nb_module_version_odoo}, un script a été développé pour chercher la quantité de modules en cherchant dans les 133 répertoires Git\footnote{Logiciel de gestion de versions décentralisé}, puis pour toutes les versions d'Odoo.
+Pour obtenir les résultats du tableau~\ref{tab:nb_module_version_odoo}, un script a été développé pour trouver la quantité de modules en cherchant dans les 133 répertoires Git\footnote{Logiciel de gestion de versions décentralisées}, puis pour toutes les versions d'Odoo.
 
-Des fois, la quantité de modules diminue d'une année à l'autre. Il y a création d'une nouvelle branche lors d'une nouvelle version qui est la suite de la version précédente. Par exemple, dans le tableau~\ref{tab:nb_module_version_odoo}, la version 10.0 entre 2017 et 2018, il y a une réduction de 171 modules dans les répertoires d'entreprise, mais il y a eu seulement 4 mois pour faire le nettoyage. Les méthodes de mises à jours ont évolués depuis.
+Parfois, la quantité de modules diminue d'une année à l'autre. Il y a création d'une nouvelle branche, lors d'une nouvelle version, qui est la suite de la version précédente. Par exemple, dans le tableau~\ref{tab:nb_module_version_odoo}, la version 10.0, entre 2017 et 2018, il y a une réduction de 171 modules dans les répertoires d'entreprise, mais il y a eu seulement 4 mois pour faire le nettoyage. Les méthodes de mises à jour ont évolué depuis.
 
-De plus, les chiffres du tableau~\ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'Odoo sont plus populaires que les versions impaires. Cependant, la communauté d'Odoo est bien plus grosse que 133 répertoires.
+De plus, les chiffres du tableau~\ref{tab:nb_module_version_odoo} semblent démontrer que les versions paires d'Odoo sont plus populaires que les versions impaires. Cependant, la communauté d'Odoo est bien plus grosse que ce que les 133 répertoires semblent suggérer.
 
-Dans la section «total» du tableau~\ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du premier janvier 2023, il y a eu au total 17 309 modules, dont 6 063 modules uniques. Cela signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
+Dans la section «total» du tableau~\ref{tab:nb_module_version_odoo}, la section unique signifie que la somme va ignorer les doublons. En date du premier janvier 2023, il y a eu, au total, 17 309 modules, dont 6 063 modules uniques. Cela signifie qu'il y a 11 246 modules en doublon. Hors, le code diffère d'une version à l'autre, même si c'est un doublon, ils peuvent avoir des bogues ou des fonctionnalités différentes entre eux.
 
 % Prochain tableau
 \begin{table}
-\caption{Nombre de modules, contenant un manifest avec paramètre installable, par version Odoo à partir du premier janvier minuit par année sur la plateforme ERPLibre 1.5.0.}
+\caption{Nombre de modules, contenant un manifest installable, par version Odoo, à partir du premier janvier, minuit, par année, sur la plateforme ERPLibre 1.5.0.}
 \centering
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
 \hline
 
-Légende & \multicolumn{2}{|l|}{\shortstack[l]{Total\\\textcolor[HTML]{274e13}{OCA}\\\textcolor[HTML]{4c1130}{Entreprise}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{d9ead3}{\shortstack[l]{Version \\ actuelle}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{fff2cc}{\shortstack[l]{Anciennes \\ versions avec \\ maintenance \\ étendu}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{f4cccc}{\shortstack[l]{Anciennes \\ versions ou \\ fin de \\ maintenance}}}\\\hline
+Légende & \multicolumn{2}{|l|}{\shortstack[l]{Total\\\textcolor[HTML]{274e13}{OCA}\\\textcolor[HTML]{4c1130}{Entreprise}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{d9ead3}{\shortstack[l]{Version \\ actuelle}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{fff2cc}{\shortstack[l]{Anciennes \\ versions avec \\ maintenance \\ étendue}}} & \multicolumn{2}{|c|}{\cellcolor[HTML]{f4cccc}{\shortstack[l]{Anciennes \\ versions ou \\ fin de \\ maintenance}}}\\\hline
 
-\multicolumn{9}{|l|}{\shortstack[l]{17309/\textcolor[HTML]{274e13}{10728}/\textcolor[HTML]{4c1130}{6581} modules à supporter le premier janvier 2023 \\ 17465/\textcolor[HTML]{274e13}{10952}/\textcolor[HTML]{4c1130}{6513} modules le 15 février 2023 \\ 156/\textcolor[HTML]{274e13}{132}/\textcolor[HTML]{4c1130}{24} nouveaux modules en 31 jours durant janvier 2023}}\\\hline
+\multicolumn{9}{|l|}{\shortstack[l]{17309/\textcolor[HTML]{274e13}{10728}/\textcolor[HTML]{4c1130}{6581} modules à supporter le 1er janvier 2023 \\ 17465/\textcolor[HTML]{274e13}{10952}/\textcolor[HTML]{4c1130}{6513} modules le 15 février 2023 \\ 156/\textcolor[HTML]{274e13}{132}/\textcolor[HTML]{4c1130}{24} nouveaux modules en 31 jours, durant janvier 2023}}\\\hline
 
 Odoo version & 2016 & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 \\\hline
 
@@ -246,7 +246,7 @@ Unique &
 
 \subsection{Introduction Accorderie}
 
-L'Accorderie, un réseau d'entraide Québécois, était à la recherche d'une plateforme améliorée, avec des technologies plus récentes. Les membres ont commencé depuis quelques années à utiliser des plateformes alternatives depuis l'émergence des plateformes de réseaux sociaux pour communiquer et échanger des services sans passer par la plateforme Espace Membre. En ajoutant des fonctionnalités dont l'automatisation\footnote{La gestion des feuilles de temps est manuelle avec validation par un membre de la communauté.} des processus d'échange de temps, la plateforme deviendra plus attractive.
+L'Accorderie, un réseau d'entraide québécois, était à la recherche d'une plateforme améliorée, avec des technologies plus récentes. Les membres ont commencé, depuis quelques années, à utiliser des plateformes alternatives dû à l'émergence des plateformes de réseaux sociaux, pour communiquer et échanger des services, sans passer par la plateforme Espace Membre. En ajoutant des fonctionnalités, dont l'automatisation\footnote{La gestion des feuilles de temps est manuelle avec validation par un membre de la communauté.} des processus d'échange de temps, la plateforme deviendra plus attractive.
 
 % L’objectif du projet en collaboration avec l’Accorderie est de faire une plateforme améliorée avec des technologies plus récentes pour contrer l’effet des réseaux sociaux qui est devenu un intermédiaire intéressant pour échanger entre les membres, ainsi que d’automatiser les processus d’échange de temps, qui demande actuellement une gestion manuelle.
 
@@ -259,7 +259,7 @@ L'Accorderie, un réseau d'entraide Québécois, était à la recherche d'une pl
 
 % L’objectif du projet en collaboration avec l’Accorderie est de faire une plateforme améliorée avec des technologies plus récentes pour contrer l’effet des réseaux sociaux qui est devenu un intermédiaire intéressant pour échanger entre les membres, ainsi que d’automatiser les processus d’échange de temps, qui demande actuellement une gestion manuelle.
 
-Nous avons décelé que le présent projet pourrait répondre à leur besoin avec le générateur de module Odoo qui permet de faciliter, entre autres la maintenance dans le temps. De plus, la plateforme ERPLibre a le potentiel de leur éviter des coûts sur les licences, du développement redondant et leur donner des fonctionnalités personnalisées. Ainsi, nous avons obtenu accès au code source PHP de la plateforme Espace Membre dont le copyright mentionne l’année 2007 par la compagnie GRF Ressource Informatique. De plus, nous avons aussi eu accès à la base de données et selon les archives, le premier échange tracé est le premier janvier 2003. «Le 3 juin 2002, l’Accorderie de Québec est officiellement constituée en tant qu’organisme à but non lucratif. Sa mission : lutter contre la pauvreté et l’exclusion sociale ainsi que favoriser la mixité sociale»\cite{erudit_accorderie_2014}. La plateforme aurait eu plusieurs mises à jour au fil du temps. Cela nous donnait un cas réel empirique, avec des données et des utilisateurs réels, pour rendre concret une plateforme d'échange de temps dont le présent mémoire fait objet comme premier cas pratique d'étude.
+Nous avons décelé que le présent projet pourrait répondre aux besoins de l'Accorderie avec le générateur de module Odoo qui permet de faciliter, entre autres, la maintenance dans le temps. De plus, la plateforme ERPLibre a le potentiel de leur éviter des coûts sur les licences, du développement redondant et leur donner des fonctionnalités personnalisées. Ainsi, nous avons obtenu accès au code source PHP de la plateforme Espace Membre dont le copyright mentionne l’année 2007, par la compagnie GRF Ressource Informatique. De plus, nous avons aussi eu accès à la base de données et, selon les archives, le premier échange tracé est le premier janvier 2003. «Le 3 juin 2002, l’Accorderie de Québec est officiellement constituée en tant qu’organisme à but non lucratif. Sa mission : lutter contre la pauvreté et l’exclusion sociale, ainsi que favoriser la mixité sociale»\cite{erudit_accorderie_2014}. La plateforme aurait eu plusieurs mises à jour au fil du temps. Cela nous donnait un cas réel empirique, avec des données et des utilisateurs réels, pour rendre concret une plateforme d'échange de temps dont le présent mémoire fait objet comme premier cas pratique d'étude.
 
 \subsection{Introduction CEPPP}
 
@@ -269,9 +269,9 @@ Nous avons décelé que le présent projet pourrait répondre à leur besoin ave
 
 % what
 
-Le CEPPP, Centre d’excellence sur le partenariat avec les patients et le public, était à la recherche d'une plateforme pour la gestion du partenariat avec les patients et le public. Le Portail des partenaires (“Portail”) du CEPPP est issu de la fusion de communautés de patients partenaires, entre autres de la Direction collaboration et partenariat patient (DCPP) de la Faculté de médecine de l’Université de Montréal, et celle du Centre de recherche du Centre Hospitalier de l’Université de Montréal (CR-CHUM). Le Portail est un outil qui vient soutenir les activités de recrutement et de recherche sur les pratiques de partenariat. Ils avaient donc déjà une solution~\cite{github_ceppp_crm}, mais elle était incomplète. Cette solution manquait la gestion de l'anonymisation et l'interface demandait beaucoup de navigation pour atteindre l'information et un clic de souris pour chaque champs par section.
+Le CEPPP, Centre d’excellence sur le partenariat avec les patients et le public, était à la recherche d'une plateforme pour la gestion du partenariat avec les patients et le public. Le Portail des partenaires (“Portail”) du CEPPP est issu de la fusion de communautés de patients partenaires, entre autres, de la Direction collaboration et partenariat patient (DCPP) de la Faculté de médecine de l’Université de Montréal, et celle du Centre de recherche du Centre Hospitalier de l’Université de Montréal (CR-CHUM). Le Portail est un outil qui vient soutenir les activités de recrutement et de recherche sur les pratiques de partenariat. Ils avaient donc déjà une solution~\cite{github_ceppp_crm}, mais elle était incomplète. Il manquait, dans cette solution, la gestion de l'anonymisation et l'interface demandait beaucoup de navigation pour atteindre l'information et exigeait un clic de souris pour chaque champs par section.
 
-Le présent projet venait pallier aux problèmes rencontrés en facilitant et en accélérant le développement, en permettant une personnalisation et en développant l'anonymisation des données, comme second cas pratique d'étude.
+Le présent projet venait pallier aux problèmes rencontrés en facilitant et en accélérant le développement, en permettant une personnalisation et en développant l'anonymisation des données et était donc tout indiqué comme second cas pratique d'étude.
 
 % À l'instar de l'Accorderie, cela permettait aussi un cas réel d'utilisation empirique du projet afin d'améliorer et de comprendre ce dont le générateur de code a besoin. 
 
@@ -282,7 +282,7 @@ Le présent projet venait pallier aux problèmes rencontrés en facilitant et en
 \section{Définitions et concepts}
 
 
-\subsection{Caractéristique de la plateforme Odoo}
+\subsection{Caractéristiques de la plateforme Odoo}
 
 % TODO mettre les besoins issues des cas pratique (Accorderie) (CEPPP) et que les propriétés Odoo répondent à leur critère
 
@@ -293,44 +293,44 @@ Pour générer des modules Odoo, le générateur de code a besoin de s'appuyer s
 L’architecture MVC permet de séparer les composantes logicielles comme suit : 
 \begin{enumerate}
     \item Le modèle : représente les données et les règles de l’application. Le modèle est responsable de la manipulation des données, de leur stockage et de leur récupération.
-    \item La vue : représente la présentation des données. La vue est responsable de l’affichage des données stockées dans le modèle à l’utilisateur final.
+    \item La vue : représente la présentation des données. La vue est responsable de l’affichage, à l’utilisateur final, des données stockées dans le modèle.
     \item Le contrôleur : gère les interactions entre le modèle et la vue. Le contrôleur est responsable de la réception des demandes de l’utilisateur et de leur transmission au modèle, puis de la récupération des données du modèle pour les transmettre à la vue.
 \end{enumerate}
 Il est possible de modifier une de ces composantes sans affecter les autres composantes, ce qui facilite la maintenance.
 
 \subsubsection{Architecture ORM}
 
-L'utilisation de requêtes SQL pour communiquer avec des bases de données demande un temps considérable au développeur à implémenter et elle nécessite la programmation d'interface avec la base de données. L'utilisation d'un ORM permet d'augmenter la productivité, de faciliter la maintenance et augmente la sécurité d'un logiciel. L’objectif du ORM est de faciliter la manipulation des données stockées dans une base de données relationnelle en les représentant sous forme d’objets dans un langage de programmation orientée objet\footnote{\url{https://fr.wikipedia.org/wiki/Mapping_objet-relationnel}}. Cela permet la simplification de l’architecture en l’écrivant en langage haut niveau au lieu de directement en SQL, réduisant le nombre d'erreurs et facilite la maintenance.
+L'utilisation de requêtes SQL pour communiquer avec des bases de données demande un temps considérable au développeur à implémenter et elle nécessite la programmation d'interface avec la base de données. L'utilisation d'un ORM permet de bonifier la productivité, de faciliter la maintenance et d'augmenter la sécurité d'un logiciel. L’objectif du ORM est de faciliter la manipulation des données stockées dans une base de données relationnelle en les représentant sous forme d’objets dans un langage de programmation orientée objet\footnote{\url{https://fr.wikipedia.org/wiki/Mapping_objet-relationnel}}. Cela permet la simplification de l’architecture en l’écrivant en langage haut niveau, au lieu de directement en SQL, réduisant le nombre d'erreurs et facilite la maintenance.
 
 \subsubsection{Architecture modulaire par héritage}
 
-L'ensemble des fonctionnalités nécessaire à la gestion des procédures et ressources des organisations rend le développement complexe. Pour réduire cette complexité du développement logiciel, utiliser une architecture modulaire permet la réutilisation de code et créer des relations fonctionnelles personnalisables aux contextes des organisations.
+L'ensemble des fonctionnalités nécessaire à la gestion des procédures et ressources des organisations rend le développement complexe. Pour réduire cette complexité du développement logiciel, choisir une architecture modulaire permet la réutilisation de code et la création de relations fonctionnelles personnalisables au contexte des organisations.
 
 L’héritage dans Odoo 12 peut se faire de deux manières : 
 \begin{enumerate}
-    \item L’héritage par extension : Cela permet d’ajouter des fonctionnalités ou de modifier le comportement d’un module existant sans toucher au code source d’origine. Les nouvelles fonctionnalités peuvent être ajoutées en créant un nouveau module qui hérite du module d’origine et en y ajoutant des vues, des modèles ou des contrôleurs supplémentaires.
+    \item L’héritage par extension : Cela permet d’ajouter des fonctionnalités ou de modifier le comportement d’un module existant, sans toucher au code source d’origine. Les nouvelles fonctionnalités peuvent être ajoutées en créant un nouveau module qui hérite du module d’origine et en y ajoutant des vues, des modèles ou des contrôleurs supplémentaires.
     \item L’héritage par substitution : Cela permet de remplacer complètement le comportement d’un module existant en créant un nouveau module qui hérite du module d’origine et en y modifiant les vues, les modèles ou les contrôleurs existants.
 \end{enumerate}
-En utilisant l’architecture modulaire avec héritage dans Odoo 12, les développeurs peuvent facilement personnaliser l’application pour répondre aux besoins spécifiques de leur organisation, sans toucher au code source d’origine et sans compromettre la compatibilité avec les mises à jour futures.
+En utilisant l’architecture modulaire avec héritage dans Odoo 12, les développeurs peuvent facilement personnaliser l’application pour répondre aux besoins spécifiques d'une organisation, sans toucher au code source d’origine et sans compromettre la compatibilité, par exemple, avec les mises à jour futures.
 
 
 \subsubsection{Fonctionnalité du hook lors de l’installation d’un module}
 
-Au moment de l’installation d’un module Odoo, il y a des opérations qui peuvent être effectuées, comme par exemple migrer des données pour les adapter à un nouveau modèle de données. Ainsi, il y a une fonctionnalité qui se nomme le hook pour «pre-install», «post-install» et «uninstall». Ce sont des méthodes qui sont exécutées soit au moment de l’installation, avant ou après l’initialisation de la plateforme, puis à la désinstallation. En «post-install», il devient possible d’exécuter du code et accéder à la plupart des fonctionnalités du ORM au moment d’installer un module. C’est une manière pour exécuter des scripts dans la plateforme au moment de l’installation d’un module, que ce soit en ligne de commande ou via l’application «Application» dans Odoo.
+Au moment de l’installation d’un module Odoo, il y a des opérations qui peuvent être effectuées, comme migrer des données pour les adapter à un nouveau modèle de données. Ainsi, il y a une fonctionnalité qui se nomme le hook pour «pre-install», «post-install» et «uninstall». Ce sont des méthodes qui sont exécutées soit au moment de l’installation, avant ou après l’initialisation de la plateforme, puis à la désinstallation. En «post-install», il devient possible d’exécuter du code et d'accéder à la plupart des fonctionnalités du ORM au moment d’installer un module. C’est une manière pour exécuter des scripts dans la plateforme au moment de l’installation d’un module, que ce soit en ligne de commande ou via l’application «Application» dans Odoo.
 
 \subsubsection{Website builder}
 
-Le «Website builder» est un outil qui permet une autonomie aux utilisateurs lambda\footnote{Utilisateur semblable à la majorité dans son comportement. \url{https://fr.wiktionary.org/wiki/utilisateur_lambda}} (augmenter l'accessibilité) dans la création et mise à jour de contenus des pages web sur le site vitrine de l'organisation. C’est un mécanisme LCNC\footnote{Qui nécessite peu ou pas du tout du code} dans Odoo 12 pour créer et modifier un site web multi-page par un mécanisme de «drag and drop»\footnote{Glisser-déposer} avec des «snippets»\footnote{Fragment de code} paramétrables. Il permet de modifier une page web en réduisant le besoin de recourir à un expert technique réduisant ainsi les coûts de développement.
+Le «Website Builder» est un outil qui permet une autonomie aux utilisateurs lambda\footnote{Utilisateur semblable à la majorité dans son comportement. \url{https://fr.wiktionary.org/wiki/utilisateur_lambda}} (augmenter l'accessibilité) dans la création et mise à jour de contenus de pages web sur le site vitrine de l'organisation. C’est un mécanisme LCNC\footnote{Qui nécessite peu ou pas du tout du code} dans Odoo 12 pour créer et modifier un site web multi-pages par un mécanisme de «drag and drop»\footnote{Glisser-déposer} avec des «snippets»\footnote{Fragment de code} paramétrables. Il permet de modifier une page web en réduisant le besoin de recourir à un expert technique abaissant ainsi les coûts de développement.
 
 \subsubsection{Internationalisation et localisation}
 
-Il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard i18n, qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\cite{wikipedia_i18n}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou XML. Le système permet de générer un fichier d'extension «.pot» qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier d'extension «.pot» pour faire un fichier d'extension «.po» sous la nomenclature i18n et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier d'extension «.po» avec les traductions déjà connues par le système, il suffit de le mettre à jour.
+Il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard i18n, qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\cite{wikipedia_i18n}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou XML. Le système permet de générer un fichier d'extension «.pot», qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier d'extension «.pot» pour faire un fichier d'extension «.po» sous la nomenclature i18n et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier d'extension «.po» avec les traductions déjà connues par le système, il suffit de le mettre à jour.
 
 \subsubsection{ERPLibre}
 
-Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créés causant une divergence sur les fonctionnalités créant le modèle d'affaires «Open Core»\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un ERP est complexe et nécessite l'intervention d'un ou des experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme au réalité de l'organisation. Bien que l'OCA travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseau d'entraides à pouvoir se débrouiller de manière souveraine.
+Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créés causant une divergence sur les fonctionnalités, créant le modèle d'affaires «Open Core»\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un ERP est complexe et nécessite l'intervention d'experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme aux réalités de l'organisation. Bien que l'OCA travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseaux d'entraide à pouvoir se débrouiller de manière souveraine.
 
-La plateforme ERPLibre a ainsi été créé en début 2020 en encapsulant la version Odoo 12.0 sous licence AGPLv3 en offrant une alternative 100\% libre, et dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible au même endroit toute l'information nécessaire à la gestion de son ERP pour une organisation.
+La plateforme ERPLibre a ainsi été créée en début 2020 en encapsulant la version Odoo 12.0, sous licence AGPLv3, en offrant une alternative 100\% libre, dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible, au même endroit, toute l'information nécessaire à la gestion de l'ERP d'une organisation.
 
 % \subsection{Communauté de développement}
 
@@ -370,7 +370,7 @@ print("Hello, World!")
 \label{fig:exemple_code_hello_world}
 \end{figure}
 
-De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui est parfois représenté par «machine», cela fait référence à un ensemble de module. Lorsque nous utilisons le terme robot logiciel codeur, nous faisons référence au «générateur de code» qui y est intégré, mais aussi à un ensemble de scripts dans ERPLibre, puisque le robot doit avoir un contrôle sur son projet en entier jusqu'au déploiement de celui-ci. Ainsi, la machine est au niveau conceptuel théorique, le générateur de code est au niveau composante logicielle, et le robot logiciel codeur est au niveau de solution logicielle.
+De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui est parfois représenté par «machine», cela fait référence à un ensemble de modules. Lorsque nous utilisons le terme robot logiciel codeur, nous faisons référence au «générateur de code» qui y est intégré, mais aussi à un ensemble de scripts dans ERPLibre, puisque le robot doit avoir un contrôle sur son projet en entier, jusqu'au déploiement de celui-ci. Ainsi, la machine est au niveau conceptuel théorique, le générateur de code est au niveau composante logicielle, et le robot logiciel codeur est au niveau de solution logicielle.
 
 \subsection{Exemples illustratifs d’auto-reproducteur}\label{exemple_illustratif_auto_reproducteur}
 
@@ -378,7 +378,7 @@ De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui 
 
 «Un quine~\cite{sarkar2020quines} (ou programme auto-reproducteur, self-reproducing en anglais) est un programme informatique qui imprime son propre code source»~\cite{wiki_quine} sans se lire lui-même. Il doit contenir une logique d’écriture de code et contenir ses méta-données de génération. Il est ainsi un générateur de premier niveau.
 
-Voir Figure~\ref{fig:exemple_quine}, la sortie textuelle dans la console lors de l'exécution est le même que son code.
+Voir Figure~\ref{fig:exemple_quine}, la sortie textuelle dans la console, lors de l'exécution, est la même que son code.
 
 \begin{figure}
 \begin{lstlisting}[language=Python]
@@ -392,11 +392,11 @@ Cependant, le Quine ne sait rien faire d’autre que de s’auto-générer. Ce q
 
 \subsection{Exemples illustratifs de générateur de code}
 
-La génération de code est un des moyens pour soutenir le développeur dans son développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps~\ref{devops_ref}.
+La génération de code est un des moyens pour soutenir le développeur dans le développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps~\ref{devops_ref}.
 
 \subsubsection{Technique de génération de code basique}
 
-Dans Figure~\ref{fig:exemple_gen_code_basique}, la fonction «eval» en Python est dynamique, c'est-à-dire qu’il permet l’exécution à partir d’une chaîne de caractère, ce type de génération de code ne permet pas une évolution efficace ou une simplification du développement. Ça revient à lire un fichier et à l'imprimer, il n’a pas de capacité dynamique d’adaptation.
+Dans Figure~\ref{fig:exemple_gen_code_basique}, la fonction «eval» en Python est dynamique, c'est-à-dire qu’elle permet l’exécution à partir d’une chaîne de caractères, ce type de génération de code ne permet pas une évolution efficace ou une simplification du développement. Ça revient à lire un fichier et à l'imprimer, il n’a pas de capacité dynamique d’adaptation.
 
 \begin{figure}
 \begin{lstlisting}[language=Python, upquote=true, caption={C de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_c}]
@@ -414,7 +414,7 @@ eval("""print('print("Hello, World!")')""")
 \label{fig:exemple_gen_code_basique}
 \end{figure}
 
-Dans Figure~\ref{fig:exemple_gen_code_basique_2}, cette technique basique est paramétrable, contrairement à la première exemple Figure~\ref{fig:exemple_gen_code_basique}. Le f-strings fait office de template et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
+Dans Figure~\ref{fig:exemple_gen_code_basique_2}, cette technique basique est paramétrable, contrairement au premier exemple Figure~\ref{fig:exemple_gen_code_basique}. Le f-strings fait office de «template» et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
 
 \begin{figure}
 \begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_c}]
@@ -443,11 +443,11 @@ with open("C.py", "w") as f:
 \label{fig:exemple_gen_code_basique_2}
 \end{figure}
 
-\subsubsection{Technique de génération de code par template}
+\subsubsection{Technique de génération de code par «template»}
 
-Un moteur de template est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet web.
+Un moteur de «template» est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet web.
 
-La génération de code par template est une technique de développement de logiciels qui permet de produire du code source à partir de modèles prédéfinis appelés templates.
+La génération de code par «template» est une technique de développement de logiciels qui permet de produire du code source à partir de modèles prédéfinis appelés «template».
 
 Le code de La Figure~\ref{fig:exemple_gen_code_basique_template} utilise la bibliothèque «Jinja2». C'est un mécanisme similaire à Figure~\ref{fig:exemple_gen_code_basique_2}, cependant la logique est intégrée directement dans le fichier template.
 
@@ -507,7 +507,7 @@ with open("C.py", "w") as f:
 
 \subsubsection{Générateur de code par template avec Odoo 12}
 
-La technique utilisée par Odoo 12 est le «scaffold», il gère 2 types de template : un module de base «default» et un module thème «theme».
+La technique utilisée par Odoo 12 est le «scaffold», il gère 2 types de «template» : un module de base «default» et un module thème «theme».
 
 Dans Figure~\ref{fig:exemple_odoo_scaffold_module}, tout est presque commenté, rien n’est utilisable, mais nous avons la structure MVC. Le gain d’accélération au développement est minime.
 
@@ -535,7 +535,7 @@ views
 \label{fig:exemple_odoo_scaffold_module}
 \end{figure}
 
-Cette fois-ci, dans Figure~\ref{fig:exemple_odoo_scaffold_theme}, tout est vide, le module «theme\_module» fait une erreur à l'installation. Il est plus efficace copier et modifier un thème existant que d'utiliser le «scaffold».
+Cette fois-ci, dans Figure~\ref{fig:exemple_odoo_scaffold_theme}, tout est vide, le module «theme\_module» produit une erreur à l'installation. Il est plus efficace de copier et de modifier un thème existant que d'utiliser le «scaffold».
 
 \begin{figure}
 \begin{lstlisting}[language=Python]
@@ -557,11 +557,11 @@ views
 \label{fig:exemple_odoo_scaffold_theme}
 \end{figure}
 
-Le gain d’accélération au développement est si minime, qu'il peut être considéré comme négligeable. Copier un module fonctionnel et le modifier en enlevant ce qu’on ne veut pas est plus efficace que d’utiliser cette technique. Disons que cette technique est utile pour un débutant pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel ou lire la documentation officiel sur comment développer un module Odoo.
+Le gain d’accélération au développement est si minime qu'il peut être considéré comme négligeable. Copier un module fonctionnel et le modifier en enlevant ce qu’on ne veut pas est plus efficace que d’utiliser cette technique. Admettons que cette technique est utile pour un débutant, pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel ou lire la documentation officielle sur comment développer un module Odoo.
 
 \subsubsection{Technique de génération de code par rétro-ingénierie}
 
-Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur le code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
+Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur de code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
 
 \begin{figure}[htb]
 \centering
@@ -570,7 +570,7 @@ Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} a
 \label{fig:retro_re_ing}
 \end{figure}
 
-Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque AST pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logiciel entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
+Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque AST pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logicielle entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
 
 \begin{figure}
 \begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_c}]
@@ -615,9 +615,9 @@ print("Hello, World!")
 
 \subsection{Tester un générateur de code}
 
-Il existe le test «Output comparison testing»~\cite{wikipedia_test_informatique} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuel.
+Il existe le test «Output comparison testing»~\cite{wikipedia_test_informatique} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuelle.
 
-Pour valider si le générateur utilise sa pleine capacité, il suffit de faire des tests de toutes les combinaisons de ses techniques de génération et d'utiliser un outil de couverture de code pour déterminer les lignes qui sont opérés.
+Pour valider si le générateur utilise sa pleine capacité, il suffit de faire des tests de toutes les combinaisons de ses techniques de génération et d'utiliser un outil de couverture de code pour déterminer les lignes qui sont opérées.
 
 % TODO missing auto-ingénierie, auto-amélioration, évolution technique rétro
 

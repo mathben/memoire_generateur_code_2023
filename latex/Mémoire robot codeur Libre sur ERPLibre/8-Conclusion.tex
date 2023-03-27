@@ -12,18 +12,18 @@ Les résultats obtenus ont permis d’atteindre en tout ou en partie l’ensembl
 
 \subsection{Générateur de code}
 
-En partant de modules existants, le développement du générateur de code a été orienté pour avoir une traçabilité sur les données de génération des modules. Puis des techniques de rétro-ingénierie ont été implémentés pour permettre l'extraction d'information et intégrer des boucles d'amélioration continue sur le développement, permettant la génération de code automatisée. Un mécanisme de test de génération de code a été implémenté pour éviter la régression sur le développement. Le développement de module dans Odoo 12 est maintenant accéléré pour plusieurs contextes.
+En partant de modules existants, le développement du générateur de code a été orienté pour avoir une traçabilité sur les données de génération des modules. Puis des techniques de rétro-ingénierie ont été implémentées pour permettre l'extraction d'information et intégrer des boucles d'amélioration continue sur le développement, permettant la génération de code automatisée. Un mécanisme de test de génération de code a été implémenté pour éviter la régression sur le développement. Le développement de module dans Odoo 12 est maintenant accéléré pour plusieurs contextes.
 
 \subsection{Gestion de communauté autour de projet libre}
 Pour la gestion de communauté autour de projet libre, 3 guides ont été rédigés pour permettre d'outiller le gestionnaire de communauté à intégrer des participants dans leur développement technologique. Un guide pour démarrer un projet, un guide pour gérer les participants et un guide pour les règles éthiques d'hébergement. De plus, l'outil STARS est accessible directement dans la plateforme ERP pour l'amélioration continue.
 
 \subsection{Projet Accorderie}
 
-Une analyse des besoins fonctionnels a été effectué pour comprendre les développements à effectuer. La migration de la base de données d'une plateforme en PHP a été réussie en utilisant le générateur de code, mais elle est encore à ce jour en adaptation vers un modèle Odoo plus intégré au ERP. Les efforts ont été mis pour la création d’une interface utilisateur avec des technologies qui n’étaient pas à la base supportées dans Odoo.
+Une analyse des besoins fonctionnels a été effectuée pour comprendre les développements à réaliser. La migration de la base de données d'une plateforme en PHP a été réussie en utilisant le générateur de code, mais elle est encore, à ce jour, en adaptation vers un modèle Odoo plus intégré au ERP. Les efforts ont été mis pour la création d’une interface utilisateur avec des technologies qui n’étaient pas, à la base, supportées dans Odoo.
 
 \subsection{Projet Portail CEPPP}
 
-Une analyse des besoins fonctionnels a été effectué pour comprendre le développement à effectuer. Le générateur de code a été utilisé en début de projet pour faire la migration des fonctionnalités personnalisés par un ancien développeur sur la plateforme SuiteCRM. Cela a permis d'économiser du temps de développement et de réduire les erreurs possibles de retranscription du langage PHP au langage Python, ainsi que la génération des vues administrations et portails. Cependant, nous avons cessé d'utiliser le générateur de code suite à la ré-ingénierie dès que le projet a commencé à diverger vers des fonctionnalités personnalisées qu’il ne pouvait plus supporter, telle que l'anonymisation des données. La nouvelle solution est utilisée en production.
+Une analyse des besoins fonctionnels a été effectuée pour comprendre le développement à réaliser. Le générateur de code a été utilisé en début de projet pour faire la migration des fonctionnalités personnalisées par un ancien développeur sur la plateforme SuiteCRM. Cela a permis d'économiser du temps de développement et de réduire les erreurs possibles de retranscription du langage PHP au langage Python, ainsi que la génération des vues administrations et portails. Cependant, nous avons cessé d'utiliser le générateur de code suite à la ré-ingénierie, dès que le projet a commencé à diverger vers des fonctionnalités personnalisées qu’il ne pouvait plus supporter, telle que l'anonymisation des données. La nouvelle solution est utilisée en production.
 
 %%
 %%  LIMITATIONS
@@ -32,7 +32,7 @@ Une analyse des besoins fonctionnels a été effectué pour comprendre le dével
 % TODO dire en quoi ce que tu as fait améliore l’état de l’art décrit dans la littérature SYNTHÈSE
 % TODO décrire les limitations/faiblesses de ce que tu as produit comme logiciel/résultats LIMITATION
 
-Les limitations sont causés en général par le manque de temps de terminer les développements et seulement la ligne critique pour réaliser la liste des tâches a été effectué.
+Les limitations sont causées, en général, par le manque de temps de terminer les développements et seulement la ligne critique a été suivie pour réaliser la liste des tâches nécessaires à la réponse des demandes-client.
 
 \subsection{Couverture des tests}
 Les tests devraient couvrir 100\% du code, cependant la couverture est de 84\% pour 3 raisons :
@@ -44,13 +44,14 @@ Les tests devraient couvrir 100\% du code, cependant la couverture est de 84\% p
 \end{enumerate}
 
 \subsection{Personnalisation du développement}
-La personnalisation de module ERP passe par le nombre de technique supporté, mais aussi par la paramétrisation de ces techniques. L'emphase du projet a été mis sur le support des techniques et permettre l'amélioration continue sur des modules. Toutes les combinaisons n'ont pas été testé et il manque plusieurs possibilités de paramétrisation.
+La personnalisation de module ERP passe par le nombre de technique supporté, mais aussi par la paramétrisation de ces techniques. L'accent du projet a été mis sur le support des techniques et sur permettre l'amélioration continue sur des modules. Toutes les combinaisons n'ont pas été testée et il manque plusieurs possibilités de paramétrisation.
 
 \subsection{Auto-reproduction du générateur de code}
-Bien qu'il y a du progrès dans l'auto-reproduction du générateur de code, cette tâche n'est pas terminé par le manque de technique à supporter ainsi que les modules qui l'hérite.
+%todomarie cette phrase n'est vraiment pas claire, tu devrais mieux expliquer
+Bien qu'il y ait du progrès dans l'auto-reproduction du générateur de code, cette tâche n'est pas terminée par le manque de technique à supporter ainsi que les modules qui l'hérite.
 
 \subsection{Extraction de code et de modèles de base de données}
-L'extraction de code PHP, Javascript ou de modèles de base de données ont été fait sur des contextes particuliers tel que le projet Accorderie et CEPPP. Ainsi, il sera nécessaire de faire des ajustements pour supporter de nouveaux projets, et s'assurer de mettre ces techniques d'extraction dans les tests de régression.
+L'extraction de code PHP, Javascript ou de modèles de base de données ont été appliqués sur des contextes particuliers tels que le projet Accorderie et CEPPP. Ainsi, il sera nécessaire de faire des ajustements pour supporter de nouveaux projets et s'assurer de mettre ces techniques d'extraction dans les tests de régression.
 
 %%
 %%  AMELIORATIONS FUTURES / FUTURE RESEARCH
@@ -61,14 +62,14 @@ L'extraction de code PHP, Javascript ou de modèles de base de données ont ét�
 
 % TODO parler de la sympoïèse comme étant la suite sur la partie communautaire et la distribution de système
 % TODO regarder comment intégrer du «Model Driven Architecture»
-
+%todomarie je ne comprends pas du tout cette phrase/section
 Ce projet pourrait avoir une incidence beaucoup plus importante en prenant en considération les réflexions suivante, comme nous avons classé en 5 thématiques : Amélioration du générateur de code, projet Accorderie, projet Ceppp, projet NLP et projet support de développement de module dans la communauté Odoo.
 
 \subsection{Amélioration du générateur de code}
 
-\subsubsection{Amélioration des instances clientes}
+\subsubsection{Amélioration des instances clients}
 
-Il faut intégrer la génération de code à l’intérieur des instances clientes dans l’objectif qu’elles soient accessibles au gestionnaire de déploiement pour y ajouter les nouvelles fonctionnalités suivantes : démarrer la mise à jour, les tests, les améliorations, la migration, importation. Les instances clientes devraient proposer aux clients via les interfaces l'ajout ou le retrait de fonctionnalités selon leurs retours d'expérience et leurs habitudes d'utilisation.
+Il faut intégrer la génération de code à l’intérieur des instances clients dans l’objectif de la rendre accessible au gestionnaire de déploiement pour y ajouter les nouvelles fonctionnalités suivantes : démarrer la mise à jour, les tests, les améliorations, la migration, l'importation. Les instances clients devraient proposer aux clients via les interfaces l'ajout ou le retrait de fonctionnalités selon leurs retours d'expérience et leurs habitudes d'utilisation.
 
 % Intégration de plusieurs types de réseaux de neurones accessibles librement, il doit être compatible avec le libre.
 
@@ -78,16 +79,16 @@ Il faut intégrer la génération de code à l’intérieur des instances client
 
 \subsubsection{Amélioration de l'auto-génération}
 
-Une fois que le générateur de code aura atteint 100\% d’auto-génération, il restera limité à produire que les fonctionnalités qu’il utilise. Il faut faire des tests pour les fonctionnalités qu’il n’utilise pas (ou les combinaisons non utilisés) pour se reproduire. Il reste à auto-générer toutes ses techniques dans des modules qui font de l'héritage sur le générateur de code. L'auto-génération complète va ouvrir la possibilité vers une restructuration de l'architecture par le développeur assisté du générateur pour faciliter l'ajout de techniques d'ingénierie dans la génération de code.
+Une fois que le générateur de code aura atteint 100\% d’auto-génération, il restera limité à ne produire que les fonctionnalités qu’il utilise. Il faut faire des tests pour les fonctionnalités qu’il n’utilise pas (ou les combinaisons non utilisées) pour se reproduire. Il reste à auto-générer toutes ses techniques dans des modules qui font de l'héritage sur le générateur de code. L'auto-génération complète va ouvrir la possibilité à une restructuration de l'architecture par le développeur assistée du générateur pour faciliter l'ajout de techniques d'ingénierie dans la génération de code.
 
 % Ajout de la génération de test de base, génération de documentation, mise à jour, migration lors d’une mise à jour sur les données, migration d’une mise à jour de la plateforme.
 
 \subsubsection{Amélioration de l’architecture}
 
-Voici un survol des améliorations de l'architecture possible :
+Voici un survol des améliorations de l'architecture possibles :
 
 \begin{enumerate}
-    \item Parallélisation de tout le code tout le temps lorsque cela est possible;
+    \item Parallélisation de tout le code, en tout temps, temps lorsque cela est possible;
     \item Automatisation de la configuration pour le déverminage;
     \item Automatiser la détection des anomalies;
     \item Améliorer l’interface LCNC pour pouvoir accomplir les mêmes étapes que le mode de paramétrisation «Code hook»;
@@ -95,12 +96,12 @@ Voici un survol des améliorations de l'architecture possible :
         \begin{enumerate}
         \item des applications Cordova pour le support mobile natif;
         \item des extensions Javascript dans Gnome Shell pour étendre les fonctionnalités du ERP directement sur le bureau d’un ordinateur sans passer par un navigateur web;
-        \item d'autres modules sur différents systèmes ERP tel que Tryton ou NextERP;
-        \item générer des scripts de développement dans le projet ERPLibre qui ne dépendant pas d’Odoo;
-        \item supporter des applications embarquées pour contrôler des automates ou des systèmes de production automatisé;
+        \item d'autres modules sur différents systèmes ERP tels que Tryton ou NextERP;
+        \item générer des scripts de développement dans le projet ERPLibre qui ne dépendent pas d’Odoo;
+        \item supporter des applications embarquées pour contrôler des automates ou des systèmes de production automatisée;
         \end{enumerate}
     \item Implémenter de l'auto-ingénierie sur le développement des techniques du générateur de code;
-    \item Génération de code par requis fonctionnelle.
+    \item Génération de code par requis fonctionnel.
 \end{enumerate}
 
 % Problème d’extraction, il était dans le générateur de code au départ dans le développement, il y a donc une extraction à deux endroits qui rend complexe la gestion du code. Au fil de la progression du développement, l’extraction de données par rétro-ingénierie s’avère plus efficace que les méta-données du module dans le système Odoo.
@@ -117,37 +118,37 @@ Ces travaux d’amélioration devront être effectués après l’auto-générat
 
 \subsubsection{Amélioration de la gestion de projet et statistiques}
 
-Le générateur de code doit offrir des outils de gestionnaire de projet pour suivre le développement, faire la liaison entre les demandes clients et les avancements des développeurs, le suivi de la ré-ingénierie des processus d'affaires de l'entreprise, etc. Bref, faire le suivi des étapes des facteurs décisionnels pour l'implantation d'un ERP.
+Le générateur de code doit offrir des outils de gestionnaire de projet pour suivre le développement, faire la liaison entre les demandes clients et les avancements des développeurs, le suivi de la ré-ingénierie des processus d'affaires de l'entreprise, etc. Bref, il doit permettre de faire le suivi des étapes des facteurs décisionnels pour l'implantation d'un ERP.
 
-De plus, puisque l’état des méta-données évolue, il devient difficile de faire le suivi des performances du générateur de code, puisqu’il vient aider dans les boucles d’itérations. Ainsi, il faudrait faire des statistiques sur ces itérations pour évaluer la contribution du générateur versus l'implication du développeur.
+De plus, puisque l’état des méta-données évolue, il devient difficile de faire le suivi des performances du générateur de code, puisqu’il vient aider dans les boucles d’itérations. Ainsi, il faudrait dégager des statistiques sur ces itérations pour évaluer la contribution du générateur versus l'implication du développeur.
 
 % Il manque l’analyse des différences de code sur les différentes sections générées.
 
 \subsubsection{Suite du développement du générateur de code}
 
-Autre que la modification de l'architecture, le générateur de code doit générer des tests fonctionnels sur les modules Odoo, générer de la documentation fonctionnelle et technique, développer de la migration de module et de données.
+Autre que la modification de l'architecture, le générateur de code doit générer des tests fonctionnels sur les modules Odoo, générer de la documentation fonctionnelle et technique et développer de la migration de module et de données.
 
 % selon les changements du code de versions antérieurs des versions antérieurs. Il faudrait aussi un suivi des fonctionnalités selon les exigences clientes.
 
-Une fois l'auto-reproduction complété, la prochaine étape est de tester sa mise à niveau de tous les modules dans la communauté et détecter les techniques manquantes par supervision du développeur pour les implémenter. Une fois qu’il aura géré tous les modules de la communauté, nous pourrons implémenter la migration vers des mises à jour de la plateforme, c’est-à-dire passer d'odoo 12 vers Odoo 14, puis vers Odoo 16. La migration va nécessiter l'adaptation des techniques par différentes version de la plateforme.
+Une fois l'auto-reproduction complétée, la prochaine étape est de tester sa mise à niveau de tous les modules dans la communauté et détecter les techniques manquantes par supervision du développeur pour les implémenter. Une fois que tous les modules de la communauté seront gérés, nous pourrons implémenter la migration vers des mises à jour de la plateforme, c’est-à-dire passer d'odoo 12 vers Odoo 14, puis vers Odoo 16. La migration va nécessiter l'adaptation des techniques par différentes version de la plateforme.
 
 % Une fois que l’auto-poïèse sera en place sur la gestion de la machine, la prochaine étape sera de faire l’auto-poïèse sur tout le code Odoo pour le développement de l’architecture.
 
 \subsection{Projet Accorderie}
 
-Une plateforme de l'espace membre est en finalisation de développement sur le site web, il faudrait poursuivre la mise à jour du générateur de code pour supporter cette nouvelle technologie pour des projets futurs similaires.
+Une plateforme de l'espace membre est en finalisation de développement, il faudrait poursuivre la mise à jour du générateur de code pour supporter cette nouvelle technologie pour des projets futurs similaires.
 
 % TODO terminé la plateforme Accorderie avec génération AngularJS ou Angular
 
 \subsection{Projet Portail CEPPP}
 
-Le générateur de code doit être en mesure de faire les personnalisations nécessaire au projet Portail CEPPP, tel que l'anonymisation des données. Lorsque ces fonctionnalités seront supportés, la prochaine étape est d'ammener le client à utiliser par soi même le générateur de code pour la maintenance future de la plateforme, ainsi nous pourrons évaluer la faciliter d'utilisation pour des utilisateurs non développeur.
+Le générateur de code doit être en mesure de produire les personnalisations nécessaire au projet Portail CEPPP, telles que l'anonymisation des données. Lorsque ces fonctionnalités seront supportées, la prochaine étape est d'amener le client à utiliser par soi même le générateur de code pour la maintenance future de la plateforme. Ainsi, nous pourrons évaluer la facilité d'utilisation pour des utilisateurs non développeur.
 
 \subsection{NLP}
+%todomarie est-ce que NLP est défini qqpart?
+La technologie NLP va permettre de comprendre des textes rédigés par l’utilisateur et les associer à des techniques de programmation. Le NLP est une solution alternative pour interfacer avec l’utilisateur et communiquer avec ce dernier pour développer des logiciels. De plus, cela va améliorer la rédaction de documentation adaptée aux contextes de l'utilisateur. 
 
-La technologie NLP va permettre de comprendre des textes rédigés par l’utilisateur et l’associer à des techniques de programmation. Le NLP est une solution alternative pour interfacer avec l’utilisateur et communiquer avec pour développer des logiciels. De plus, cela va améliorer la rédaction de documentation adapté à des contextes de l'utilisateur. 
-
-Il existe la communauté Hugging Face qui base ses technologies d'apprentissage automatique sur des solutions ouvertes. Il existe des solutions NLP accessible et compatible avec le générateur de code.
+Il existe la communauté Hugging Face qui base ses technologies d'apprentissage automatique sur des solutions ouvertes. Il existe des solutions NLP accessibles et compatibles avec le générateur de code.
 
 % TODO Définir le besoin 
 % TODO parler d’émotion et empathie
@@ -174,4 +175,11 @@ Il existe la communauté Hugging Face qui base ses technologies d'apprentissage 
 
 % L'autopoïèse qui sera développé servira à produire la représentation du contenu de ma thèse que je poursuis.
 \section{Importance de la recherche}
-En conclusion, le robot logiciel libre codeur est en première phase de développement incluant la génération de code, l'interface avec l'utilisateur et la rétro-ingénierie pour appliquer de l'amélioration continue orienté au support d'un réseau d'entraide. L’automatisation du développement de logiciel va permettre l’accélération de création de fonctionnalités et réduction des coûts de développement. Les communautés auront accès à des fonctionnalités plus aisément permettant l'adaptation à des états d'urgence tel le partage de banques de temps de service en temps de crise. Le robot va permettre aux chercheurs d’être plus efficaces dans leurs travaux en facilitant le développement de leurs propres outils pouvant mieux tracer, s’interfacer et avoir le contrôle de leurs données. Avec les crises mondiales, les états d’urgence seront de plus en plus présents, l’accélération de développement technologique aura un impact sur l’appropriation de la technologie aux communautés pour leur permettre de mettre en place des solutions rapidement.
+En conclusion, le robot logiciel libre codeur est en première phase de développement incluant la génération de code, l'interface avec l'utilisateur et la rétro-ingénierie pour appliquer de l'amélioration continue orientée au support d'un réseau d'entraide. 
+
+L’automatisation du développement de logiciel va permettre l’accélération de création de fonctionnalités et la réduction des coûts de développement. 
+
+Le robot va permettre aux chercheurs d’être plus efficaces dans leurs travaux en facilitant le développement de leurs propres outils pouvant mieux tracer, s’interfacer et avoir le contrôle de leurs données.
+
+Les communautés auront accès à des fonctionnalités plus aisément, permettant ainsi l'adaptation à des états d'urgence, grâce, par exemple, au partage de banques de temps de service en temps de crise. 
+Avec les crises mondiales, les états d’urgence seront de plus en plus présents, l’accélération du développement technologique aura un impact sur l’appropriation de la technologie des communautés pour leur permettre de mettre en place des solutions rapidement.

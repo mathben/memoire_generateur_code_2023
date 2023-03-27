@@ -1,10 +1,10 @@
 \Chapter{RÉSULTAT EXPÉRIMENTAUX}\label{sec:Theme2}
 
-Nous présentons les résultats en commençant d’abord par décrire l’implémentation du modèle conceptuel du robot logiciel codeur présenté dans la sous-section~\ref{subsection_cadre_conceptuel}. Ensuite, nous présenterons successivement les résultats propres à chacun des sous-objectifs décrits dans le chapitre~\ref{chapitre_methode}.
+Nous présentons les résultats en commençant par décrire l’implémentation du modèle conceptuel du robot logiciel codeur présenté dans la sous-section~\ref{subsection_cadre_conceptuel}. Ensuite, nous présenterons successivement les résultats propres à chacun des sous-objectifs décrits dans le chapitre~\ref{chapitre_methode}.
 
 \section{Implémentation: du modèle conceptuel au modèle opérationnel}
 
-L’implémentation de la machine (conceptuelle) est passée par la programmation manuelle d’une première interface et d’un premier noyau, en mettant à jour une version préliminaire de générateur basé sur une GUI\cite{bluiksnot_repo} en lui intégrant la capacité de générer du code à partir d’un module externe via son «hook» au moment de l’installation. La version à ce jour, ainsi que ses guides d’utilisation et ses scripts associés, sont disponibles sur le site de ERPLibre\footnote{\url{https://erplibre.ca}}.
+L’implémentation de la machine (conceptuelle) est passée par la programmation manuelle d’une première interface et d’un premier noyau, en mettant à jour une version préliminaire de générateur basée sur une GUI\cite{bluiksnot_repo} en lui intégrant la capacité de générer du code à partir d’un module externe via son «hook» au moment de l’installation. La version à ce jour, ainsi que ses guides d’utilisation et ses scripts associés, sont disponibles sur le site de ERPLibre\footnote{\url{https://erplibre.ca}}.
 
 L’interface permet l’interactivité avec un utilisateur ou le système-cible. L’interface est découplée en deux ensembles de méta-données: µ$_C^A$ et µ$_C^B$. µ$_C^B$ est l’ensemble qui paramétrise le passage de méta-données au code pour un module spécifique. µ$_C^A$ est l’ensemble qui paramétrise le passage de code aux méta-données tout en préparant un µ$_C^B$ adapté à ce module spécifique. Ce découplage a permis l’adaptation de l’interface au contexte de l’installation de modules sur une instance Odoo via des «hooks». Par la suite, un ensemble supplémentaire de méta-données, noté µ$_C^0$, a été dégagé de la programmation manuelle de versions successives de µ$_C^A$. µ$_C^0$ sert à initialiser une version de départ de µ$_C^A$.
 
@@ -44,7 +44,7 @@ La Figure~\ref{fig:dia_architecture} démontre un développeur qui utilise l'int
 
 Description des différentes sections : 
 \begin{enumerate}
-    \item L’interface machine permet à l’utilisateur de créer un modèle de données pour indiquer à la machine quelle opération effectuée avec leurs données associées. Plusieurs combinaisons, héritables, sont possibles selon les différentes techniques. De plus, c’est ici qu’on vient activer la génération de code.
+    \item L’interface machine permet à l’utilisateur de créer un modèle de données pour indiquer à la machine quelle opération effectuer avec les données associées. Plusieurs combinaisons, héritables, sont possibles selon les différentes techniques. De plus, c’est ici qu’on vient activer la génération de code.
     \item L’extraction par rétro-ingénierie permet de remplir le modèle de méta-données sans passer par la paramétrisation. Il extrait des informations qui ne sont pas accessibles dans le modèle de données d’Odoo sur le module.
     \item La création de méta-données se fait soit par l’utilisateur via la GUI ou le «Code Hook», il gère simultanément plusieurs techniques qui sont dans des modules. Le mode «nouveau» permet de créer de nouvelles données. Une fois qu’elles sont créées, c’est le mode «existant» qui est utilisé. Cependant, le mode «hybride» permet d’écraser les données existantes en réactivant le mode «nouveau».
     \item Le générateur de fichier se fait activer par l’interface, mais il prend les méta-données pour faire sa génération selon le mode qu’il doit générer et l’architecture qu’il connaît. Il fait des liaisons entre les modèles et les vues en référence aux noms des champs de chaque modèle de données.
@@ -56,7 +56,7 @@ La sécurité dépend du modèle. Le contrôleur dépend du modèle. La vue dép
 
 \subsection{Auto-générateur}
 
-Représenté par µ$_C^0$, voir Annexe~\ref{annexe_cg_code_uc0}, c’est un auto-générateur! Au moment de son installation, il génère le même code que lui-même au même endroit dans le système de fichier. Une légère modification va créer une autre entité qui sera une déviation dans l’objectif de démarrer une chaîne de production logiciel.
+Représenté par µ$_C^0$, voir Annexe~\ref{annexe_cg_code_uc0}, c’est un auto-générateur. Au moment de son installation, il génère le même code que lui-même, au même endroit dans le système de fichier. Une légère modification va créer une autre entité qui sera une déviation dans l’objectif de démarrer une chaîne de production logicielle.
 
 C'est le module \texttt{M} qui contient les méta-données de µ$_C^0$. Ainsi, exécuter µ$_C^0$ devient un test de fonctionnalité et c'est un succès lorsqu'il n'y a pas de différence. Cependant, sa programmation est actuellement spécifique à sa génération, aucun autre module n’a besoin de cette fonctionnalité unique.
 
@@ -87,7 +87,7 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 
 \begin{enumerate}
 % TODO define Wizard
- \item Ajout de bouton qui ouvre des «Wizard» pour générer les «Views», les «Models» et les «Controllers», voir Figure~\ref{fig:dia_gui_mvc}. Ainsi le développeur peut les configurer et demander de générer les méta-données associées.
+ \item Ajout de bouton qui ouvre des «Wizard» pour générer les «Views», les «Models» et les «Controllers», voir Figure~\ref{fig:dia_gui_mvc}. Ainsi, le développeur peut les configurer et demander de générer les méta-données associées.
     \begin{figure}[htb]
     \centering
     \includegraphics[width=3in]{images/GUI_MVC.png}
@@ -103,20 +103,20 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 % TODO manque le load de https://fr.wikipedia.org/wiki/Extract-transform-load
 % ça devient discussion
 
-La migration de données à partir de SQL était déjà supporté dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations : 
+La migration de données à partir de SQL était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations : 
 
 \begin{enumerate}
-    \item Ajout de type de données, dont ceux utilisés par le projet Accorderie;
+    \item Ajout de type de données, dont celles utilisées par le projet Accorderie;
     \item Ajout d'associations entre les types de données et les différentes personnalisations de l’architecture Odoo;
-    \item Interface représentant la base de données avec les contrôleurs permettant la configuration de la migration sur le modèle de données désirés;
+    \item Interface représentant la base de données avec les contrôleurs permettant la configuration de la migration sur le modèle de données désiré;
     \item Gestion des interdépendances (A de B et B de A).
 \end{enumerate}
 
 \subsection{Génération de code par des données}
 
-La génération de code par des données a la capacité de prendre les données via les interfaces utilisateurs telles que la GUI et le «Code hook» Cela permet la personnalisation pour obtenir un logiciel adapté à ce que l’utilisateur est capable d’exprimer.
+La génération de code par des données a la capacité de prendre les données via les interfaces utilisateurs telles que la GUI et le «Code hook». Cela permet la personnalisation pour obtenir un logiciel adapté à ce que l’utilisateur est capable d’exprimer.
 
-Le robot logiciel codeur est une machine qui grâce à son interface «code hook», se fait commander par deux couches de méta-données paramétrable par l’humain. Les deux couches s’interfèrent entre elles pour permettre l’évolution de la fonctionnalité désirée.
+Le robot logiciel codeur est une machine qui, grâce à son interface «code hook», se fait commander par deux couches de méta-données paramétrables par l’humain. Les deux couches interfèrent entre elles pour permettre l’évolution de la fonctionnalité désirée.
 
 % TODO diagramme de couche entrée de l’utilisateur et sortie des fonctionnalités.
 
@@ -129,11 +129,11 @@ Voici l'ensemble résumé des accomplissements de SO-1 :
     \item Ajout de «Wizard» pour configurer le MVC selon des paramètres;
     \item Amélioration de l’importation des bases de données externes;
     \item Support de la génération de code par des données;
-    \item Augmentation de technique de génération de code, support des templates «Qweb», ajout du type de données géospatiale.
+    \item Augmentation de technique de génération de code, support des «templates» «Qweb», ajout du type de données géospatiales.
 \end{enumerate}
 
 \subsubsection{SO-1 Feuille de route}
-Voici la briève feuille de route pour SO-1 :
+Voici la brève feuille de route pour SO-1 :
 \begin{enumerate}
     \item Implémenter les fonctionnalités manquantes dans la GUI pour générer les MVC d’un module;
     \item Augmenter le nombre de technologies à supporter sur l'importation des données;
@@ -147,11 +147,11 @@ Voici la briève feuille de route pour SO-1 :
 
 \subsection {Extraction de code et reproduction}
 
-De la macro et micro extraction ont été réalisés avec plusieurs techniques combinées. Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération direct de générer le code qui a été copié. L’utilisation de l’AST a servi à déterminer quelle ligne de code était à découper pour les recopier.
+De la macro et micro extraction ont été réalisées avec plusieurs techniques combinées. Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération directe de générer le code qui a été copié. L’utilisation de l’AST a servi à déterminer quelle ligne de code était à découper pour les recopier.
 
-Cependant, il était nécessaire dans certains contextes de faire de la micro extraction, comme : 
+Cependant, il était nécessaire, dans certains contextes, de faire de la micro extraction, comme : 
 \begin{enumerate}
-    \item L’extraction des noms des constantes, ils sont transformés en valeurs lors de l’exécution;
+    \item L’extraction des noms des constantes, elles sont transformées en valeurs lors de l’exécution;
     \item L’extraction des commentaires, qui n’est pas supportée dans la bibliothèque AST de Python 3.7;
     \item L’extraction des décorateurs;
     \item L’extraction des paramètres et noms des méthodes/fonctions;
@@ -167,17 +167,18 @@ C'est en développant les techniques de génération de code que nous réalisons
 
 \subsection {Amélioration continue sur la génération}
 
-Grâce à l’extraction des méta-données, dès que la technique de génération est bien développée avec les méta-données, le code est automatiquement généré avec de bonnes pratiques logicielles corrigeant automatiquement les problèmes.
+Grâce à l’extraction des méta-données, dès que la technique de génération est bien développée avec les méta-données, le code est automatiquement généré avec de bonnes pratiques logicielles, corrigeant automatiquement les problèmes.
 
-L’intérêt de passer par Odoo pour lire le module valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python ou les XML étaient bien construits).
+L’intérêt de passer par Odoo pour lire le module est qu'i valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python où les XML étaient bien construits).
 
 Ainsi, pour un module désiré, nous utilisons les outils pour générer µ$_C^A$ et µ$_C^B$, puis en avançant dans le développement, nous bouclons entre le 3 et 4 sur Figure~\ref{fig:dia_sequence_gc}.
+%todomarie elle est oû la figure 4.1?
 
 \subsection {Test de validation de génération de codes}\label{test_validation_generation_code_resultat}
 
-Pour tester ce générateur de code, la technique du test de comparaisons des sorties de la génération a été utilisé. Pour procéder, un développeur valide via l'outil Git ce qui est commité\footnote{Un terme dans l'outil Git pour valider le code en créant un état dans l'historique.}. Ainsi, un script a été développé pour lancer en parallèle les tests et valider les différences de génération avec ce qui a été commité précédemment. Un succès est lorsqu'il y a aucune différence dans le code entre le version généré et la précédente.
+Pour tester ce générateur de code, la technique du test de comparaisons des sorties de la génération a été utilisée. Pour procéder, un développeur valide via l'outil Git ce qui est commité\footnote{Un terme dans l'outil Git pour valider le code en créant un état dans l'historique.}. Ainsi, un script a été développé pour lancer en parallèle les tests et valider les différences de génération avec ce qui a été commité précédemment. Un succès est lorsqu'il y a aucune différence dans le code entre la version générée et la précédente.
 
-Il y a plusieurs types de test : 
+Il y a plusieurs types de tests : 
 \begin{enumerate}
     \item Valider l’installation du module généré;
     \item Valider que µ$_C^B$ génère bien le module cible sans différence dans le code;
@@ -186,7 +187,7 @@ Il y a plusieurs types de test :
     \item Valider que la migration d’une base de données SQL se fait sans différence dans le code.
 \end{enumerate}
 
-En exécutant tous les tests, voir annexe~\ref{annexe_test_generateur_code}, une couverture de 84\% est obtenu, tous les tests présents sont un succès, sauf ceux sur l’auto-générateur.
+En exécutant tous les tests, voir annexe~\ref{annexe_test_generateur_code}, une couverture de 84\% est obtenue, tous les tests présents sont un succès, sauf ceux sur l’auto-générateur.
 
 Les tests deviennent une documentation sur comment utiliser le générateur de code. Puisque la génération de code se fait par données, il suffit de changer les paramètres pour générer un autre module et lancer un nouveau projet sur le module généré pour obtenir toute la chaîne.
 
@@ -194,9 +195,9 @@ Les tests deviennent une documentation sur comment utiliser le générateur de c
 
 Au moment de générer les fichiers, toutes les sorties textes sont traitées par des outils de mise en forme en suivant des règles de codage standardisées.
 
-Pour le Python, l’outil «black» est utilisé pour la mise en forme en suivant le standard PEP8 avec «isort» pour réordonner les importations. «black» donne une mise en forme non naturel comparé à l’écriture de code pour un humain. Cependant, son résultat facilite la lecture et le suivi des différences pour les futurs ajouts. Le Javascript, le HTML et le XML sont mise en forme avec l’outil «prettier».
+Pour le Python, l’outil «black» est utilisé pour la mise en forme en suivant le standard PEP8 avec «isort» pour réordonner les importations. «Black» donne une mise en forme non naturelle comparé à l’écriture de code pour un humain. Cependant, son résultat facilite la lecture et le suivi des différences pour les futurs ajouts. Le Javascript, le HTML et le XML sont mis en forme avec l’outil «prettier».
 
-De plus, le générateur force le déplacement des classes dans leur propre fichier respectif pour faire une classe par fichier. Les champs, pour chaque modèle, sont déplacés en ordre alphabétique, mais le premier est celui qui est utilisé pour représenter le modèle\footnote{Référence à l'attribut «\_rec\_name»}.
+De plus, le générateur force le déplacement des classes dans leur fichier respectif pour faire une classe par fichier. Les champs, pour chaque modèle, sont déplacés en ordre alphabétique, mais le premier est celui qui est utilisé pour représenter le modèle\footnote{Référence à l'attribut «\_rec\_name»}.
 
 \subsection{Interprétation des résultats de SO-2}
 
@@ -211,7 +212,7 @@ Voici l'ensemble résumé des accomplissements de SO-2 :
 \end{enumerate}
 
 \subsubsection{SO-2 Feuille de route}
-Voici la briève feuille de route pour SO-2 :
+Voici la brève feuille de route pour SO-2 :
 \begin{enumerate}
     \item Finaliser l’implémentation de l'auto-génération sur le générateur de code;
     \item Mettre à jour les tests pour atteindre une couverture de code à 100\%;
@@ -260,7 +261,7 @@ Les techniques :
 
 \subsubsection{L'interface graphique}
 
- L'interface graphique existait déjà dans la version initiale~\cite{bluiksnot_repo}, elle a été améliorée pour afficher plus d'informations par rapport aux développements. Elle sert à faciliter la paramétrisation du générateur de code. Elle n’a pas été priorisée et elle manque de fonctionnalités si nous le comparons à ce qui peut être supporté via la technique «code hooks» avec µ$_C^A$ et µ$_C^B$.
+ L'interface graphique existait déjà dans la version initiale~\cite{bluiksnot_repo}, elle a été améliorée pour afficher plus d'informations par rapport au développement. Elle sert à faciliter la paramétrisation du générateur de code. Elle n’a pas été priorisée et elle manque de fonctionnalités si nous la comparons à ce qui peut être supporté via la technique «code hooks» avec µ$_C^A$ et µ$_C^B$.
 
 Ce qui fonctionne : 
 \begin{enumerate}
@@ -280,22 +281,22 @@ Ce qui fonctionne :
 
 % TODO on montre un exemple de code hook?
 
-L'interface «code hook» permet d’accéder à la totalité des fonctionnalités du générateur de code via µ$_C^A$ et µ$_C^B$. Elle a été utilisé pour toutes les démonstrations qui servent de test et elle contient la paramétrisation pour des modules désirés. De plus, l'avantage de cette interface, elle nous permet d'ajouter du code pour rendre dynamique la paramétrisation.
+L'interface «code hook» permet d’accéder à la totalité des fonctionnalités du générateur de code via µ$_C^A$ et µ$_C^B$. Elle a été utilisée pour toutes les démonstrations qui servent de test et elle contient la paramétrisation pour des modules désirés. De plus, l'avantage de cette interface est qu'elle nous permet d'ajouter du code pour rendre dynamique la paramétrisation.
 
 \subsection{Interprétation des résultats de SO-3}
 
 \subsubsection{SO-3 Accomplissements}
 Voici l'ensemble résumé des accomplissements de SO-3 :
 \begin{enumerate}
-    \item Ajout de nouvelles techniques et une classification de ceux-ci;
+    \item Ajout de nouvelles techniques et une classification de celles-ci;
     \item Rendre accessible une interface graphique pour paramétrer la génération de code;
     \item Rendre accessible une interface de programmation pour utiliser toutes les fonctionnalités du robot logiciel codeur.
 \end{enumerate}
 
 \subsubsection{SO-3 Feuille de route}
-Voici la briève feuille de route pour SO-3 :
+Voici la brève feuille de route pour SO-3 :
 \begin{enumerate}
-    \item Ajouter des paramètres pour faire plus de personnalisation sur les techniques;
+    \item Ajouter des paramètres pour faire davantage de personnalisation sur les techniques;
     \item Extraire les techniques du générateur et les implémenter une par module;
     \item Supporter les fonctionnalités manquantes sur toutes les techniques pour l’interface graphique;
     \item Supporter l’accès à la création de méta-données par la rétro-ingénierie via l’interface graphique.
@@ -305,7 +306,7 @@ Voici la briève feuille de route pour SO-3 :
 
 \subsection{Utilisation d’un conteneur Docker}
 
-Puisque le générateur de code fait partie de ERPLibre, la version 1.5.0 contient les modules de génération de code. Le déploiement se fait rapidement en utilisant le logiciel Docker, le générateur de code permet l’utilisation de l’interface graphique pour générer des modules Odoo.
+Puisque le générateur de code fait partie de ERPLibre, la version 1.5.0 contient les modules de génération de code. Le déploiement se fait rapidement en utilisant le logiciel «Docker», le générateur de code permet l’utilisation de l’interface graphique pour générer des modules Odoo.
 
 \subsection{Interprétation des résultats de SO-4}
 
@@ -313,13 +314,13 @@ Puisque le générateur de code fait partie de ERPLibre, la version 1.5.0 contie
 Le générateur de code a été intégré dans un système de distribution via un Docker.
 
 \subsubsection{SO-4 Feuille de route}
-Voici la briève feuille de route pour SO-4 :
+Voici la brève feuille de route pour SO-4 :
 \begin{enumerate}
     \item Développer une synchronisation entre les instances pour permettre de la redondance;
     \item Développer une gestion de son infrastructure via le générateur de code;
     \item Faire participer le robot logiciel codeur à la maintenance de l’infrastructure de déploiement;
     \item Utiliser d’autres systèmes de conteneur en distribution qui sont libres comme «Pod»~\footnote{\url{https://podman.io/}};
-    \item Développer la capacité au robot logiciel codeur de valider techniquement si le logiciel est AGPLv3 au moment de l’exécution.
+    \item Développer la capacité du robot logiciel codeur de valider techniquement si le logiciel est AGPLv3 au moment de l’exécution.
 \end{enumerate}
 
 \section{Résultats propres à SO-5}
@@ -370,7 +371,7 @@ Nous avons rédigé un guide pour gérer l'intégration d'un membre en communaut
     \item Amener les utilisateurs à faire des contributions en participant à la maintenance et en facilitant chaque étape d'implication;
     \item Rendre disponible des tâches pour les nouveaux membres;
     \begin{enumerate}
-        \item Permettre d'utiliser des étiquettes de classement adaptés sur des initiatives proposés par des nouveaux, tels que «suggestion», «problème» ou «question».
+        \item Permettre d'utiliser des étiquettes de classement adaptées sur des initiatives proposées par des nouveaux, tels que «suggestion», «problème» ou «question».
     \end{enumerate}
     \item Remercier la personne pour son intérêt qui veut participer au projet;
     \item Répondre en moins de 24 heures pour accueillir le membre;
@@ -398,13 +399,13 @@ Nous avons rédigé un guide pour gérer le comportement en communauté :
 
 Nous avons rédigé un guide pour le développement public :
 \begin{enumerate}
-    \item Mettre en place un site web de développement en lien avec l'organisation créé;
+    \item Mettre en place un site web de développement en lien avec l'organisation créée;
     \item Documenter publiquement le processus de développement;
     \item Permettre de voir l'avancement des tâches en lien avec les processus;
     \begin{enumerate}
         \item Permettre de proposer des changements avec un système d'acceptation par les pairs.
     \end{enumerate}
-    \item Montrer la feuille de route du projet, des livrables prévues;
+    \item Montrer la feuille de route du projet, les livrables prévue;
     \item Encourager la publication du travail brouillon avec un état de travail en progression;
     \item Déployer un moyen de discussion public et éviter de répondre en privé.
 \end{enumerate}
@@ -438,11 +439,11 @@ S'assurer que les documentations suivantes sont accessibles à la racine du proj
 \end{enumerate}
 
 \subsection{Sécurité}
-
+%todomarie ce qui n'est pas clair ici c'est est-ce que c'est fait? C'est à faire? C'est quoi le lien avec le mémoire
 Rendre disponible des informations suivantes en lien avec la sécurité : 
 \begin{enumerate}
     \item Montrer le niveau de sécurité de l'application;
-    \item Mettre en place un système de communication des mises à jours nécessaires;
+    \item Mettre en place un système de communication des mises à jour nécessaires;
     \item Informer comment sécuriser les clés d'authentification, les données et les configurations personnelles.
 \end{enumerate}
 
@@ -452,11 +453,11 @@ Voici les étapes à suivre en lien avec le développement libre :
 \begin{enumerate}
     \item Rendre accessible le code source d'une manière facile à accéder, tel qu'un lien visible à partir du site web vitrine du projet;
     \item Suivre les règles d'hébergement de logiciel libre pour permettre l'inclusion;
-    \item Expliquer l'importance du choix de la licence libre ainsi que les différences. Expliquer pourquoi d'autres choix ne sont pas proposés et restreindre l'utilisation de logiciel libre si la licence n'est pas acceptée;
+    \item Expliquer l'importance du choix de la licence libre, ainsi que les différences. Expliquer pourquoi d'autres choix ne sont pas proposés et restreindre l'utilisation du logiciel libre si la licence n'est pas acceptée;
     \item Rendre accessible la documentation sur le logiciel libre en lien avec la localité administrative de l'organisation\footnote{Exemple, un document du Québec : \url{https://www.tresor.gouv.qc.ca/fileadmin/PDF/ressources_informationnelles/logiciels_libres/ll.pdf}};
-    \item Toujours proposer des licences libres avec un guide explicatif, ne pas permettre d'utiliser des licences non compatible au libre :
+    \item Toujours proposer des licences libres avec un guide explicatif, ne pas permettre d'utiliser des licences qui ne seraient pas compatibles aux licences libres :
     \begin{enumerate}
-        \item LGPL3 et + - elle est acceptable, mais non désiré;
+        \item LGPL3 et + - elle est acceptable, mais non désirée;
         \item GPL3 et + - pour toutes machines sans communication;
         \item AGPL3 et +\footnote{\url{https://www.gnu.org/licenses/agpl-3.0.en.html}};
         \item CC0\footnote{\url{https://creativecommons.org/share-your-work/public-domain/cc0/}}, ne protège pas l'oeuvre;
@@ -482,7 +483,7 @@ Voici l'ensemble résumé des accomplissements de SO-5 :
 \end{enumerate}
 
 \subsubsection{SO-5 Feuille de route}
-Voici la briève feuille de route pour SO-5 :
+Voici la brève feuille de route pour SO-5 :
 \begin{enumerate}
     \item Supporter la demande de «Pull Request» sur les projets Git respectif lorsqu’il y a une amélioration. Il doit y avoir un suivi et valider le suivi des règles de contributions de la communauté;
     \item Développer d’autres modules de gestion de projet pour l’accompagnement dans le développement de projet client;
@@ -490,11 +491,11 @@ Voici la briève feuille de route pour SO-5 :
     \item Développer le suivi du développement des modules communautaires avec une traçabilité sur les résultats avec des métriques de génie logiciel.
 \end{enumerate}
 
-\section{Projets diverses}
+\section{Projets divers}
 
 \subsection{Projet module «auto\_backup»}
 
-Le module «auto\_backup» est le premier module de la communauté de l'organisation OCA répertoire «server-tools» à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré. Le générateur de code a pu modifier le module pour appliquer de la qualité logiciel. Cela a permis de développer la technique de gestion des «Cron», puisqu’il lance des sauvegardes par SSH ou en local à des moments spécifiques dans le temps.
+Le module «auto\_backup» est le premier module de la communauté de l'organisation OCA répertoire «server-tools» à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré. Le générateur de code a pu modifier le module pour appliquer de la qualité logicielle. Cela a permis de développer la technique de gestion des «Cron», puisqu’il lance des sauvegardes, par SSH ou en local, à des moments spécifiques dans le temps.
 
 \subsection{Projet module workflow design}
 
@@ -502,7 +503,7 @@ C’est un module de gestion de projet qui a été développé entièrement avec
 
 \subsection{Projet module STARS}
 
-Le module STARS dépend de l’application Projet, il permet de configurer une procédure intégré dans un projet pour suivre les étapes de STARS, voir Figure~\ref{fig:workflow_stars}.
+Le module STARS dépend de l’application Projet, il permet de configurer une procédure intégrée dans un projet pour suivre les étapes de STARS, voir Figure~\ref{fig:workflow_stars}.
 
 \begin{figure}
 \centering
@@ -522,7 +523,7 @@ Ainsi, nous pouvons créer un nouveau projet et suivre cette procédure en ajout
 
 \subsection{Projet module SRS}
 
-C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code. Il permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et finalement définir les requis fonctionnelles d’un projet. Il a été utilisé entre autre pour le projet Accorderie et le projet Portail CEPPP.
+C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code. Il permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et, finalement, définir les requis fonctionnels d’un projet. Il a été utilisé, entre autres, pour le projet Accorderie et le projet Portail CEPPP.
 
 \section{Projet espace Accorderie}
 
@@ -530,25 +531,25 @@ Le projet a débuté par l'élaboration d'une analyse des besoins fonctionnels, 
 
 Le générateur de code a permis de créer un module Odoo 12.0 avec leurs modèles de données basés sur leur base de données en SQL de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
 
-Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «True» était exprimé par la valeur «-1» dans un type «int», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçue pour de l’automatisation, mais plutôt pour que les échanges de services soient validés par des membres de la communauté.
+Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «True» était exprimé par la valeur «-1» dans un type «int», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçu pour de l’automatisation, mais plutôt pour que les échanges de services soient validées par des membres de la communauté.
 
-Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre OSRM, etc...
+Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre OSRM, etc.
 
-La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migré vers une mise en production.
+La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migrée vers une mise en production.
 
 Un portail a été généré, pour remplacer les formulaires utilisés par l'ancienne plateforme PHP pour visualiser les entrées. Cependant, cette fonctionnalité a été abandonnée puisque cette technologie ne plaisait pas.
 
 Une maquette a été conçue pour un nouvel espace membre. Ainsi, nous avons utilisé la technique «website\_snippet» pour afficher des données sur le site web et créer des formulaires. Cette base a permis d’accélérer la création de code de communication entre le client et le serveur. À force de faire l’intégration et la personnalisation de cette maquette, il n’y a plus vraiment de code qui provient du générateur de code.
 
-Le générateur de code a permis d’aider à créer un diagramme pour afficher le processus d’échange de temps, voir Annexe~\ref{annexe_processus_accorderie_2023}, puis une application en Javascript avec AngularJS a été développé pour afficher ce processus à l’utilisateur, une machine à état qui permet de revenir selon des paramètres à un état du processus.
+Le générateur de code a permis d’aider à créer un diagramme pour afficher le processus d’échange de temps, voir Annexe~\ref{annexe_processus_accorderie_2023}, puis une application en Javascript avec AngularJS a été développée pour afficher ce processus à l’utilisateur, une machine à état, qui permet de revenir selon des paramètres à un état du processus.
 
-Dû à des limitations humaines et de temps, tout le reste du projet a dû être fait manuellement puisqu’on a changé de technologie pour faciliter le développement de l’interface.
+Dû à des limitations humaines et de temps, tout le reste du projet a dû être fait manuellement, puisque la technologie a été changée pour faciliter le développement de l’interface.
 
 \section{Projet Portail CEPPP}
 
 L'objectif est de faire une section portail pour les patients et une section administrative pour les recruteurs, les partenaires et les administrateurs de la plateforme, rendre accessible des formulaires et anonymiser les données. Le mandat était de migrer les fonctionnalités de la plateforme qui a été développée sur SuiteCRM en PHP.
 
-Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en CSV et un module d'importation des données a été développé.
+Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code et puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en CSV et un module d'importation des données a été développé.
 
 Extraction : 
 \begin{enumerate}
@@ -576,25 +577,25 @@ CSV & 25 & 51 & + 26\\\hline
 \label{tab:stat_code_portail_ceppp}
 \end{table}
 
-L'anonymisation n'est pas supportée par le générateur de code, puis la personnalisation enlève beaucoup de champs mis de manière générique dans les fichier XML. 
+L'anonymisation n'est pas supportée par le générateur de code, puis la personnalisation enlève beaucoup de champs mis de manière générique dans les fichiers XML. 
 
-Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{annexe_db_ceppp_2022}. L'interface administrateur~\ref{annexe_form_ceppp_2022} contient la fiche du patient, que les partenaires ont accès seulement qu'à la partie anonymisée~\ref{annexe_form_anonyme_ceppp_2022}.
+Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{annexe_db_ceppp_2022}. L'interface administrateur~\ref{annexe_form_ceppp_2022} contient la fiche du patient dont les partenaires ont accès seulement qu'à la partie anonymisée~\ref{annexe_form_anonyme_ceppp_2022}.
 
-La signification que le nombre de lignes de XML aurait diminué, c’est que le générateur de code génère de base toutes les vues de tous les champs. Au moment de la ré-ingénierie, il y a eu beaucoup de nettoyage et de données XML effacées. Cependant, le développeur va mettre plus de code Python pour développer des logiques qui ne sont pas supportées par le robot logiciel codeur. Le Javascript ajouté sert à supporter les dates dans le portail. L’ajout de CSV sert pour l’ajout de permissions et rôles pour l’anonymisation.
+Le nombre de lignes de XML a diminué car le générateur de code génère de base toutes les vues de tous les champs. Au moment de la ré-ingénierie, il y a eu beaucoup de nettoyage et de données XML effacées. Cependant, le développeur va mettre plus de code Python pour développer des logiques qui ne sont pas supportées par le robot logiciel codeur. Le Javascript ajouté sert à supporter les dates dans le portail. L’ajout de CSV permet l’ajout de permissions et rôles pour l’anonymisation.
 
 \section{Comment les résultats obtenus soutiennent-ils le libre?}
-Le réseau d’entraide a besoin d’un support technologique libre, puisque permettre aux participants de respecter leurs 4 libertés vont permettre de pouvoir s’adapter à des situations d’urgence et apporter des solutions rapidement. Les 4 libertés sont :
+Le réseau d’entraide a besoin d’un support technologique libre, puisque permettre aux participants de suivre leurs 4 libertés vont permettre de pouvoir s’adapter à des situations d’urgence et apporter des solutions rapidement. Les 4 libertés sont :
 
 \begin{enumerate}
     \item \textbf{Étudier} La rétro-ingénierie a permis au générateur de code de comprendre certaines fonctionnalités pour pouvoir recréer les méta-données adéquatement pour la reproduction;
-    \item \textbf{Copier} L’auto-générateur a été mis en place, il reste à auto-reproduire le robot logiciel codeur par son module principale de générateur de code;
-    \item \textbf{Modifier} Au moment d'une ré-ingénierie, la rétro-ingénierie est accessible pour permettre une génération de code automatique en appliquant une mises en forme de code et une validation de la qualité logiciel;
-    \item \textbf{Utiliser} Le robot logiciel codeur a la capacité d’utiliser ses fonctionnalités générées et d’exécuter des scripts d’automatisation à des périodes de temps adaptable.
+    \item \textbf{Copier} L’auto-générateur a été mis en place, il reste à auto-reproduire le robot logiciel codeur par son module principal de générateur de code;
+    \item \textbf{Modifier} Au moment d'une ré-ingénierie, la rétro-ingénierie est accessible pour permettre une génération de code automatique en appliquant une mise en forme de code et une validation de la qualité logicielle;
+    \item \textbf{Utiliser} Le robot logiciel codeur a la capacité d’utiliser ses fonctionnalités générées et d’exécuter des scripts d’automatisation à des périodes de temps adaptables.
 \end{enumerate}
 
 \section{Avancement sur le développement en réseau d'entraide}
 
-Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outil est rendu accessible aux gestionnaires de communauté, aux développeurs de projet. L'outil «No-code/Low-code» est l'interface au générateur de code pour l'assister dans leur développement. La section formation sur le développement sont les exemples de code via les tests qui sont fait pour être facilement transformable pour gérer des nouveaux contextes. La détection des anomalies est mise en place par la révision par les paires sur l'état du code. L'outil STARS est rendu accessible pour faire de l'amélioration continue au sein de son organisation. Des guides de gestion de communauté sont accessibles pour faciliter l'ajout de participants. Puis, la mise en place de méthodologie Agile avec suivi du développement pour l'adaptation aux changements.
+Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outils est rendu accessible aux gestionnaires de communauté, aux développeurs de projet. L'outil «No-code/Low-code» est l'interface du générateur de code pour les assister dans leur développement. La section formation sur le développement comprend les exemples de code via les tests qui sont faits pour être facilement transformables pour gérer des nouveaux contextes. La détection des anomalies est mise en place par la révision par les pairs sur l'état du code. L'outil STARS est rendu accessible pour faire de l'amélioration continue au sein des organisations. Des guides de gestion de communauté sont accessibles pour faciliter l'ajout de participants. Enfin, la mise en place de méthodologie Agile avec suivi du développement pour l'adaptation aux changements est mise à disposition.
 
 \begin{figure}
 \centering
@@ -605,11 +606,11 @@ Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outil est ren
 
 \section{Avancement de la technopoïèse}\label{avancement_technopoiese}
 % TODO résultat, séparer réseau d'entraide en développement
-Voir Figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine lorsque cette dernière est en dehors des techniques maîtrisées par le robot logiciel codeur.
+Voir Figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine, lorsque cette dernière est en dehors des techniques maîtrisées par le robot logiciel codeur.
 
-Pour l'Allopoïèse, le robot logiciel codeur vient assister l'intervention humaine à $H_0$ et $H_1$, qui permet de passer des méta-données sur le module désiré, à une nouvelle version de ce module. Après une modification, il faut boucler avec le mode direct et le mode indirect du générateur de code pour avoir une version stable.
+Pour l'Allopoïèse, le robot logiciel codeur vient assister l'intervention humaine à $H_0$ et $H_1$, qui permet de passer des méta-données sur le module désiré à une nouvelle version de ce module. Après une modification, il faut boucler avec le mode direct et le mode indirect du générateur de code pour avoir une version stable.
 
-Pour l'Autopoïèse, la génération de code se fait directement sur le module de génération de code, c'est-à-dire qu'on met à jour la machine avec l'assistance de la machine. L'humain intervient dans l'adaptation de la fonctionnalité et la correction de technique d'ingénierie au moment de la génération, aux endroits $H_0$ et $H_1$. À la fin de la modification, il faut boucler avec le mode direct et le mode indirect du générateur de code pour avoir une version stable de soi-même. Puisque le générateur de code génère le générateur de code, il y a des techniques et guide d'utilisation qui sont mis à la disposition dans le projet pour éviter de s'auto-écraser\footnote{C'est un problème qui peut arriver fréquemment dans ce système, de perdre des modifications en bouclant dû à une mauvaise manipulation ou une mauvaise configuration. Il faut toujours commiter le travail avant de démarrer la machine.} et perdre son travail.
+Pour l'Autopoïèse, la génération de code se fait directement sur le module de génération de code, c'est-à-dire que la machine est mise à jour avec l'assistance de la machine. L'humain intervient dans l'adaptation de la fonctionnalité et la correction de technique d'ingénierie au moment de la génération, aux endroits $H_0$ et $H_1$. À la fin de la modification, il faut boucler avec le mode direct et le mode indirect du générateur de code pour avoir une version stable de soi-même. Puisque le générateur de code génère le générateur de code, il y a des techniques et guides d'utilisation qui sont mis à la disposition dans le projet pour éviter de s'auto-écraser\footnote{C'est un problème qui peut arriver fréquemment dans ce système, de perdre des modifications en bouclant dû à une mauvaise manipulation ou une mauvaise configuration. Il faut toujours comiter le travail avant de démarrer la machine.} et perdre son travail.
 
 \begin{figure}
 \centering
@@ -629,7 +630,7 @@ Nous avons des résultats qui démontrent 100\% d'autonomie dans quelques contex
 % TODO une fois qu'on aura supporté plus de technique et l'autopoïèse entière, la prochaine étape serait de le faire fonctionner en continue. Bien qu'il soit capable via l'interface graphique, les efforts n'ont pas été effectué pour cette capacité.
 
 \subsection{Adaptable}
-Le robot logiciel codeur est adaptable, il génère 6 composantes, voir résultat d'architecture section~\ref{architecture_result} : web, website, portail, snippet, migration de données entrants et migration de modèle de données entrantes. De plus, il est capable d'interagir avec des technologies en dehors d'Odoo telles que d'extraire du code externe en PHP du logiciel SuiteCRM et des bases de données externes (MySQL/SQL Server/PostgreSQL) pour importer des modèles de données et migrer des données.
+Le robot logiciel codeur est adaptable, il génère 6 composantes, voir résultat d'architecture section~\ref{architecture_result} : web, website, portail, snippet, migration de données entrantes et migration de modèle de données entrantes. De plus, il est capable d'interagir avec des technologies en dehors d'Odoo comme extraire du code externe en PHP du logiciel SuiteCRM et des bases de données externes (MySQL/SQL Server/PostgreSQL) pour importer des modèles de données et migrer des données.
 
 % TODO il faudrait supporter la génération de technologies externes, nous travaillons présentement à générer des applications mobiles natives, ou même générer des modules sur d'autres plateforme ERP tel que Tryton ou NextERP.
 
@@ -684,4 +685,5 @@ Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a
 
 
 \subsection{Article «A template-based code generator for web applications»}
+%todomarie je ne comprends pas ce que ce bout de texte fait là. C'est un peu mal expliqué.
 Le code source de cette application «A template-based code generator for web applications» n’est pas accessible facilement au public, par conséquence, il sera difficile de comparer son efficacité du coté pratique. Mettons par exemple : elle ne dispose pas de ORM, elle ne fait pas de rétro-ingénierie et elle n'a pas été dédié pour une communauté. Cependant, il démontre bien l'efficacité d'un générateur de code sur une solution ERP web.
