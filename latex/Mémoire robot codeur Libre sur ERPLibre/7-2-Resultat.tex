@@ -169,10 +169,10 @@ C'est en développant les techniques de génération de code que nous réalisons
 
 Grâce à l’extraction des méta-données, dès que la technique de génération est bien développée avec les méta-données, le code est automatiquement généré avec de bonnes pratiques logicielles, corrigeant automatiquement les problèmes.
 
-L’intérêt de passer par Odoo pour lire le module est qu'il valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python où les XML étaient bien construits).
+L’intérêt de passer par Odoo pour lire le module est qu'il valide déjà certains fonctionnements (par exemple, il n'y pas d’erreur de syntaxe dans le Python où les XML étaient bien construits).
 
 Ainsi, pour un module désiré, nous utilisons les outils pour générer µ$_C^A$ et µ$_C^B$, puis en avançant dans le développement, nous bouclons entre le 3 et 4 sur Figure~\ref{fig:dia_sequence_gc}.
-%todomarie elle est oû la figure 4.1? Réponse retour en arrière, elle a été présenté précédamment
+%todomarie elle est oû la figure 4.1? Réponse retour en arrière, elle a été présenté précédemment
 
 \subsection {Test de validation de génération de codes}\label{test_validation_generation_code_resultat}
 
@@ -187,7 +187,7 @@ Il y a plusieurs types de tests :
     \item Valider que la migration d’une base de données SQL se fait sans différence dans le code.
 \end{enumerate}
 
-En exécutant tous les tests, voir annexe~\ref{annexe_test_generateur_code}, une couverture de 84\% est obtenue, tous les tests présents sont un succès, sauf ceux sur l’auto-générateur.
+En exécutant tous les tests, voir Annexe~\ref{annexe_test_generateur_code}, une couverture de 84\% est obtenue, tous les tests présents sont un succès, sauf ceux sur l’auto-générateur.
 
 Les tests deviennent une documentation sur comment utiliser le générateur de code. Puisque la génération de code se fait par données, il suffit de changer les paramètres pour générer un autre module et lancer un nouveau projet sur le module généré pour obtenir toute la chaîne.
 
@@ -341,7 +341,7 @@ Le guide du tableau~\ref{tab:demarrer_projet_7_etape} permet de démarrer rapide
 \begin{tabular}{|l|l|}
 
 \hline
-\cellcolor[HTML]{d9d9d9}{\textbf{Étape}} &\cellcolor[HTML]{d9d9d9}{Description}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Étape}} &\cellcolor[HTML]{d9d9d9}{\textbf{Description}}\\\hline
 
 \shortstack[l]{Mission} & \shortstack[l]{Trouver votre mission, vos indicateurs
 % \footnote{\url{https://www.tresor.gouv.qc.ca/fileadmin/PDF/cadre_gestion/guide_indicateur.pdf}} 
@@ -440,7 +440,7 @@ S'assurer que les documentations suivantes sont accessibles à la racine du proj
 
 \subsection{Sécurité}
 %todomarie ce qui n'est pas clair ici c'est est-ce que c'est fait? C'est à faire? C'est quoi le lien avec le mémoire - réponse meilleur introduction, c'est un guide.
-La sécurité est importante pour protéger les données dans la communauté, voici 3 étapes suggérés à faire sur votre projet communautaire :
+La sécurité est importante pour protéger les données dans la communauté, voici 3 étapes suggérées à intégrer au projet communautaire :
 \begin{enumerate}
     \item Montrer le niveau de sécurité de l'application et de ses dépendances (faire un suivi des CVE);
     \item Mettre en place un système de communication des mises à jour nécessaires;
@@ -566,7 +566,7 @@ Voici les statistiques du Tableau~\ref{tab:stat_code_portail_ceppp} du code apr�
 \begin{tabular}{|l|l|l|l|}
 
 \hline
-\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Ligne extrait}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Ligne personnalisé}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Diff}}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Ligne extrait}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Ligne personnalisée}} & \cellcolor[HTML]{d9d9d9}{\textbf{\# Diff}}\\\hline
 
 XML & 6 861 & 3 856 & - 3 005\\\hline
 Python & 567 & 1 564 & + 997\\\hline
@@ -579,7 +579,7 @@ CSV & 25 & 51 & + 26\\\hline
 
 L'anonymisation n'est pas supportée par le générateur de code, puis la personnalisation enlève beaucoup de champs mis de manière générique dans les fichiers XML. 
 
-Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles~\ref{annexe_db_ceppp_2022}. L'interface administrateur~\ref{annexe_form_ceppp_2022} contient la fiche du patient dont les partenaires ont accès seulement qu'à la partie anonymisée~\ref{annexe_form_anonyme_ceppp_2022}.
+Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles Annexe~\ref{annexe_db_ceppp_2022}. L'interface administrateur Annexe~\ref{annexe_form_ceppp_2022} contient la fiche du patient dont les partenaires ont accès seulement qu'à la partie anonymisée Annexe~\ref{annexe_form_anonyme_ceppp_2022}.
 
 Le nombre de lignes de XML a diminué car le générateur de code génère de base toutes les vues de tous les champs. Au moment de la ré-ingénierie, il y a eu beaucoup de nettoyage et de données XML effacées. Cependant, le développeur va mettre plus de code Python pour développer des logiques qui ne sont pas supportées par le robot logiciel codeur. Le Javascript ajouté sert à supporter les dates dans le portail. L’ajout de CSV permet l’ajout de permissions et rôles pour l’anonymisation.
 
@@ -686,4 +686,4 @@ Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a
 
 \subsection{Article «A template-based code generator for web applications»}
 %todomarie je ne comprends pas ce que ce bout de texte fait là. C'est un peu mal expliqué. - réponse c'est une critique littéraire
-Le code source de cette application «A template-based code generator for web applications» n’est pas accessible facilement au public, par conséquence, il sera difficile de comparer son efficacité du coté pratique. Mettons par exemple : elle ne dispose pas de ORM, elle ne fait pas de rétro-ingénierie et elle n'a pas été dédié pour une communauté. Cependant, il démontre bien l'efficacité d'un générateur de code sur une solution ERP web.
+Le code source de cette application «A template-based code generator for web applications» n’est pas accessible facilement au public, par conséquence, il sera difficile de comparer son efficacité du coté pratique. En effet, elle ne dispose pas de ORM, elle ne fait pas de rétro-ingénierie et elle n'a pas été dédiée pour une communauté. Cependant, elle démontre bien l'efficacité d'un générateur de code sur une solution ERP web.

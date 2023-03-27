@@ -44,14 +44,14 @@ Les tests devraient couvrir 100\% du code, cependant la couverture est de 84\% p
 \end{enumerate}
 
 \subsection{Personnalisation du développement}
-La personnalisation de module ERP passe par le nombre de technique supporté, mais aussi par la paramétrisation de ces techniques. L'accent du projet a été mis sur le support des techniques et sur permettre l'amélioration continue sur des modules. Toutes les combinaisons n'ont pas été testée et il manque plusieurs possibilités de paramétrisation.
+La personnalisation de module ERP passe par le nombre de technique supporté, mais aussi par la paramétrisation de ces techniques. L'accent du projet a été mis sur le support des techniques et sur permettre l'amélioration continue sur des modules. Toutes les combinaisons n'ont pas été testées et il manque plusieurs possibilités de paramétrisation.
 
 \subsection{Auto-reproduction du générateur de code}
 %todomarie cette phrase n'est vraiment pas claire, tu devrais mieux expliquer - réponse ajouter de la clarté
-Bien qu'il y ait du progrès dans l'auto-reproduction du générateur de code, cet objectif n'est pas complétée. Le générateur de code ne supporte pas encore toutes les techniques et combinaisons que celui-ci nécessite pour fonctionner. Les travaux doivent continuer sur cette ligne critique en améliorant le générateur de code jusqu'à ce qu'il soit apte à s'auto-reproduire.
+Bien qu'il y ait du progrès dans l'auto-reproduction du générateur de code, cet objectif n'est pas complété. Le générateur de code ne supporte pas encore toutes les techniques et combinaisons que celui-ci nécessite pour fonctionner. Les travaux doivent continuer sur cette ligne critique en améliorant le générateur de code jusqu'à ce qu'il soit apte à s'auto-reproduire.
 
 \subsection{Extraction de code et de modèles de base de données}
-L'extraction de code PHP, Javascript ou de modèles de base de données ont été appliqués sur des contextes particuliers tels que le projet Accorderie et CEPPP. Ainsi, il sera nécessaire de faire des ajustements pour supporter de nouveaux projets et s'assurer de mettre ces techniques d'extraction dans les tests de régression.
+L'extraction de code PHP, Javascript ou de modèles de base de données a été appliqué sur des contextes particuliers tels que le projet Accorderie et CEPPP. Ainsi, il sera nécessaire de faire des ajustements pour supporter de nouveaux projets et s'assurer de mettre ces techniques d'extraction dans les tests de régression.
 
 %%
 %%  AMELIORATIONS FUTURES / FUTURE RESEARCH
@@ -64,7 +64,7 @@ L'extraction de code PHP, Javascript ou de modèles de base de données ont ét�
 % TODO regarder comment intégrer du «Model Driven Architecture»
 
 %todomarie je ne comprends pas du tout cette phrase/section
-Ce projet pourrait avoir une incidence beaucoup plus importante en prenant en considération les réflexions suivante, comme nous avons classé en 5 thématiques : Amélioration du générateur de code, projet Accorderie, projet Ceppp, projet NLP et projet support de développement de module dans la communauté Odoo.
+Ce projet pourrait avoir une incidence beaucoup plus importante en prenant en considération les apports futurs sur les 5 thématiques suivantes soit l'amélioration du générateur de code, le projet Accorderie, le projet Ceppp, le projet NLP et le projet de support de développement de module dans la communauté Odoo.
 
 \subsection{Amélioration du générateur de code}
 
@@ -89,7 +89,7 @@ Une fois que le générateur de code aura atteint 100\% d’auto-génération, i
 Voici un survol des améliorations de l'architecture possibles :
 
 \begin{enumerate}
-    \item Parallélisation de tout le code, en tout temps, temps lorsque cela est possible;
+    \item Parallélisation de tout le code, en tout temps, lorsque cela est possible;
     \item Automatisation de la configuration pour le déverminage;
     \item Automatiser la détection des anomalies;
     \item Améliorer l’interface LCNC pour pouvoir accomplir les mêmes étapes que le mode de paramétrisation «Code hook»;
@@ -115,7 +115,7 @@ Voici un survol des améliorations de l'architecture possibles :
 
 % TODO mettre photo d'amélioration architecture
 
-Ces travaux d’amélioration devront être effectués après l’auto-génération.
+Ces travaux d’amélioration devront être effectués après l’auto-génération complète des modules Odoo de génération de module.
 
 \subsubsection{Amélioration de la gestion de projet et statistiques}
 
@@ -143,7 +143,7 @@ Une plateforme de l'espace membre est en finalisation de développement, il faud
 
 \subsection{Projet Portail CEPPP}
 
-Le générateur de code doit être en mesure de produire les personnalisations nécessaire au projet Portail CEPPP, telles que l'anonymisation des données. Lorsque ces fonctionnalités seront supportées, la prochaine étape est d'amener le client à utiliser par soi même le générateur de code pour la maintenance future de la plateforme. Ainsi, nous pourrons évaluer la facilité d'utilisation pour des utilisateurs non développeur.
+Le générateur de code doit être en mesure de produire les personnalisations nécessaires au projet Portail CEPPP, telles que l'anonymisation des données. Lorsque ces fonctionnalités seront supportées, la prochaine étape est d'amener le client à utiliser par lui-même le générateur de code pour la maintenance future de la plateforme. Ainsi, nous pourrons évaluer la facilité d'utilisation pour des utilisateurs non développeur.
 
 \subsection{NLP}
 %todomarie est-ce que NLP est défini qqpart? - réponse tous les accronymes sont définis dans le fichier Sigles_Abrev.tex
