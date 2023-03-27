@@ -47,8 +47,8 @@ Les tests devraient couvrir 100\% du code, cependant la couverture est de 84\% p
 La personnalisation de module ERP passe par le nombre de technique supporté, mais aussi par la paramétrisation de ces techniques. L'accent du projet a été mis sur le support des techniques et sur permettre l'amélioration continue sur des modules. Toutes les combinaisons n'ont pas été testée et il manque plusieurs possibilités de paramétrisation.
 
 \subsection{Auto-reproduction du générateur de code}
-%todomarie cette phrase n'est vraiment pas claire, tu devrais mieux expliquer
-Bien qu'il y ait du progrès dans l'auto-reproduction du générateur de code, cette tâche n'est pas terminée par le manque de technique à supporter ainsi que les modules qui l'hérite.
+%todomarie cette phrase n'est vraiment pas claire, tu devrais mieux expliquer - réponse ajouter de la clarté
+Bien qu'il y ait du progrès dans l'auto-reproduction du générateur de code, cet objectif n'est pas complétée. Le générateur de code ne supporte pas encore toutes les techniques et combinaisons que celui-ci nécessite pour fonctionner. Les travaux doivent continuer sur cette ligne critique en améliorant le générateur de code jusqu'à ce qu'il soit apte à s'auto-reproduire.
 
 \subsection{Extraction de code et de modèles de base de données}
 L'extraction de code PHP, Javascript ou de modèles de base de données ont été appliqués sur des contextes particuliers tels que le projet Accorderie et CEPPP. Ainsi, il sera nécessaire de faire des ajustements pour supporter de nouveaux projets et s'assurer de mettre ces techniques d'extraction dans les tests de régression.
@@ -62,6 +62,7 @@ L'extraction de code PHP, Javascript ou de modèles de base de données ont ét�
 
 % TODO parler de la sympoïèse comme étant la suite sur la partie communautaire et la distribution de système
 % TODO regarder comment intégrer du «Model Driven Architecture»
+
 %todomarie je ne comprends pas du tout cette phrase/section
 Ce projet pourrait avoir une incidence beaucoup plus importante en prenant en considération les réflexions suivante, comme nous avons classé en 5 thématiques : Amélioration du générateur de code, projet Accorderie, projet Ceppp, projet NLP et projet support de développement de module dans la communauté Odoo.
 
@@ -145,7 +146,7 @@ Une plateforme de l'espace membre est en finalisation de développement, il faud
 Le générateur de code doit être en mesure de produire les personnalisations nécessaire au projet Portail CEPPP, telles que l'anonymisation des données. Lorsque ces fonctionnalités seront supportées, la prochaine étape est d'amener le client à utiliser par soi même le générateur de code pour la maintenance future de la plateforme. Ainsi, nous pourrons évaluer la facilité d'utilisation pour des utilisateurs non développeur.
 
 \subsection{NLP}
-%todomarie est-ce que NLP est défini qqpart?
+%todomarie est-ce que NLP est défini qqpart? - réponse tous les accronymes sont définis dans le fichier Sigles_Abrev.tex
 La technologie NLP va permettre de comprendre des textes rédigés par l’utilisateur et les associer à des techniques de programmation. Le NLP est une solution alternative pour interfacer avec l’utilisateur et communiquer avec ce dernier pour développer des logiciels. De plus, cela va améliorer la rédaction de documentation adaptée aux contextes de l'utilisateur. 
 
 Il existe la communauté Hugging Face qui base ses technologies d'apprentissage automatique sur des solutions ouvertes. Il existe des solutions NLP accessibles et compatibles avec le générateur de code.

@@ -169,10 +169,10 @@ C'est en développant les techniques de génération de code que nous réalisons
 
 Grâce à l’extraction des méta-données, dès que la technique de génération est bien développée avec les méta-données, le code est automatiquement généré avec de bonnes pratiques logicielles, corrigeant automatiquement les problèmes.
 
-L’intérêt de passer par Odoo pour lire le module est qu'i valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python où les XML étaient bien construits).
+L’intérêt de passer par Odoo pour lire le module est qu'il valide déjà certains fonctionnements (par exemple : pas d’erreur de syntaxe dans le Python où les XML étaient bien construits).
 
 Ainsi, pour un module désiré, nous utilisons les outils pour générer µ$_C^A$ et µ$_C^B$, puis en avançant dans le développement, nous bouclons entre le 3 et 4 sur Figure~\ref{fig:dia_sequence_gc}.
-%todomarie elle est oû la figure 4.1?
+%todomarie elle est oû la figure 4.1? Réponse retour en arrière, elle a été présenté précédamment
 
 \subsection {Test de validation de génération de codes}\label{test_validation_generation_code_resultat}
 
@@ -439,10 +439,10 @@ S'assurer que les documentations suivantes sont accessibles à la racine du proj
 \end{enumerate}
 
 \subsection{Sécurité}
-%todomarie ce qui n'est pas clair ici c'est est-ce que c'est fait? C'est à faire? C'est quoi le lien avec le mémoire
-Rendre disponible des informations suivantes en lien avec la sécurité : 
+%todomarie ce qui n'est pas clair ici c'est est-ce que c'est fait? C'est à faire? C'est quoi le lien avec le mémoire - réponse meilleur introduction, c'est un guide.
+La sécurité est importante pour protéger les données dans la communauté, voici 3 étapes suggérés à faire sur votre projet communautaire :
 \begin{enumerate}
-    \item Montrer le niveau de sécurité de l'application;
+    \item Montrer le niveau de sécurité de l'application et de ses dépendances (faire un suivi des CVE);
     \item Mettre en place un système de communication des mises à jour nécessaires;
     \item Informer comment sécuriser les clés d'authentification, les données et les configurations personnelles.
 \end{enumerate}
@@ -685,5 +685,5 @@ Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a
 
 
 \subsection{Article «A template-based code generator for web applications»}
-%todomarie je ne comprends pas ce que ce bout de texte fait là. C'est un peu mal expliqué.
+%todomarie je ne comprends pas ce que ce bout de texte fait là. C'est un peu mal expliqué. - réponse c'est une critique littéraire
 Le code source de cette application «A template-based code generator for web applications» n’est pas accessible facilement au public, par conséquence, il sera difficile de comparer son efficacité du coté pratique. Mettons par exemple : elle ne dispose pas de ORM, elle ne fait pas de rétro-ingénierie et elle n'a pas été dédié pour une communauté. Cependant, il démontre bien l'efficacité d'un générateur de code sur une solution ERP web.
