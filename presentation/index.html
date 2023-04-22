@@ -304,6 +304,63 @@
       débouchent sur de nouvelles voies de recherche
     </section>
 
+    <section>
+      <section>
+        <h2>Démonstration</h2>
+        <ul>
+          <li>
+            <b>Cron</b> : exécution automatique de script à une date ou heure spécifiée à l'avance.
+          </li>
+          <li>
+            <b>Migration MySQL</b> : création d'un modèle et vue selon le schéma de base de données.
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h2>Cron</h2>
+      &#10003; modifier paramètre cron et regarder les différences
+      <section data-markdown>
+        <script type="text/template">
+          ```bash
+          ./script/database/db_restore.py --database cg_cron
+          ./script/addons/install_addons_dev.sh cg_cron code_generator_auto_backup
+          ./run.sh -d cg_cron
+          # TODO faire les modifications
+          ```
+        </script>
+      </section>
+      <section data-markdown>
+        <script type="text/template">
+          ```bash
+          cd ./addons/OCA_server-tools
+          git diff
+          cd -
+          ```
+        </script>
+      </section>
+    </section>
+
+    <section>
+      <h2>Migration MySQL</h2>
+      &#10003; faire afficher un nouveau champs lors de la migration
+      <section data-markdown>
+        <script type="text/template">
+          ```bash
+          ./script/database/restore_mariadb_sql_example_1.sh
+          ./script/database/db_restore.py --database cg_migrator
+          ./script/addons/install_addons_dev.sh cg_migrator code_generator_migrator_demo_mariadb_sql_example_1
+          # Faire un commit dans addons/TechnoLibre_odoo-code-generator-template
+          # Modifier script/database/mariadb_sql_example_1.sql
+          # Modifier addons/TechnoLibre_odoo-code-generator-template/code_generator_migrator_demo_mariadb_sql_example_1/hooks.py
+          # Réexécuter et diff
+          ```
+        </script>
+      </section>
+    </section>
+    <!--    </section>-->
+
   </div>
 </div>
 
