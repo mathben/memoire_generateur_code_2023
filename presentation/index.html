@@ -37,15 +37,14 @@
           Giovanni BELTRAME, membre
         </li>
       </ul>
-      <img alt="Logo LABAC" src="assets/logo_labac_black.png"/>
+      <img class="r-stretch" alt="Logo LABAC" src="assets/logo_labac_black.png"/>
     </section>
 
     <!-- TODO situation son travail dans le cadre plus général de son domaine d'étude -->
 
-
     <section>
       <h2>Plan de présentation</h2><br/>
-      <ol>
+      <ol class="r-fit-text">
         <li>
           Introduction
           <ol>
@@ -71,6 +70,17 @@
         </li>
         <li>
           Conclusion
+          <ol>
+            <li>
+              Principale conclusions de la recherche
+            </li>
+            <li>
+              Question demeurée sans réponse
+            </li>
+            <li>
+              Débouchent sur de nouvelles voies de recherche
+            </li>
+          </ol>
         </li>
         <li>
           Démonstration
@@ -148,7 +158,7 @@
       </section>
       <section>
         Solution : <u>Automatisation du développement</u><br/>
-        <img alt="Logo LABAC" src="../diagramme/devops.png"/><br/>
+        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/devops.png"/><br/>
         Pour réduire le temps de développement, faciliter son déploiement et le suivi de la satisfaction d'utilisation.
       </section>
     </section>
@@ -429,30 +439,136 @@
     </section>
 
     <!-- what résultat -->
-    <!--    <section>-->
-    <!--      DevOPS-->
-    <!--      <img alt="Logo LABAC" src="../diagramme/devops.png"/>-->
-    <!--    </section>-->
+    <section>
+      <section>
+        <h2>Résultat du générateur de code</h2>
+        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/architecture_machine.drawio.png"/>
+        <p>1. MVC - 2. Gabarit - 3. Données - 4. BD externe</p>
+      </section>
 
-    <!--    <section>-->
-    <!--      LCNC-->
-    <!--    </section>-->
+      <section>
+        <h2>Séquence d'utilisation</h2>
+        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/code_generateur_erplibre_global_sequence.drawio.png"/>
+      </section>
+    </section>
 
-    <!--    <section>-->
-    <!--      Reproducteur-->
-    <!--    </section>-->
+    <section>
+      <h2>Résultat de l'amélioraton continue</h2>
+      <ol>
+        <li>
+          Extraction du code via l’utilisation d’un AST et extraction des méta-données dans les
+          fichiers XML;
+        </li>
+        <li>
+          Amélioration continue sur la génération de code grâce à la reproduction à l’aide de
+          l’extraction du code;
+        </li>
+        <li>
+          Un outil pour aider à la création de technique de génération à l’aide d’un générateur
+          de générateur de code;
+        </li>
+        <li>
+          Le générateur de code est accompagné de tests de validation en reproduisant l’ensemble
+          des techniques en démonstration;
+        </li>
+        <li>
+          La génération de code applique des règles de codage standardisées.
+        </li>
+      </ol>
+    </section>
 
-    <!--    <section>-->
-    <!--      Principale conclusions de la recherche-->
-    <!--    </section>-->
+    <section>
+      <section>
+        <h2>Résultat sur l'interface</h2>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_model.png"/>
+      </section>
 
-    <!--    <section>-->
-    <!--      Question demeurée sans réponse-->
-    <!--    </section>-->
+      <section>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_champs.png"/>
+      </section>
 
-    <!--    <section>-->
-    <!--      débouchent sur de nouvelles voies de recherche-->
-    <!--    </section>-->
+      <section>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_hook.png"/>
+      </section>
+
+      <section>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_code.png"/>
+      </section>
+
+    </section>
+
+    <section>
+      <h2>Résultat sur la distribution</h2>
+      <p>Distribution du travail via docker pour déploiement rapide.</p>
+
+    </section>
+
+    <section>
+      <section>
+        <h2>Résultat sur la gestion de communauté</h2>
+      </section>
+
+      <section>
+        <h2>Accorderie</h2>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/accorderie_processus.png"/>
+        <p>Migration de données, migration du modèles de données, génération du portail, etc.</p>
+      </section>
+
+      <section>
+        <h2>CEPPP</h2>
+        <p>Extraction du modèle de données d'une plateforme externe en PHP + ré-ingénierie.</p>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/exemple_vue_formulaire_patient_ceppp.png"/>
+      </section>
+
+      <section>
+        <h2>CEPPP (SUITE)</h2>
+        <p>Anonymisation des données (non supporté par le générateur)</p>
+        <img class="r-stretch" alt="Modèle" src="../diagramme/exemple_vue_formulaire_patient_anonyme_ceppp.png"/>
+      </section>
+
+    </section>
+
+    <section>
+      <section>
+        <h2>Principale conclusions de la recherche</h2>
+        <p>Ingénierie</p>
+        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
+      </section>
+
+      <section>
+        <h2>Principale conclusions de la recherche</h2>
+        <p>Communauté</p>
+        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/developpeur_outil_developpement.drawio.png"/>
+      </section>
+
+    </section>
+
+    <section>
+      <section>
+        <h2>Question demeurée sans réponse</h2>
+        <p>Manque de test et métrique sur les performances de génération et d'utilisation.</p>
+        <p>Manque d'intégration des procédures de gestion de communauté à même l'outil.</p>
+        <p>Manque d'outil pour compléter le devops.</p>
+        <p>Manque de configuration sur la génération pour différent paramètre.</p>
+      </section>
+      <section>
+        <h2>Question demeurée sans réponse</h2>
+        <p>
+          Auto-poïèse à terminer.
+        </p>
+        <p>Peut-on générer toute la plateforme entièrement pour Accorderie et CEPPP?</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Débouchent sur de nouvelles voies de recherche</h2>
+      <p>
+        Intégration NLP, auto-génération, auto-amélioration. Robot codeur libre!
+      </p>
+      <p>
+        Tester la gestion de projet en simulation état d'urgence.
+      </p>
+    </section>
 
     <section>
       <section id="exemples">
