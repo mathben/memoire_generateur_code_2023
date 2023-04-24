@@ -56,10 +56,10 @@
               Poïèse
             </li>
             <li>
-              Logiciel libre
+              Auto-reproducteur
             </li>
             <li>
-              Auto-reproducteur
+              Logiciel libre
             </li>
           </ol>
         </li>
@@ -222,6 +222,35 @@
 
     <section>
       <section>
+        <h2>Auto-reproducteur</h2>
+        Le <u>quine</u> se produit par lui-même, de niveau 0. C'est un programme informatique qui imprime son propre
+        code source.
+        <pre class="bash"><code data-trim data-noescape>
+<script
+    type="text/template">a='a=%r;print(a%%a)';print(a%a)</script>
+      </code></pre>
+      </section>
+
+      <section>
+        <h2>Rétro-ingénierie</h2>
+        <img class="r-stretch" alt="Rétro-ingénierie" src="../diagramme/Retroingenierie_-_Byrne.png"/>
+        <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la <u>ré-ingénierie</u>
+          grâce à l'<u>arbre de la syntaxe abstraite</u>(AST).
+        </p>
+      </section>
+
+      <section>
+        <h2>Génération de code par rétro-ingénierie</h2>
+        <img class="r-stretch" alt="Mode direct et inverse" src="../diagramme/machine_ing_retro_ing.drawio.png"/>
+        <p>
+          Boucle de génération de code qui permet l'amélioration continue. Auto-génération lorsque <br/>C = M
+        </p>
+      </section>
+
+    </section>
+
+    <section>
+      <section>
         <h2>Logiciel Libre</h2>
         <div style="text-align: left">
           Développement de logiciel pour les communautés en respectant leurs 4 libertés :
@@ -288,19 +317,115 @@
       </section>
     </section>
 
-    <section>
-      Auto reproducteur
-      Le quine
-      Concept de production et reproduction
-    </section>
-
     <!-- how objectif et méthodologie -->
     <section>
-      Objectifs
-    </section>
+      <section>
+        <h2>Objectifs</h2>
+        <ol>
+          <li>
+            développer un <u>générateur</u> de code de module sur Odoo;
+          </li>
+          <li>
+            développer une logique d’<u>amélioration continue</u> sur l’écriture du code;
+          </li>
+          <li>
+            développer une <u>interface</u> permettant de paramétrer la génération de code;
+          </li>
+          <li>
+            développer un système de <u>distribution</u>;
+          </li>
+          <li>
+            développer un système de <u>gestion de communauté</u>.
+          </li>
+        </ol>
+      </section>
 
-    <section>
-      Méthodologie
+      <section>
+        <h2>Méthodologie SO-1</h2>
+        <ol>
+          <li>
+            Développer une logique d’écriture de module sur une architecture de MVC avec support de plateforme web;
+          </li>
+          <li>
+            Mise en place d’un concept de gabarit de code qui génère du code;
+          </li>
+          <li>
+            Mise en place de la génération de code à partir de données;
+          </li>
+          <li>
+            Générer un module à partir d’une base de données externe.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Méthodologie SO-2</h2>
+        <ol>
+          <li>
+            Développer la capacité de comprendre une structure de code et de la reproduire;
+          </li>
+          <li>
+            Définir ce qui est de l’amélioration continue et son application dans un contexte d’automatisation;
+          </li>
+          <li>
+            Mise en place de test de validation de code sur des critères de qualité mesurables;
+          </li>
+          <li>
+            Intégration de règles de codage standardisées pour favoriser le réseau d’entraide.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Méthodologie SO-3</h2>
+        <ol>
+          <li>
+            Proposer une classification des techniques que le robot logiciel codeur peut réaliser en programmation;
+          </li>
+          <li>
+            Développer une interface permettant le contrôle du robot logiciel codeur pour l’orienter dans la
+            programmation de fonctionnalités;
+          </li>
+          <li>
+            Rendre disponible une interface LCNC<sup>1</sup> pour permettre aux utilisateurs de programmer leurs
+            fonctionnalités.
+          </li>
+        </ol>
+        <hr/>
+        <div style="text-align: left; font-size: smaller">1: Low-Code/No-Code</div>
+      </section>
+
+      <section>
+        <h2>Méthodologie SO-4</h2>
+        <ol>
+          <li>
+            Pour la section déploiement, il faut développer un système de distribution du robot logiciel codeur.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Méthodologie SO-5</h2>
+        <ol>
+          <li>
+            Documenter les processus de développement pour amener les utilisateurs à contribuer;
+          </li>
+          <li>
+            Mettre des guides pour permettre le sentiment d’appartenance;
+          </li>
+          <li>
+            Mettre en place une politique tolérance zéro avec un système de communication non
+            violente et créer un lieu de discussion publique;
+          </li>
+          <li>
+            Élaboration du prototype pour les spécifications du réseau de l’Accorderie du Canada;
+          </li>
+          <li>
+            Élaboration du prototype pour les spécifications de l’organisme CEPPP du Canada;
+          </li>
+        </ol>
+      </section>
+
     </section>
 
     <!-- what résultat -->
@@ -309,25 +434,25 @@
     <!--      <img alt="Logo LABAC" src="../diagramme/devops.png"/>-->
     <!--    </section>-->
 
-    <section>
-      LCNC
-    </section>
+    <!--    <section>-->
+    <!--      LCNC-->
+    <!--    </section>-->
 
-    <section>
-      Reproducteur
-    </section>
+    <!--    <section>-->
+    <!--      Reproducteur-->
+    <!--    </section>-->
 
-    <section>
-      Principale conclusions de la recherche
-    </section>
+    <!--    <section>-->
+    <!--      Principale conclusions de la recherche-->
+    <!--    </section>-->
 
-    <section>
-      Question demeurée sans réponse
-    </section>
+    <!--    <section>-->
+    <!--      Question demeurée sans réponse-->
+    <!--    </section>-->
 
-    <section>
-      débouchent sur de nouvelles voies de recherche
-    </section>
+    <!--    <section>-->
+    <!--      débouchent sur de nouvelles voies de recherche-->
+    <!--    </section>-->
 
     <section>
       <section id="exemples">
