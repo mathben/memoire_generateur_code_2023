@@ -2,3 +2,7 @@
     display: inline-block;
     transform: rotate(180deg);
 }
+
+:root {
+    --r-main-font-size: 35px;
+}

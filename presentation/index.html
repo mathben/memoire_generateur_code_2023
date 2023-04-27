@@ -8,10 +8,13 @@
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
-  <link rel="stylesheet" href="dist/theme/dracula.css">
+  <!--  <link rel="stylesheet" href="dist/theme/dracula.css">-->
+  <!--  <link rel="stylesheet" href="dist/theme/black.css">-->
+  <link rel="stylesheet" href="dist/theme/league.css">
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="plugin/toc-progress/toc-progress.css">
 
   <!-- Homemade -->
   <link rel="stylesheet" href="css/custom.css">
@@ -43,8 +46,8 @@
     <!-- TODO situation son travail dans le cadre plus général de son domaine d'étude -->
 
     <section>
-      <h2>Plan de présentation</h2><br/>
-      <ol class="r-fit-text">
+      <h3>Plan de présentation</h3>
+      <ol>
         <li>
           Introduction
           <ol>
@@ -91,15 +94,15 @@
     <!-- Why -->
     <section>
       <section>
+        <h3>Réseau d'entraide</h3>
         <div style="text-align:left">
           Problématique mondiale : Crise climatique, migration, pandémie, situation d'urgence, etc<br/>
           <br/>
           Problématique locale : Gestion des besoins de sociétés jusqu'aux individus<br/>
         </div>
-        <u>Réseau d'entraide</u><br/>
       </section>
       <section>
-        <u>Besoins technologiques</u><br/>
+        <h3>Besoins technologiques</h3>
         <ul>
           <li>
             Communication
@@ -165,12 +168,12 @@
 
     <section>
       <section>
-        <h2>Poïèse</h2><br/>
+        <h3>Poïèse</h3><br/>
         Processus créatif de fabrication, de production ou de création.
         <!-- todo mettre exemple génie industriel -->
       </section>
       <section>
-        <h2>Technopoïèse</h2><br/>
+        <h3>Technopoïèse</h3><br/>
         Processus créatif de développement technologique.
         <br/>
         <br/>
@@ -180,11 +183,11 @@
         <u>La technologie est un outil.</u>
       </section>
       <section>
-        <h2>Allopoïèse</h2><br/>
+        <h3>Allopoïèse</h3><br/>
         Un système qui développe quelque chose avec des composantes externes.
       </section>
       <section>
-        <h2>Autopoïèse</h2><br/>
+        <h3>Autopoïèse</h3><br/>
         Un système qui se développe soi-même avec seulement des composantes internes.
         <br/>
         <u>Contraire de l'Allopoïèse</u>
@@ -208,7 +211,7 @@
         <u>C'est un auto-reproducteur!</u>
       </section>
       <section>
-        <h2>Sympoïèse</h2><br/>
+        <h3>Sympoïèse</h3><br/>
         Un système qui se développe en collectivité et en collaboration qui a un effet bénéfique sur les
         écosystèmes.<br/>
         <br/>
@@ -232,7 +235,7 @@
 
     <section>
       <section>
-        <h2>Auto-reproducteur</h2>
+        <h3>Auto-reproducteur</h3>
         Le <u>quine</u> se produit par lui-même, de niveau 0. C'est un programme informatique qui imprime son propre
         code source.
         <pre class="bash"><code data-trim data-noescape>
@@ -242,7 +245,7 @@
       </section>
 
       <section>
-        <h2>Rétro-ingénierie</h2>
+        <h3>Rétro-ingénierie</h3>
         <img class="r-stretch" alt="Rétro-ingénierie" src="../diagramme/Retroingenierie_-_Byrne.png"/>
         <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la <u>ré-ingénierie</u>
           grâce à l'<u>arbre de la syntaxe abstraite</u>(AST).
@@ -250,7 +253,7 @@
       </section>
 
       <section>
-        <h2>Génération de code par rétro-ingénierie</h2>
+        <h3>Génération de code par rétro-ingénierie</h3>
         <img class="r-stretch" alt="Mode direct et inverse" src="../diagramme/machine_ing_retro_ing.drawio.png"/>
         <p>
           Boucle de génération de code qui permet l'amélioration continue. Auto-génération lorsque <br/>C = M
@@ -261,7 +264,7 @@
 
     <section>
       <section>
-        <h2>Logiciel Libre</h2>
+        <h3>Logiciel Libre</h3>
         <div style="text-align: left">
           Développement de logiciel pour les communautés en respectant leurs 4 libertés :
         </div>
@@ -303,7 +306,7 @@
         guide de référence gouvernementale à ce sujet au Québec</a> sur les logiciels libres et ouverts.<br/>
       </section>
       <section>
-        <h2>Logiciel libre en industrie</h2>
+        <h3>Logiciel libre en industrie</h3>
         <div style="text-align: left">
           Les <u><span style="color:orange">industries</span></u> vont pouvoir :
         </div>
@@ -330,7 +333,7 @@
     <!-- how objectif et méthodologie -->
     <section>
       <section>
-        <h2>Objectifs</h2>
+        <h3>Objectifs</h3>
         <ol>
           <li>
             développer un <u>générateur</u> de code de module sur Odoo;
@@ -351,7 +354,7 @@
       </section>
 
       <section>
-        <h2>Méthodologie SO-1</h2>
+        <h3>Méthodologie SO-1</h3>
         <ol>
           <li>
             Développer une logique d’écriture de module sur une architecture de MVC avec support de plateforme web;
@@ -369,7 +372,7 @@
       </section>
 
       <section>
-        <h2>Méthodologie SO-2</h2>
+        <h3>Méthodologie SO-2</h3>
         <ol>
           <li>
             Développer la capacité de comprendre une structure de code et de la reproduire;
@@ -387,7 +390,7 @@
       </section>
 
       <section>
-        <h2>Méthodologie SO-3</h2>
+        <h3>Méthodologie SO-3</h3>
         <ol>
           <li>
             Proposer une classification des techniques que le robot logiciel codeur peut réaliser en programmation;
@@ -406,7 +409,7 @@
       </section>
 
       <section>
-        <h2>Méthodologie SO-4</h2>
+        <h3>Méthodologie SO-4</h3>
         <ol>
           <li>
             Pour la section déploiement, il faut développer un système de distribution du robot logiciel codeur.
@@ -415,7 +418,7 @@
       </section>
 
       <section>
-        <h2>Méthodologie SO-5</h2>
+        <h3>Méthodologie SO-5</h3>
         <ol>
           <li>
             Documenter les processus de développement pour amener les utilisateurs à contribuer;
@@ -441,19 +444,19 @@
     <!-- what résultat -->
     <section>
       <section>
-        <h2>Résultat du générateur de code</h2>
+        <h3>Résultat du générateur de code</h3>
         <img class="r-stretch" alt="Logo LABAC" src="../diagramme/architecture_machine.drawio.png"/>
         <p>1. MVC - 2. Gabarit - 3. Données - 4. BD externe</p>
       </section>
 
       <section>
-        <h2>Séquence d'utilisation</h2>
+        <h3>Séquence d'utilisation</h3>
         <img class="r-stretch" alt="Logo LABAC" src="../diagramme/code_generateur_erplibre_global_sequence.drawio.png"/>
       </section>
     </section>
 
     <section>
-      <h2>Résultat de l'amélioraton continue</h2>
+      <h3>Résultat de l'amélioraton continue</h3>
       <ol>
         <li>
           Extraction du code via l’utilisation d’un AST et extraction des méta-données dans les
@@ -479,7 +482,7 @@
 
     <section>
       <section>
-        <h2>Résultat sur l'interface</h2>
+        <h3>Résultat sur l'interface</h3>
         <img class="r-stretch" alt="Modèle" src="../diagramme/cg_model.png"/>
       </section>
 
@@ -498,30 +501,30 @@
     </section>
 
     <section>
-      <h2>Résultat sur la distribution</h2>
+      <h3>Résultat sur la distribution</h3>
       <p>Distribution du travail via docker pour déploiement rapide.</p>
 
     </section>
 
     <section>
       <section>
-        <h2>Résultat sur la gestion de communauté</h2>
+        <h3>Résultat sur la gestion de communauté</h3>
       </section>
 
       <section>
-        <h2>Accorderie</h2>
+        <h3>Accorderie</h3>
         <img class="r-stretch" alt="Modèle" src="../diagramme/accorderie_processus.png"/>
         <p>Migration de données, migration du modèles de données, génération du portail, etc.</p>
       </section>
 
       <section>
-        <h2>CEPPP</h2>
+        <h3>CEPPP</h3>
         <p>Extraction du modèle de données d'une plateforme externe en PHP + ré-ingénierie.</p>
         <img class="r-stretch" alt="Modèle" src="../diagramme/exemple_vue_formulaire_patient_ceppp.png"/>
       </section>
 
       <section>
-        <h2>CEPPP (SUITE)</h2>
+        <h3>CEPPP (SUITE)</h3>
         <p>Anonymisation des données (non supporté par le générateur)</p>
         <img class="r-stretch" alt="Modèle" src="../diagramme/exemple_vue_formulaire_patient_anonyme_ceppp.png"/>
       </section>
@@ -530,13 +533,13 @@
 
     <section>
       <section>
-        <h2>Principale conclusions de la recherche</h2>
+        <h3>Principale conclusions de la recherche</h3>
         <p>Ingénierie</p>
         <img class="r-stretch" alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
       </section>
 
       <section>
-        <h2>Principale conclusions de la recherche</h2>
+        <h3>Principale conclusions de la recherche</h3>
         <p>Communauté</p>
         <img class="r-stretch" alt="Logo LABAC" src="../diagramme/developpeur_outil_developpement.drawio.png"/>
       </section>
@@ -545,14 +548,14 @@
 
     <section>
       <section>
-        <h2>Question demeurée sans réponse</h2>
+        <h3>Question demeurée sans réponse</h3>
         <p>Manque de test et métrique sur les performances de génération et d'utilisation.</p>
         <p>Manque d'intégration des procédures de gestion de communauté à même l'outil.</p>
         <p>Manque d'outil pour compléter le devops.</p>
         <p>Manque de configuration sur la génération pour différent paramètre.</p>
       </section>
       <section>
-        <h2>Question demeurée sans réponse</h2>
+        <h3>Question demeurée sans réponse</h3>
         <p>
           Auto-poïèse à terminer.
         </p>
@@ -561,7 +564,7 @@
     </section>
 
     <section>
-      <h2>Débouchent sur de nouvelles voies de recherche</h2>
+      <h3>Débouchent sur de nouvelles voies de recherche</h3>
       <p>
         Intégration NLP, auto-génération, auto-amélioration. Robot codeur libre!
       </p>
@@ -572,7 +575,7 @@
 
     <section>
       <section id="exemples">
-        <h2>Démonstration</h2>
+        <h3>Démonstration</h3>
         <ul>
           <li>
             <a href="#/exemple_cron"><b>Cron</b> : exécution automatique de script à une date ou heure spécifiée à
@@ -594,7 +597,7 @@
       </section>
 
       <section id="exemple_cron">
-        <h2>Cron <a href="#/exemples">↑</a></h2>
+        <h3>Cron <a href="#/exemples">↑</a></h3>
         &#10003; modifier paramètre cron et regarder les différences
         <pre class="bash"><code data-line-numbers="1-3|4|5-7" data-trim data-noescape>
 <script type="text/template">./script/database/db_restore.py --database cg_cron
@@ -609,7 +612,7 @@ cd -
       </section>
 
       <section id="exemple_migration_sql">
-        <h2>Migration MySQL <a href="#/exemples">↑</a></h2>
+        <h3>Migration MySQL <a href="#/exemples">↑</a></h3>
         &#10003; faire afficher un nouveau champ lors de la migration
         <pre class="bash"><code data-line-numbers="1-3|4-6|7" data-trim data-noescape>
 <script type="text/template">./script/database/restore_mariadb_sql_example_1.sh
@@ -624,7 +627,7 @@ cd -
       </section>
 
       <section id="exemple_snippet">
-        <h2>Génération snippet <a href="#/exemples">↑</a></h2>
+        <h3>Génération snippet <a href="#/exemples">↑</a></h3>
         &#10003; créer modèle et générer snippet
         <pre class="bash"><code data-line-numbers="1-3|4-6|7" data-trim data-noescape>
 <script
@@ -660,7 +663,7 @@ cd -
       </section>
 
       <section id="exemple_carte_interactive">
-        <h2>Carte interactive <a href="#/exemples">↑</a></h2>
+        <h3>Carte interactive <a href="#/exemples">↑</a></h3>
         &#10003; démontrer une génération complexe
         <pre class="bash"><code data-trim data-noescape>
 <script type="text/template">./script/database/db_restore.py --database cg_map
