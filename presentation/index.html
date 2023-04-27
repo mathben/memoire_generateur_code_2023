@@ -19,7 +19,7 @@
 <body>
 <div class="reveal">
   <div class="slides">
-    <section>
+    <section data-state="no-toc-progress">
       <div>
         <u><b>Génération de code automatisée pour les modules d'un ERP libre, application à la création d'un réseau
           d'entraide et d'amélioration continue</b></u><br/>
@@ -688,8 +688,16 @@ cd -
     Reveal.initialize({
         hash: true,
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        // Learn about plugins: https://revealjs.comq/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        dependencies: [
+            {
+                src: 'plugin/toc-progress/toc-progress.js', async: true, callback: function () {
+                    toc_progress.initialize();
+                    toc_progress.create();
+                }
+            }
+        ]
     });
 </script>
 </body>
