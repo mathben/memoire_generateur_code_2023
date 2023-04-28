@@ -1,3 +1,5 @@
+// window.onbeforeunload = null;
+
 // Source shellinabox https://github.com/shellinabox/shellinabox/blob/master/misc/embedded.html
 var url = "http://127.0.0.1:4200";
 var iframe = document.getElementById('mon-iframe');
