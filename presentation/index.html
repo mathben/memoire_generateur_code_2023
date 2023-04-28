@@ -91,9 +91,16 @@
       </ol>
     </section>
 
-    <section>
+    <section id="demonstration">
       <h3>Démonstration</h3>
-      <iframe data-src="http://127.0.0.1:4200" class="fullscreen" data-preload></iframe>
+      <!--      <iframe id="mon-iframe" data-src="http://127.0.0.1:4200" class="fullscreen" data-preload></iframe>-->
+      <iframe id="mon-iframe" src="" class="fullscreen" data-preload></iframe>
+      <div style="position: absolute; top: 0; right: 0; display: flex; flex-direction: column;">
+        <button id="demo_btn_login">Login</button>
+        <button id="demo_btn_run">Run</button>
+        <button id="demo_btn_stop">Kill all</button>
+        <button onclick="window.open('http://127.0.0.1:8069/')">Result</button>
+      </div>
     </section>
 
     <!-- Why -->
@@ -689,6 +696,7 @@ cd -
 <script src="plugin/notes/notes.js"></script>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
+<script src="js/custom.js"></script>
 <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
