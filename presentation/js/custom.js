@@ -4,7 +4,7 @@
 var url = "http://127.0.0.1:4200";
 var iframe = document.getElementById('mon-iframe');
 // var iframe_view = document.getElementById('iframe_view');
-document.getElementById("demo_btn_login").addEventListener("click", function () {
+document.getElementById("demo_1_btn_login").addEventListener("click", function () {
     console.debug("login");
     // login
     let message = JSON.stringify({
@@ -28,7 +28,7 @@ document.getElementById("demo_btn_login").addEventListener("click", function () 
     iframe.contentWindow.postMessage(message, url);
 });
 
-document.getElementById("demo_btn_run").addEventListener("click", function () {
+document.getElementById("demo_1_btn_run").addEventListener("click", function () {
     console.debug("run");
 
     // cd
@@ -46,12 +46,90 @@ document.getElementById("demo_btn_run").addEventListener("click", function () {
     iframe.contentWindow.postMessage(message, url);
 });
 
-document.getElementById("demo_btn_stop").addEventListener("click", function () {
+document.getElementById("demo_1_btn_stop").addEventListener("click", function () {
     console.debug("Kill all");
     // force kill all
-    message = JSON.stringify({
+    let message = JSON.stringify({
         type: 'input',
         data: 'pkill -f odoo-bin\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // iframe_view.src = ""
+});
+
+document.getElementById("demo_1_btn_status").addEventListener("click", function () {
+    console.debug("status");
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2/addons/TechnoLibre_odoo-code-generator-template\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // status
+    message = JSON.stringify({
+        type: 'input',
+        data: 'git status\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // iframe_view.src = ""
+});
+
+document.getElementById("demo_1_btn_new_project").addEventListener("click", function () {
+    console.debug("Générer");
+    let input_module = document.getElementById("demo_1_input_module");
+    let input_model = document.getElementById("demo_1_input_model");
+    let input_champs = document.getElementById("demo_1_input_champs");
+    let input_type = document.getElementById("demo_1_input_type");
+
+    let all_good = true;
+
+    if (!input_module.value){
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+
+    if (!input_model.value){
+        input_model.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_model.classList.remove("invalid");
+    }
+
+    if (!input_champs.value){
+        input_champs.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_champs.classList.remove("invalid");
+    }
+
+    if (!input_type.value){
+        input_type.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_type.classList.remove("invalid");
+    }
+
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2/\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // new project
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/code_generator/new_project.py -m ${input_module.value} -d ./addons/TechnoLibre_odoo-code-generator-template\n`
     });
     iframe.contentWindow.postMessage(message, url);
 

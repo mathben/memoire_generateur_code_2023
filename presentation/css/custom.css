@@ -7,14 +7,6 @@
     --r-main-font-size: 35px;
 }
 
-.fullscreen {
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  width: 1000px;
-  height: 500px;
+.invalid {
+  border: 1px solid red;
 }
-
-/*.reveal {*/
-/*  height: 100%;*/
-/*}*/

@@ -96,13 +96,26 @@
     </section>
 
     <section id="demonstration">
-      <h3>Démonstration</h3>
+      <h3>Démonstration génération module</h3>
+      <p>
+        Module : <input id="demo_1_input_module" type="text"/>
+        Modèle : <input id="demo_1_input_model" type="text"/>
+        <br/>
+        Champs : <input id="demo_1_input_champs" type="text"/>
+        Type : <select id="demo_1_input_type">
+        <option value="char">String</option>
+        <option value="bool">Booléan</option>
+        <option value="bool">Chiffre entier</option>
+      </select>
+      </p>
       <!--      <iframe id="mon-iframe" data-src="http://127.0.0.1:4200" class="fullscreen" data-preload></iframe>-->
-      <iframe id="mon-iframe" src="" class="fullscreen"></iframe>
+      <iframe id="mon-iframe" src="" style="width: 1000px; height: 400px;"></iframe>
       <div style="position: absolute; top: 0; right: 0; display: flex; flex-direction: column;">
-        <button id="demo_btn_login">Login</button>
-        <button id="demo_btn_run">Run</button>
-        <button id="demo_btn_stop">Kill all</button>
+        <button id="demo_1_btn_login">Login</button>
+        <button id="demo_1_btn_run">Run</button>
+        <button id="demo_1_btn_stop">Kill all</button>
+        <button id="demo_1_btn_new_project">New project</button>
+        <button id="demo_1_btn_status">Status</button>
         <button onclick="window.open('http://127.0.0.1:8069/')">Result</button>
       </div>
       <aside class="notes">
