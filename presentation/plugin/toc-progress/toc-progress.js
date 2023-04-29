@@ -130,8 +130,8 @@ toc_progress.create=function()
 				a_element.setAttribute('href','#/'+main_sections_index.toString());
 				a_element.appendChild(document.createTextNode(title_element.textContent));
 				li_element.appendChild(a_element);
-				style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
-				style_node.textContent=style_node.textContent+this.viewport+'[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
+				style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold; color: white !important; text-decoration: underline;}\n';
+				style_node.textContent=style_node.textContent+this.viewport+'[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold; color: white !important; text-decoration: underline;}\n';
 				style_node.textContent=style_node.textContent+this.viewport+':not([class*="toc-progress-'+main_sections_index.toString()+'-"]):not([class*="toc-progress-'+main_sections_index.toString()+' "]):not([class$="toc-progress-'+main_sections_index.toString()+'"]) li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: none;}\n';
 				main_title_set = true;
 			}
@@ -186,8 +186,8 @@ toc_progress.create=function()
 						a_element.setAttribute('href','#/'+main_sections_index.toString());
 						a_element.appendChild(document.createTextNode(title_element.textContent));
 						li_element.appendChild(a_element);
-						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
-						style_node.textContent=style_node.textContent+this.viewport+'[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold;}\n';
+						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+' {font-weight: bold; color: white !important; text-decoration: underline;}\n';
+						style_node.textContent=style_node.textContent+this.viewport+'[class*="toc-progress-'+main_sections_index.toString()+'-"] #toc-progress-'+main_sections_index.toString()+' {font-weight: bold; color: white !important; text-decoration: underline;}\n';
 						style_node.textContent=style_node.textContent+this.viewport+':not([class*="toc-progress-'+main_sections_index.toString()+'-"]):not([class*="toc-progress-'+main_sections_index.toString()+' "]):not([class$="toc-progress-'+main_sections_index.toString()+'"]) li[id^="toc-progress-'+main_sections_index.toString()+'-"] {display: none;}\n';
 					}
 					else if (secondary_sections_index!=0)
@@ -207,7 +207,7 @@ toc_progress.create=function()
 						a_element.setAttribute('href','#/'+main_sections_index.toString()+'/'+secondary_sections_index.toString());
 						a_element.appendChild(document.createTextNode(title_element.textContent));
 						li_element.appendChild(a_element);
-						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' {font-weight: bold;}\n';
+						style_node.textContent=style_node.textContent+'.toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' #toc-progress-'+main_sections_index.toString()+'-'+secondary_sections_index.toString()+' {font-weight: bold; color: white !important; text-decoration: underline;}\n';
 					};
 				}
 				else if (title_element==null)
@@ -334,7 +334,7 @@ toc_progress.reduceorscrollelementifnecessary=function(element)
 			{
 				visible_element_index=visible_element_index+1;
 			};
-			if (window.getComputedStyle(li_element).getPropertyValue('font-weight')=='700' || window.getComputedStyle(li_element).getPropertyValue('font-weight')==700 || window.getComputedStyle(li_element).getPropertyValue('font-weight')=='bold')
+			if (window.getComputedStyle(li_element).getPropertyValue('font-weight')=='700' || window.getComputedStyle(li_element).getPropertyValue('font-weight')==700 || window.getComputedStyle(li_element).getPropertyValue('font-weight')=='900')
 			{
 				selected_element_index=visible_element_index;
 			};
