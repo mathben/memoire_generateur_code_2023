@@ -87,28 +87,28 @@ document.getElementById("demo_1_btn_new_project").addEventListener("click", func
 
     let all_good = true;
 
-    if (!input_module.value){
+    if (!input_module.value) {
         input_module.classList.add("invalid");
         all_good = false;
     } else {
         input_module.classList.remove("invalid");
     }
 
-    if (!input_model.value){
+    if (!input_model.value) {
         input_model.classList.add("invalid");
         all_good = false;
     } else {
         input_model.classList.remove("invalid");
     }
 
-    if (!input_champs.value){
+    if (!input_champs.value) {
         input_champs.classList.add("invalid");
         all_good = false;
     } else {
         input_champs.classList.remove("invalid");
     }
 
-    if (!input_type.value){
+    if (!input_type.value) {
         input_type.classList.add("invalid");
         all_good = false;
     } else {
@@ -118,6 +118,8 @@ document.getElementById("demo_1_btn_new_project").addEventListener("click", func
     if (!all_good) {
         return;
     }
+    // let config = '{\\"model\\":[{\\"name\\":\\"b\\",\\"fields\\":[{\\"name\\":\\"b\\",\\"type\\":\\"integer\\"},{\\"name\\":\\"c\\",\\"type\\":\\"datetime\\"}]},{\\"name\\":\\"a\\",\\"fields\\":[{\\"name\\":\\"a\\",\\"type\\":\\"char\\"}]}]}'
+    let config = `{\\"model\\":[{\\"name\\":\\"${input_model.value}\\",\\"fields\\":[{\\"name\\":\\"${input_champs.value}\\",\\"type\\":\\"${input_type.value}\\"}]}]}`
 
     // cd
     let message = JSON.stringify({
@@ -129,7 +131,7 @@ document.getElementById("demo_1_btn_new_project").addEventListener("click", func
     // new project
     message = JSON.stringify({
         type: 'input',
-        data: `./script/code_generator/new_project.py -m ${input_module.value} -d ./addons/TechnoLibre_odoo-code-generator-template\n`
+        data: `./script/code_generator/new_project.py -m ${input_module.value} -d ./addons/TechnoLibre_odoo-code-generator-template --config "${config}"\n`
     });
     iframe.contentWindow.postMessage(message, url);
 
