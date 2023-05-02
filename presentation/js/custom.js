@@ -119,6 +119,52 @@ document.getElementById("demo_1_btn_commit").addEventListener("click", function 
     iframe.contentWindow.postMessage(message, url);
 });
 
+document.getElementById("demo_1_btn_clean").addEventListener("click", function () {
+    console.debug("clean");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        all_good = false;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2/addons/TechnoLibre_odoo-code-generator-template\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // clean
+    message = JSON.stringify({
+        type: 'input',
+        data: 'git clean -fd\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    if (!all_good) {
+        return;
+    }
+
+    // force clean if exist (or good ;-))
+    message = JSON.stringify({
+        type: 'input',
+        data: `rm -rf "${input_module.value}"\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+    message = JSON.stringify({
+        type: 'input',
+        data: `rm -rf "code_generator_template_${input_module.value}"\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+    message = JSON.stringify({
+        type: 'input',
+        data: `rm -rf "code_generator_${input_module.value}"\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
 document.getElementById("demo_1_btn_stat_c").addEventListener("click", function () {
     console.debug("stat c");
 
@@ -359,6 +405,7 @@ document.getElementById("demo_1_btn_up_ucb").addEventListener("click", function 
 
 document.getElementById("demo_1_btn_new_project").addEventListener("click", function () {
     console.debug("Générer");
+    let button = document.getElementById("demo_1_btn_new_project");
     let input_module = document.getElementById("demo_1_input_module");
     let input_model = document.getElementById("demo_1_input_model");
     let input_champs = document.getElementById("demo_1_input_champs");
@@ -407,13 +454,14 @@ document.getElementById("demo_1_btn_new_project").addEventListener("click", func
     });
     iframe.contentWindow.postMessage(message, url);
 
+    // button.style.color = "orange";
     // new project
     message = JSON.stringify({
         type: 'input',
-        data: `./script/code_generator/new_project.py -m ${input_module.value} -d ./addons/TechnoLibre_odoo-code-generator-template --config "${config}"\n`
+        data: `./script/code_generator/new_project.py --keep_bd_alive -m ${input_module.value} -d ./addons/TechnoLibre_odoo-code-generator-template --config "${config}"\n`
     });
     iframe.contentWindow.postMessage(message, url);
-
+    // button.style.color = "black";
     // iframe_view.src = ""
 });
 
