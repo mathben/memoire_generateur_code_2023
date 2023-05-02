@@ -153,7 +153,6 @@
           <button id="demo_1_btn_stat_c" style="background-color: #a69300;">Stat C</button>
           <button id="demo_1_btn_stat_uca" style="background-color: #a69300;">Stat µCa</button>
           <button id="demo_1_btn_stat_ucb" style="background-color: #a69300;">Stat µCb</button>
-          <button id="demo_1_btn_123" style="background-color: #a69300;">Stat µCb</button>
           <button style="background-color: rebeccapurple;" onclick="window.open('http://127.0.0.1:8069/')">Demo root
           </button>
           <button style="background-color: rebeccapurple;"
@@ -205,14 +204,14 @@
             <fieldset>
               <legend>{{$index + 1}}</legend>
               <label>Modèle :
-                <input type="text" ng-model="modele.nom">
+                <input type="text" ng-model="modele.name">
               </label>
-              <button ng-click="supprimerModele($index)">Supprimer modèle {{modele.nom}}</button>
+              <button ng-click="supprimerModele($index)">Supprimer modèle {{modele.name}}</button>
               <div class="champs">
                 <button ng-click="ajouterChamp(modele)">Ajouter un champ</button>
                 <div ng-repeat="champ in modele.champs">
                   <label>Champ :
-                    <input type="text" ng-model="champ.nom">
+                    <input type="text" ng-model="champ.name">
                   </label>
                   <label>Type :
                     <select ng-model="champ.type">
@@ -226,10 +225,9 @@
                       <option value="date">Date</option>
                     </select>
                   </label>
-                  <button ng-click="supprimerChamp(modele, $index)">Supprimer champ {{champ.nom}}</button>
+                  <button ng-click="supprimerChamp(modele, $index)">Supprimer champ {{champ.name}}</button>
                 </div>
               </div>
-
             </fieldset>
           </div>
           <button ng-click="ajouterModele()">Ajouter un modèle</button>
