@@ -128,7 +128,7 @@
       </section>
     </section>
 
-    <section id="demonstration" ng-app="monApp">
+    <section id="demonstration" ng-app="monApp" ng-controller="FormulaireController">
       <section>
         <h3>Démonstration génération module</h3>
         <p>
@@ -137,22 +137,21 @@
         <!--      <iframe id="mon-iframe" data-src="http://127.0.0.1:4200" class="fullscreen" data-preload></iframe>-->
         <iframe id="mon-iframe" src="" style="width: 1000px; height: 400px; margin-right: 50px;"></iframe>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
-          <button id="demo_1_btn_login">Login</button>
-          <button id="demo_1_btn_run" style="background-color: green;">Run</button>
-          <button id="demo_1_btn_stop" style="background-color: green;">Kill all</button>
-          <button id="demo_1_btn_status" style="background-color: red;">Status</button>
-          <button id="demo_1_btn_diff" style="background-color: red;">Diff</button>
-          <button id="demo_1_btn_commit" style="background-color: red;">Commit</button>
-          <button id="demo_1_btn_clean" style="background-color: red;">Clean</button>
-          <!--        <button id="demo_1_btn_new_project" style="background-color: #a69300;">New project</button>-->
-          <button id="demo_1_btn_new_project" style="background-color: blue;">New project</button>
-          <button id="demo_1_btn_install" style="background-color: blue;">Install</button>
-          <button id="demo_1_btn_update" style="background-color: blue;">Update</button>
-          <button id="demo_1_btn_up_uca" style="background-color: blue;">⟳ µCa</button>
-          <button id="demo_1_btn_up_ucb" style="background-color: blue;">⟳ µCb</button>
-          <button id="demo_1_btn_stat_c" style="background-color: #a69300;">Stat C</button>
-          <button id="demo_1_btn_stat_uca" style="background-color: #a69300;">Stat µCa</button>
-          <button id="demo_1_btn_stat_ucb" style="background-color: #a69300;">Stat µCb</button>
+          <button ng-click="fct_login()">Login</button>
+          <button ng-click="fct_run()" style="background-color: green;">Run</button>
+          <button ng-click="fct_stop()" style="background-color: green;">Kill all</button>
+          <button ng-click="fct_status()" style="background-color: red;">Status</button>
+          <button ng-click="fct_diff()" style="background-color: red;">Diff</button>
+          <button ng-click="fct_commit()" style="background-color: red;">Commit</button>
+          <button ng-click="fct_clean()" style="background-color: red;">Clean</button>
+          <button ng-click="fct_new_project()" style="background-color: blue;">New project</button>
+          <button ng-click="fct_install()" style="background-color: blue;">Install</button>
+          <button ng-click="fct_update()" style="background-color: blue;">Update</button>
+          <button ng-click="fct_up_uca()" style="background-color: blue;">⟳ µCa</button>
+          <button ng-click="fct_up_ucb()" style="background-color: blue;">⟳ µCb</button>
+          <button ng-click="fct_stat_c()" style="background-color: #a69300;">Stat C</button>
+          <button ng-click="fct_stat_uca()" style="background-color: #a69300;">Stat µCa</button>
+          <button ng-click="fct_stat_ucb()" style="background-color: #a69300;">Stat µCb</button>
           <button style="background-color: rebeccapurple;" onclick="window.open('http://127.0.0.1:8069/')">Demo root
           </button>
           <button style="background-color: rebeccapurple;"
@@ -198,42 +197,40 @@
           regénérer.
         </aside>
       </section>
-      <section ng-controller="FormulaireController" class="scrollable-slide">
-        <div>
-          <div ng-repeat="modele in modeles">
-            <fieldset>
-              <legend>{{$index + 1}}</legend>
-              <label>Modèle :
-                <input type="text" ng-model="modele.name">
-              </label>
-              <button ng-click="supprimerModele($index)">Supprimer modèle {{modele.name}}</button>
-              <div class="champs">
-                <button ng-click="ajouterChamp(modele)">Ajouter un champ</button>
-                <div ng-repeat="champ in modele.champs">
-                  <label>Champ :
-                    <input type="text" ng-model="champ.name">
-                  </label>
-                  <label>Type :
-                    <select ng-model="champ.type">
-                      <option value="char">Phrase</option>
-                      <option value="boolean">Booléan</option>
-                      <option value="integer">Chiffre entier</option>
-                      <option value="float">Chiffre réel</option>
-                      <option value="text">Texte</option>
-                      <option value="html">HTML</option>
-                      <option value="datetime">Date + temps</option>
-                      <option value="date">Date</option>
-                    </select>
-                  </label>
-                  <button ng-click="supprimerChamp(modele, $index)">Supprimer champ {{champ.name}}</button>
-                </div>
+      <section class="scrollable-slide">
+        <div ng-repeat="modele in modeles">
+          <fieldset>
+            <legend>{{$index + 1}}</legend>
+            <label>Modèle :
+              <input type="text" ng-model="modele.name">
+            </label>
+            <button ng-click="supprimerModele($index)">Supprimer modèle {{modele.name}}</button>
+            <div class="champs">
+              <button ng-click="ajouterChamp(modele)">Ajouter un champ</button>
+              <div ng-repeat="champ in modele.champs">
+                <label>Champ :
+                  <input type="text" ng-model="champ.name">
+                </label>
+                <label>Type :
+                  <select ng-model="champ.type">
+                    <option value="char">Phrase</option>
+                    <option value="boolean">Booléan</option>
+                    <option value="integer">Chiffre entier</option>
+                    <option value="float">Chiffre réel</option>
+                    <option value="text">Texte</option>
+                    <option value="html">HTML</option>
+                    <option value="datetime">Date + temps</option>
+                    <option value="date">Date</option>
+                  </select>
+                </label>
+                <button ng-click="supprimerChamp(modele, $index)">Supprimer champ {{champ.name}}</button>
               </div>
-            </fieldset>
-          </div>
-          <button ng-click="ajouterModele()">Ajouter un modèle</button>
-          <button ng-click="genererJSON()">Générer le JSON</button>
-          <pre>{{json}}</pre>
+            </div>
+          </fieldset>
         </div>
+        <button ng-click="ajouterModele()">Ajouter un modèle</button>
+        <button ng-click="genererJSON()">Générer le JSON</button>
+        <pre>{{json}}</pre>
         <!--        Modèle : <input id="demo_1_input_model" type="text"/>-->
         <!--        <br/>-->
         <!--        Champs : <input id="demo_1_input_champs" type="text"/>-->
