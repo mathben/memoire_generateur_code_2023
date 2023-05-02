@@ -10,3 +10,8 @@
 .invalid {
   border: 1px solid red;
 }
+
+.scrollable-slide {
+    height: 600px;
+    overflow-y: auto !important;
+}

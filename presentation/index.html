@@ -43,7 +43,9 @@
       <img class="r-stretch" alt="Logo LABAC" src="assets/logo_labac_black.png"/>
       <aside class="notes">
         Remercier <b>Samuel</b> pour sa confiance. Projet commun ORE et puis pleins d'automatisation industriel.<br/>
-        Remercier Martin et Giovanni pour leur révision de mon travail, honoré de faire cette présentation pour vous.
+        Remercier Martin et Giovanni pour leur révision de mon travail, honoré de faire cette présentation pour
+        vous.<br/>
+        Un biais, ma présentation risque d'être teinté d'exemple de logiciel libre
       </aside>
     </section>
 
@@ -126,51 +128,132 @@
       </section>
     </section>
 
-    <section id="demonstration">
-      <h3>Démonstration génération module</h3>
-      <p>
-        Module : <input id="demo_1_input_module" type="text"/>
-        Modèle : <input id="demo_1_input_model" type="text"/>
-        <br/>
-        Champs : <input id="demo_1_input_champs" type="text"/>
-        Type : <select id="demo_1_input_type">
-        <option value="char">String</option>
-        <option value="boolean">Booléan</option>
-        <option value="integer">Chiffre entier</option>
-        <option value="float">Chiffre réel</option>
-        <option value="text">Texte</option>
-        <option value="html">HTML</option>
-        <option value="datetime">Date + temps</option>
-        <option value="date">Date</option>
-        <!--        <option value="many2one">Contient 1 - * to 1</option>-->
-        <!--        <option value="many2many">Contient plusieurs - * to *</option>-->
-        <!--        <option value="selection">Sélection</option>-->
-        <!--        <option value="one2many">One2many</option>-->
-      </select>
-      </p>
-      <!--      <iframe id="mon-iframe" data-src="http://127.0.0.1:4200" class="fullscreen" data-preload></iframe>-->
-      <iframe id="mon-iframe" src="" style="width: 1000px; height: 400px; margin-right: 50px;"></iframe>
-      <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column;">
-        <button id="demo_1_btn_login">Login</button>
-        <button id="demo_1_btn_run">Run</button>
-        <button onclick="window.open('http://127.0.0.1:8069/')">Result</button>
-        <button id="demo_1_btn_stop">Kill all</button>
-        <button id="demo_1_btn_new_project">New project</button>
-        <button id="demo_1_btn_status">Git status</button>
-        <button id="demo_1_btn_diff">Git diff</button>
-        <button id="demo_1_btn_commit">Git commit</button>
-        <button id="demo_1_btn_install">Install</button>
-        <button id="demo_1_btn_update">Update</button>
-        <button id="demo_1_btn_up_uca">⟳ µCa</button>
-        <button id="demo_1_btn_up_ucb">⟳ µCb</button>
-        <button id="demo_1_btn_stat_c">Stat C</button>
-        <button id="demo_1_btn_stat_uca">Stat µCa</button>
-        <button id="demo_1_btn_stat_ucb">Stat µCb</button>
-      </div>
-      <aside class="notes">
-        C'est plus facile que de faire un fichier tableur!<br />
-        retro : tester modification code, ajout méthode. Ajout commentaire. Voir résultat dans UCB, ajout ligne de code, regénérer.
-      </aside>
+    <section id="demonstration" ng-app="monApp">
+      <section>
+        <h3>Démonstration génération module</h3>
+        <p>
+          Module : <input id="demo_1_input_module" type="text"/>
+        </p>
+        <!--      <iframe id="mon-iframe" data-src="http://127.0.0.1:4200" class="fullscreen" data-preload></iframe>-->
+        <iframe id="mon-iframe" src="" style="width: 1000px; height: 400px; margin-right: 50px;"></iframe>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <button id="demo_1_btn_login">Login</button>
+          <button id="demo_1_btn_run" style="background-color: green;">Run</button>
+          <button id="demo_1_btn_stop" style="background-color: green;">Kill all</button>
+          <button id="demo_1_btn_status" style="background-color: red;">Status</button>
+          <button id="demo_1_btn_diff" style="background-color: red;">Diff</button>
+          <button id="demo_1_btn_commit" style="background-color: red;">Commit</button>
+          <button id="demo_1_btn_clean" style="background-color: red;">Clean</button>
+          <!--        <button id="demo_1_btn_new_project" style="background-color: #a69300;">New project</button>-->
+          <button id="demo_1_btn_new_project" style="background-color: blue;">New project</button>
+          <button id="demo_1_btn_install" style="background-color: blue;">Install</button>
+          <button id="demo_1_btn_update" style="background-color: blue;">Update</button>
+          <button id="demo_1_btn_up_uca" style="background-color: blue;">⟳ µCa</button>
+          <button id="demo_1_btn_up_ucb" style="background-color: blue;">⟳ µCb</button>
+          <button id="demo_1_btn_stat_c" style="background-color: #a69300;">Stat C</button>
+          <button id="demo_1_btn_stat_uca" style="background-color: #a69300;">Stat µCa</button>
+          <button id="demo_1_btn_stat_ucb" style="background-color: #a69300;">Stat µCb</button>
+          <button id="demo_1_btn_123" style="background-color: #a69300;">Stat µCb</button>
+          <button style="background-color: rebeccapurple;" onclick="window.open('http://127.0.0.1:8069/')">Demo root
+          </button>
+          <button style="background-color: rebeccapurple;"
+                  onclick="window.open('http://127.0.0.1:8069/web/database/manager')">Demo BD
+          </button>
+          <!--          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_1')">-->
+          <!--            DATA-->
+          <!--          </button>-->
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_0')">LVL
+            0
+          </button>
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_1')">LVL
+            1
+          </button>
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_2')">LVL
+            2
+          </button>
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_3')">LVL
+            3
+          </button>
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_4')">LVL
+            4
+          </button>
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_5')">LVL
+            5
+          </button>
+          <button
+              onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/projet_ore')">
+            ORE
+          </button>
+          <button
+              onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/projet_ceppp')">
+            CEPPP
+          </button>
+          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/end')">
+            END
+          </button>
+        </div>
+        <aside class="notes">
+          C'est plus facile que de faire un fichier tableur!<br/>
+          retro : tester modification code, ajout méthode. Ajout commentaire. Voir résultat dans UCB, ajout ligne de
+          code,
+          regénérer.
+        </aside>
+      </section>
+      <section ng-controller="FormulaireController" class="scrollable-slide">
+        <div>
+          <div ng-repeat="modele in modeles">
+            <fieldset>
+              <legend>{{$index + 1}}</legend>
+              <label>Modèle :
+                <input type="text" ng-model="modele.nom">
+              </label>
+              <button ng-click="supprimerModele($index)">Supprimer modèle {{modele.nom}}</button>
+              <div class="champs">
+                <button ng-click="ajouterChamp(modele)">Ajouter un champ</button>
+                <div ng-repeat="champ in modele.champs">
+                  <label>Champ :
+                    <input type="text" ng-model="champ.nom">
+                  </label>
+                  <label>Type :
+                    <select ng-model="champ.type">
+                      <option value="char">Phrase</option>
+                      <option value="boolean">Booléan</option>
+                      <option value="integer">Chiffre entier</option>
+                      <option value="float">Chiffre réel</option>
+                      <option value="text">Texte</option>
+                      <option value="html">HTML</option>
+                      <option value="datetime">Date + temps</option>
+                      <option value="date">Date</option>
+                    </select>
+                  </label>
+                  <button ng-click="supprimerChamp(modele, $index)">Supprimer champ {{champ.nom}}</button>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+          <button ng-click="ajouterModele()">Ajouter un modèle</button>
+          <button ng-click="genererJSON()">Générer le JSON</button>
+          <pre>{{json}}</pre>
+        </div>
+        <!--        Modèle : <input id="demo_1_input_model" type="text"/>-->
+        <!--        <br/>-->
+        <!--        Champs : <input id="demo_1_input_champs" type="text"/>-->
+        <!--        Type : <select id="demo_1_input_type">-->
+        <!--                <option value="char">String</option>-->
+        <!--                <option value="boolean">Booléan</option>-->
+        <!--                <option value="integer">Chiffre entier</option>-->
+        <!--                <option value="float">Chiffre réel</option>-->
+        <!--                <option value="text">Texte</option>-->
+        <!--                <option value="html">HTML</option>-->
+        <!--                <option value="datetime">Date + temps</option>-->
+        <!--                <option value="date">Date</option>-->
+        <!--        &lt;!&ndash;        <option value="many2one">Contient 1 - * to 1</option>&ndash;&gt;-->
+        <!--        &lt;!&ndash;        <option value="many2many">Contient plusieurs - * to *</option>&ndash;&gt;-->
+        <!--        &lt;!&ndash;        <option value="selection">Sélection</option>&ndash;&gt;-->
+        <!--        &lt;!&ndash;        <option value="one2many">One2many</option>&ndash;&gt;-->
+        <!--      </select>-->
+      </section>
     </section>
 
     <!--    <section>-->
@@ -457,6 +540,47 @@
         fabrication à l'aide d'un outil.
       </aside>
 
+    </section>
+
+    <section id="lvl_3">
+      <h3>Générateur de code avec retour</h3>
+      <aside class="notes">
+        montrer image amélioration continue<br/>
+        Génération de technique
+      </aside>
+
+    </section>
+
+    <section id="lvl_4">
+      <section>
+
+        <h3>Autopoïèse</h3>
+        <aside class="notes">
+          Parler des poïèses<br/>
+
+        </aside>
+      </section>
+
+      <section>
+        <h3>Résultat</h3>
+        <pre class="bash"><code data-trim data-noescape>
+<script
+    type="text/template">make addons_install_code_generator_code_generator</script>
+      </code></pre>
+        Échec puisque je ne génère pas tous les mots du module du code_generator.
+      </section>
+    </section>
+
+    <section id="projet_ore">
+      ORE
+    </section>
+
+    <section id="projet_ceppp">
+      <aside class="notes">
+        Générer leur modèle avec un lecteur de code PHP qui m'a permis de faire de la ré-ingénierie en copiant leur
+        mots. TODO stat<br/>
+        Je suis en train de créer un copieur
+      </aside>
     </section>
 
     <section>
@@ -992,6 +1116,8 @@ cd -
 <script src="plugin/notes/notes.js"></script>
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/custom.js"></script>
 <script>
     // More info about initialization & config:

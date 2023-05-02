@@ -483,3 +483,65 @@ document.getElementById("demo_1_btn_new_project").addEventListener("click", func
 
 // Add url to our iframe after the event listener is installed.
 iframe.src = url;
+
+// Gestion du formulaire
+let monApp = angular.module('monApp', []);
+monApp.controller('FormulaireController', function ($scope) {
+    $scope.modeles = [{
+        nom: '',
+        champs: [{nom: '', type: 'char'}]
+    }];
+
+    $scope.ajouterModele = function () {
+        $scope.modeles.push({
+            nom: '',
+            champs: [{nom: '', type: 'char'}]
+        });
+    };
+
+    $scope.supprimerModele = function (index) {
+        $scope.modeles.splice(index, 1);
+    };
+
+    $scope.ajouterChamp = function (modele) {
+        modele.champs.push({nom: '', type: 'char'});
+    };
+
+    $scope.supprimerChamp = function (modele, index) {
+        modele.champs.splice(index, 1);
+    };
+
+    $scope.genererJSON = function () {
+        let data = [];
+        $scope.modeles.forEach(function (modele) {
+            let modeleData = {};
+            modeleData.modele = modele.nom;
+            modeleData.champs = {};
+            modele.champs.forEach(function (champ) {
+                modeleData.champs[champ.nom] = champ.type;
+            });
+            data.push(modeleData);
+        });
+        $scope.json = JSON.stringify(data, null, 2);
+    };
+});
+
+// Gestion du scroll bar, dépend de .scrollable-slide
+function resetSlideScrolling(slide) {
+    $(slide).removeClass('scrollable-slide');
+}
+
+function handleSlideScrolling(slide) {
+    if ($(slide).height() >= 800) {
+        $(slide).addClass('scrollable-slide');
+    }
+}
+
+Reveal.addEventListener('ready', function (event) {
+    handleSlideScrolling(event.currentSlide);
+});
+
+Reveal.addEventListener('slidechanged', function (event) {
+    resetSlideScrolling(event.previousSlide)
+    handleSlideScrolling(event.currentSlide);
+});
