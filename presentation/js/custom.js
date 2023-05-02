@@ -74,8 +74,287 @@ document.getElementById("demo_1_btn_status").addEventListener("click", function 
         data: 'git status\n'
     });
     iframe.contentWindow.postMessage(message, url);
+});
 
-    // iframe_view.src = ""
+document.getElementById("demo_1_btn_diff").addEventListener("click", function () {
+    console.debug("diff");
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2/addons/TechnoLibre_odoo-code-generator-template\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // status
+    message = JSON.stringify({
+        type: 'input',
+        data: 'git diff\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_commit").addEventListener("click", function () {
+    console.debug("commit");
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2/addons/TechnoLibre_odoo-code-generator-template\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // add
+    message = JSON.stringify({
+        type: 'input',
+        data: 'git add .\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // commit
+    message = JSON.stringify({
+        type: 'input',
+        data: 'git commit -m "test"\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_stat_c").addEventListener("click", function () {
+    console.debug("stat c");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // stat
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/statistic/code_count.sh ./addons/TechnoLibre_odoo-code-generator-template/${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_stat_uca").addEventListener("click", function () {
+    console.debug("stat uca");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // stat
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/statistic/code_count.sh ./addons/TechnoLibre_odoo-code-generator-template/code_generator_template_${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_stat_ucb").addEventListener("click", function () {
+    console.debug("stat ucb");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // stat
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/statistic/code_count.sh ./addons/TechnoLibre_odoo-code-generator-template/code_generator_${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_install").addEventListener("click", function () {
+    console.debug("install");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // restore
+    message = JSON.stringify({
+        type: 'input',
+        data: './script/database/db_restore.py --database demo\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // install
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/addons/install_addons.sh demo ${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_update").addEventListener("click", function () {
+    console.debug("update");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // update
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/addons/install_addons.sh demo ${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_up_uca").addEventListener("click", function () {
+    console.debug("up uca");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // restore
+    message = JSON.stringify({
+        type: 'input',
+        data: './script/database/db_restore.py --database cg_uca_demo\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // install
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/addons/install_addons_dev.sh cg_uca_demo ${input_module.value},code_generator_template_${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
+});
+
+document.getElementById("demo_1_btn_up_ucb").addEventListener("click", function () {
+    console.debug("up ucb");
+
+    let input_module = document.getElementById("demo_1_input_module");
+    let all_good = true;
+
+    if (!input_module.value) {
+        input_module.classList.add("invalid");
+        all_good = false;
+    } else {
+        input_module.classList.remove("invalid");
+    }
+    if (!all_good) {
+        return;
+    }
+
+    // cd
+    let message = JSON.stringify({
+        type: 'input',
+        data: 'cd ~/git/ERPLibre2\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // restore
+    message = JSON.stringify({
+        type: 'input',
+        data: './script/database/db_restore.py --database cg_ucb_demo\n'
+    });
+    iframe.contentWindow.postMessage(message, url);
+
+    // install
+    message = JSON.stringify({
+        type: 'input',
+        data: `./script/addons/install_addons_dev.sh cg_ucb_demo code_generator_${input_module.value}\n`
+    });
+    iframe.contentWindow.postMessage(message, url);
 });
 
 document.getElementById("demo_1_btn_new_project").addEventListener("click", function () {
