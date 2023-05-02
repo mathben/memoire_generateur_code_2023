@@ -137,6 +137,8 @@ monApp.controller('FormulaireController', function ($scope) {
         let input_module = document.getElementById("demo_1_input_module");
         // let config = '{\\"model\\":[{\\"name\\":\\"b\\",\\"fields\\":[{\\"name\\":\\"b\\",\\"type\\":\\"integer\\"},{\\"name\\":\\"c\\",\\"type\\":\\"datetime\\"}]},{\\"name\\":\\"a\\",\\"fields\\":[{\\"name\\":\\"a\\",\\"type\\":\\"char\\"}]}]}'
         // let config = `{\\"model\\":[{\\"name\\":\\"${input_model.value}\\",\\"fields\\":[{\\"name\\":\\"${input_champs.value}\\",\\"type\\":\\"${input_type.value}\\"}]}]}`
+        // Force gen json
+        $scope.genererJSON();
         let config = $scope.json_inline;
 
         // cd
@@ -274,15 +276,24 @@ monApp.controller('FormulaireController', function ($scope) {
         let data = {"model": lst_model};
         $scope.modeles.forEach(function (modele) {
             let modeleData = {};
-            modeleData.name = modele.name;
-            modeleData.fields = [];
-            modele.champs.forEach(function (champ) {
-                modeleData.fields.push({"name": champ.name, "type": champ.type});
-            });
-            lst_model.push(modeleData);
+            if (modele.name.length) {
+                modeleData.name = modele.name;
+                modeleData.fields = [];
+                modele.champs.forEach(function (champ) {
+                    if (champ.name.length) {
+                        modeleData.fields.push({"name": champ.name, "type": champ.type});
+                    }
+                });
+                lst_model.push(modeleData);
+            }
         });
-        $scope.json = JSON.stringify(data, null, 2);
-        $scope.json_inline = JSON.stringify(data).replaceAll('"', '\\"');
+        if (lst_model.length) {
+            $scope.json = JSON.stringify(data, null, 2);
+            $scope.json_inline = JSON.stringify(data).replaceAll('"', '\\"');
+        } else {
+            $scope.json = "";
+            $scope.json_inline = "";
+        }
     };
 });
 
