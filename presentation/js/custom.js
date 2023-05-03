@@ -166,6 +166,21 @@ monApp.controller('FormulaireController', function ($scope) {
         send_terminal(`./script/addons/install_addons.sh ${bd_name} ${input_module.value}`);
     }
 
+    $scope.fct_install_full = function () {
+        console.debug("install full");
+        let all_good = validate_module();
+        if (!all_good) {
+            return;
+        }
+        let input_module = document.getElementById("demo_1_input_module");
+        // cd
+        send_terminal(`cd ${path_root}`);
+        // restore
+        send_terminal(`./script/database/db_restore.py --image erplibre_ecommerce_pos --database ${bd_name}`);
+        // install
+        send_terminal(`./script/addons/install_addons.sh ${bd_name} ${input_module.value}`);
+    }
+
     $scope.fct_update = function () {
         console.debug("update");
         let all_good = validate_module();
