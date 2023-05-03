@@ -360,7 +360,17 @@
                     <option value="html">HTML</option>
                     <option value="datetime">Date + temps</option>
                     <option value="date">Date</option>
+                    <option value="many2one">Many 2 one</option>
+                    <option value="many2many">Many 2 many</option>
+                    <!--                    <option value="selection">Sélection</option>-->
+                    <option value="one2many">One 2 many</option>
                   </select>
+                </label>
+                <label ng-if="['many2one', 'many2many', 'one2many'].includes(champ.type)">Relation :
+                  <input type="text" ng-model="champ.relation">
+                </label>
+                <label ng-if="['one2many'].includes(champ.type)">Relation champ :
+                  <input type="text" ng-model="champ.relation_field">
                 </label>
                 <button ng-click="supprimerChamp(modele, $index)">Supprimer champ {{champ.name}}</button>
               </div>
@@ -370,23 +380,6 @@
         <button ng-click="ajouterModele()">Ajouter un modèle</button>
         <button ng-click="genererJSON()">Générer le JSON</button>
         <pre>{{json}}</pre>
-        <!--        Modèle : <input id="demo_1_input_model" type="text"/>-->
-        <!--        <br/>-->
-        <!--        Champs : <input id="demo_1_input_champs" type="text"/>-->
-        <!--        Type : <select id="demo_1_input_type">-->
-        <!--                <option value="char">String</option>-->
-        <!--                <option value="boolean">Booléan</option>-->
-        <!--                <option value="integer">Chiffre entier</option>-->
-        <!--                <option value="float">Chiffre réel</option>-->
-        <!--                <option value="text">Texte</option>-->
-        <!--                <option value="html">HTML</option>-->
-        <!--                <option value="datetime">Date + temps</option>-->
-        <!--                <option value="date">Date</option>-->
-        <!--        &lt;!&ndash;        <option value="many2one">Contient 1 - * to 1</option>&ndash;&gt;-->
-        <!--        &lt;!&ndash;        <option value="many2many">Contient plusieurs - * to *</option>&ndash;&gt;-->
-        <!--        &lt;!&ndash;        <option value="selection">Sélection</option>&ndash;&gt;-->
-        <!--        &lt;!&ndash;        <option value="one2many">One2many</option>&ndash;&gt;-->
-        <!--      </select>-->
       </section>
     </section>
 

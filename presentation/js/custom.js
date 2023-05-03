@@ -281,7 +281,14 @@ monApp.controller('FormulaireController', function ($scope) {
                 modeleData.fields = [];
                 modele.champs.forEach(function (champ) {
                     if (champ.name.length) {
-                        modeleData.fields.push({"name": champ.name, "type": champ.type});
+                        let field_value = {"name": champ.name, "type": champ.type};
+                        if (champ.relation !== undefined && champ.relation.length) {
+                            field_value["relation"] = champ.relation;
+                        }
+                        if (champ.relation_field !== undefined && champ.relation_field.length) {
+                            field_value["relation_field"] = champ.relation_field;
+                        }
+                        modeleData.fields.push(field_value);
                     }
                 });
                 lst_model.push(modeleData);
