@@ -45,7 +45,7 @@
         Remercier <b>Samuel</b> pour sa confiance. Projet commun ORE et puis pleins d'automatisation industriel.<br/>
         Remercier Martin et Giovanni pour leur révision de mon travail, honoré de faire cette présentation pour
         vous.<br/>
-        Un biais, ma présentation risque d'être teinté d'exemple de logiciel libre
+
       </aside>
     </section>
 
@@ -55,53 +55,35 @@
       <h3>Plan de présentation</h3>
       <ol>
         <li>
-          Introduction
-          <ol>
-            <li>
-              Problématique
-            </li>
-            <li>
-              Poïèse
-            </li>
-            <li>
-              Auto-reproducteur
-            </li>
-            <li>
-              Logiciel libre
-            </li>
-          </ol>
-        </li>
-        <li>
-          Objectifs et méthodologies
+          Présentation de Mathieu Benoit
         </li>
         <li>
           Résultats
+          <ul>
+            <li>
+              6 niveaux de production en ingénierie numérique
+            </li>
+            <li>
+              Démonstration
+            </li>
+            <li>
+              Projets d'étude
+            </li>
+          </ul>
         </li>
         <li>
           Conclusion
-          <ol>
-            <li>
-              Principale conclusions de la recherche
-            </li>
-            <li>
-              Question demeurée sans réponse
-            </li>
-            <li>
-              Débouchées sur de nouvelles voies de recherche
-            </li>
-          </ol>
-        </li>
-        <li>
-          Démonstration
         </li>
       </ol>
       <aside class="notes">
-        Les résultats seront démontrés en ordre de niveau de production en ingénierie numérique.
+        Les résultats seront démontrés en ordre de niveau de production en ingénierie numérique.<br/>
+        Un biais, ma présentation risque d'être teinté d'exemple de logiciel libre<br/>
+        Cette présentation est un bref aperçu de mes travaux.
       </aside>
     </section>
 
     <section id="whoiam">
-      <section>
+      <section data-transition="zoom">
         <h3>Mathieu Benoit</h3>
         <div>
           <div style="display: flex; align-items: center;">
@@ -122,12 +104,49 @@
         <aside class="notes">
           Merci à mes parents d'être présent. Aujourd'hui, je peux leur démontrer ma passion que je développe depuis que
           j'ai un ordinateur à la maison. Je faisais des sites web avec Netscape Composer et des présentations
-          dynamiques en Flash.
+          dynamiques en Flash.<br/>
+          Passé en robotisation, club étudiant de sous-marin autonome et intelligent nommé SONIA.<br/>
+          Création informatique de système automatisé de plusieurs machines pour l'injection de polymère sur un moule
+          d'un carter d'avion.<br/>
+        </aside>
+      </section>
+
+      <section data-transition="zoom">
+        <h3>Mathieu Benoit</h3>
+        <div>
+          <div style="display: flex; align-items: center;">
+            <img alt="mathben" src="./image/mathben.jpg" style="width: 200px; margin-right: 20px"/>
+            <ul>
+              <li>
+                MathBenTech - 2018
+              </li>
+              <li>
+                SantéLibre - 2020
+              </li>
+              <li>
+                TechnoLibre - 2020
+              </li>
+            </ul>
+          </div>
+          <p>Développement ERPLibre pour automatiser Odoo et rendre accessible un déploiement 100% libre.</p>
+        </div>
+        <aside class="notes">
+          Accélérer le développement avec des scripts d'automatisation. Accélérer la mise en place d'un projet
+          client.<br/>
+          Soutien travailleur autonome à Laval<br/>
+          Bourse d'honneur en innovation technologique du ministre de l'éducation et de l'innovation à Laval.<br/>
+          Modèle d'affaires sur un robot codeur libre pour accélérer le développement de logiciel pour les entreprises
+          TODO
         </aside>
       </section>
 
       <section>
-
+        <h3>Valeur du libre</h3>
+        <ul>
+          <li>Solution pour réseau d'entraide</li>
+          <li>Sans limitation technique pour comprendre et résoudre des défis</li>
+          <li>Valorisation et reconnaissance du développeur logiciel</li>
+        </ul>
       </section>
     </section>
 
@@ -402,6 +421,26 @@
         </aside>
       </section>
       <section>
+        <h3>Project existant</h3>
+        <p>
+          <a href="https://github.com/bluisknot/github_odoo_apps/tree/12.0">https://github.com/bluisknot/github_odoo_apps/tree/12.0</a>
+        </p>
+        <ul>
+          <li>
+            code_generator
+          </li>
+          <li>
+            code_generator_db_servers
+          </li>
+        </ul>
+        <aside class="notes">
+          Le projet a débuté à partir d'un code existant. Le but était de migrer la base de données de l'Accorderie vers
+          un module Odoo. Ce module prend des bases de données MySQL et migre le modèle de données.<br/>
+          C'est en faisant des recherches de modules existants pour réaliser cette tâche qu'on a trouvé des objectifs
+          communs. Le reste du projet découle de ce module qui a accéléré l'implantation.
+        </aside>
+      </section>
+      <section>
         <h3>Technique de génération de code</h3>
         <ul>
           <li>Par Template</li>
@@ -456,6 +495,15 @@
           </li>
           <li>
             Modifie
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Tester le générateur</h3>
+        <ul>
+          <li>
+            Validation de la source avec un suivi des modifications dans le code.
           </li>
         </ul>
       </section>
@@ -516,8 +564,27 @@
           Plusieurs critères à comprendre pour mesurer les temps. Chaques développeurs ont des connaissances
           différentes. Chaque contexte nécessite différentes adaptations. De plus, cela dépend aussi de l'avancement
           du générateur, ce qu'il gère déjà, puisqu'il permet de booster ce qui est déjà supporté. Puis la technique a
-          implémenté peut différer en niveau de difficulté dépend de la plateforme.
+          implémenté peut différer en niveau de difficulté dépend de la plateforme.<br/>
+          Quels sont les avantages, les bénéfices à l'utilisation du générateur de code? Elle permet l'accélération du
+          développement par le partage de connaissances, pour développeur expérimenté et nouveau.<br/>
+          La manière de mesurer est arbitraire, c'est relatif à plusieurs contextes.<br/>
+          Trouver un protocole pour mesurer les performances.<br/>
+          Si on veut standardiser notre méthodologie, il faut ouvrir un projet pour évaluer les performances que ça
+          génère, définir exactement les critères du protocole de test.
         </aside>
+      </section>
+
+      <section>
+        <h3>Méthodologie de développement</h3>
+        <ul>
+          <li>
+            Mode sprint
+          </li>
+          <li>Extreme programming en solo</li>
+          <li>
+            Pas de planification de vue globale
+          </li>
+        </ul>
       </section>
 
       <section>
@@ -605,6 +672,7 @@
           <li>Développement de technique automatisée</li>
         </ul>
         <aside class="notes">
+          Technologie de rupture
         </aside>
       </section>
 
@@ -621,7 +689,7 @@
         <h3>Sympoïèse</h3>
         <aside class="notes">
           C'est une autopoïèse éthique sur la fabrication, elle doit avoir conscience de ce qui l'entoure.
-          <br />
+          <br/>
           exemple corail, champignon, communication en collaboration pour le maintient de son espèce.
           <br/>
           L'être humain est à la base destructif, il a l'habitude par exemple de manger pour transformer. Donnons leur
@@ -688,6 +756,22 @@
         <h3>Accorderie</h3>
         <img class="r-stretch" alt="Modèle" src="../diagramme/accorderie_processus.png"/>
         <p>Migration de données, migration du modèles de données, génération du portail, etc.</p>
+      </section>
+
+      <section>
+        <h3>Démonstration ORE</h3>
+        <ul>
+          <li>
+            Processus d'échange de temps
+          </li>
+          <li>
+            Adaptation en temps réel du processus via un diagramme de relation.
+          </li>
+        </ul>
+        <aside class="notes">
+          Intégration AngularJS dans Odoo pour faciliter la réduction de dépendance du serveur, mais en restant hybride.<br/>
+
+        </aside>
       </section>
     </section>
 
@@ -886,111 +970,117 @@
       <p>
         Tester la gestion de projet en simulation état d'urgence.
       </p>
+      <aside class="notes">
+        Application mobile, auto-déverminage, auto-validation, auto-migration. Apprendre les techniques de développement
+        sur l'ensemble des modules de la communauté.<br/>
+        Réflexion sur les orientations/projections à donner sur le futur avec l'autopoïèse<br/>
+        Pousser au prochain niveau l'auto-ingénierie, doit faire une refactorisation du système via l'autopoïèse.
+      </aside>
     </section>
 
-    <section>
-      <section id="exemples">
-        <h3>Démonstration</h3>
-        <ul>
-          <li>
-            <a href="#/exemple_cron"><b>Cron</b> : exécution automatique de script à une date ou heure spécifiée à
-              l'avance.</a>
-          </li>
-          <li>
-            <a href="#/exemple_migration_sql"><b>Migration MySQL</b> : création d'un modèle et vue selon le schéma de
-              base de données.</a>
-          </li>
-          <li>
-            <a href="#/exemple_snippet"><b>Génération snippet</b> : création d'un modèle et génération snippet sur site
-              web.</a>
-          </li>
-          <li>
-            <a href="#/exemple_carte_interactive"><b>Carte interactive</b> : création du frontend avec Leaflet connecté
-              au modèle géospatiale.</a>
-          </li>
-        </ul>
-      </section>
+    <!--    <section>-->
+    <!--      <section id="exemples">-->
+    <!--        <h3>Démonstration</h3>-->
+    <!--        <ul>-->
+    <!--          <li>-->
+    <!--            <a href="#/exemple_cron"><b>Cron</b> : exécution automatique de script à une date ou heure spécifiée à-->
+    <!--              l'avance.</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a href="#/exemple_migration_sql"><b>Migration MySQL</b> : création d'un modèle et vue selon le schéma de-->
+    <!--              base de données.</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a href="#/exemple_snippet"><b>Génération snippet</b> : création d'un modèle et génération snippet sur site-->
+    <!--              web.</a>-->
+    <!--          </li>-->
+    <!--          <li>-->
+    <!--            <a href="#/exemple_carte_interactive"><b>Carte interactive</b> : création du frontend avec Leaflet connecté-->
+    <!--              au modèle géospatiale.</a>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </section>-->
 
-      <section id="exemple_cron">
-        <h3>Cron <a href="#/exemples">↑</a></h3>
-        &#10003; modifier paramètre cron et regarder les différences
-        <pre class="bash"><code data-line-numbers="1-3|4|5-7" data-trim data-noescape>
-<script type="text/template">./script/database/db_restore.py --database cg_cron
-./script/addons/install_addons_dev.sh cg_cron code_generator_auto_backup
-./run.sh -d cg_cron
-# TODO faire les modifications
-cd ./addons/OCA_server-tools
-git diff
-cd -
-</script>
-      </code></pre>
-      </section>
+    <!--      <section id="exemple_cron">-->
+    <!--        <h3>Cron <a href="#/exemples">↑</a></h3>-->
+    <!--        &#10003; modifier paramètre cron et regarder les différences-->
+    <!--        <pre class="bash"><code data-line-numbers="1-3|4|5-7" data-trim data-noescape>-->
+    <!--<script type="text/template">./script/database/db_restore.py &#45;&#45;database cg_cron-->
+    <!--./script/addons/install_addons_dev.sh cg_cron code_generator_auto_backup-->
+    <!--./run.sh -d cg_cron-->
+    <!--# TODO faire les modifications-->
+    <!--cd ./addons/OCA_server-tools-->
+    <!--git diff-->
+    <!--cd - -->
+    <!--</script>-->
+    <!--      </code></pre>-->
+    <!--      </section>-->
 
-      <section id="exemple_migration_sql">
-        <h3>Migration MySQL <a href="#/exemples">↑</a></h3>
-        &#10003; faire afficher un nouveau champ lors de la migration
-        <pre class="bash"><code data-line-numbers="1-3|4-6|7" data-trim data-noescape>
-<script type="text/template">./script/database/restore_mariadb_sql_example_1.sh
-./script/database/db_restore.py --database cg_migrator
-./script/addons/install_addons_dev.sh cg_migrator code_generator_migrator_demo_mariadb_sql_example_1
-# Faire un commit dans addons/TechnoLibre_odoo-code-generator-template
-# Modifier script/database/mariadb_sql_example_1.sql
-# Modifier addons/TechnoLibre_odoo-code-generator-template/code_generator_migrator_demo_mariadb_sql_example_1/hooks.py
-# Réexécuter et diff
-</script>
-      </code></pre>
-      </section>
+    <!--      <section id="exemple_migration_sql">-->
+    <!--        <h3>Migration MySQL <a href="#/exemples">↑</a></h3>-->
+    <!--        &#10003; faire afficher un nouveau champ lors de la migration-->
+    <!--        <pre class="bash"><code data-line-numbers="1-3|4-6|7" data-trim data-noescape>-->
+    <!--<script type="text/template">./script/database/restore_mariadb_sql_example_1.sh-->
+    <!--./script/database/db_restore.py &#45;&#45;database cg_migrator-->
+    <!--./script/addons/install_addons_dev.sh cg_migrator code_generator_migrator_demo_mariadb_sql_example_1-->
+    <!--# Faire un commit dans addons/TechnoLibre_odoo-code-generator-template-->
+    <!--# Modifier script/database/mariadb_sql_example_1.sql-->
+    <!--# Modifier addons/TechnoLibre_odoo-code-generator-template/code_generator_migrator_demo_mariadb_sql_example_1/hooks.py-->
+    <!--# Réexécuter et diff-->
+    <!--</script>-->
+    <!--      </code></pre>-->
+    <!--      </section>-->
 
-      <section id="exemple_snippet">
-        <h3>Génération snippet <a href="#/exemples">↑</a></h3>
-        &#10003; créer modèle et générer snippet
-        <pre class="bash"><code data-line-numbers="1-3|4-6|7" data-trim data-noescape>
-<script
-    type="text/template">./script/code_generator/new_project.py -m fruit -d ./addons/TechnoLibre_odoo-code-generator-template
-# Commit dans ./addons/TechnoLibre_odoo-code-generator-template
-./script/database/db_restore.py --database cg_test
-./script/addons/install_addons_dev.sh cg_test code_generator_fruit
-./run.sh -d cg_test
-# Ajouter de son modèle de données et des données, montrer les vues
-# Retro-ingénierie
-./script/code_generator/search_class_model.py --quiet -d addons/TechnoLibre_odoo-code-generator-template/fruit -t addons/TechnoLibre_odoo-code-generator-template/code_generator_template_fruit
-./script/database/db_restore.py --database cg_test_template
-./script/addons/install_addons_dev.sh cg_test_template fruit,code_generator_template_fruit
+    <!--      <section id="exemple_snippet">-->
+    <!--        <h3>Génération snippet <a href="#/exemples">↑</a></h3>-->
+    <!--        &#10003; créer modèle et générer snippet-->
+    <!--        <pre class="bash"><code data-line-numbers="1-3|4-6|7" data-trim data-noescape>-->
+    <!--<script-->
+    <!--    type="text/template">./script/code_generator/new_project.py -m fruit -d ./addons/TechnoLibre_odoo-code-generator-template-->
+    <!--# Commit dans ./addons/TechnoLibre_odoo-code-generator-template-->
+    <!--./script/database/db_restore.py &#45;&#45;database cg_test-->
+    <!--./script/addons/install_addons_dev.sh cg_test code_generator_fruit-->
+    <!--./run.sh -d cg_test-->
+    <!--# Ajouter de son modèle de données et des données, montrer les vues-->
+    <!--# Retro-ingénierie-->
+    <!--./script/code_generator/search_class_model.py &#45;&#45;quiet -d addons/TechnoLibre_odoo-code-generator-template/fruit -t addons/TechnoLibre_odoo-code-generator-template/code_generator_template_fruit-->
+    <!--./script/database/db_restore.py &#45;&#45;database cg_test_template-->
+    <!--./script/addons/install_addons_dev.sh cg_test_template fruit,code_generator_template_fruit-->
 
-# Ajouter les snippet et vue portail
-# Ajout manifest "code_generator_website_snippet" et "code_generator_portal",
-# Dans le hook mettre `lst_depend_module = ["portal", "website"]`
-# Dans le hook, mettre variable `"enable_generate_portal": True, "portal_enable_create": True,`
-# Copier case 4 snippet
+    <!--# Ajouter les snippet et vue portail-->
+    <!--# Ajout manifest "code_generator_website_snippet" et "code_generator_portal",-->
+    <!--# Dans le hook mettre `lst_depend_module = ["portal", "website"]`-->
+    <!--# Dans le hook, mettre variable `"enable_generate_portal": True, "portal_enable_create": True,`-->
+    <!--# Copier case 4 snippet-->
 
-./script/database/db_restore.py --database cg_test_snippet
-./script/addons/install_addons_dev.sh cg_test_snippet code_generator_fruit
+    <!--./script/database/db_restore.py &#45;&#45;database cg_test_snippet-->
+    <!--./script/addons/install_addons_dev.sh cg_test_snippet code_generator_fruit-->
 
-# update file addons/TechnoLibre_odoo-code-generator-template/code_generator_demo_website_multiple_snippet/hooks.py
-# change MODULE_NAME, comment all case except 4, update model
-./script/database/db_restore.py --database cg_snippet
-./script/addons/install_addons_dev.sh cg_snippet code_generator_demo_website_leaflet
-./script/database/db_restore.py --database cg_test_map
-./script/addons/install_addons.sh cg_test_map demo_website_leaflet
-./run.sh -d cg_test_map
-</script>
-      </code></pre>
-      </section>
+    <!--# update file addons/TechnoLibre_odoo-code-generator-template/code_generator_demo_website_multiple_snippet/hooks.py-->
+    <!--# change MODULE_NAME, comment all case except 4, update model-->
+    <!--./script/database/db_restore.py &#45;&#45;database cg_snippet-->
+    <!--./script/addons/install_addons_dev.sh cg_snippet code_generator_demo_website_leaflet-->
+    <!--./script/database/db_restore.py &#45;&#45;database cg_test_map-->
+    <!--./script/addons/install_addons.sh cg_test_map demo_website_leaflet-->
+    <!--./run.sh -d cg_test_map-->
+    <!--</script>-->
+    <!--      </code></pre>-->
+    <!--      </section>-->
 
-      <section id="exemple_carte_interactive">
-        <h3>Carte interactive <a href="#/exemples">↑</a></h3>
-        &#10003; démontrer une génération complexe
-        <pre class="bash"><code data-trim data-noescape>
-<script type="text/template">./script/database/db_restore.py --database cg_map
-./script/addons/install_addons_dev.sh cg_map code_generator_demo_website_leaflet
-./script/database/db_restore.py --database cg_test_map
-./script/addons/install_addons.sh cg_test_map demo_website_leaflet
-./run.sh -d cg_test_map
-</script>
-      </code></pre>
-      </section>
+    <!--      <section id="exemple_carte_interactive">-->
+    <!--        <h3>Carte interactive <a href="#/exemples">↑</a></h3>-->
+    <!--        &#10003; démontrer une génération complexe-->
+    <!--        <pre class="bash"><code data-trim data-noescape>-->
+    <!--<script type="text/template">./script/database/db_restore.py &#45;&#45;database cg_map-->
+    <!--./script/addons/install_addons_dev.sh cg_map code_generator_demo_website_leaflet-->
+    <!--./script/database/db_restore.py &#45;&#45;database cg_test_map-->
+    <!--./script/addons/install_addons.sh cg_test_map demo_website_leaflet-->
+    <!--./run.sh -d cg_test_map-->
+    <!--</script>-->
+    <!--      </code></pre>-->
+    <!--      </section>-->
 
-    </section>
+    <!--    </section>-->
 
   </div>
 </div>
