@@ -26,7 +26,7 @@
       <div>
         <u><b>Génération de code automatisée pour les modules d'un ERP libre, application à la création d'un réseau
           d'entraide et d'amélioration continue</b></u><br/>
-        Présenté par <b>Mathieu Benoit</b><br/>
+        Présenté par <b>Mathi6eu Benoit</b><br/>
       </div>
       <div style="text-align: left;">JURY</div>
       <ul>
@@ -42,7 +42,8 @@
       </ul>
       <img class="r-stretch" alt="Logo LABAC" src="assets/logo_labac_black.png"/>
       <aside class="notes">
-        TODO lire titre.<br/>
+        <u><b>Génération de code automatisée pour les modules d'un ERP libre, application à la création d'un réseau
+          d'entraide et d'amélioration continue</b></u><br/>
         Avant de commencer, je tiens à remercier monsieur Samuel Bassetto pour la confiance qu'il m'a démontré tout au
         long de mon parcours et plus particulièrement pour l'opportunité du projet ORE et pour ses propositions futures
         d'automatisation d'industrie.<br/>
@@ -70,7 +71,7 @@
                   <a href="#/demonstration">Démonstration du générateur de module Odoo sur ERPLibre</a>
                 </li>
                 <li>
-                  <a href="#/lvl_0">Niveau 2 et 3, génération de code</a>
+                  <a href="#/lvl_2">Niveau 2 et 3, génération de code</a>
                 </li>
                 <li>
                   <a href="#/demonstration">Démonstration de l'amélioration continue</a>
@@ -174,7 +175,7 @@
 
     <section id="demonstration" ng-app="monApp" ng-controller="FormulaireController">
       <section>
-        <h3>Démonstration génération module</h3>
+        <h3>Démonstration - Générateur module Odoo</h3>
         <p>
           Module : <input id="demo_1_input_module" type="text"/>
         </p>
@@ -211,10 +212,10 @@
           <!--          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_1')">LVL-->
           <!--            1-->
           <!--          </button>-->
-          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_2')">
-            LVL 2
+          <button onclick="window.location.replace('#/lvl_2_prob')">
+            Prob LVL 2 s
           </button>
-          <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_3')">
+          <button onclick="window.location.replace('#/lvl_3')">
             LVL 3
           </button>
           <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_4')">
@@ -236,10 +237,12 @@
           </button>
         </div>
         <aside class="notes">
-          J'ai fait une arcade pour vous présenter le générateur de code. Mais avant, on doit comprendre la base. Ce
-          sera court! On y reviendra :)<br/>
+          J'ai fait une interface style arcade pour vous présenter le générateur de code. Mais avant, on doit comprendre
+          la base. Ce sera court! On y reviendra :)<br/>
           <hr/>
+          Démonstration de création d'un module en manière évolutive.
           C'est plus facile que de faire un fichier tableur!<br/>
+          <hr/>
           retro : tester modification code, ajout méthode. Ajout commentaire. Voir résultat dans UCB, ajout ligne de
           code, regénérer.<br/>
           Deux fois new project relance la boucle.
@@ -297,8 +300,7 @@
 
     <section id="lvl_0">
       <section>
-        <h3>Ingénierie de production sans numérique</h3>
-        <p>Niveau 0</p>
+        <h3>Niveau 0 - Ingénierie de production sans numérique</h3>
         <ul>
           <li>
             Procédure papier
@@ -328,8 +330,7 @@
     <section id="lvl_1">
 
       <section>
-        <h3>Ingénierie de production avec numérique</h3>
-        <p>Niveau 1</p>
+        <h3>Niveau 1 - Ingénierie de production avec numérique</h3>
         <ul>
           <li>
             Communication
@@ -346,7 +347,8 @@
             Suivi des procédures et traçabilité
           </li>
           <li>
-            Système de reconnaissance sur l'entraide (ORE) TODO LOGO
+            Système de reconnaissance sur l'entraide <img src="image/Logo%20ORE_background.svg"
+                                                          style="height: 60px; display:inline"/>
           </li>
           <li>
             Amélioration continue
@@ -426,24 +428,33 @@
 
       <section>
         <h3>Système ERPLibre version 1.5.0</h3>
-        <img data-enlargable style="height: 450px" alt="erp fiche" src="image/erp_libre_4_cat.png"/>
-        <p>2977 modules accessibles</p>
+        <div style="height: 350px">
+          <img data-enlargable alt="erp fiche" src="image/erp_libre_4_cat.png"/>
+          <p>2977 modules accessibles</p>
+        </div>
         <aside class="notes">
-          Les logiciel ERP, dont ERPLibre, servent à gérer les ressources des entreprises ou des groupes d'entraide. Ils
-          contiennent, mais ce n'est pas une liste exhaustive, la gestion des ventes, des factures, du personnel, de la
+          Les logiciel ERP, dont ERPLibre, servent à gérer les ressources des entreprises ou des groupes d'entraide.
+          Ils
+          contiennent, mais ce n'est pas une liste exhaustive, la gestion des ventes, des factures, du personnel, de
+          la
           documentation, des processus, des sites webs, des boutiques en ligne, de la relation avec le client, de
           l'amélioration continue, etc.<br/>
-          Il y a actuellement 2977 modules accessibles dans ERPLibre, mais il y a en beaucoup plus dans la communauté.
+          <hr/>
+          Il y a actuellement 2977 modules accessibles dans ERPLibre, mais il y a en beaucoup plus dans la
+          communauté.
         </aside>
       </section>
       <section>
         <h3>Application ERPLibre</h3>
-        <img data-enlargable style="height: 450px" alt="erp fiche" src="image/odoo_menu.png"/>
-        <p>Marché des solutions ERP évalué autour de 40 milliards USD mondialement en 2020</p>
+        <div style="height: 350px">
+          <img data-enlargable alt="erp fiche" src="image/odoo_menu.png"/>
+          <p>Marché des solutions ERP évalué autour de 40 milliards USD mondialement en 2020</p>
+        </div>
         <aside class="notes">
           ERPLibre contient la solution Odoo 12.0 communautaire et permet d'accélérer le développement avec des scripts
           d'automatisation et rend plus rapide la mise en place de nouveau projet client et la traçabilité des
           personnalisations.<br/>
+          <hr/>
           Le marché des solutions ERP évalué autour de 40 milliards USD mondialement en 2020
         </aside>
       </section>
@@ -468,17 +479,26 @@
           </li>
         </ul>
         <aside class="notes">
-          TODO
+          La plateforme Odoo offre déjà des outils de développement qui simplifie la création de module. Le ORM permet
+          de faire abstraction à une base de données par la manipulation d'objet en Python. Le MVC permet de découpler
+          le travail par composante, soit le modèle, la vue et le contrôleur.<br/>
+          Le website builder est un concept d'interface Low-code/No-code qui est la création d'un site web avec des
+          snippets.<br/>
+          Le développement est modulaire, c'est-à-dire que pour faire une application, c'est un ensemble de module avec
+          des caractéristiques sur le fonctionnement.<br/>
+          Puis la plateforme est programmé avec du Python, XMl et Javascript.<br/>
+          Il y a d'autres bénéfices techniques, mais ceux-ci sont importants pour le générateur de code.
         </aside>
       </section>
 
       <section>
         <h3>Ingénierie traditionnelle en développement logiciel</h3>
-        TODO mathben mettre image et texte
+        <img src="../diagramme/dev_tradition_ing.png"/>
         <aside class="notes">
+          Voici le travail de développeur que nous connaissons, nous passons d'un état initial vers un état désiré et
+          l'humain développeur intervient pour faire la transformation, une ré-ingénierie.
         </aside>
       </section>
-
 
       <section>
         <h3>Automatisation du développement</h3>
@@ -523,7 +543,8 @@
             </li>
           </ul>
           <br/>
-          Bref, le développement est presqu'infini.
+          Bref, le développement est presqu'infini et cela devient non réaliste lorsqu'il vient le temps de devoir gérer
+          un cas d'urgence et qu'il faut de la personnalisation aux contextes.
         </aside>
       </section>
 
@@ -531,13 +552,12 @@
 
     <section id="lvl_2">
       <section>
-        <h3>Générateur de code</h3>
+        <h3>Niveau 2 - Générateur de code</h3>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
           <a href="#/demonstration">
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
-        <p>Niveau 2</p>
         <aside class="notes">
           C'est ainsi que nous arrivons au niveau 2, le générateur de code.
         </aside>
@@ -565,35 +585,50 @@
           code.
         </aside>
       </section>
-      <section>
-        <h3>Technique de génération de code</h3>
-        <ul>
-          <li>Par Template</li>
-        </ul>
-        <aside class="notes">
-          Veut l'appropriation de son résultat à l'utilisateur et qu'il puisse le partager. C'est comme faire une
-          fabrication à l'aide d'un outil.
-        </aside>
-      </section>
-      <section>
-        <h3>Problématique</h3>
-        <aside class="notes">
-          Il y a tellement de technique à implémenter, ça nécessite beaucoup de connaissance.<br/>
-          Un réseau de neurone serait plus efficace ;-).
-        </aside>
-      </section>
-    </section>
 
-    <section id="lvl_3">
       <section>
-        <h3>Générateur de code avec rétroaction</h3>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
           <a href="#/demonstration">
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
-        <p>Niveau 3</p>
+        <h3>Démonstration de génération de code</h3>
+        <h4>Technique</h4>
+        <ul>
+          <li>Génération par gabarit</li>
+          <li>Génération avec des données</li>
+        </ul>
         <aside class="notes">
+          Cette démonstration est de la génération de code par gabarit avec des données.
+        </aside>
+      </section>
+
+      <section id="lvl_2_prob">
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
+        <h3>Problématique du niveau 2</h3>
+        <aside class="notes">
+          Il y a tellement de technique à implémenter, ça nécessite beaucoup de connaissance et de temps.<br/>
+          Un réseau de neurone pourrait être plus efficace ;-), mais c'est un autre sujet, cependant ça peut bien se
+          lier ensemble.
+        </aside>
+      </section>
+
+    </section>
+
+    <section id="lvl_3">
+      <section>
+        <h3>Niveau 3 - Générateur de code avec rétroaction</h3>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
+        <aside class="notes">
+          C'est pourquoi nous arrivons au niveau 3!<br/>
           montrer image amélioration continue<br/>
           Génération de technique<br/>
           <h3>Résultat de l'amélioraton continue</h3>
@@ -774,6 +809,29 @@
         </aside>
       </section>
 
+       <section>
+         TODO diagramme développement allopoïèse
+        <aside class="notes">
+        </aside>
+      </section>
+
+       <section>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
+        <h3>Démonstration de génération de code avec rétroaction</h3>
+        <h4>Technique</h4>
+        <ul>
+          <li>Génération par gabarit</li>
+          <li>Génération avec des données</li>
+        </ul>
+        <aside class="notes">
+          Cette démonstration est TODO
+        </aside>
+      </section>
+
       <section>
         <h3>Problématique</h3>
         <aside class="notes">
@@ -785,13 +843,12 @@
 
     <section id="lvl_4">
       <section>
-        <h3>Autopoïèse</h3>
+        <h3>Niveau 4 - Autopoïèse</h3>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
           <a href="#/demonstration">
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
-        <p>Niveau 4</p>
         <aside class="notes">
           Parler des poïèses<br/>
         </aside>
@@ -925,13 +982,12 @@
 
     <section id="lvl_5">
       <section>
-        <h3>Sympoïèse</h3>
+        <h3>Niveau 5 - Sympoïèse</h3>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
           <a href="#/demonstration">
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
-        <p>Niveau 5</p>
         <aside class="notes">
           C'est une autopoïèse éthique sur la fabrication, elle doit avoir conscience de ce qui l'entoure.
           <br/>
@@ -1035,9 +1091,8 @@
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
-        <h3>ORE</h3>
-        <p>Projet étude 1</p>
-        <h4>Offrir Recevoir Échanger</h4>
+        <h3>Projet d'étude - ORE</h3>
+        <b>Offrir Recevoir Échanger</b>
         <aside class="notes">
         </aside>
       </section>
@@ -1076,8 +1131,8 @@
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
-        <h3>CEPPP</h3>
-        <p>Projet étude 2 avec SantéLibre</p>
+        <h3>Projet d'étude - CEPPP</h3>
+        <p>Avec SantéLibre</p>
         <aside class="notes">
           Générer leur modèle avec un lecteur de code PHP qui m'a permis de faire de la ré-ingénierie en copiant leur
           mots. TODO stat<br/>
