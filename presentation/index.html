@@ -320,24 +320,15 @@
         </aside>
       </section>
       <section>
-        <h3>Système ERP</h3>
+        <h3>Système ERPLibre</h3>
+        <img data-enlargable style="height: 450px" alt="erp fiche" src="image/erp_libre_4_cat.png"/>
+      </section>
+      <section>
+        <h3>Application ERPLibre</h3>
+        <img data-enlargable style="height: 450px" alt="erp fiche" src="image/odoo_menu.png"/>
       </section>
       <section>
         <h3>Ingénierie traditionnelle en développement logiciel</h3>
-      </section>
-      <section>
-        <h3>Logiciel libre</h3>
-        <ul>
-          <li>
-            Publication et partage
-          </li>
-          <li>
-            Utilisation du logiciel propriétaire en dernier recours
-          </li>
-        </ul>
-        <aside class="notes">
-          Pourquoi se référer à du logiciel propriétaire?<br/>
-        </aside>
       </section>
 
       <section>
@@ -367,7 +358,7 @@
       </section>
 
       <section>
-        <u>ERP comme solution</u><br/>
+        <h3>ERP comme solution</h3>
         <ul>
           <li>
             Plateforme ERPLibre 1.5.0 qui utilise Odoo 12 communautaire
@@ -380,6 +371,27 @@
           </li>
           <li>
             Marché des solutions ERP évalué autour de 40 milliards USD mondialement en 2020
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Bénéfice technique d'utiliser Odoo</h3>
+        <ul>
+          <li>
+            ORM
+          </li>
+          <li>
+            MVC
+          </li>
+          <li>
+            Website builder
+          </li>
+          <li>
+            Modulaire
+          </li>
+          <li>
+            Python + XML + Javascript
           </li>
         </ul>
       </section>
@@ -403,35 +415,51 @@
       </section>
 
       <section>
-        Solution : <u>Automatisation du développement</u><br/>
-        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/devops.png"/><br/>
-        Pour réduire le temps de développement, faciliter son déploiement et le suivi de la satisfaction d'utilisation.
+        <h3>Automatisation du développement</h3>
+        <div style="height: 350px">
+          <img data-enlargable alt="Logo LABAC" src="../diagramme/devops.png"/>
+          <p>
+            Pour réduire le temps de développement, faciliter son déploiement et le suivi de la satisfaction
+            d'utilisation.
+          </p>
+        </div>
       </section>
 
       <section>
-        <h3>Logiciel Libre</h3>
-        <div style="text-align: left">
-          Développement de logiciel pour les communautés en respectant leurs 4 libertés :
-        </div>
+        <h3>Logiciel Libre - 4 libertés</h3>
         <ul>
           <li>
             utiliser sans restriction;
           </li>
           <li>
-            étudier pour comprendre;
+            étudier pour valider le fonctionnement;
           </li>
           <li>
-            copier pour s'attribuer;
+            copier pour permettre la diffusion;
           </li>
           <li>
             modifier pour adapter, en redistribuant.
           </li>
         </ul>
         <br/>
-        <div style="text-align: left">
-          <u>Respecte</u> le développeur et leur utilisateur via la copyleft <span class="copyleft">&copy;</span> en
+        <aside class="notes">
+          Développement de logiciel pour les communautés en respectant leurs 4 libertés, essentiel pour la gestion d'un
+          réseau d'entraide<br/>
+
+          <b>Utiliser</b> sans être limité par des restrictions ou des coûts.<br/>
+          <b>Étudier</b> pour comprendre le fonctionnement et valider s'il répond bien aux besoins.<br/>
+          <b>Copier</b> pour permettre une diffusion plus large et plus rapide des logiciels libres.<br/>
+          <b>Modifier</b> pour l'adaptation du logiciel aux besoins spécifiques, améliorer la qualité du logiciel,
+          permettre à l'utilisateur de choisir son fonctionnement, puis partager les connaissances pour stimuler
+          l'innovation et la créativité.<br/>
+
+          Permet la correction de problème de sécurité, cela apporte une plus grande flexibilité sur l'adaptation à
+          différent contexte.<br/>
+
+          De plus, <u>Respecte</u> le développeur et leur utilisateur via la copyleft <span
+            class="copyleft">&copy;</span> en
           rendant sa production un bien commun via la contrainte de redistribution qui hérite des 4 libertés.
-        </div>
+        </aside>
       </section>
 
       <section>
@@ -581,21 +609,43 @@
 
       <section>
         <h3>Rétro-ingénierie</h3>
-        <img class="r-stretch" alt="Rétro-ingénierie" src="../diagramme/Retroingenierie_-_Byrne.png"/>
-        <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la <u>ré-ingénierie</u>
-          grâce à l'<u>arbre de la syntaxe abstraite</u>(AST).
-        </p>
+        <div style="height: 300px">
+          <img data-enlargable alt="Rétro-ingénierie" src="../diagramme/Retroingenierie_-_Byrne.png"/>
+          <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la
+            <u>ré-ingénierie</u>.
+          </p>
+        </div>
         <aside class="notes">
-          TODO Créer
+          <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la
+            <u>ré-ingénierie</u>
+            grâce à l'<u>arbre de la syntaxe abstraite</u>(AST).
+          </p>
         </aside>
       </section>
 
       <section>
         <h3>Génération de code par rétro-ingénierie</h3>
-        <img class="r-stretch" alt="Mode direct et inverse" src="../diagramme/machine_ing_retro_ing.drawio.png"/>
-        <p>
-          Boucle de génération de code qui permet l'amélioration continue. Auto-génération lorsque <br/>C = M
-        </p>
+        <div style="height: 300px">
+          <img data-enlargable alt="Mode direct et inverse" src="../diagramme/machine_ing_retro_ing.drawio.png"/>
+          <p>
+            Boucle de génération de code qui permet l'amélioration continue. Auto-génération lorsque <br/>C = M
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Architecture du générateur de code</h3>
+        <div style="height: 450px">
+          <img data-enlargable src="../diagramme/architecture_machine.drawio.png"/>
+        </div>
+      </section>
+
+      <section>
+        <h3>Diagramme de séquence d'utilisation du générateur de code</h3>
+        <div style="height: 450px">
+          <img data-enlargable
+               src="../diagramme/code_generateur_erplibre_global_sequence.drawio.png"/>
+        </div>
       </section>
 
       <section>
@@ -735,20 +785,31 @@
       </section>
 
       <section>
-        <h3>Résultat sur l'interface</h3>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_model.png"/>
+        <h3>Interface - Visualisation des modèles</h3>
+        <div style="height: 450px">
+          <img data-enlargable alt="Modèle" src="../diagramme/cg_model.png"/>
+        </div>
       </section>
 
       <section>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_champs.png"/>
+        <h3>Interface - Visualisation des champs</h3>
+        <div style="height: 450px">
+          <img data-enlargable alt="Modèle" src="../diagramme/cg_champs.png"/>
+        </div>
       </section>
 
       <section>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_hook.png"/>
+        <h3>Interface - Visualisation des hooks</h3>
+        <div style="height: 450px">
+          <img data-enlargable alt="Modèle" src="../diagramme/cg_hook.png"/>
+        </div>
       </section>
 
       <section>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/cg_code.png"/>
+        <h3>Interface - Visualisation des morceaux de code</h3>
+        <div style="height: 450px">
+          <img data-enlargable alt="Modèle" src="../diagramme/cg_code.png"/>
+        </div>
       </section>
 
       <section>
@@ -880,8 +941,10 @@
 
       <section>
         <h3>Accorderie</h3>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/accorderie_processus.png"/>
-        <p>Migration de données, migration du modèle de données, génération du portail, etc.</p>
+        <div style="height: 350px">
+          <img data-enlargable alt="Modèle" src="../diagramme/accorderie_processus.png"/>
+          <p>Migration de données, migration du modèle de données, génération du portail, etc.</p>
+        </div>
       </section>
 
       <section>
@@ -914,28 +977,20 @@
 
       <section>
         <h3>CEPPP</h3>
-        <p>Extraction du modèle de données d'une plateforme externe en PHP + ré-ingénierie.</p>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/exemple_vue_formulaire_patient_ceppp.png"/>
+        <div style="height: 350px">
+          <p>Extraction du modèle de données d'une plateforme externe en PHP + ré-ingénierie.</p>
+          <img data-enlargable alt="Modèle"
+               src="../diagramme/exemple_vue_formulaire_patient_ceppp.png"/>
+        </div>
       </section>
 
       <section>
         <h3>CEPPP (SUITE)</h3>
-        <p>Anonymisation des données (non supporté par le générateur)</p>
-        <img class="r-stretch" alt="Modèle" src="../diagramme/exemple_vue_formulaire_patient_anonyme_ceppp.png"/>
-      </section>
-    </section>
-
-    <!-- what résultat -->
-    <section>
-      <section>
-        <h3>Résultat du générateur de code</h3>
-        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/architecture_machine.drawio.png"/>
-        <p>1. MVC - 2. Gabarit - 3. Données - 4. BD externe</p>
-      </section>
-
-      <section>
-        <h3>Séquence d'utilisation</h3>
-        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/code_generateur_erplibre_global_sequence.drawio.png"/>
+        <div style="height: 350px">
+          <p>Anonymisation des données (non supporté par le générateur)</p>
+          <img data-enlargable alt="Modèle"
+               src="../diagramme/exemple_vue_formulaire_patient_anonyme_ceppp.png"/>
+        </div>
       </section>
     </section>
 
@@ -946,15 +1001,11 @@
 
       <section>
         <h3>Principale conclusions de la recherche</h3>
-        <p>Ingénierie</p>
-        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
+        <div style="height: 350px">
+          <p>Ingénierie</p>
+          <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
+        </div>
       </section>
-
-      <!--      <section>-->
-      <!--        <h3>Principale conclusions de la recherche</h3>-->
-      <!--        <p>Communauté</p>-->
-      <!--        <img class="r-stretch" alt="Logo LABAC" src="../diagramme/developpeur_outil_developpement.drawio.png"/>-->
-      <!--      </section>-->
 
       <section>
         <h3>Question demeurée sans réponse</h3>
