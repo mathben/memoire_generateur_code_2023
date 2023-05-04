@@ -26,7 +26,7 @@
       <div>
         <u><b>Génération de code automatisée pour les modules d'un ERP libre, application à la création d'un réseau
           d'entraide et d'amélioration continue</b></u><br/>
-        Présenté par <b>Mathi6eu Benoit</b><br/>
+        Présenté par <b>Mathieu Benoit</b><br/>
       </div>
       <div style="text-align: left;">JURY</div>
       <ul>
@@ -68,13 +68,16 @@
                   <a href="#/lvl_0">Niveau 0 et 1, acquis en société moderne</a>
                 </li>
                 <li>
-                  <a href="#/demonstration">Démonstration du générateur de module Odoo sur ERPLibre</a>
+                  <a href="#/lvl_2">Niveau 2, génération de code</a>
                 </li>
                 <li>
-                  <a href="#/lvl_2">Niveau 2 et 3, génération de code</a>
+                  <a href="#/demonstration">Démonstration de résultats du générateur de module Odoo sur ERPLibre</a>
                 </li>
                 <li>
-                  <a href="#/demonstration">Démonstration de l'amélioration continue</a>
+                  <a href="#/lvl_2">Niveau 3, génération de code avec rétroaction</a>
+                </li>
+                <li>
+                  <a href="#/demonstration">Démonstration de résultats d'amélioration continue</a>
                 </li>
                 <li>
                   <a href="#/lvl_4">Niveau 4 et 5, la poïèse d'une génération de code</a>
@@ -94,7 +97,8 @@
         Je vais tout d'abord me présenter, puis les résultats seront démontrés en ordre de 6 niveaux de production en
         ingénierie numérique.<br/>
         Je dois mentionner un biais, ma présentation sera teintée de mes convictions profondes envers le logiciel libre.<br/>
-        Voici donc un bref aperçu de mes travaux.
+        Voici donc un bref aperçu de mes travaux, veuillez noter que la présentation a été préparée avec prérequis la
+        lecture de mon mémoire. Je vous invite à le lire pour des compléments d'information.
       </aside>
     </section>
 
@@ -559,11 +563,11 @@
           </a>
         </div>
         <aside class="notes">
-          C'est ainsi que nous arrivons au niveau 2, le générateur de code.
+          C'est ainsi que nous arrivons au niveau 2, le générateur de code et objet de ma maîtrise.
         </aside>
       </section>
       <section>
-        <h3>Project existant</h3>
+        <h3>Projet existant</h3>
         <p>
           <a href="https://github.com/bluisknot/github_odoo_apps/tree/12.0">https://github.com/bluisknot/github_odoo_apps/tree/12.0</a>
         </p>
@@ -599,7 +603,7 @@
           <li>Génération avec des données</li>
         </ul>
         <aside class="notes">
-          Cette démonstration est de la génération de code par gabarit avec des données.
+          Cette démonstration de résultat est de la génération de code par gabarit avec des données.
         </aside>
       </section>
 
@@ -622,81 +626,24 @@
     <section id="lvl_3">
       <section>
         <h3>Niveau 3 - Générateur de code avec rétroaction</h3>
+        <h4>Par rétro-ingénierie</h4>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
           <a href="#/demonstration">
             <button style="background-color: rebeccapurple;">&#129302;</button>
           </a>
         </div>
+        <div style="height: 300px">
+          <img data-enlargable alt="Mode direct et inverse" src="../diagramme/machine_ing_retro_ing.drawio.png"/>
+          <p>
+            Boucle de génération de code qui permet l'amélioration continue.
+            <!--            Auto-génération lorsque <br/>C = M-->
+          </p>
+        </div>
         <aside class="notes">
           C'est pourquoi nous arrivons au niveau 3!<br/>
-          montrer image amélioration continue<br/>
-          Génération de technique<br/>
-          <h3>Résultat de l'amélioraton continue</h3>
-          <ol>
-            <li>
-              Extraction du code via l’utilisation d’un AST et extraction des méta-données dans les
-              fichiers XML;
-            </li>
-            <li>
-              Amélioration continue sur la génération de code grâce à la reproduction à l’aide de
-              l’extraction du code;
-            </li>
-            <li>
-              Un outil pour aider à la création de technique de génération à l’aide d’un générateur
-              de générateur de code;
-            </li>
-            <li>
-              Le générateur de code est accompagné de tests de validation en reproduisant l’ensemble
-              des techniques en démonstration;
-            </li>
-            <li>
-              La génération de code applique des règles de codage standardisées.
-            </li>
-          </ol>
-        </aside>
-      </section>
+          <!--          montrer image amélioration continue<br/>-->
+          <!--          Génération de technique<br/>-->
 
-      <section>
-        <h3>Technique de génération de code avec rétroaction</h3>
-        <ul>
-          <li>Réplicateur</li>
-          <li>Générateur de générateur</li>
-          <li>Auto-générateur</li>
-        </ul>
-        <aside class="notes">
-          Veut l'appropriation de son résultat à l'utilisateur et qu'il puisse le partager. C'est comme faire une
-          fabrication à l'aide d'un outil.
-        </aside>
-      </section>
-
-      <section>
-        <h3>Réplicateur</h3>
-        <ul>
-          <li>
-            Lire du code
-          </li>
-          <li>
-            Étudie du code. Condition de continuer ou abandon.
-          </li>
-          <li>
-            Copie le code
-          </li>
-          <li>
-            Modifie
-          </li>
-        </ul>
-        <aside class="notes">
-        </aside>
-      </section>
-
-      <section>
-        <h3>Tester le générateur</h3>
-        <ul>
-          <li>
-            Validation de la source avec un suivi des modifications dans le code.
-          </li>
-        </ul>
-        <aside class="notes">
         </aside>
       </section>
 
@@ -704,27 +651,45 @@
         <h3>Rétro-ingénierie</h3>
         <div style="height: 300px">
           <img data-enlargable alt="Rétro-ingénierie" src="../diagramme/Retroingenierie_-_Byrne.png"/>
-          <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la
-            <u>ré-ingénierie</u>.
-          </p>
         </div>
         <aside class="notes">
           <p>Capacité d'<u>extraire</u> des informations sur un code pour créer une <u>altération</u> et permettre la
             <u>ré-ingénierie</u>
             grâce à l'<u>arbre de la syntaxe abstraite</u>(AST).
           </p>
+          <p>Effet inverse de l'ingénierie <b>Explique</b></p>
         </aside>
       </section>
 
       <section>
-        <h3>Génération de code par rétro-ingénierie</h3>
-        <div style="height: 300px">
-          <img data-enlargable alt="Mode direct et inverse" src="../diagramme/machine_ing_retro_ing.drawio.png"/>
-          <p>
-            Boucle de génération de code qui permet l'amélioration continue. Auto-génération lorsque <br/>C = M
-          </p>
+        <h3>Technique de génération de code avec rétroaction</h3>
+        <div style="height: 350px">
+          <p>Ingénierie</p>
+          <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
         </div>
         <aside class="notes">
+          Les résultats de l'amélioration continue sont :
+          <ol>
+            <li>
+              l'extraction du code via l’utilisation d’un AST et extraction des méta-données dans les
+              fichiers XML;
+            </li>
+            <li>
+              l'amélioration continue sur la génération de code grâce à la reproduction à l’aide de
+              l’extraction du code;
+            </li>
+            <li>
+              Un outil pour aider à la création de technique de génération à l’aide d’un générateur
+              de générateur de code;
+            </li>
+            <li>
+              Le générateur de code est accompagné de tests de validation qui reproduise l’ensemble
+              des techniques en démonstration;
+            </li>
+            <li>
+              La génération de code applique des règles de codage standardisées.
+            </li>
+          </ol>
         </aside>
       </section>
 
@@ -748,7 +713,7 @@
       </section>
 
       <section>
-        <h3>Performance</h3>
+        <h3>Performance d'exécution du générateur</h3>
         <ul>
           <li>
             Exécution de génération. 1s, 5s, 30s.
@@ -761,8 +726,6 @@
           </li>
         </ul>
         <aside class="notes">
-          TODO lire des travaux scientifiques sur des projets qui utilise Odoo, les reproduire avec le générateur de
-          code pour valider son efficacité.<br/>
         </aside>
       </section>
 
@@ -784,38 +747,17 @@
           Plusieurs critères à comprendre pour mesurer les temps. Chaques développeurs ont des connaissances
           différentes. Chaque contexte nécessite différentes adaptations. De plus, cela dépend aussi de l'avancement
           du générateur, ce qu'il gère déjà, puisqu'il permet de booster ce qui est déjà supporté. Puis la technique a
-          implémenté peut différer en niveau de difficulté dépend de la plateforme.<br/>
-          Quels sont les avantages, les bénéfices à l'utilisation du générateur de code? Elle permet l'accélération du
-          développement par le partage de connaissances, pour développeur expérimenté et nouveau.<br/>
+          implémenté peut différer en niveau de difficulté, cela dépend de la plateforme.<br/>
+          Quels sont les avantages, les bénéfices à l'utilisation du générateur de code? Il permet l'accélération du
+          développement par le partage de connaissances autant pour un développeur expérimenté qu'un nouveau.<br/>
           La manière de mesurer est arbitraire, c'est relatif à plusieurs contextes.<br/>
-          Trouver un protocole pour mesurer les performances.<br/>
+          Il faut trouver un protocole commun pour mesurer les performances.<br/>
           Si on veut standardiser notre méthodologie, il faut ouvrir un projet pour évaluer les performances que ça
           génère, définir exactement les critères du protocole de test.
         </aside>
       </section>
 
       <section>
-        <h3>Méthodologie de développement</h3>
-        <ul>
-          <li>
-            Mode sprint
-          </li>
-          <li>Extreme programming en solo</li>
-          <li>
-            Pas de planification de vue globale
-          </li>
-        </ul>
-        <aside class="notes">
-        </aside>
-      </section>
-
-       <section>
-         TODO diagramme développement allopoïèse
-        <aside class="notes">
-        </aside>
-      </section>
-
-       <section>
         <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
           <a href="#/demonstration">
             <button style="background-color: rebeccapurple;">&#129302;</button>
@@ -824,11 +766,9 @@
         <h3>Démonstration de génération de code avec rétroaction</h3>
         <h4>Technique</h4>
         <ul>
-          <li>Génération par gabarit</li>
-          <li>Génération avec des données</li>
+          <li>Mise à jour des métadonnées selon le code</li>
         </ul>
         <aside class="notes">
-          Cette démonstration est TODO
         </aside>
       </section>
 
@@ -850,14 +790,14 @@
           </a>
         </div>
         <aside class="notes">
-          Parler des poïèses<br/>
+          C'est pourquoi nous arrivons au niveau 4!<br/>
+          Tout d'abord, il faut comprendre quelques définitions pour arriver à l'autopoïèse.
         </aside>
       </section>
 
       <section>
         <h3>Poïèse</h3>
         <p>Processus créatif de fabrication, de production ou de création.</p>
-        <!-- todo mettre exemple génie industriel -->
         <aside class="notes">
         </aside>
       </section>
@@ -865,9 +805,11 @@
       <section>
         <h3>Technopoïèse</h3>
         <p>Processus créatif de développement technologique.</p>
-        <p>Capacité de l'humanité à créer et à façonner la technologie pour répondre à ses besoins et à ses désirs.</p>
+
         <p><u>La technologie est un outil.</u></p>
         <aside class="notes">
+          <p>Capacité de l'humanité à créer et à façonner la technologie pour répondre à ses besoins et à ses
+            désirs.</p>
         </aside>
       </section>
 
@@ -875,6 +817,7 @@
         <h3>Allopoïèse</h3>
         <p>Un système qui développe quelque chose avec des composantes externes.</p>
         <aside class="notes">
+          Une industrie est de l'Allopoïèse, des machines qui créent un produit.
         </aside>
       </section>
 
@@ -882,22 +825,23 @@
         <h3>Autopoïèse</h3>
         <p>Un système qui se développe soi-même avec seulement des composantes internes.</p>
         <p><u>Contraire de l'Allopoïèse</u></p>
-        <ul>
-          <li>
-            Autonome
-          </li>
-          <li>
-            Individuel
-          </li>
-          <li>
-            Connaissant et établis ses limites
-          </li>
-          <li>
-            Absent d'entrant et de sortant
-          </li>
-        </ul>
         <p><u>C'est un auto-reproducteur!</u></p>
         <aside class="notes">
+          C'est un système :
+          <ul>
+            <li>
+              Autonome
+            </li>
+            <li>
+              Individuel
+            </li>
+            <li>
+              Connaissant et établis ses limites
+            </li>
+            <li>
+              Absent d'entrant et de sortant
+            </li>
+          </ul>
         </aside>
       </section>
 
@@ -919,7 +863,7 @@
 <script
     type="text/template">make addons_install_code_generator_code_generator</script>
       </code></pre>
-        Échec puisque je ne génère pas tous les mots du module du code_generator.
+        Échec puisque le générateur n'arrive pas à se reproduire entièrement sans erreur.
         <aside class="notes">
         </aside>
       </section>
@@ -930,6 +874,7 @@
           <img data-enlargable alt="Modèle" src="../diagramme/cg_model.png"/>
         </div>
         <aside class="notes">
+          Voici de quoi semble l'interface du générateur de code qui contient les métadonnées du générateur de code.
         </aside>
       </section>
 
@@ -962,20 +907,29 @@
 
       <section>
         <h3>Technique d'autopoïèse</h3>
-        <ul>
-          <li>Auto-générateur</li>
-          <li>Auto-ingénierie</li>
-          <li>Développement de technique automatisée</li>
-        </ul>
+        <div style="height: 350px">
+          <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
+        </div>
         <aside class="notes">
-          Technologie de rupture
+          L'autopoïèse a le potentiel d'être une technologie de rupture, c'est-à-dire d'apporter de grand changement aux
+          technologies ERP actuel.<br/>
+          <br/>
+          Le code est la machine même.<br/>
+          <ul>
+            <li>Auto-générateur</li>
+            <li>Auto-ingénierie</li>
+            <li>Auto-amélioration</li>
+            <li>Développement de technique automatisée</li>
+          </ul>
         </aside>
       </section>
 
       <section>
         <h3>Problématique</h3>
         <aside class="notes">
-          Sortir de l'isolement, on ne veut pas créer des entités indépendantes qui se gère par soi même.
+          L'autopoïèse est un système individuel indépendant. Hors, dans un réseau d'entraide, il faut sortir de
+          l'isolement, ne pas créer de petites entités complètement indépendantes, mais aider une communauté à se gérer
+          et à échanger avec d'autres communautés.
         </aside>
       </section>
     </section>
@@ -983,43 +937,8 @@
     <section id="lvl_5">
       <section>
         <h3>Niveau 5 - Sympoïèse</h3>
-        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
-          <a href="#/demonstration">
-            <button style="background-color: rebeccapurple;">&#129302;</button>
-          </a>
-        </div>
-        <aside class="notes">
-          C'est une autopoïèse éthique sur la fabrication, elle doit avoir conscience de ce qui l'entoure.
-          <br/>
-          exemple corail, champignon, communication en collaboration pour le maintient de son espèce.
-          <br/>
-          L'être humain est à la base destructif, il a l'habitude par exemple de manger pour transformer. Donnons leur
-          les outils de la technopoïèse pour gérer leurs besoins et formons les gens sur la gestion de la
-          consommation.<br/>
-          l'être humain va pouvoir mieux conserver son habitat avec des outils partagés entre la communauté et atteindre
-          localement la personne.<br/>
-          Les connaissances devraient être partagées au maximum pour un travail collaboratif.<br/>
-          Pour revenir au niveau 0, la théorie de l'autodétermination soutient que l'être humain a besoin de se sentir
-          autonome et libre de prendre des décisions qui ont un impact sur sa vie. Il doit pouvoir expérimenter, se
-          tromper et apprendre.
-        </aside>
-      </section>
-
-      <section>
-        <h3>Technique de sympoïèse</h3>
-        <ul>
-          <li>Automatisation collaborative entre robot</li>
-          <li>Réduction du réchauffement climatique</li>
-        </ul>
-        <aside class="notes">
-        </aside>
-      </section>
-
-      <section>
-        <h3>Sympoïèse</h3><br/>
         Un système qui se développe en collectivité et en collaboration qui a un effet bénéfique sur les
         écosystèmes.<br/>
-        <br/>
         <ul>
           <li>
             Technologie éthique
@@ -1033,18 +952,32 @@
           <li>
             Mouvement des villes en transition
           </li>
+          <li>Automatisation collaborative entre robot</li>
+          <li>Réduction du réchauffement climatique</li>
         </ul>
         <aside class="notes">
-          Réduire la consommation<br/>
-          moins utiliser de produits<br/>
-          partage de l'outil numérique de leur choix comme une musique<br/>
-          Réduction des ressources<br/>
-          jeter le moins possible<br/>
-          respecter le libre<br/>
-          utiliser en priorité le logiciel libre<br/>
-          commencer par remplacer tout logiciel qui contrôle le matériel<br/>
-          Générer seulement les logiciels nécessaires pour nos besoins<br/>
-          la technologie est un outil, nous devons contrôler nos limites et respecter nos besoins<br/>
+          C'est pourquoi nous arrivons au niveau 5!<br/>
+          La sympoïèse est une autopoïèse éthique sur la production, elle doit avoir une certaine conscience de ce qui
+          l'entoure.
+          <br/>
+          Pour faire un parallel au monde des vivants, il y a par exemple les coraux ou les champignons, qui
+          communiquent entre eux en collaboration pour le maintient de leurs espèces.
+          <br/>
+          L'être humain est à la base destructeur. Donnons-lui
+          les outils de la technopoïèse pour gérer ses besoins et formons les gens sur la gestion de la
+          consommation.<br/>
+          L'être humain va pouvoir mieux conserver son habitat avec des outils partagés entre la communauté et atteindre
+          localement les personnes.<br/>
+          Les connaissances devraient être partagées au maximum pour un travail collaboratif.<br/>
+          Pour revenir au niveau 0, la théorie de l'autodétermination soutient que l'être humain a besoin de se sentir
+          autonome et libre de prendre des décisions qui ont un impact sur sa vie. Il doit pouvoir expérimenter, se
+          tromper, apprendre et enseigner son expérience. (référence libre)<br/>
+          On peut concevoir deux aspects de la sympoïèse, à la fois un système de communication et de maintenance entre
+          des robots, puis un système écologique pour mettre en place des outils permettant par exemple de réduire notre
+          emprunte sur la planète en évitant le gaspillage par la prise de conscience et la collaboration.<br/>
+          On doit, en technologie, cesser le gaspillage et générer seulement les logiciels nécessaires pour nos
+          besoins<br/>
+          La technologie est un outil, nous devons contrôler nos limites et respecter nos besoins<br/>
         </aside>
       </section>
 
@@ -1055,7 +988,7 @@
             Respecter les demandes et besoins de leurs consommateurs;
           </li>
           <li>
-            Bénéficier d'une réduction du gaspillage de temps de développement;
+            Bénéficier d'une réduction du gaspillage de temps de développement.
           </li>
         </ul>
         <aside class="notes">
@@ -1171,11 +1104,6 @@
 
     <section id="conclusion">
       <section>
-        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
-          <a href="#/demonstration">
-            <button style="background-color: rebeccapurple;">&#129302;</button>
-          </a>
-        </div>
         <h3>Conclusion</h3>
         <aside class="notes">
           la différence entre un réseau de neurone et l'autopoïèse, c'est que l'autopoïèse peut afficher son set de
@@ -1197,28 +1125,29 @@
         <h3>Question demeurée sans réponse</h3>
         <p>Comprendre le fonctionnement d'un système autopoïèse fonctionnel.</p>
         <p>Étudier le changement de forme d'un système en continu changement sur les techniques choisis.</p>
-        <p>Manque de test et métrique sur les performances de génération et d'utilisation.</p>
-        <p>Manque d'intégration des procédures de gestion de communauté à même l'outil.</p>
-        <p>Manque d'outil pour compléter le devops.</p>
-        <p>Manque de configuration sur la génération pour différent paramètre.</p>
+        <!--        <p>Manque de test et métrique sur les performances de génération et d'utilisation.</p>-->
+        <!--        <p>Manque d'intégration des procédures de gestion de communauté à même l'outil.</p>-->
+        <!--        <p>Manque d'outil pour compléter le devops.</p>-->
+        <!--        <p>Manque de configuration sur la génération pour différent paramètre.</p>-->
         <p>Migration des données automatisées.</p>
+        <p>Peut-on générer toute la plateforme entièrement pour Accorderie et CEPPP?</p>
         <aside class="notes">
           Auto-gpt est un exemple.<br/>
           Nous pourrions combler les besoins de suivi de procédure de toute poly grâce à ce logiciel.
         </aside>
       </section>
-      <section>
-        <h3>Question demeurée sans réponse</h3>
-        <p>
-          Auto-poïèse à terminer.
-        </p>
-        <p>Peut-on générer toute la plateforme entièrement pour Accorderie et CEPPP?</p>
-        <aside class="notes">
-          Réchauffement climatique 1°c au 4 ans et en augmentation<br/>
-          Le robot codeur n'est pas un jeu. Son utilisation a des impactes juridiques local et mondial. Cependant il
-          peut générer des jeux!
-        </aside>
-      </section>
+      <!--      <section>-->
+      <!--        <h3>Question demeurée sans réponse</h3>-->
+      <!--        <p>-->
+      <!--          Auto-poïèse à terminer.-->
+      <!--        </p>-->
+      <!--        <p>Peut-on générer toute la plateforme entièrement pour Accorderie et CEPPP?</p>-->
+      <!--        <aside class="notes">-->
+      <!--          Réchauffement climatique 1°c au 4 ans et en augmentation<br/>-->
+      <!--          Le robot codeur n'est pas un jeu. Son utilisation a des impactes juridiques local et mondial. Cependant il-->
+      <!--          peut générer des jeux!-->
+      <!--        </aside>-->
+      <!--      </section>-->
       <section>
         <h3>Débouchent sur de nouvelles voies de recherche</h3>
         <p>
@@ -1235,6 +1164,9 @@
           Pousser au prochain niveau l'auto-ingénierie, doit faire une refactorisation du système via l'autopoïèse.<br/>
           Connexion avec logiciel de génération de micro-code : https://github.com/Torantulino/AI-Functions
         </aside>
+      </section>
+      <section>
+        <h3>Question</h3>
       </section>
     </section>
 
