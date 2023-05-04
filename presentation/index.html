@@ -45,13 +45,12 @@
         Remercier <b>Samuel</b> pour sa confiance. Projet commun ORE et puis pleins d'automatisation industriel.<br/>
         Remercier Martin et Giovanni pour leur révision de mon travail, honoré de faire cette présentation pour
         vous.<br/>
-
       </aside>
     </section>
 
     <!-- TODO situation son travail dans le cadre plus général de son domaine d'étude -->
 
-    <section>
+    <section id="presentation">
       <h3>Plan de présentation</h3>
       <ol>
         <li>
@@ -62,17 +61,31 @@
           <ul>
             <li>
               6 niveaux de production en ingénierie numérique
+              <ul>
+                <li>
+                  <a href="#/lvl_0">Niveau 0 et 1, acquis en société moderne</a>
+                </li>
+                <li>
+                  <a href="#/demonstration">Démonstration du générateur de module Odoo sur ERPLibre</a>
+                </li>
+                <li>
+                  <a href="#/lvl_0">Niveau 2 et 3, génération de code</a>
+                </li>
+                <li>
+                  <a href="#/demonstration">Démonstration de l'amélioration continue</a>
+                </li>
+                <li>
+                  <a href="#/lvl_4">Niveau 4 et 5, la poïèse d'une génération de code</a>
+                </li>
+              </ul>
             </li>
             <li>
-              Démonstration
-            </li>
-            <li>
-              Projets d'étude
+              <a href="#/projet_ore">Projets d'étude ORE et CEPPP</a>
             </li>
           </ul>
         </li>
         <li>
-          Conclusion
+          <a href="#/conclusion">Conclusion</a>
         </li>
       </ol>
       <aside class="notes">
@@ -147,6 +160,8 @@
           <li>Sans limitation technique pour comprendre et résoudre des défis</li>
           <li>Valorisation et reconnaissance du développeur logiciel</li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
     </section>
 
@@ -214,10 +229,13 @@
           </button>
         </div>
         <aside class="notes">
+          J'ai fait une arcade pour vous présenter le générateur de code. Mais avant, on doit comprendre la base. Ce
+          sera court!<br/>
           C'est plus facile que de faire un fichier tableur!<br/>
           retro : tester modification code, ajout méthode. Ajout commentaire. Voir résultat dans UCB, ajout ligne de
           code,
-          regénérer.
+          regénérer.<br/>
+          Deux fois new project relance la boucle.
         </aside>
       </section>
       <section class="scrollable-slide">
@@ -264,6 +282,8 @@
         <button ng-click="ajouterModele()">Ajouter un modèle</button>
         <button ng-click="genererJSON()">Générer le JSON</button>
         <pre>{{json}}</pre>
+        <aside class="notes">
+        </aside>
       </section>
     </section>
 
@@ -304,10 +324,6 @@
           Je vous reviens plus tard avec ce niveau.
         </aside>
       </section>
-      <!--      <section>-->
-      <!--        <aside class="notes">-->
-      <!--        </aside>-->
-      <!--      </section>-->
     </section>
 
     <section id="lvl_1">
@@ -322,13 +338,19 @@
       <section>
         <h3>Système ERPLibre</h3>
         <img data-enlargable style="height: 450px" alt="erp fiche" src="image/erp_libre_4_cat.png"/>
+        <aside class="notes">
+        </aside>
       </section>
       <section>
         <h3>Application ERPLibre</h3>
         <img data-enlargable style="height: 450px" alt="erp fiche" src="image/odoo_menu.png"/>
+        <aside class="notes">
+        </aside>
       </section>
       <section>
         <h3>Ingénierie traditionnelle en développement logiciel</h3>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -355,6 +377,8 @@
             Amélioration continue
           </li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -373,6 +397,8 @@
             Marché des solutions ERP évalué autour de 40 milliards USD mondialement en 2020
           </li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -394,6 +420,8 @@
             Python + XML + Javascript
           </li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -423,6 +451,8 @@
             d'utilisation.
           </p>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -489,7 +519,12 @@
 
     <section id="lvl_2">
       <section>
-        <h3>Générateur de code <a href="#/demonstration">↑</a></h3>
+        <h3>Générateur de code</h3>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <p>Niveau 2</p>
         <aside class="notes">
           Veut l'appropriation de son résultat à l'utilisateur et qu'il puisse le partager. C'est comme faire une
@@ -537,7 +572,12 @@
 
     <section id="lvl_3">
       <section>
-        <h3>Générateur de code avec rétroaction <a href="#/demonstration">↑</a></h3>
+        <h3>Générateur de code avec rétroaction</h3>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <p>Niveau 3</p>
         <aside class="notes">
           montrer image amélioration continue<br/>
@@ -596,6 +636,8 @@
             Modifie
           </li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -605,6 +647,8 @@
             Validation de la source avec un suivi des modifications dans le code.
           </li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -631,6 +675,8 @@
             Boucle de génération de code qui permet l'amélioration continue. Auto-génération lorsque <br/>C = M
           </p>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -638,6 +684,8 @@
         <div style="height: 450px">
           <img data-enlargable src="../diagramme/architecture_machine.drawio.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -646,6 +694,8 @@
           <img data-enlargable
                src="../diagramme/code_generateur_erplibre_global_sequence.drawio.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -706,6 +756,8 @@
             Pas de planification de vue globale
           </li>
         </ul>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -720,6 +772,11 @@
     <section id="lvl_4">
       <section>
         <h3>Autopoïèse</h3>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <p>Niveau 4</p>
         <aside class="notes">
           Parler des poïèses<br/>
@@ -730,6 +787,8 @@
         <h3>Poïèse</h3>
         <p>Processus créatif de fabrication, de production ou de création.</p>
         <!-- todo mettre exemple génie industriel -->
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -737,11 +796,15 @@
         <p>Processus créatif de développement technologique.</p>
         <p>Capacité de l'humanité à créer et à façonner la technologie pour répondre à ses besoins et à ses désirs.</p>
         <p><u>La technologie est un outil.</u></p>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
         <h3>Allopoïèse</h3>
         <p>Un système qui développe quelque chose avec des composantes externes.</p>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -763,6 +826,8 @@
           </li>
         </ul>
         <p><u>C'est un auto-reproducteur!</u></p>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -773,6 +838,8 @@
 <script
     type="text/template">a='a=%r;print(a%%a)';print(a%a)</script>
       </code></pre>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -782,6 +849,8 @@
     type="text/template">make addons_install_code_generator_code_generator</script>
       </code></pre>
         Échec puisque je ne génère pas tous les mots du module du code_generator.
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -789,6 +858,8 @@
         <div style="height: 450px">
           <img data-enlargable alt="Modèle" src="../diagramme/cg_model.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -796,6 +867,8 @@
         <div style="height: 450px">
           <img data-enlargable alt="Modèle" src="../diagramme/cg_champs.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -803,6 +876,8 @@
         <div style="height: 450px">
           <img data-enlargable alt="Modèle" src="../diagramme/cg_hook.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -810,6 +885,8 @@
         <div style="height: 450px">
           <img data-enlargable alt="Modèle" src="../diagramme/cg_code.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -835,6 +912,11 @@
     <section id="lvl_5">
       <section>
         <h3>Sympoïèse</h3>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <p>Niveau 5</p>
         <aside class="notes">
           C'est une autopoïèse éthique sur la fabrication, elle doit avoir conscience de ce qui l'entoure.
@@ -934,9 +1016,16 @@
 
     <section id="projet_ore">
       <section>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <h3>ORE</h3>
         <p>Projet étude 1</p>
         <h4>Offrir Recevoir Échanger</h4>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -945,6 +1034,8 @@
           <img data-enlargable alt="Modèle" src="../diagramme/accorderie_processus.png"/>
           <p>Migration de données, migration du modèle de données, génération du portail, etc.</p>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -966,8 +1057,13 @@
 
     <section id="projet_ceppp">
       <section>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <h3>CEPPP</h3>
-        <p>Projet étude 2</p>
+        <p>Projet étude 2 avec SantéLibre</p>
         <aside class="notes">
           Générer leur modèle avec un lecteur de code PHP qui m'a permis de faire de la ré-ingénierie en copiant leur
           mots. TODO stat<br/>
@@ -982,21 +1078,38 @@
           <img data-enlargable alt="Modèle"
                src="../diagramme/exemple_vue_formulaire_patient_ceppp.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
-        <h3>CEPPP (SUITE)</h3>
+        <h3>CEPPP technique anonymisation des données</h3>
         <div style="height: 350px">
           <p>Anonymisation des données (non supporté par le générateur)</p>
           <img data-enlargable alt="Modèle"
                src="../diagramme/exemple_vue_formulaire_patient_anonyme_ceppp.png"/>
         </div>
+        <aside class="notes">
+        </aside>
+      </section>
+
+      <section>
+        <h3>CEPPP technique</h3>
+        <aside class="notes">
+        </aside>
       </section>
     </section>
 
-    <section>
+    <section id="conclusion">
       <section>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
         <h3>Conclusion</h3>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
@@ -1005,14 +1118,23 @@
           <p>Ingénierie</p>
           <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
         </div>
+        <aside class="notes">
+        </aside>
       </section>
 
       <section>
         <h3>Question demeurée sans réponse</h3>
+        <p>Comprendre le fonctionnement d'un système autopoïèse fonctionnel.</p>
+        <p>Étudier le changement de forme d'un système en continu changement sur les techniques choisis.</p>
         <p>Manque de test et métrique sur les performances de génération et d'utilisation.</p>
         <p>Manque d'intégration des procédures de gestion de communauté à même l'outil.</p>
         <p>Manque d'outil pour compléter le devops.</p>
         <p>Manque de configuration sur la génération pour différent paramètre.</p>
+        <p>Migration des données automatisées.</p>
+        <aside class="notes">
+          Auto-gpt est un exemple.<br/>
+          Nous pourrions combler les besoins de suivi de procédure de toute poly grâce à ce logiciel.
+        </aside>
       </section>
       <section>
         <h3>Question demeurée sans réponse</h3>
