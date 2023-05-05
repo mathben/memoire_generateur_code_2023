@@ -1030,8 +1030,14 @@
           </a>
         </div>
         <h3>Projet d'étude - ORE</h3>
-        <b>Offrir Recevoir Échanger</b>
+        <div style="height: 350px">
+          <img data-enlargable alt="Modèle" src="image/image_processus_ore.png"/><br/>
+          <b>Offrir Recevoir Échanger</b>
+        </div>
         <aside class="notes">
+          Mon mémoire a porté sur des cas réels d'étude, dont la création du projet ORE, 'O' pour offrir, 'R' pour
+          recevoir et 'E' pour échanger. Il s'agit en fait d'une plateforme d'échange de temps où la monnaie sont des
+          heures qu'on peut échanger contre des services.
         </aside>
       </section>
 
@@ -1042,24 +1048,37 @@
           <p>Migration de données, migration du modèle de données, génération du portail, etc.</p>
         </div>
         <aside class="notes">
+          Le projet ORE découle du travail effectué avec un client le réseau Accorderie. Le travail a commencé par
+          l'analyse fonctionnelle de leurs besoins et j'ai fait la migration de leurs modèles de données entièrement
+          avec le générateur de code, ainsi que leurs données. Il y avait 3 phases, la première était une copie
+          identique de leurs modèles de données, c'était une preuve de concept. La deuxième phase était une
+          démonstration d'un ERP sans leurs données. Puis la troisième est une fusion des deux premières incluant le
+          développement de la nouvelle plateforme espace membre.<br/>
+          <br/>
+          Dans la phase 2, j'ai utilisé le générateur de code pour générer l'interface du portail d'Odoo avec leurs
+          modèles obtenant 10 000 lignes de code à personnaliser. Cependant, le projet a été abandonné pour prendre une
+          autre voie avec l'intégration d'une maquette faite par le laboratoire DOMUS de l'université de Sherbrooke. Ce
+          choix était pour avoir une interface client plus facilement accessible et conviviale.
+          <br/>
+          <br/>
+          &#9787; leur processus d'échange de temps a été un développement sur mesure.
         </aside>
       </section>
 
-      <section>
-        <h3>Démonstration ORE</h3>
-        <ul>
-          <li>
-            Processus d'échange de temps
-          </li>
-          <li>
-            Adaptation en temps réel du processus via un diagramme de relation.
-          </li>
-        </ul>
-        <aside class="notes">
-          Intégration AngularJS dans Odoo pour faciliter la réduction de dépendance du serveur, mais en restant hybride.<br/>
-
-        </aside>
-      </section>
+      <!--      <section>-->
+      <!--        <h3>Démonstration ORE</h3>-->
+      <!--        <ul>-->
+      <!--          <li>-->
+      <!--            Processus d'échange de temps-->
+      <!--          </li>-->
+      <!--          <li>-->
+      <!--            Adaptation en temps réel du processus via un diagramme de relation.-->
+      <!--          </li>-->
+      <!--        </ul>-->
+      <!--        <aside class="notes">-->
+      <!--          Intégration AngularJS dans Odoo pour faciliter la réduction de dépendance du serveur, mais en restant hybride.<br/>-->
+      <!--        </aside>-->
+      <!--      </section>-->
     </section>
 
     <section id="projet_ceppp">
@@ -1070,11 +1089,14 @@
           </a>
         </div>
         <h3>Projet d'étude - CEPPP</h3>
-        <p>Avec SantéLibre</p>
+        <div style="height: 350px">
+          <p>Avec</p>
+          <img data-enlargable alt="Modèle" src="image/santelibre.png">
+        </div>
         <aside class="notes">
-          Générer leur modèle avec un lecteur de code PHP qui m'a permis de faire de la ré-ingénierie en copiant leur
-          mots. TODO stat<br/>
-          Je suis en train de créer un copieur
+          CEPPP est mon 2e cas d'étude qui a été développé avec SantéLibre. Ils avaient besoin d'une application pour
+          gérer les relations avec les patients-partenaire. Le but était de créer des formulaires pour partager des
+          données afin d'améliorer la relation entre les patients et les divers partenaires du milieu du CR-CHUM.
         </aside>
       </section>
 
@@ -1086,6 +1108,19 @@
                src="../diagramme/exemple_vue_formulaire_patient_ceppp.png"/>
         </div>
         <aside class="notes">
+          Une plateforme en PHP sur SuiteCRM avait été développée pour gérer les formulaires de CEPPP, elle a été
+          développé
+          en 3 ans de travail et elle n'était pas terminée. Par exemple, il manquait l'anonymisation des données.
+          Avec le générateur de code, j'ai développé en deux jours un module qui est allé extraire les modèles de
+          données du
+          code PHP pour générer une réplique dans ERPLibre. Bien sur, les fonctionnalités n'ont pas été migrée, mais
+          nous
+          avons fait une réingénierie, puisque le projet avait évolué depuis 3 ans. Le reste de l'implémentation était
+          du
+          développement normal. Puis j'ai utilisé le générateur de code pour générer l'interface du portail, que j'ai
+          adapté selon les besoins manuellement.
+          <br/>
+          &#9787; le formulaire
         </aside>
       </section>
 
@@ -1097,12 +1132,9 @@
                src="../diagramme/exemple_vue_formulaire_patient_anonyme_ceppp.png"/>
         </div>
         <aside class="notes">
-        </aside>
-      </section>
-
-      <section>
-        <h3>CEPPP technique</h3>
-        <aside class="notes">
+          L'anonymisation des données est un concept qui rend accessible que certaines données à l'utilisateur, géré
+          selon des permissions et groupes. Par exemple, si le client est ton client, tu vois ses données. Si c'est le
+          client d'un autre intervenant, ton accès est limité et les données sensibles ne sont pas accessibles.
         </aside>
       </section>
     </section>
@@ -1111,8 +1143,9 @@
       <section>
         <h3>Conclusion</h3>
         <aside class="notes">
-          la différence entre un réseau de neurone et l'autopoïèse, c'est que l'autopoïèse peut afficher son set de
-          données en clairs lisible par les humains.
+          En conclusion, le générateur de code apparaît un outil judicieux pour permettre à des organisations telles que
+          des organismes communautaires, de sauver du temps et de l'argent tout en leur offrant des fonctionnalités, un
+          ERP rivalisant ceux des plus grandes entreprises.
         </aside>
       </section>
 
@@ -1123,20 +1156,28 @@
           <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
         </div>
         <aside class="notes">
+          Ma recherche se résumé
         </aside>
       </section>
 
       <section>
         <h3>Question demeurée sans réponse</h3>
-        <p>Comprendre le fonctionnement d'un système autopoïèse fonctionnel.</p>
-        <p>Étudier le changement de forme d'un système en continu changement sur les techniques choisis.</p>
-        <!--        <p>Manque de test et métrique sur les performances de génération et d'utilisation.</p>-->
-        <!--        <p>Manque d'intégration des procédures de gestion de communauté à même l'outil.</p>-->
-        <!--        <p>Manque d'outil pour compléter le devops.</p>-->
-        <!--        <p>Manque de configuration sur la génération pour différent paramètre.</p>-->
-        <p>Migration des données automatisées.</p>
-        <p>Peut-on générer toute la plateforme entièrement pour Accorderie et CEPPP?</p>
+        <ul>
+          <li>
+            Comprendre le fonctionnement d'un système autopoïèse fonctionnel.
+          </li>
+          <li>
+            Étudier le changement de forme d'un système en continu changement sur les techniques choisis.
+          </li>
+          <li>
+            Peut-on réaliser une migration complète des données automatisées?
+          </li>
+          <li>
+            Peut-on générer toute la plateforme entièrement pour Accorderie et CEPPP?
+          </li>
+        </ul>
         <aside class="notes">
+          Cependant, certaines questions demeurent sans réponse.
           Auto-gpt est un exemple.<br/>
           Nous pourrions combler les besoins de suivi de procédure de toute poly grâce à ce logiciel.
         </aside>
