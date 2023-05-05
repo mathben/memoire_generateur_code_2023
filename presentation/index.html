@@ -179,7 +179,7 @@
 
     <section id="demonstration" ng-app="monApp" ng-controller="FormulaireController">
       <section>
-        <h3>Démonstration - Générateur module Odoo</h3>
+        <h3>Démonstration - Générateur module ERPLibre</h3>
         <p>
           Module : <input id="demo_1_input_module" type="text"/>
         </p>
@@ -228,14 +228,14 @@
           <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/lvl_5')">
             LVL 5
           </button>
-          <button
-              onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/projet_ore')">
-            ORE
-          </button>
-          <button
-              onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/projet_ceppp')">
-            CEPPP
-          </button>
+          <!--          <button-->
+          <!--              onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/projet_ore')">-->
+          <!--            ORE-->
+          <!--          </button>-->
+          <!--          <button-->
+          <!--              onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/projet_ceppp')">-->
+          <!--            CEPPP-->
+          <!--          </button>-->
           <button onclick="window.location.replace('/memoire_generateur_code_2023/presentation/index.html#/end')">
             Fin
           </button>
@@ -665,7 +665,7 @@
         <h3>Technique de génération de code avec rétroaction</h3>
         <div style="height: 350px">
           <p>Ingénierie</p>
-          <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
+          <img data-enlargable alt="Logo LABAC" src="../diagramme/dev_generateur_de_code.png"/>
         </div>
         <aside class="notes">
           Les résultats de l'amélioration continue sont :
@@ -858,7 +858,12 @@
       </section>
 
       <section>
-        <h3>Résultat <a href="#/demonstration">↑</a></h3>
+        <div style="position: absolute; top: 0; right: -20px; display: flex; flex-direction: column; font-weight: bold">
+          <a href="#/demonstration">
+            <button style="background-color: rebeccapurple;">&#129302;</button>
+          </a>
+        </div>
+        <h3>Résultat</h3>
         <pre class="bash"><code data-trim data-noescape>
 <script
     type="text/template">make addons_install_code_generator_code_generator</script>
@@ -908,7 +913,7 @@
       <section>
         <h3>Technique d'autopoïèse</h3>
         <div style="height: 350px">
-          <img data-enlargable alt="Logo LABAC" src="../diagramme/auto_machine_discussion.drawio.png"/>
+          <img data-enlargable alt="Logo LABAC" src="../diagramme/dev_autopoiese.png"/>
         </div>
         <aside class="notes">
           L'autopoïèse a le potentiel d'être une technologie de rupture, c'est-à-dire d'apporter de grand changement aux
@@ -977,7 +982,7 @@
           emprunte sur la planète en évitant le gaspillage par la prise de conscience et la collaboration.<br/>
           On doit, en technologie, cesser le gaspillage et générer seulement les logiciels nécessaires pour nos
           besoins<br/>
-          La technologie est un outil, nous devons contrôler nos limites et respecter nos besoins<br/>
+          La technologie est un outil, nous devons contrôler nos limites et respecter nos besoins.<br/>
         </aside>
       </section>
 
