@@ -274,7 +274,6 @@ Ce qui fonctionne :
     \item Changer les informations sur les propriétés «manifest» du module;
     \item Ajouter du code, voir Annexe~\ref{annexe_cg_gui_code};
     \item Modification des «hooks», voir Annexe~\ref{annexe_cg_gui_hook};
-    \item Etc.
 \end{enumerate}
 
 \subsubsection{L'interface «code hook»}
@@ -533,7 +532,7 @@ Le générateur de code a permis de créer un module Odoo 12.0 avec leurs modèl
 
 Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «True» était exprimé par la valeur «-1» dans un type «int», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçu pour de l’automatisation, mais plutôt pour que les échanges de services soient validées par des membres de la communauté.
 
-Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre OSRM, etc.
+Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre OSRM.
 
 La migration du modèle de données a été faite dans un module qui dépend de la technique «Migration DB» qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migrée vers une mise en production.
 
@@ -640,7 +639,7 @@ Le robot logiciel codeur contient plusieurs compétences techniques qui sont dé
 % TODO les techniques ont été développés comme preuve de concept, il manque de mâturité et de personnalisation. 
 
 \subsection{Compétences sociales}
-Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a une interface graphique LCNC qui permet la paramétrisation pour la génération de code. Il y a aussi une interface de code pour paramétrer le fonctionnement de la génération accompagnée de la rétro-ingénierie et il permet d'accompagner le développeur dans l'évolution de son module. Il contient aussi une fonctionnalité pour afficher les différences de code entre la version précédente et la version générée, il permet de créer des statistiques sur les lignes de codes, il permet de montrer la couverture de code, etc.
+Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a une interface graphique LCNC qui permet la paramétrisation pour la génération de code. Il y a aussi une interface de code pour paramétrer le fonctionnement de la génération accompagnée de la rétro-ingénierie et il permet d'accompagner le développeur dans l'évolution de son module. Il contient aussi une fonctionnalité pour afficher les différences de code entre la version précédente et la version générée, il permet de créer des statistiques sur les lignes de codes et il permet de montrer la couverture de code.
 
 % TODO manque l'outil en temps réel, ce n'est pas supporté dans Odoo, il faut utiliser une application tierce tel que Etherpad et ajouter les méthodes de synchronisation des mises à jour sur les données. Il manque l'accès directe aux script à la racine du projet ERPLibre pour contrôler les outils de contrôle de la qualité. Collaboration, conscience professionnelle, résolutions de problèmes en équipe, communication efficace, adaptivité sur les livrables et exigences clientes
 
