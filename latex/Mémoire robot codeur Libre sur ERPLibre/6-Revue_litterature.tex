@@ -5,19 +5,19 @@
 
 Dans ce mémoire, le terme robot logiciel revient à quelques reprises, ainsi sa définition est «agent intelligent programmé afin d'imiter les capacités d'un être humain dans un système informatique ou afin d'effectuer un ensemble de tâches prédéterminées de manière automatique.»~\cite{robot_logiciel_oqlf_2018} Les autres termes suggérés sont «robot informatique» et «robot». Ainsi, un robot logiciel codeur est une intelligence artificielle orientée au développement logiciel. En anglais, il pourrait être nommé un «DevBot»~\cite{8823643}.
 
-Selon l'auteur Erlenhov.L et al. de l'article «Current and future bots in software development»~\cite{8823643}, le robot logiciel développeur idéal est un développeur de logiciels artificiel qui est autonome, adaptable et possède des compétences techniques ainsi que sociales. La référence à l'aspect social d'un robot logiciel développeur est, par exemple, l'outillage aux développeurs autour d'un éditeur asynchrone en temps réel tel que CodeBuddy~\cite{10.1145/3287324.3293750} ou CodePilot~\cite{10.5555/1030453.1030540} dans leur développement collaboratif.
+Selon les auteurs Erlenhov et al. en 2019~\cite{8823643}, le robot logiciel développeur idéal est un développeur de logiciels artificiel qui est autonome, adaptable et possède des compétences techniques ainsi que sociales. La référence à l'aspect social d'un robot logiciel développeur est, par exemple, l'outillage aux développeurs autour d'un éditeur asynchrone en temps réel tel que CodeBuddy~\cite{10.1145/3287324.3293750} ou CodePilot~\cite{10.5555/1030453.1030540} dans leur développement collaboratif.
 
 \section{Génération de code}
 
-Utiliser un générateur de code dans un contexte d'application web est efficace, comme le démontre l'auteur Uyanik.B, et al. de l'article «A template-based code generator for web applications»~\cite{SAHIN2020}, ils obtiennent un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code.
+Utiliser un générateur de code dans un contexte d'application web est efficace, comme le démontre les auteurs Uyanik et al. en 2020~\cite{SAHIN2020}, ils obtiennent un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code.
 
-Dans un autre projet de l'auteur Pichidtienthum.S et al. de l'article «Developing module generation for odoo using concept of low-code development platform and automation systems»~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, ils obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeurs peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celle expérimentée dans ce mémoire, en excluant l'aspect de la rétro-ingénierie qui est manquante.
+Dans un autre projet de les auteurs Pichidtienthum et al. en 2021~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, ils obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeurs peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celle expérimentée dans ce mémoire, en excluant l'aspect de la rétro-ingénierie qui est manquante.
 
 \section{Logiciel Libre et Open Source}
 
 Le partage de bibliothèque Open Source est une méthode utilisée pour accélérer le développement permettant la réutilisation de code. L’Open Source permet aussi de supporter l'interopérabilité~\cite{open_interop_2011}, qui est la capacité de différents logiciels d'interagir et communiquer efficacement entre eux, de manière transparente et harmonieuse, sans entraves ni obstacles, même s’ils ont été développés par différentes organisations.
 
-D'ailleurs, comme le mentionne l'auteur Hertel.G et al. de l'article «Motivation of software developers in Open Source projects: an Internet-based survey of contributors to the Linux kernel»~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associée à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans son développement.
+D'ailleurs, comme le mentionne les auteurs Hertel et al. en 2003~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associée à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans son développement.
 
 % \section{Logiciel Libre}
 % Le logiciel libre entrave l’interopérabilité seulement pour les systèmes non compatibles avec la copyleft. Bien qu’elle prône la liberté du code, elle est restrictive.
@@ -28,17 +28,17 @@ D'ailleurs, comme le mentionne l'auteur Hertel.G et al. de l'article «Motivatio
 
 Bien qu'il y a plusieurs aspects de sécurité à considérer, ce qui nous intéresse, ici, est la sécurité logicielle via son développement et ses dépendances.
 
-Thompson.K démontre, dans l'article «Reflections on trusting trust»~\cite{thompson_trusting_1984}, qu'il est possible d'injecter du code malveillant dans les outils de compilation d'un logiciel pour créer une faille de sécurité dans l'exécutable. Shah.M explique dans son blog~\cite{discussion_reflection_trusting_2020}, que la morale est assez simple : il est impossible de fonctionner\footnote{D'utiliser et d'avoir confiance sur des technologies} sans faire confiance à quelqu'un. À moins que vous n'ayez écrit tout le code vous-même, vous devrez faire confiance à la sécurité d'une partie du processus de traitement du programme.
+Thompson démontre en 1984~\cite{thompson_trusting_1984} qu'il est possible d'injecter du code malveillant dans les outils de compilation d'un logiciel pour créer une faille de sécurité dans l'exécutable. Shah explique dans son blog en 2020~\cite{discussion_reflection_trusting_2020}, que la morale est assez simple : il est impossible de fonctionner\footnote{D'utiliser et d'avoir confiance sur des technologies} sans faire confiance à quelqu'un. À moins que vous n'ayez écrit tout le code vous-même, vous devrez faire confiance à la sécurité d'une partie du processus de traitement du programme.
 
 Hors, s'il est nécessaire de faire confiance, comment peut-on faire confiance lorsqu'on observe des problèmes de compatibilité de licence libre~\cite{pfeiffer2022license}\cite{8667977}? Le développeur choisi des bibliothèques libres qui utilisent d'autres bibliothèques pas nécessairement libres et qui peuvent contenir des failles de sécurités~\cite{10.1145/3133956.3134048}, sans en être conscient. 
 
-Pour revenir à l'article de Thompson.K, comme le mentionne Yona.L dans son blog, cela suggère que, tant que nous ne sommes pas en mesure de rétroconception\footnote{Faire de la rétro-ingénierie sur un développement.} et de contrôler pleinement la fonctionnalité des réseaux neuronaux, il existera un risque inhérent. Même si nous parvenons à résoudre le problème d'alignement et à rendre l'IA conviviale pour l'homme, les attaquants qui obtiennent un accès en écriture aux poids\footnote{Un poids est la valeur numérique d'une neurone dans un réseau de neurones.} pourront implanter leurs portes dérobées.~\cite{discussion_reflection_trusting_ia_2023}
+Pour revenir à l'article de Thompson, comme le mentionne Yona dans son blog en 2023, cela suggère que, tant que nous ne sommes pas en mesure de rétroconception\footnote{Faire de la rétro-ingénierie sur un développement.} et de contrôler pleinement la fonctionnalité des réseaux neuronaux, il existera un risque inhérent. Même si nous parvenons à résoudre le problème d'alignement et à rendre l'IA conviviale pour l'homme, les attaquants qui obtiennent un accès en écriture aux poids\footnote{Un poids est la valeur numérique d'une neurone dans un réseau de neurones.} pourront implanter leurs portes dérobées.~\cite{discussion_reflection_trusting_ia_2023}
 
 Ainsi, il serait pertinent de développer un robot codeur qui soit en mesure de faire de la rétro-ingénierie sur une application et ses bibliothèques. Le générateur pourrait comprendre le fonctionnement de cette chaîne de dépendance et générer le code idéal pour la remplacer par une nouvelle application digne de confiances en validant la propriété intellectuelle libre.
 
 \section{Les complexités de développer ERP}
 
-L'auteur Pitetti.F mentionne dans son article «L’implémentation d’un ERP libre implique-t-elle nécessairement une réduction des coûts ?» : «Le choix d’un ERP libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{Ré-ingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet.»~\cite{pitetti2010implementation} C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement. Les étapes suivantes ont été définies par l'auteur Braud.O dans son mémoire «Facteurs decisionnels pour l’implantation d’un erp dans les pme : Le rôle de l’evaluation des benefices tangibles et intangibles»~\cite{uqam_erp_benefice_2008} telles que :
+L'auteur Pitetti mentionne en 2010 : «Le choix d’un ERP libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{Ré-ingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet.»~\cite{pitetti2010implementation} C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement. Les étapes suivantes ont été définies par l'auteur Braud en 2008 dans son mémoire «Facteurs decisionnels pour l’implantation d’un erp dans les pme : Le rôle de l’evaluation des benefices tangibles et intangibles»~\cite{uqam_erp_benefice_2008} telles que :
 \begin{enumerate}
     \item Évaluation des besoins;
     \item Préparation du projet;
@@ -70,7 +70,7 @@ L'auteur Pitetti.F mentionne dans son article «L’implémentation d’un ERP l
     \end{enumerate}
 \end{enumerate}
 
-Un autre facteur complexe est l'association des processus d'affaires actuels à la ré-ingénierie vers un nouveau modèle de processus d'affaires adapté aux contraintes technologiques, ainsi que les fonctionnalités déjà existantes sur la plateforme choisie. Comme on peut le constater dans le travail de l'auteur Medjek.M et al. dans le mémoire «Conception et réalisation d’un module ERP pour le suivi des patients sur le plan médical et financier au niveau de la clinique EL DJOUHER»~\cite{kenza2018conception}, un travail a été effectué pour énumérer les fonctionnalités de la plateforme, ainsi que de faire du développement personnalisé avec tous les diagrammes de conception génie logiciel.
+Un autre facteur complexe est l'association des processus d'affaires actuels à la ré-ingénierie vers un nouveau modèle de processus d'affaires adapté aux contraintes technologiques, ainsi que les fonctionnalités déjà existantes sur la plateforme choisie. Comme on peut le constater dans le travail des auteurs Medjek et al. en 2018~\cite{kenza2018conception}, un travail a été effectué pour énumérer les fonctionnalités de la plateforme, ainsi que de faire du développement personnalisé avec tous les diagrammes de conception génie logiciel.
 
 Dans Odoo, le nombre de module augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et à éviter de réinventer la roue. En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet pour des adaptations futures aux nouveaux processus de l'entreprise.
 
@@ -86,7 +86,7 @@ Dans Odoo, le nombre de module augmente avec le temps et diffère entre les vers
 
 \section{DevOps}\label{devops_ref}
 
-Comme le mentionne l'auteur Ebert.C dans l'article «DevOps»~\cite{ebert2016devops}, le DevOps consiste en un développement et une provision de processus commerciaux rapides et flexibles. Il intègre efficacement le développement, la livraison et les opérations, facilitant ainsi une connexion fluide et flexible de ces silos traditionnellement séparés, voir Figure~\ref{fig:devops}.
+Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le DevOps consiste en un développement et une provision de processus commerciaux rapides et flexibles. Il intègre efficacement le développement, la livraison et les opérations, facilitant ainsi une connexion fluide et flexible de ces silos traditionnellement séparés, voir Figure~\ref{fig:devops}.
 
 \begin{figure}[htb]
 \centering
@@ -100,7 +100,7 @@ Comme le mentionne l'auteur Ebert.C dans l'article «DevOps»~\cite{ebert2016dev
 
 % Basé sur des templates de code et une interface qui, au besoin, permet la configuration par du code.
 
-Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des segments d'application en utilisant pas ou peu de code. Selon l'auteur Bock.A.C de l'article «Low-Code Platform»~\cite{LC_bock_2021}, le LCNC a besoin de : 
+Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des segments d'application en utilisant pas ou peu de code. Selon l'auteur Bock en 2021~\cite{LC_bock_2021}, le LCNC a besoin de : 
 \begin{enumerate}
     \item Aspect général;
     \begin{enumerate}
@@ -135,7 +135,7 @@ Le LCNC est un concept qui permet à l’utilisateur de développer une platefor
     \end{enumerate}
 \end{enumerate}
 
-Selon l'auteur Apurvanand.S de l'article «Supporting the understanding and comparison of low-code development platform»~\cite{9226356}, il faut les éléments techniques suivants pour supporter une plateforme LCNC :
+Selon l'auteur Apurvanand en 2020~\cite{9226356}, il faut les éléments techniques suivants pour supporter une plateforme LCNC :
 \begin{enumerate}
     \item Bases de données;
     \item Services externes;
@@ -155,7 +155,7 @@ Selon l'auteur Apurvanand.S de l'article «Supporting the understanding and comp
     \end{enumerate}
 \end{enumerate}
 
-L'auteur Apurvanand.S poursuit en mentionnant les besoins de niveau supérieur d’une plateforme LCNC :
+L'auteur Apurvanand poursuit en mentionnant les besoins de niveau supérieur d’une plateforme LCNC :
 \begin{enumerate}
     \item GUI;
     \item Interoperabilité, support entre services externes et base de données;
@@ -186,7 +186,7 @@ Hors, en supportant l'ensemble de ces mécanismes et éléments techniques, nous
 
 \subsection{Communication non violente}
 
-La mise en place d’une méthode de communication non violente~\footnote{\url{https://fr.wikipedia.org/wiki/Communication_non_violente}} formalisée par Marshall B. Rosenberg, voir Figure~\ref{fig:communication_non_violente}, permettrait de réduire les frictions et faciliter l'intégration entre les participants du réseau d’entraide.
+La mise en place d’une méthode de communication non violente~\footnote{\url{https://fr.wikipedia.org/wiki/Communication_non_violente}} formalisée par Rosenberg, voir Figure~\ref{fig:communication_non_violente}, permettrait de réduire les frictions et faciliter l'intégration entre les participants du réseau d’entraide.
 
 \begin{figure}[htb]
 \centering
@@ -197,7 +197,7 @@ La mise en place d’une méthode de communication non violente~\footnote{\url{h
 
 \subsection{Guide construire une communauté Open Source}
 
-Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés enn 4 sections avec des titres indicateurs d’orientation :
+Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés en 4 sections avec des titres indicateurs d’orientation :
 
 \begin{enumerate}
     \item Mise en place de votre projet pour le succès;
@@ -293,7 +293,7 @@ L'autopoïèse peut être décrite comme un système qui se développe par soi m
 
 Le maintien de sa propre organisation signifie l'auto-production, voir exemple illustratif auto-reproducteur du code~\ref{exemple_illustratif_auto_reproducteur}.
 
-Selon l'article «A computational aspect of autopoiesis»~\cite{tatsuya_computational_autopoiesis_2000} de l'auteur Nomura.T, un système est de l'autopoïèse dans le contexte qu'il est : 
+Selon l'auteur Nomura en 2000~\cite{tatsuya_computational_autopoiesis_2000}, un système est de l'autopoïèse dans le contexte qu'il est : 
 \begin{enumerate}
     \item \textbf{Autonome} : il doit être capable d'apporter des changements variés pour maintenir son organisation;
     \item \textbf{Individuel} : il doit être indépendant dans sa définition, par sa prise de décision par rapport aux observateurs externes, en reproduisant à répétition et en maintenant son organisation;
@@ -307,7 +307,7 @@ Le concept de vue sur les entrants et sortants d'un système est une perception 
 
 % TODO Alors comment fait-il pour se produire lui même en interaction avec son environnement s'il n'a pas d'entrant et sortant?
 
-La conception d'un système autopoïèse, de l'article \cite{tatsuya_computational_autopoiesis_2000}, devrait comporter les points suivants : 
+La conception d'un système autopoïèse, de l'article~\cite{tatsuya_computational_autopoiesis_2000}, devrait comporter les points suivants : 
 
 \begin{enumerate}
     \item Les composantes du système sont déterminés par les opérations du système;
@@ -331,7 +331,7 @@ Puis il y a des modèles d'apprentissage automatique qui ont été inspirés de 
 
 La sympoïèse peut être définie comme un système qui se développe en collectivité. C'est un concept utilisée en écologie et en théorie des systèmes pour décrire les processus de production collective et collaborative dans les écosystèmes. Elle se distingue de l'autopoïèse, qui est le processus par lequel un système produit et reproduit ses propres composants de manière autonome. Par exemple, les coraux sont des collectifs d'organismes en interaction qui produisent des structures complexes telles que des récifs, qui ont des effets bénéfiques sur l'écosystème dans son ensemble.
 
-Selon Guillibert.P, «La nature est une puissance d’engendrement qui surgit et s’autoproduit. Donna Haraway a récemment proposé de remplacer le concept "d’autoproduction" par celui de "sympoïèse" qui désigne la coproduction du milieu par des espèces en interrelations plutôt que l’activité autonome de certains organismes isolés.»~\cite{guillibert:tel-02929676}
+Selon Guillibert en 2019, «La nature est une puissance d’engendrement qui surgit et s’autoproduit. Donna Haraway a récemment proposé de remplacer le concept "d’autoproduction" par celui de "sympoïèse" qui désigne la coproduction du milieu par des espèces en interrelations plutôt que l’activité autonome de certains organismes isolés.»~\cite{guillibert:tel-02929676}
 
 Ainsi, le développement de technologie en collectivité va permettre de gérer des cas d'urgence humanitaire tel que le «mouvement des villes en transition»~\cite{MOUV_063_0130}\footnote{\url{https://fr.wikipedia.org/wiki/Ville_en_transition}} en développant des technologies permettant de mettre en place des systèmes d'échange local~\cite{cibois2010compte}\footnote{\url{https://fr.wikipedia.org/wiki/Systeme_d'echange_local}}.
 
