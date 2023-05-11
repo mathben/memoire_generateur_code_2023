@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-11T18:47:36.033Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="MWsnpGq7_dyqqfkeifV4" version="21.2.9" type="device">
+<mxfile host="app.diagrams.net" modified="2023-05-11T19:39:50.135Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="yaKuzMQ0e7eUkC_jQMon" version="21.2.9" type="device">
   <diagram name="Page-1" id="TdMP7RXxZ5fVctfMn1uE">
     <mxGraphModel dx="2714" dy="2210" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="NCH8o113N83UNr_NgnJS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NCH8o113N83UNr_NgnJS-2" target="NCH8o113N83UNr_NgnJS-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="NCH8o113N83UNr_NgnJS-2" value="Faire une revue littérature" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="NCH8o113N83UNr_NgnJS-2" value="Faire une revue de littérature" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="454" y="455" width="140" height="40" as="geometry" />
         </mxCell>
         <mxCell id="NCH8o113N83UNr_NgnJS-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="NCH8o113N83UNr_NgnJS-3" target="NCH8o113N83UNr_NgnJS-4" edge="1">
@@ -46,7 +46,7 @@
         <mxCell id="NCH8o113N83UNr_NgnJS-10" value="L&#39;hypothèse est fause" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="560" y="709" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="NxHBVrm-DMn3pa3XiHI9-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-11" target="NxHBVrm-DMn3pa3XiHI9-27">
+        <mxCell id="NxHBVrm-DMn3pa3XiHI9-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-11" target="NxHBVrm-DMn3pa3XiHI9-69">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="NCH8o113N83UNr_NgnJS-11" value="Rapporter les résultats" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -223,13 +223,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="NxHBVrm-DMn3pa3XiHI9-63" value="Déploiement de la fonctionnalité" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="767" width="120" height="48" as="geometry" />
+          <mxGeometry x="90" y="764" width="120" height="48" as="geometry" />
         </mxCell>
         <mxCell id="NxHBVrm-DMn3pa3XiHI9-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NxHBVrm-DMn3pa3XiHI9-64" target="NxHBVrm-DMn3pa3XiHI9-29">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="NxHBVrm-DMn3pa3XiHI9-64" value="Révision" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="845" width="120" height="43" as="geometry" />
+          <mxGeometry x="90" y="842" width="120" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="NxHBVrm-DMn3pa3XiHI9-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NxHBVrm-DMn3pa3XiHI9-69" target="NxHBVrm-DMn3pa3XiHI9-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NxHBVrm-DMn3pa3XiHI9-69" value="Mise en oeuvre logicielle" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460.5" y="833.5" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
