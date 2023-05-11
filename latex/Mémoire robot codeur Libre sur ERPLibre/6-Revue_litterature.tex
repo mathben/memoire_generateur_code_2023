@@ -361,3 +361,343 @@ Ainsi, le développement de technologie en collectivité va permettre de gérer 
 % Luhmann, N. (1986). The autopoiesis of social systems. John Wiley & Sons.
 % Castells, M. (1996). The rise of the network society. Blackwell Publishers.
 % Ahrweiler, P. (2012). Innovation in complex social systems. Routledge.
+
+\section{Définitions et concepts}
+
+
+\subsection{Caractéristiques de la plateforme Odoo}
+
+% TODO mettre les besoins issues des cas pratique (Accorderie) (CEPPP) et que les propriétés Odoo répondent à leur critère
+
+\subsubsection{Architecture MVC}
+
+Pour générer des modules Odoo, le générateur de code a besoin de s'appuyer sur l'architecture MVC pour permettre une séparation claire des responsabilités et une structure de code facile à maintenir. Le générateur doit ainsi générer chacune des sections de cette architecture pour faire un tout qui permet d'échanger les données entre la base de données et l'interface utilisateur.
+
+L’architecture MVC permet de séparer les composantes logicielles comme suit : 
+\begin{enumerate}
+    \item Le modèle : représente les données et les règles de l’application. Le modèle est responsable de la manipulation des données, de leur stockage et de leur récupération.
+    \item La vue : représente la présentation des données. La vue est responsable de l’affichage, à l’utilisateur final, des données stockées dans le modèle.
+    \item Le contrôleur : gère les interactions entre le modèle et la vue. Le contrôleur est responsable de la réception des demandes de l’utilisateur et de leur transmission au modèle, puis de la récupération des données du modèle pour les transmettre à la vue.
+\end{enumerate}
+Il est possible de modifier une de ces composantes sans affecter les autres composantes, ce qui facilite la maintenance.
+
+\subsubsection{Architecture ORM}
+
+L'utilisation de requêtes SQL pour communiquer avec des bases de données demande un temps considérable au développeur à implémenter et elle nécessite la programmation d'interface avec la base de données. L'utilisation d'un ORM permet de bonifier la productivité, de faciliter la maintenance et d'augmenter la sécurité d'un logiciel. L’objectif du ORM est de faciliter la manipulation des données stockées dans une base de données relationnelle en les représentant sous forme d’objets dans un langage de programmation orientée objet\footnote{\url{https://fr.wikipedia.org/wiki/Mapping_objet-relationnel}}. Cela permet la simplification de l’architecture en l’écrivant en langage haut niveau, au lieu de directement en SQL, réduisant le nombre d'erreurs et facilite la maintenance.
+
+\subsubsection{Architecture modulaire par héritage}
+
+L'ensemble des fonctionnalités nécessaire à la gestion des procédures et ressources des organisations rend le développement complexe. Pour réduire cette complexité du développement logiciel, choisir une architecture modulaire permet la réutilisation de code et la création de relations fonctionnelles personnalisables au contexte des organisations.
+
+L’héritage dans Odoo 12 peut se faire de deux manières : 
+\begin{enumerate}
+    \item L’héritage par extension : Cela permet d’ajouter des fonctionnalités ou de modifier le comportement d’un module existant, sans toucher au code source d’origine. Les nouvelles fonctionnalités peuvent être ajoutées en créant un nouveau module qui hérite du module d’origine et en y ajoutant des vues, des modèles ou des contrôleurs supplémentaires.
+    \item L’héritage par substitution : Cela permet de remplacer complètement le comportement d’un module existant en créant un nouveau module qui hérite du module d’origine et en y modifiant les vues, les modèles ou les contrôleurs existants.
+\end{enumerate}
+En utilisant l’architecture modulaire avec héritage dans Odoo 12, les développeurs peuvent facilement personnaliser l’application pour répondre aux besoins spécifiques d'une organisation, sans toucher au code source d’origine et sans compromettre la compatibilité, par exemple, avec les mises à jour futures.
+
+
+\subsubsection{Fonctionnalité du hook lors de l’installation d’un module}
+
+Au moment de l’installation d’un module Odoo, il y a des opérations qui peuvent être effectuées, comme migrer des données pour les adapter à un nouveau modèle de données. Ainsi, il y a une fonctionnalité qui se nomme le hook pour «pre-install», «post-install» et «uninstall». Ce sont des méthodes qui sont exécutées soit au moment de l’installation, avant ou après l’initialisation de la plateforme, puis à la désinstallation. En «post-install», il devient possible d’exécuter du code et d'accéder à la plupart des fonctionnalités du ORM au moment d’installer un module. C’est une manière pour exécuter des scripts dans la plateforme au moment de l’installation d’un module, que ce soit en ligne de commande ou via l’application «Application» dans Odoo.
+
+\subsubsection{Website builder}
+
+Le «Website Builder» est un outil qui permet une autonomie aux utilisateurs lambda\footnote{Utilisateur semblable à la majorité dans son comportement. \url{https://fr.wiktionary.org/wiki/utilisateur_lambda}} (augmenter l'accessibilité) dans la création et mise à jour de contenus de pages web sur le site vitrine de l'organisation. C’est un mécanisme LCNC\footnote{Qui nécessite peu ou pas du tout du code} dans Odoo 12 pour créer et modifier un site web multi-pages par un mécanisme de «drag and drop»\footnote{Glisser-déposer} avec des «snippets»\footnote{Fragment de code} paramétrables. Il permet de modifier une page web en réduisant le besoin de recourir à un expert technique abaissant ainsi les coûts de développement.
+
+\subsubsection{Internationalisation et localisation}
+
+Il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard i18n, qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\cite{wikipedia_i18n}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou XML. Le système permet de générer un fichier d'extension «.pot», qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier d'extension «.pot» pour faire un fichier d'extension «.po» sous la nomenclature i18n et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier d'extension «.po» avec les traductions déjà connues par le système, il suffit de le mettre à jour.
+
+\subsubsection{ERPLibre}
+
+Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créés causant une divergence sur les fonctionnalités, créant le modèle d'affaires «Open Core»\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un ERP est complexe et nécessite l'intervention d'experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme aux réalités de l'organisation. Bien que l'OCA travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseaux d'entraide à pouvoir se débrouiller de manière souveraine.
+
+La plateforme ERPLibre a ainsi été créée en début 2020 en encapsulant la version Odoo 12.0, sous licence AGPLv3, en offrant une alternative 100\% libre, dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible, au même endroit, toute l'information nécessaire à la gestion de l'ERP d'une organisation.
+
+% \subsection{Communauté de développement}
+
+% % TODO manque why et how
+% Une communauté de développement va regrouper une communauté de développeurs (qui travaille sur l’aspect technique) et une communauté d’utilisateurs (qui travaille sur l’aspect fonctionnel). Il faut réussir à faire interagir ces deux groupes d'individus et les amener à travailler ensemble.
+
+% \subsubsection{Générateur de code accessible dans la communauté Odoo}
+
+% % TODO REF
+% % Il permet de générer un module simple dans Odoo et faire son modèle de données et vue de base admin
+
+\subsection{Cadre conceptuel} \label{subsection_cadre_conceptuel}
+
+Nous proposons un modèle formel de la génération de code qui guide le travail proposé dans ce mémoire. Soit C, un code informatique exécutable (qui pourrait aussi être un script interprétable), soit µ$_C$ les méta-données du code, et soit M, une machine disposant de deux modes d’opération : $M^d$ le mode direct, et $M^i$ le mode inverse, voir Figure~\ref{fig:mode_direct_inverse}. Lorsque M opère en mode direct sur µ$_C$, on doit obtenir C; en opérant en mode inverse sur C, on doit obtenir µ$_C$.
+
+On peut représenter ces deux processus par les équations $M^d$(µC)=C et $M^i$(C)=µC. La machine peut alors être représentée par M = \{$M^d$,$M^i$\}.
+
+L’ingénierie de génération est le mode direct. La rétro-ingénierie, le mode inverse, est le processus qui consiste à examiner et à analyser un système existant pour en comprendre le fonctionnement et les spécifications. Cette boucle va permettre d’intégrer des concepts d’amélioration continue sur l’évolution du code.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=2.5in]{images/machine_ing_retro_ing.drawio.png}
+\caption{Mode direct et inverse}
+\label{fig:mode_direct_inverse}
+\end{figure}
+
+Pour concrétiser le sens de ce modèle formel, nous allons proposer quelques exemples simples. Ayant pour but de faciliter la compréhension, ces exemples sont triviaux et ne présentent pas le plein potentiel de notre approche. L’interpréteur Python 3.6 et + est utilisé pour les exemples de codes.
+
+Pour la plupart des exemples, le C, représenté par «C.py», est le code «Hello, World!», voir Figure~\ref{fig:exemple_code_hello_world}.
+
+% \begin{lstlisting}[language=Python, upquote=false, caption={Exemple de code Hello, World!}, label={lst:exemple_code_hello_world}]
+\begin{figure}
+\begin{lstlisting}[language=Python]
+print("Hello, World!")
+\end{lstlisting}
+\caption{Exemple de code Hello, World!}
+\label{fig:exemple_code_hello_world}
+\end{figure}
+
+De plus, dans ce mémoire, nous utilisons le terme «générateur de code» qui est parfois représenté par «machine», cela fait référence à un ensemble de modules. Lorsque nous utilisons le terme robot logiciel codeur, nous faisons référence au «générateur de code» qui y est intégré, mais aussi à un ensemble de scripts dans ERPLibre, puisque le robot doit avoir un contrôle sur son projet en entier, jusqu'au déploiement de celui-ci. Ainsi, la machine est au niveau conceptuel théorique, le générateur de code est au niveau composante logicielle, et le robot logiciel codeur est au niveau de solution logicielle.
+
+\subsection{Exemples illustratifs d’auto-reproducteur}\label{exemple_illustratif_auto_reproducteur}
+
+\subsubsection{Le Quine}
+
+«Un quine~\cite{sarkar2020quines} (ou programme auto-reproducteur, self-reproducing en anglais) est un programme informatique qui imprime son propre code source»~\cite{wiki_quine} sans se lire lui-même. Il doit contenir une logique d’écriture de code et contenir ses méta-données de génération. Il est ainsi un générateur de premier niveau.
+
+Voir Figure~\ref{fig:exemple_quine}, la sortie textuelle dans la console, lors de l'exécution, est la même que son code.
+
+\begin{figure}
+\begin{lstlisting}[language=Python]
+a='a=%r;print(a%%a)';print(a%a)
+\end{lstlisting}
+\caption{Exemple de code Quine}
+\label{fig:exemple_quine}
+\end{figure}
+
+Cependant, le Quine ne sait rien faire d’autre que de s’auto-générer. Ce qui pourrait apporter une contribution serait de faire un auto-reproducteur qui permet de dériver vers d’autres fonctionnalités et ainsi intégrer l’amélioration continue sur son propre développement.
+
+\subsection{Exemples illustratifs de générateur de code}
+
+La génération de code est un des moyens pour soutenir le développeur dans le développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps~\ref{devops_ref}.
+
+\subsubsection{Technique de génération de code basique}
+
+Dans Figure~\ref{fig:exemple_gen_code_basique}, la fonction «eval» en Python est dynamique, c'est-à-dire qu’elle permet l’exécution à partir d’une chaîne de caractères, ce type de génération de code ne permet pas une évolution efficace ou une simplification du développement. Ça revient à lire un fichier et à l'imprimer, il n’a pas de capacité dynamique d’adaptation.
+
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_uc}]
+print('print("Hello, World!")')
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_m}]
+eval("""print('print("Hello, World!")')""")
+\end{lstlisting}
+\caption{Exemple de technique de génération de code basique d'un «Hello World»}
+\label{fig:exemple_gen_code_basique}
+\end{figure}
+
+Dans Figure~\ref{fig:exemple_gen_code_basique_2}, cette technique basique est paramétrable, contrairement au premier exemple Figure~\ref{fig:exemple_gen_code_basique}. Le f-strings fait office de «template» et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
+
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_uc}]
+{
+ "fonction": "print",
+ "argument": "\"Hello, World!\""
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_m}]
+import json
+
+with open("uC.json") as f:
+   metadata = json.load(f)
+
+result = f"{metadata.get('fonction')}({metadata.get('argument')})\n"
+
+with open("C.py", "w") as f:
+   f.write(result)
+\end{lstlisting}
+\caption{Exemple de technique de génération de code basique paramétrable d'un «Hello World»}
+\label{fig:exemple_gen_code_basique_2}
+\end{figure}
+
+\subsubsection{Technique de génération de code par «template»}
+
+Un moteur de «template» est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet web.
+
+La génération de code par «template» est une technique de développement de logiciels qui permet de produire du code source à partir de modèles prédéfinis appelés «template».
+
+Le code de La Figure~\ref{fig:exemple_gen_code_basique_template} utilise la bibliothèque «Jinja2». C'est un mécanisme similaire à Figure~\ref{fig:exemple_gen_code_basique_2}, cependant la logique est intégrée directement dans le fichier template.
+
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_c}]
+print("Hello, World!")
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={µ$_C$ - fichier uC.json de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_uc}]
+{
+ "fonction": "print",
+ "argument": "\"Hello, World!\""
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={template - fichier template de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_template}]
+{{ fonction }}({{ argument }})
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique_template}}, label={lst:gen_code_template_m}]
+import json
+
+from jinja2 import Template
+
+with open("template") as f:
+   template = Template(f.read())
+
+with open("uC.json") as f:
+   metadata = json.load(f)
+
+result = template.render(
+   fonction=metadata.get("fonction"), argument=metadata.get("argument")
+)
+
+with open("C.py", "w") as f:
+   f.write(result)
+\end{lstlisting}
+\caption{Exemple de technique de génération de code par template avec Jinja2 d'un «Hello World»}
+\label{fig:exemple_gen_code_basique_template}
+\end{figure}
+
+% Les avantages du template~\ref{fig:gen_code_template_template_2} pour cette approche sont : une productivité accrue, une réduction des erreurs de codage, une meilleure cohérence du code et une réduction du temps de développement. Cette technique peut également faciliter la maintenance du code, puisque les modifications apportées aux templates sont automatiquement propagées à tout le code généré.
+
+\begin{figure}
+\begin{lstlisting}[language=Python]
+{% for student in students %}
+  <li>
+	{% if student.score > 80 %}:){% else %}:({% endif %}
+	<em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
+  </li>
+{% endfor %}
+\end{lstlisting}
+\caption{Exemple de template Jinja2 avec logique}
+\label{fig:gen_code_template_template_2}
+\end{figure}
+
+
+\subsubsection{Générateur de code par template avec Odoo 12}
+
+La technique utilisée par Odoo 12 est le «scaffold», il gère 2 types de «template» : un module de base «default» et un module thème «theme».
+
+Dans Figure~\ref{fig:exemple_odoo_scaffold_module}, tout est presque commenté, rien n’est utilisable, mais nous avons la structure MVC. Le gain d’accélération au développement est minime.
+
+\begin{figure}
+\begin{lstlisting}[language=Python]
+> ./odoo/odoo-bin scaffold module_default ./
+> tree module_default/
+controllers
+    controllers.py
+    __init__.py
+demo
+    demo.xml
+__init__.py
+__manifest__.py
+models
+    __init__.py
+    models.py
+security
+    ir.model.access.csv
+views
+    templates.xml
+	views.xml
+\end{lstlisting}
+\caption{Exemple de génération de module MVC Odoo avec la technique du Scaffold}
+\label{fig:exemple_odoo_scaffold_module}
+\end{figure}
+
+Cette fois-ci, dans Figure~\ref{fig:exemple_odoo_scaffold_theme}, tout est vide, le module «theme\_module» produit une erreur à l'installation. Il est plus efficace de copier et de modifier un thème existant que d'utiliser le «scaffold».
+
+\begin{figure}
+\begin{lstlisting}[language=Python]
+> /odoo/odoo-bin scaffold -t theme theme_module ./
+> tree theme_module/
+demo
+    pages.xml
+__init__.py
+__manifest__.py
+static
+    src
+        scss
+            custom.scss
+views
+    options.xml
+    snippets.xml
+\end{lstlisting}
+\caption{Exemple de génération de module thème Odoo avec la technique du Scaffold}
+\label{fig:exemple_odoo_scaffold_theme}
+\end{figure}
+
+Le gain d’accélération au développement peut être considéré comme négligeable. Copier un module fonctionnel et l'adapter est plus efficace. Admettons que cette technique est utile pour un débutant, pour comprendre à quoi ressemble une architecture vide, mais il va apprendre plus vite en regardant le fonctionnement de module fonctionnel ou lire la documentation officielle sur comment développer un module Odoo.
+
+\subsubsection{Technique de génération de code par rétro-ingénierie}
+
+Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur de code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=5in]{images/Retroingenierie_-_Byrne.png}
+\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie. Image modifiée~\cite{wikipedia_image_retroingenierie}}
+\label{fig:retro_re_ing}
+\end{figure}
+
+Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque AST pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logicielle entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
+
+\begin{figure}
+\begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_c}]
+print(                     "Hello, World!"                         )
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={M qui extrait µ$_C$ pour générer C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_m}]
+import ast
+
+with open("C.py", "r") as f:
+   code = f.read()
+
+# Extraction du AST
+tree = ast.parse(code)
+node = tree.body[0]
+
+if (
+   isinstance(node, ast.Expr)
+   and isinstance(node.value, ast.Call)
+   and isinstance(node.value.func, ast.Name)
+):
+   # Si une expression executable de type function est trouve
+   fct_arg = ""
+   for arg in node.value.args:
+       if isinstance(arg, ast.Str):
+           # Cherche un parametre
+           fct_arg = arg.s
+           break
+   # Template
+   result = f"""{node.value.func.id}("{fct_arg}")\n"""
+
+with open("C.py", "w") as f:
+   f.write(result)
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, upquote=true, caption={C corrigé - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_new_c}]
+print("Hello, World!")
+\end{lstlisting}
+\caption{Exemple de technique de génération de code avec rétro-ingénierie d'un «Hello World»}
+\label{fig:exemple_gen_code_retro}
+\end{figure}
+
+\subsection{Tester un générateur de code}
+
+Il existe le test «Output comparison testing»~\cite{wikipedia_test_informatique} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuelle.
+
+Pour valider si le générateur utilise sa pleine capacité, il suffit de faire des tests de toutes les combinaisons de ses techniques de génération et d'utiliser un outil de couverture de code pour déterminer les lignes qui sont opérées.
