@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" modified="2023-05-09T23:10:11.445Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="AbAzBKR8LwXmaW2ONWgL" version="21.2.9" type="device">
+  <diagram name="Page-1" id="TdMP7RXxZ5fVctfMn1uE">
+    <mxGraphModel dx="768" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NCH8o113N83UNr_NgnJS-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-1" target="NCH8o113N83UNr_NgnJS-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-1" value="Poser une question" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="149" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-2" target="NCH8o113N83UNr_NgnJS-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-2" value="Faire une revue littérature" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="224" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-3" target="NCH8o113N83UNr_NgnJS-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-3" value="Émettre des hypothèses" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="297" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.537;entryY=-0.01;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-4" target="NCH8o113N83UNr_NgnJS-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-4" value="Tester avec une expérience" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="339" y="360" width="151" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-8" target="NCH8o113N83UNr_NgnJS-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-8" target="NCH8o113N83UNr_NgnJS-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-8" value="Analyser les résultats" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="427" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-9" target="NCH8o113N83UNr_NgnJS-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-9" value="L&#39;hypothèse est vrai" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="478" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-10" target="NCH8o113N83UNr_NgnJS-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-10" target="NCH8o113N83UNr_NgnJS-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-10" value="L&#39;hypothèse est fause" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="478" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-11" value="Rapporter les résultats" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="542" width="141" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="NCH8o113N83UNr_NgnJS-12" target="NCH8o113N83UNr_NgnJS-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NCH8o113N83UNr_NgnJS-12" value="Réflexion et réessayer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
