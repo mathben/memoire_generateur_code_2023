@@ -12,11 +12,7 @@ L’objectif général de ce projet a été de créer et de valider le fonctionn
 
 \textbf{SO-5} développer un système de gestion de communauté.
 
-La méthodologie Agile a été adoptée pour le développement de ces composantes d'un générateur de code. Les fonctionnalités de génération de code ont été validées par des tests de comparaison entre les codes générés et les codes révisés par le développeur. Dans les recherches de solution existante, le générateur de code développé par Luis en 2019~\cite{bluiksnot_repo} a été publié sur Github, cependant il a nécessité des modifications qui seront détaillées dans les résultats.
-
-% TODO mettre à jour avec les nouveaux résultats
-% TODO mettre au passé
-% TODO mettre en texte les étapes en dessous
+La méthodologie classique en recherche scientifique, voir l'annexe~\ref{annexe_methodologie}, est représentée par la section à droite qui débute par «Faire une revue de littérature», elle est bonne en théorie. Cependant, au niveau pratique, nous avons adopté la méthodologie Agile\footnote{\url{https://fr.wikipedia.org/wiki/M\%C3\%A9thode_agile}} pour le développement de ces composantes d'un générateur de code, représentée par la section de gauche du schéma en annexe~\ref{annexe_methodologie}. Les fonctionnalités de génération de code ont été validées par des tests de comparaison entre les codes générés et les codes révisés par le développeur. Dans les recherches de solution existante, le générateur de code développé par Luis en 2019~\cite{bluiksnot_repo} a été publié sur Github, cependant il a nécessité des modifications qui seront détaillées dans les résultats. 
 
 \section{SO-1 - Générateur}
 Cette section sert à la partie de génération de code, génération de module et génération de modèles de données :
@@ -60,7 +56,6 @@ Cette section sert à la partie gestion du développeur, ainsi que les projets d
 \section{Environnement informatique}
 La plateforme ERPLibre 1.5.0 contenant Odoo 12 communauté, qui utilise les langages Python 3.7, XML, Javascript et SCSS est l'environnement informatique choisi. Nos tests et développements ont été effectués sur le système d’exploitation Ubuntu 20.04.
 Pour les temps d’exécution des tests, ils ont été effectués sur une machine avec le CPU AMD Ryzen 9 5950X, mémoire ram 2x«32GiB DIMM DDR4 Synchronous Unbuffered (Unregistered) 2667 MHz (0.4 ns)», et disque 1To wd-black-sn850-nvme.
-
 
 \section{Méthodologie de test}
 Les tests ont été codés directement dans ERPLibre, dans un script Python, avec un ensemble de scripts pour valider les différences dans le Git après exécution et cacher des différences.
