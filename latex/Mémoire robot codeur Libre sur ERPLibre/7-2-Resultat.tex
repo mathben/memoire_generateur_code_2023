@@ -73,7 +73,7 @@ L'auto-générateur est utilisé pour générer des µ$_C^A$ avec une légère m
 
 \subsection{Génération par gabarit}
 
-La génération par gabarit était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations tels que l'utilisation des f-strings au lieu d'utiliser la fonction «format» de String, l'utilisation de la bibliothèque Code-writer en Python\footnote{\url{https://pypi.org/project/code-writer/}} et l'utilisation de la bibliothèque lxml\footnote{\url{https://pypi.org/project/lxml/}}.
+La génération par gabarit était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations tels que l'utilisation des f-strings au lieu d'utiliser la fonction «\textit{format}» de String, l'utilisation de la bibliothèque Code-writer en Python\footnote{\url{https://pypi.org/project/code-writer/}} et l'utilisation de la bibliothèque lxml\footnote{\url{https://pypi.org/project/lxml/}}.
 
 \subsection{MVC}
 
@@ -135,10 +135,10 @@ Le robot logiciel codeur est une machine qui, grâce à son interface «code \te
 \subsection{Interprétation des résultats de SO-1}
 
 \subsubsection{SO-1 Accomplissements}
-Pour résumé l'ensemble des accomplissements de SO-1, nous avons fait une simplification de l’écriture de technique dans le générateur de code avec l’utilisation de «f-string», de la bibliothèque «Code-writer» et de la bibliothèque «lxml», un ajout de \textit{Wizard} pour configurer le MVC selon des paramètres, une amélioration de l’importation des bases de données externes, un support de la génération de code par des données et augmenter le nombre de technique de génération de code, support des «templates» «Qweb», ajout du type de données géospatiales.
+Pour résumé l'ensemble des accomplissements de SO-1, nous avons fait une simplification de l’écriture de technique dans le générateur de code avec l’utilisation de «f-string», de la bibliothèque «Code-writer» et de la bibliothèque «lxml», un ajout de \textit{Wizard} pour configurer le MVC selon des paramètres, une amélioration de l’importation des bases de données externes, un support de la génération de code par des données et augmenter le nombre de technique de génération de code, support des «\textit{templates}» «Qweb», ajout du type de données géospatiales.
 
 \subsubsection{SO-1 Feuille de route}
-La brève feuille de route pour SO-1 se résume à implémenter les fonctionnalités manquantes dans la GUI pour générer les MVC d’un module, à augmenter le nombre de technologies à supporter sur l'importation des données, à ajouter le support de génération sur différentes architectures, à supporter différentes techniques de sécurités personnalisables, comme l’anonymisation des données, à générer automatiquement une documentation sur l’utilisation d’une technique et à supporter la génération sur d’autres systèmes ERP libres tel que Tryton\footnote{\url{https://www.tryton.org}}
+La brève feuille de route pour SO-1 se résume à implémenter les fonctionnalités manquantes dans la GUI pour générer les MVC d’un module, à augmenter le nombre de technologies à supporter sur l'importation des données, à ajouter le support de génération sur différentes architectures, à supporter différentes techniques de sécurités personnalisables, comme l’anonymisation des données, à générer automatiquement une documentation sur l’utilisation d’une technique et à supporter la génération sur d’autres systèmes \textit{ERP} libres tel que Tryton\footnote{\url{https://www.tryton.org}}
 
 \section{Résultats propres à SO-2}
 
@@ -207,7 +207,7 @@ La brève feuille de route pour SO-2 se résume à finaliser l’implémentation
 
 \subsection{Classification des techniques développées}\label{result_technique_developpe}
 
-En référence à la Figure~\ref{fig:dia_architecture}, les techniques «Modèle», «Form», «Tree», «Contrôleur» et «Migration DB» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques. Les autres techniques ont été développé pour permettre une modularité sur les modules à générer, puis supporter des nouvelles fonctionnalités tels que la gestion des cartes intéractives avec le «Géospaciale».
+En référence à la Figure~\ref{fig:dia_architecture}, les techniques «Modèle», «\textit{Form}», «\textit{Tree}», «Contrôleur» et «Migration \textit{DB}» étaient déjà implémentés dans la version initiale~\cite{bluiksnot_repo}, mais ils ont reçu des améliorations pour s’agencer aux autres techniques. Les autres techniques ont été développé pour permettre une modularité sur les modules à générer, puis supporter des nouvelles fonctionnalités tels que la gestion des cartes intéractives avec le «Géospaciale».
 
 % TODO faire un diagramme des dépendances
 % Les techniques :
@@ -266,7 +266,7 @@ La brève feuille de route pour SO-3 se résume à ajouter des paramètres pour 
 Puisque le générateur de code fait partie de ERPLibre, la version 1.5.0 contient les modules de génération de code. Le déploiement se fait rapidement en utilisant le logiciel «Docker», le générateur de code permet l’utilisation de l’interface graphique pour générer des modules Odoo.
 
 \subsubsection{SO-4 Feuille de route}
-La brève feuille de route pour SO-4 se résume à développer une synchronisation entre les instances pour permettre de la redondance, à développer une gestion de son infrastructure via le générateur de code, à faire participer le robot logiciel codeur à la maintenance de l’infrastructure de déploiement, à utiliser d’autres systèmes de conteneur en distribution qui sont libres comme «Pod»~\footnote{\url{https://podman.io/}} et à développer la capacité du robot logiciel codeur de valider techniquement si le logiciel est AGPLv3 au moment de l’exécution.
+La brève feuille de route pour SO-4 se résume à développer une synchronisation entre les instances pour permettre de la redondance, à développer une gestion de son infrastructure via le générateur de code, à faire participer le robot logiciel codeur à la maintenance de l’infrastructure de déploiement, à utiliser d’autres systèmes de conteneur en distribution qui sont libres comme «\textit{Pod}»~\footnote{\url{https://podman.io/}} et à développer la capacité du robot logiciel codeur de valider techniquement si le logiciel est AGPLv3 au moment de l’exécution.
 
 \section{Résultats propres à SO-5}
 
@@ -282,9 +282,9 @@ Avant de démarrer un projet, nous suggérons au gestionnaire de projet de suivr
 
 Le module «auto\_backup»\footnote{\url{https://github.com/ERPLibre/server-tools/tree/f6054fc/auto_backup}} est le premier module de la communauté de l'organisation OCA répertoire «server-tools» à avoir été testé dans ce projet, un µ$_C^A$\footnote{\url{https://github.com/ERPLibre/odoo-code-generator-template/tree/b5ae8e/code_generator_template_demo_sysadmin_cron}} et µ$_C^B$\footnote{\url{https://github.com/ERPLibre/odoo-code-generator-template/tree/b5ae8e/code_generator_auto_backup}} a été généré. Le générateur de code a pu modifier le module pour appliquer de la qualité logicielle. Cela a permis de développer la technique de gestion des «Cron», puisqu’il lance des sauvegardes, par SSH ou en local, à des moments spécifiques dans le temps.
 
-\subsection{Projet module workflow design}
+% \subsection{Projet module \textit{workflow} \textit{design}}
 
-C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code qui permet de faire le suivi sur les opportunités, les menaces, les forces, les faiblesses et les objectifs. Il a été utilisé dans le projet Accorderie.
+% C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code qui permet de faire le suivi sur les opportunités, les menaces, les forces, les faiblesses et les objectifs. Il a été utilisé dans le projet Accorderie.
 
 % \subsection{Projet module STARS}
 
@@ -316,7 +316,7 @@ Le projet\footnote{\url{https://github.com/TechnoLibre/odoo_accorderie/tree/ae5b
 
 Le générateur de code a permis de créer un module Odoo 12.0 avec leurs modèles de données basés sur leur base de données en SQL de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
 
-Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «True» était exprimé par la valeur «-1» dans un type «int», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçu pour de l’automatisation, mais plutôt pour que les échanges de services soient validées par des membres de la communauté.
+Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «\textit{True}» était exprimé par la valeur «-1» dans un type «\textit{int}», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçu pour de l’automatisation, mais plutôt pour que les échanges de services soient validées par des membres de la communauté.
 
 Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre OSRM.
 
@@ -389,7 +389,7 @@ Le nombre de lignes de XML a diminué car le générateur de code génère de ba
 Pour résumé l'ensemble des accomplissements de SO-5, nous avons fait un test de la génération sur un module existant de la communauté nommé «auto\_backup», des modules de gestion de projet ont été générés pour faire le suivi de la conception fonctionnelle et de l’amélioration continue, le projet Accorderie a bénéficié du générateur de code pour la migration de la base de données vers Odoo et le projet Portail CEPPP a bénéficié du générateur de code pour la migration du code PHP vers Odoo, ainsi que de l’aide au développement de la section Portail.
 
 \subsubsection{SO-5 Feuille de route}
-La brève feuille de route pour SO-5 se résume à supporter la demande de «Pull Request» sur les projets Git respectif lorsqu’il y a une amélioration. Il doit y avoir un suivi et valider le suivi des règles de contributions de la communauté, à développer d’autres modules de gestion de projet pour l’accompagnement dans le développement de projet client, à développer des modules de gestion de communauté sur des projets de logiciels libres et à développer le suivi du développement des modules communautaires avec une traçabilité sur les résultats avec des métriques de génie logiciel.
+La brève feuille de route pour SO-5 se résume à supporter la demande de «\textit{Pull Request}» sur les projets Git respectif lorsqu’il y a une amélioration. Il doit y avoir un suivi et valider le suivi des règles de contributions de la communauté, à développer d’autres modules de gestion de projet pour l’accompagnement dans le développement de projet client, à développer des modules de gestion de communauté sur des projets de logiciels libres et à développer le suivi du développement des modules communautaires avec une traçabilité sur les résultats avec des métriques de génie logiciel.
 
 \section{Discussion}
 
@@ -434,7 +434,7 @@ Nous avons des résultats qui démontrent 100\% d'autonomie dans quelques contex
 % TODO une fois qu'on aura supporté plus de technique et l'autopoïèse entière, la prochaine étape serait de le faire fonctionner en continue. Bien qu'il soit capable via l'interface graphique, les efforts n'ont pas été effectué pour cette capacité.
 
 \subsubsection{Adaptable}
-Le robot logiciel codeur est adaptable, il génère 6 composantes, voir résultat d'architecture section~\ref{architecture_result} : web, website, portail, snippet, migration de données entrantes et migration de modèle de données entrantes. De plus, il est capable d'interagir avec des technologies en dehors d'Odoo comme extraire du code externe en PHP du logiciel SuiteCRM et des bases de données externes (MySQL/SQL Server/PostgreSQL) pour importer des modèles de données et migrer des données.
+Le robot logiciel codeur est adaptable, il génère 6 composantes, voir résultat d'architecture section~\ref{architecture_result} : web, \textit{website}, portail, \textit{snippet}, migration de données entrantes et migration de modèle de données entrantes. De plus, il est capable d'interagir avec des technologies en dehors d'Odoo comme extraire du code externe en PHP du logiciel SuiteCRM et des bases de données externes (MySQL/SQL Server/PostgreSQL) pour importer des modèles de données et migrer des données.
 
 % TODO il faudrait supporter la génération de technologies externes, nous travaillons présentement à générer des applications mobiles natives, ou même générer des modules sur d'autres plateforme ERP tel que Tryton ou NextERP.
 
@@ -487,7 +487,3 @@ Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a
 % TODO doit reproduire les 4 libertés pour l’utilisation, l’accompagner dans son développement pour améliorer ses habitudes de vies par lui même sans dépendre d’autrui, restons en communauté locale pour réduire la consommation.
 % TODO faciliter l’intégration de l’intération entre notre robot personnel et celui d’une technologie externe.
 
-
-\subsubsection{Article «A template-based code generator for web applications»}
-%todomarie je ne comprends pas ce que ce bout de texte fait là. C'est un peu mal expliqué. - réponse c'est une critique littéraire
-Le code source de cette application «A template-based code generator for web applications» n’est pas accessible facilement au public, par conséquence, il sera difficile de comparer son efficacité du coté pratique. En effet, elle ne dispose pas de ORM, elle ne fait pas de rétro-ingénierie et elle n'a pas été dédiée pour une communauté. Cependant, elle démontre bien l'efficacité d'un générateur de code sur une solution ERP web.

@@ -14,11 +14,11 @@
 
 \section{Contexte et problématique}
 
-La valeur du marché des solutions ERP, \textit{Enterprise Ressources Planning} ou progiciel de gestion des ressources d'une entreprise, s'établissait autour de 40 milliards USD mondialement en 2020 \cite{mordorintelligence_erp_2023,bigbang_erp_2023}. Le coût moyen par utilisateur, sur 5 ans, s'élevait à 9 000\$, pour une PME, en 2022 \cite{softwarepath_erp_2023}. Le développement de système ERP est complexe, nécessite une maintenance exigeante et le risque d’introduire des erreurs est important~\cite{method_erp_system_2022}~\cite{wu_2006}.
+La valeur du marché des solutions \textit{ERP}, \textit{Enterprise Ressources Planning} ou progiciel de gestion des ressources d'une entreprise, s'établissait autour de 40 milliards USD mondialement en 2020 \cite{mordorintelligence_erp_2023,bigbang_erp_2023}. Le coût moyen par utilisateur, sur 5 ans, s'élevait à 9 000\$, pour une PME, en 2022 \cite{softwarepath_erp_2023}. Le développement de système \textit{ERP} est complexe, nécessite une maintenance exigeante et le risque d’introduire des erreurs est important~\cite{method_erp_system_2022}~\cite{wu_2006}.
 
-La compagnie Odoo a réussi à devenir l'un des principaux fournisseurs d'ERP \textit{open source} au monde~\cite{ingenierie_system_information_hotel_odoo_2020}, avec une communauté active de développeurs et d'utilisateurs. Odoo relève plusieurs enjeux et défis dans les ERP, notamment l'intégration de toutes les fonctions de l'entreprise, la personnalisation, la flexibilité, l'évolutivité et l'accessibilité.
+La compagnie Odoo a réussi à devenir l'un des principaux fournisseurs d'\textit{ERP} à \textit{Open Source} au monde~\cite{ingenierie_system_information_hotel_odoo_2020}, avec une communauté active de développeurs et d'utilisateurs. Odoo relève plusieurs enjeux et défis dans les \textit{ERP}, notamment l'intégration de toutes les fonctions de l'entreprise, la personnalisation, la flexibilité, l'évolutivité et l'accessibilité.
 
-Alors, comment serait-il possible d'accélérer le développement de fonctionnalités de la plateforme ERP Odoo\footnote{Anciennement OpenERP, ERP libre web, lien du projet \url{https://github.com/OCA/OCB}} 12 communautaire?
+Alors, comment serait-il possible d'accélérer le développement de fonctionnalités de la plateforme \textit{ERP} Odoo\footnote{Anciennement OpenERP, \textit{ERP} libre web, lien du projet \url{https://github.com/OCA/OCB}} 12 communautaire?
 
 Pour répondre à ce besoin, la plateforme ERPLibre~\cite{ref_erplibre} a été créée dans l’objectif d’accélérer le développement de la plateforme Odoo communautaire. Ce mémoire va se concentrer sur la génération de code par des techniques de rétro-ingénierie et la gestion d’une communauté, dans un contexte d’un projet de logiciel libre, une solution développée, démontrée dans ce mémoire, en complément de la plateforme ERPLibre.
 
@@ -26,7 +26,7 @@ Pour répondre à ce besoin, la plateforme ERPLibre~\cite{ref_erplibre} a été 
 
 Les objectifs des travaux effectués sont de développer un générateur de code pour accélérer le développement de fonctionnalité pour gérer les besoins d'une communauté, ainsi que de réaliser un auto-reproducteur, c'est-à-dire un générateur de code qui est capable de s'auto-générer, pour accélérer le développement de ce dernier.
 
-Le but de ce mémoire est de montrer une solution qui contient des limitations, sur différents niveaux de production de développement logiciel, dans les domaines des ERP, pour aider les réseaux d'entraide dans l'adaptation de leurs fonctionnalités tout en accélérant le développement avec des solutions libres.
+Le but de ce mémoire est de montrer une solution qui contient des limitations, sur différents niveaux de production de développement logiciel, dans les domaines des \textit{ERP}, pour aider les réseaux d'entraide dans l'adaptation de leurs fonctionnalités tout en accélérant le développement avec des solutions libres.
 
 % TODO problématique de devoir adapter les processus de l'entreprise aux capacité du ERP au lieu de donner un processus personnalisé
 
@@ -40,9 +40,9 @@ Le but de ce mémoire est de montrer une solution qui contient des limitations, 
 
 % Combien ça prend de temps pour développer la migration pour autant de fonctionnalités? Ajouter des champs, migrer des champs en changeant leur nature.
 
-\subsection{Choix de la plateforme ERP}
+\subsection{Choix de la plateforme \textit{ERP}}
 
-Choisir une plateforme ERP libre peut offrir des avantages significatifs en terme de coût, de flexibilité, de sécurité, de communauté et d'indépendance. Odoo a été retenu pour le projet puisqu'il répondait à ces critères, cependant, quelle est la version qui offre le plus de fonctionnalités?
+Choisir une plateforme \textit{ERP} libre peut offrir des avantages significatifs en terme de coût, de flexibilité, de sécurité, de communauté et d'indépendance. Odoo a été retenu pour le projet puisqu'il répondait à ces critères, cependant, quelle est la version qui offre le plus de fonctionnalités?
 
 \begin{table}
 \caption{Tableau des dates de lancement du logiciel Odoo à partir de la version 6.0}
@@ -71,7 +71,7 @@ Odoo version & Date de lancement & \multicolumn{2}{|l|}{Commentaire}\\\hline
 
 % Regarder l’évolution des modules dans OCA, en prenant leur nom de module, pour chaque version d’Odoo, selon une date déterminée, regarder le nombre de fois qu’il se répète. Ceci va indiquer la vitesse de migration des modules dans la communauté.
 
-Odoo a été créé initialement sous le nom de \textit{Tiny ERP}, en février 2005, cette plateforme a évolué au fil du temps, elle a été renommée pour \textit{OpenERP} autour d'octobre 2009, passant sous licence \textit{AGPL}.
+Odoo a été créé initialement sous le nom de TinyERP, en février 2005, cette plateforme a évolué au fil du temps, elle a été renommée pour OpenERP autour d'octobre 2009, passant sous licence AGPL.
 
 À partir de janvier 2023, les versions 9.0 à 12.0 ne sont plus supportées officiellement par la compagnie Odoo, voir tableau~\ref{tab:choix_plateform_erp}, mais elles le sont encore par OCA. Ainsi, la version 16.0 est la version stable actuelle. La recherche de modules commence à partir de la version 9.0, là où débute la divergence entre une version communautaire et entreprise.
 
@@ -265,7 +265,7 @@ La première étude de cas du présent mémoire a été effectuée sur l'Accorde
 
 % L’objectif du projet en collaboration avec l’Accorderie est de faire une plateforme améliorée avec des technologies plus récentes pour contrer l’effet des réseaux sociaux qui est devenu un intermédiaire intéressant pour échanger entre les membres, ainsi que d’automatiser les processus d’échange de temps, qui demande actuellement une gestion manuelle.
 
-Nous avons décelé que le présent projet pourrait répondre aux besoins de l'Accorderie, avec le générateur de modules Odoo, qui permet de faciliter, entre autres, la maintenance dans le temps. De plus, la plateforme ERPLibre a le potentiel de leur éviter des coûts sur les licences, du développement redondant et leur donner des fonctionnalités personnalisées. Ainsi, nous avons obtenu accès au code source \textit{PHP} de la plateforme Espace Membre dont le \textit{copyright} mentionne l’année 2007, par la compagnie GRF Ressource Informatique. De plus, nous avons aussi eu accès à la base de données et, selon les archives, le premier échange tracé est le premier janvier 2003. «Le 3 juin 2002, l’Accorderie de Québec est officiellement constituée en tant qu’organisme à but non lucratif. Sa mission : lutter contre la pauvreté et l’exclusion sociale, ainsi que favoriser la mixité sociale»\cite{erudit_accorderie_2014}. La plateforme aurait eu plusieurs mises à jour au fil du temps, cela nous donnait un cas réel empirique, avec des données et des utilisateurs réels, pour rendre concret une plateforme d'échange de temps. 
+Nous avons décelé que le présent projet pourrait répondre aux besoins de l'Accorderie, avec le générateur de modules Odoo, qui permet de faciliter, entre autres, la maintenance dans le temps. De plus, la plateforme ERPLibre a le potentiel de leur éviter des coûts sur les licences, du développement redondant et leur donner des fonctionnalités personnalisées. Ainsi, nous avons obtenu accès au code source PHP de la plateforme Espace Membre dont le droit d'auteur mentionne l’année 2007, par la compagnie GRF Ressource Informatique. De plus, nous avons aussi eu accès à la base de données et, selon les archives, le premier échange tracé est le premier janvier 2003. «Le 3 juin 2002, l’Accorderie de Québec est officiellement constituée en tant qu’organisme à but non lucratif. Sa mission : lutter contre la pauvreté et l’exclusion sociale, ainsi que favoriser la mixité sociale»\cite{erudit_accorderie_2014}. La plateforme aurait eu plusieurs mises à jour au fil du temps, cela nous donnait un cas réel empirique, avec des données et des utilisateurs réels, pour rendre concret une plateforme d'échange de temps. 
 
 \subsection{Introduction CEPPP}
 
@@ -279,4 +279,5 @@ Le présent projet venait pallier aux problèmes rencontrés en facilitant et en
 
 \section{Organisation générale du document}
 
-Le chapitre \ref{sec:RevLitt} présente une revue de littérature concernant les termes de robot logiciel développeur, la génération de code, les logiciels libres et open source, la sécurité en lien avec le développement logiciel, la complexité du développement des ERP, le \textit{DevOps}, les interfaces logicielles \textit{no-code / low-code}, la création de communauté et la poïèse. Il termine par le cadre conceptuel, qui contient des explications sur un générateur de code accompagné de rétro-ingénierie, ainsi que des exemples de générateur de code avec une méthode de test. Dans le chapitre \ref{sec:Theme1}, nous verrons en détail la méthodologie de travail et les objectifs de développement pour réaliser le générateur de code qui est séparé en 5 points : générateur de code, application de la rétro-ingénierie, l'interface du générateur de code, le déploiement du générateur de code et application dans des réseaux d'entraide. Le chapitre \ref{sec:Theme2} comporte les résultats présentés, ainsi qu'une discussion générale. Enfin, le chapitre \ref{sec:Conclusion} conclut ce mémoire avec une synthèse critique et des pistes pour des recherches futures.
+Le chapitre \ref{sec:RevLitt} présente une revue de littérature concernant les termes de robot logiciel développeur, la génération de code, les logiciels libres et \textit{Open 
+Source}, la sécurité en lien avec le développement logiciel, la complexité du développement des ERP, le \textit{DevOps}, les interfaces logicielles \textit{no-code / low-code}, la création de communauté et la poïèse. Il termine par le cadre conceptuel, qui contient des explications sur un générateur de code accompagné de rétro-ingénierie, ainsi que des exemples de générateur de code avec une méthode de test. Dans le chapitre \ref{sec:Theme1}, nous verrons en détail la méthodologie de travail et les objectifs de développement pour réaliser le générateur de code qui est séparé en 5 points : générateur de code, application de la rétro-ingénierie, l'interface du générateur de code, le déploiement du générateur de code et application dans des réseaux d'entraide. Le chapitre \ref{sec:Theme2} comporte les résultats présentés, ainsi qu'une discussion générale. Enfin, le chapitre \ref{sec:Conclusion} conclut ce mémoire avec une synthèse critique et des pistes pour des recherches futures.

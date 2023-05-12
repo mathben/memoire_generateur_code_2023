@@ -1,25 +1,39 @@
 \Chapter{REVUE DE LITTÉRATURE}\label{sec:RevLitt}
 % Texte / Text.
-Dans ce chapitre, nous présentons une revue de littérature concernant les termes de robot logiciel développeur, la génération de code, les logiciels libres et \textit{open source}, la sécurité en lien avec le développement logiciel, la complexité du développement des ERP, le DevOps, les interfaces logicielles \textit{no-code / low-code}, la création de communauté et la poïèse.
+Dans ce chapitre, nous présentons une revue de littérature concernant les termes de robot logiciel développeur, la génération de code, les logiciels libres et à \textit{Open Source}, la sécurité en lien avec le développement logiciel, la complexité du développement des \textit{ERP}, le \textit{DevOps}, les interfaces logicielles \textit{no-code / low-code}, la création de communauté et la poïèse.
+
+
 \section{Robot logiciel développeur}\label{robot_logiciel_developpeur_revue}
 % TODO faire une intro à la revue littéraire 
 % Le chapitre 2 présente une revue de littérature concernant le terme de robot logiciel développeur, la génération de code, les logiciels libres et open source, la sécurité en lien avec le développement logiciel, la complexité du développement de ERP, le DevOps, les interfaces logiciel no-code / low-code, la création de communauté et la poïèse. 
 %MODIFIER légèrement la phrase pour qu'elle soit un reflet de chaque revue dans ce chapitre, faire une phrase d'intro pour chaque article et un phrase critique à la fin. SI PAS LE TEMPS, faire les plus pertinents selon ta recherche. SUPER IMPORTANT mettre un paragraphe à la fin de la revue littéraire qui résume et qui dit pourquoi tout ça est en relation avec ta recherche. Mettre ce qui manque dans l'article en lien avec ta recherche.
 
 
-Dans ce mémoire, le terme robot logiciel revient à quelques reprises, ainsi sa définition est «agent intelligent programmé afin d'imiter les capacités d'un être humain dans un système informatique ou afin d'effectuer un ensemble de tâches prédéterminées de manière automatique.»~\cite{robot_logiciel_oqlf_2018} Les autres termes suggérés sont «robot informatique» et «robot». Ainsi, un robot logiciel codeur est une intelligence artificielle orientée au développement logiciel. En anglais, il pourrait être nommé un «DevBot»~\cite{8823643}.
+Dans ce mémoire, le terme robot logiciel revient à quelques reprises, ainsi sa définition est «agent intelligent programmé afin d'imiter les capacités d'un être humain dans un système informatique ou afin d'effectuer un ensemble de tâches prédéterminées de manière automatique.»~\cite{robot_logiciel_oqlf_2018} Les autres termes suggérés sont «robot informatique» et «robot». Ainsi, un robot logiciel codeur est une intelligence artificielle orientée au développement logiciel. En anglais, il pourrait être nommé un \textit{DevBot}~\cite{8823643}.
 
 Selon les auteurs Erlenhov et al. en 2019~\cite{8823643}, le robot logiciel développeur idéal est un développeur de logiciels artificiel qui est autonome, adaptable et possède des compétences techniques ainsi que sociales. La référence à l'aspect social d'un robot logiciel développeur est, par exemple, l'outillage aux développeurs autour d'un éditeur asynchrone en temps réel tel que CodeBuddy~\cite{10.1145/3287324.3293750} ou CodePilot~\cite{10.5555/1030453.1030540} dans leur développement collaboratif.
 
 \section{Génération de code}
 
-Utiliser un générateur de code dans un contexte d'application web est efficace, comme le démontre les auteurs Uyanik et al. en 2020~\cite{SAHIN2020}, ils obtiennent un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code.
+Utiliser un générateur de code dans un contexte d'application web est efficace, comme le démontre les auteurs Uyanik et al. en 2020~\cite{SAHIN2020}, ils obtiennent un gain de performance en temps de développement de 98.95\% et 0 bogue via le générateur de code. Cependant, le code source n'est pas accessible et par conséquence, il est difficile de comparer son efficacité du coté pratique. De plus, contrairement à la solution proposé dans ce mémoire, cette solution ne semble pas disposer d'un ORM, puisqu'il génère lui même le SQL, elle ne contient pas de rétro-ingénierie et elle ne semble pas dédiée pour une communauté. 
 
-Dans un autre projet de les auteurs Pichidtienthum et al. en 2021~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, ils obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeurs peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celle expérimentée dans ce mémoire, en excluant l'aspect de la rétro-ingénierie qui est manquante.
+Dans un autre projet de les auteurs Pichidtienthum et al. en 2021~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, ils obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeurs peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celle expérimentée dans ce mémoire, en excluant l'aspect de la rétro-ingénierie qui est manquante. De plus, la solution LCNC utilisé est un logiciel propriétaire non compatible avec la licence de ERPLibre, c'est pourquoi il faut développer une solution entièrement libre pour la rendre accessible à la communauté.
 
-\section{Logiciel Libre et Open Source}
+\section{Rétro-ingénierie}
+La rétro-ingénierie\footnote{Terme en anglais : \textit{reverse engineering}} est de l'ingénierie inversée, c'est-à-dire qu'on étudie un objet, ou une technologie, pour comprendre son fonctionnement interne, sa méthode de fabrication. Une fois que le système existant est compris, passant de l'implémentation à la conception, on peut débuter la ré-ingénierie au besoin pour altérer le code source et développement un nouveau système cible, voir Figure~\ref{fig:retro_re_ing}. Il y a plusieurs domaines de rétro-ingénierie, tout dépend de quel type d'information ou manipulation qu'on a besoin de faire. Dans ce mémoire, l'objectif est d'extraire des informations pour permettre la reproduction de code via le générateur de code. Les techniques diffèrent selon le type d'information à extraire, que ce soit en Python, en Javascript, en XML pour différent type de vue. Les manipulations effectués sur l'extraction sont pour trouver des modèles spécifiques et ainsi réduire la quantité de paramètre à la génération.
 
-Le partage de bibliothèque Open Source est une méthode utilisée pour accélérer le développement permettant la réutilisation de code. L’Open Source permet aussi de supporter l'interopérabilité~\cite{open_interop_2011}, qui est la capacité de différents logiciels d'interagir et communiquer efficacement entre eux, de manière transparente et harmonieuse, sans entraves ni obstacles, même s’ils ont été développés par différentes organisations.
+Dans le travail de El Idrissi en 2022~\cite{elthesis_2022}, il démontre de la rétro-ingénierie pour comprendre le niveau de variabilité des modules dans Odoo en examinant les dépendances entre les modules. Ces travaux pourraient être pratique pour notre recherche avec le générateur de code, mais nous ne sommes pas rendu à inspecter un ensemble de module, nous travaillons sur des modules individuelles.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=5in]{images/Retroingenierie_-_Byrne.png}
+\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie. Image modifiée~\cite{wikipedia_image_retroingenierie}}
+\label{fig:retro_re_ing}
+\end{figure}
+
+\section{Logiciel Libre et \textit{Open Source}}
+
+Le partage de bibliothèque \textit{Open Source} est une méthode utilisée pour accélérer le développement permettant la réutilisation de code. L’\textit{Open Source} permet aussi de supporter l'interopérabilité~\cite{open_interop_2011}, qui est la capacité de différents logiciels d'interagir et communiquer efficacement entre eux, de manière transparente et harmonieuse, sans entraves ni obstacles, même s’ils ont été développés par différentes organisations.
 
 D'ailleurs, comme le mentionne les auteurs Hertel et al. en 2003~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associée à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans son développement.
 
@@ -40,14 +54,14 @@ Pour revenir à l'article de Thompson, comme le mentionne Yona dans son blog en 
 
 Ainsi, il serait pertinent de développer un robot codeur qui soit en mesure de faire de la rétro-ingénierie sur une application et ses bibliothèques. Le générateur pourrait comprendre le fonctionnement de cette chaîne de dépendance et générer le code idéal pour la remplacer par une nouvelle application digne de confiances en validant la propriété intellectuelle libre.
 
-\section{Les complexités de développer ERP}
+\section{Les complexités de développer \textit{ERP}}
 
-L'auteur Pitetti mentionne en 2010 : «Le choix d’un ERP libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{Ré-ingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet»~\cite{pitetti2010implementation}. C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement, voir Figure~\ref{fig:erp_implantation_cinq_etape} qui démontre un processus d'implantation d'un ERP en cinq étape proposé par l'auteur Braud en 2008~\cite{uqam_erp_benefice_2008}. À ce jour, les travaux du générateur de code viennent accélérer que la partie développement de ce processus, mais ils apporteraient un gain considérable si nous pouvons l'appliquer à toutes ces étapes.
+L'auteur Pitetti mentionne en 2010 : «Le choix d’un \textit{ERP} libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{Ré-ingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet»~\cite{pitetti2010implementation}. C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement, voir Figure~\ref{fig:erp_implantation_cinq_etape} qui démontre un processus d'implantation d'un \textit{ERP} en cinq étape proposé par l'auteur Braud en 2008~\cite{uqam_erp_benefice_2008}. À ce jour, les travaux du générateur de code viennent accélérer que la partie développement de ce processus, mais ils apporteraient un gain considérable si nous pouvons l'appliquer à toutes ces étapes.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{processus_implantation_erp.drawio.png}
-\caption{Processus d'implantation d'un ERP en cinq étapes. Image adaptée de l'auteur~\cite{uqam_erp_benefice_2008}}
+\caption{Processus d'implantation d'un \textit{ERP} en cinq étapes. Image adaptée de l'auteur~\cite{uqam_erp_benefice_2008}}
 \label{fig:erp_implantation_cinq_etape}
 \end{figure}
 
@@ -66,14 +80,14 @@ Dans Odoo, le nombre de module augmente avec le temps et diffère entre les vers
 
 % En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet, cela rend le processus lourd en plus de durer dans le temps.
 
-\section{DevOps}\label{devops_ref}
+\section{\textit{DevOps}}\label{devops_ref}
 
-Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le DevOps consiste en un développement et une provision de processus commerciaux rapides et flexibles. Il intègre efficacement le développement, la livraison et les opérations, facilitant ainsi une connexion fluide et flexible de ces silos traditionnellement séparés, voir Figure~\ref{fig:devops}.
+Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le \textit{DevOps} consiste en un développement et une provision de processus commerciaux rapides et flexibles. Il intègre efficacement le développement, la livraison et les opérations, facilitant ainsi une connexion fluide et flexible de ces silos traditionnellement séparés, voir Figure~\ref{fig:devops}.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{devops.png}
-\caption{Le processus DevOps. Source: Pease, 2017.~\cite{devops_illustration}}
+\caption{Le processus \textit{DevOps}. Source: Pease, 2017.~\cite{devops_illustration}}
 \label{fig:devops}
 \end{figure}
 
@@ -82,7 +96,7 @@ Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le DevOps cons
 
 % Basé sur des templates de code et une interface qui, au besoin, permet la configuration par du code.
 
-Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des segments d'application en utilisant peu ou pas de code. Selon l'auteur Bock en 2021~\cite{LC_bock_2021}, la Figure~\ref{fig:lcnc_plateform} défini un ensemble des fonctionnalités nécessaire pour une plateforme LCNC. Les travaux de ce mémoire supporte : la gestion des rôles; un mécanisme de déploiement et exportation; un mécanisme pour changer le design de l'interface utilisateur; un mécanisme pour coupler l'interface à un modèle et un contrôleur (MVC); un mécanisme pour faire le rendu visuel sur différents types d'appareils; une gestion des processus du système et de la machine; un système de gestion des états et des transitions; un mécanisme de spécification fonctionnel de base; un générateur de code de composantes; un mécanisme d'accès à des API externes; des composantes de conception d'un modèle de données; des composantes pour spécifier des structures de données; La gestion de base de données interne et externes par API. Ainsi, la plupart des composantes communes sont supportés dans ces travaux, cependant il manquerait un générateur d'algorithme et un générateur d'interface dédié au générateur de code, puis d'autres composantes moins importantes.
+Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des segments d'application en utilisant peu ou pas de code. Selon l'auteur Bock en 2021~\cite{LC_bock_2021}, la Figure~\ref{fig:lcnc_plateform} défini un ensemble des fonctionnalités nécessaire pour une plateforme LCNC. Les travaux de ce mémoire supporte : la gestion des rôles; un mécanisme de déploiement et exportation; un mécanisme pour changer le design de l'interface utilisateur; un mécanisme pour coupler l'interface à un modèle et un contrôleur (MVC); un mécanisme pour faire le rendu visuel sur différents types d'appareils; une gestion des processus du système et de la machine; un système de gestion des états et des transitions; un mécanisme de spécification fonctionnel de base; un générateur de code de composantes; un mécanisme d'accès à des \textit{API} externes; des composantes de conception d'un modèle de données; des composantes pour spécifier des structures de données; La gestion de base de données interne et externes par \textit{API}. Ainsi, la plupart des composantes communes sont supportés dans ces travaux, cependant il manquerait un générateur d'algorithme et un générateur d'interface dédié au générateur de code, puis d'autres composantes moins importantes.
 
 \begin{figure}[htb]
 \centering
@@ -196,9 +210,9 @@ La mise en place d’une méthode de communication non violente~\footnote{\url{h
 \label{fig:communication_non_violente}
 \end{figure}
 
-\subsection{Guide construire une communauté Open Source}
+\subsection{Guide construire une communauté \textit{Open Source}}
 
-Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés en 4 sections avec des titres indicateurs d’orientation : la mise en place de votre projet pour le succès, cultiver votre communauté, résoudre les conflits et la communauté est le coeur de l'open source. Il y a beaucoup d'autres guides, mais en général, ils n'intègrent ni les aspects de génie industriel qui est vulgarisé avec le guide fusée et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
+Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés en 4 sections avec des titres indicateurs d’orientation : la mise en place de votre projet pour le succès, cultiver votre communauté, résoudre les conflits et la communauté est le coeur de l'\textit{open source}. Il y a beaucoup d'autres guides, mais en général, ils n'intègrent ni les aspects de génie industriel qui est vulgarisé avec le guide fusée et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
 
 % Il faut :
 % \begin{enumerate}
@@ -220,7 +234,7 @@ Un guide en 7 étapes du guide Fusée de CimarLab en 2023~\cite{guide_fusee}, vo
 
 \subsection{Critères éthiques de GNU concernant l'hébergement de logiciel}
 
-La licence AGPLv3 n’est pas toujours bien respectée~\cite{violation_libre_2017}. Il est important d'assister le développeur dans ses choix de licence et compréhension des licences des bibliothèques tierces. Cependant, une fois que le logiciel est prêt à être mise en production, il y a des critères éthiques concernant l'hébergement de logiciel~\cite{gnu_critere_hebergement_2022} qui doit être accessibles sur les projets du réseau d’entraide. Un guide avec des critères mesurables pour les services destinés à tous ceux qui veulent utiliser un service pour héberger publiquement du code source libre, ainsi qu'éventuellement des programmes exécutables devra être mis à la disposition des organisations. Ces critères se concentrent sur la protection de la vie privée, le fonctionnement sans JavaScript non libre\footnote{\url{https://www.fsf.org/campaigns/freejs}}, la compatibilité avec les licences à copyleft et leur philosophie, et l'absence de discrimination contre les utilisateurs, quels qu'ils soient. 
+La licence AGPLv3 n’est pas toujours bien respectée~\cite{violation_libre_2017}. Il est important d'assister le développeur dans ses choix de licence et compréhension des licences des bibliothèques tierces. Cependant, une fois que le logiciel est prêt à être mise en production, il y a des critères éthiques concernant l'hébergement de logiciel~\cite{gnu_critere_hebergement_2022} qui doit être accessibles sur les projets du réseau d’entraide. Un guide avec des critères mesurables pour les services destinés à tous ceux qui veulent utiliser un service pour héberger publiquement du code source libre, ainsi qu'éventuellement des programmes exécutables devra être mis à la disposition des organisations. Ces critères se concentrent sur la protection de la vie privée, le fonctionnement sans JavaScript non libre\footnote{\url{https://www.fsf.org/campaigns/freejs}}, la compatibilité avec les licences à la gauche d'auteur~\footnote{Copyleft} et leur philosophie, et l'absence de discrimination contre les utilisateurs, quels qu'ils soient. 
 
 % \begin{enumerate}
 %     \item Est-ce que l'hébergeur fournit l'accès au code source des programmes qu'il héberge?
@@ -321,7 +335,7 @@ Puis il y a des modèles d'apprentissage automatique qui ont été inspirés de 
 
 La sympoïèse peut être définie comme un système qui se développe en collectivité. C'est un concept utilisée en écologie et en théorie des systèmes pour décrire les processus de production collective et collaborative dans les écosystèmes. Elle se distingue de l'autopoïèse, qui est le processus par lequel un système produit et reproduit ses propres composants de manière autonome. Par exemple, les coraux sont des collectifs d'organismes en interaction qui produisent des structures complexes telles que des récifs, qui ont des effets bénéfiques sur l'écosystème dans son ensemble.
 
-Selon Guillibert en 2019, «La nature est une puissance d’engendrement qui surgit et s’autoproduit. Donna Haraway a récemment proposé de remplacer le concept "d’autoproduction" par celui de "sympoïèse" qui désigne la coproduction du milieu par des espèces en interrelations plutôt que l’activité autonome de certains organismes isolés.»~\cite{guillibert:tel-02929676}
+Selon Guillibert en 2019, «La nature est une puissance d’engendrement qui surgit et s’autoproduit. Donna Haraway a récemment proposé de remplacer le concept «d’autoproduction» par celui de «sympoïèse» qui désigne la coproduction du milieu par des espèces en interrelations plutôt que l’activité autonome de certains organismes isolés.»~\cite{guillibert:tel-02929676}
 
 Ainsi, le développement de technologie en collectivité va permettre de gérer des cas d'urgence humanitaire tel que le «mouvement des villes en transition»~\cite{MOUV_063_0130}\footnote{\url{https://fr.wikipedia.org/wiki/Ville_en_transition}} en développant des technologies permettant de mettre en place des systèmes d'échange local~\cite{cibois2010compte}\footnote{\url{https://fr.wikipedia.org/wiki/Systeme_d'echange_local}}.
 
@@ -386,9 +400,9 @@ Il est nécessaire de supporter plusieurs langues pour faciliter la compréhensi
 
 \subsubsection{ERPLibre}
 
-Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créés causant une divergence sur les fonctionnalités, créant le modèle d'affaires «Open Core»\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un ERP est complexe et nécessite l'intervention d'experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme aux réalités de l'organisation. Bien que l'OCA travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseaux d'entraide à pouvoir se débrouiller de manière souveraine.
+Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créés causant une divergence sur les fonctionnalités, créant le modèle d'affaires \textit{Open Core}\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un \textit{ERP} est complexe et nécessite l'intervention d'experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme aux réalités de l'organisation. Bien que l'OCA travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseaux d'entraide à pouvoir se débrouiller de manière souveraine.
 
-La plateforme ERPLibre a ainsi été créée en début 2020 en encapsulant la version Odoo 12.0, sous licence AGPLv3, en offrant une alternative 100\% libre, dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible, au même endroit, toute l'information nécessaire à la gestion de l'ERP d'une organisation.
+La plateforme ERPLibre a ainsi été créée en début 2020 en encapsulant la version Odoo 12.0, sous licence AGPLv3, en offrant une alternative 100\% libre, dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible, au même endroit, toute l'information nécessaire à la gestion de l'\textit{ERP} d'une organisation.
 
 % \subsection{Communauté de développement}
 
@@ -450,7 +464,7 @@ Cependant, le Quine ne sait rien faire d’autre que de s’auto-générer. Ce q
 
 \subsection{Exemples illustratifs de générateur de code}
 
-La génération de code est un des moyens pour soutenir le développeur dans le développement d’un logiciel. C’est la partie «création de code» de la méthodologie DevOps~\ref{devops_ref}.
+La génération de code est un des moyens pour soutenir le développeur dans le développement d’un logiciel. C’est la partie «création de code» de la méthodologie \textit{DevOps}~\ref{devops_ref}.
 
 \subsubsection{Technique de génération de code basique}
 
@@ -468,11 +482,11 @@ print('print("Hello, World!")')
 \begin{lstlisting}[language=Python, upquote=true, caption={M(µ$_C$) de Figure~\ref{fig:exemple_gen_code_basique}}, label={lst:gen_code_basique_m}]
 eval("""print('print("Hello, World!")')""")
 \end{lstlisting}
-\caption{Exemple de technique de génération de code basique d'un «Hello World»}
+\caption{Exemple de technique de génération de code basique d'un «\textit{Hello World}»}
 \label{fig:exemple_gen_code_basique}
 \end{figure}
 
-Dans Figure~\ref{fig:exemple_gen_code_basique_2}, cette technique basique est paramétrable, contrairement au premier exemple Figure~\ref{fig:exemple_gen_code_basique}. Le f-strings fait office de «template» et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
+Dans Figure~\ref{fig:exemple_gen_code_basique_2}, cette technique basique est paramétrable, contrairement au premier exemple Figure~\ref{fig:exemple_gen_code_basique}. Le f-strings fait office de \textit{template} et il y a la capacité dynamique d’adaptation en ajoutant des itérations et des conditions sans utiliser de bibliothèque externe.
 
 \begin{figure}
 \begin{lstlisting}[language=Python, upquote=true, caption={C - fichier C.py de Figure~\ref{fig:exemple_gen_code_basique_2}}, label={lst:gen_code_basique_2_c}]
@@ -497,11 +511,11 @@ result = f"{metadata.get('fonction')}({metadata.get('argument')})\n"
 with open("C.py", "w") as f:
    f.write(result)
 \end{lstlisting}
-\caption{Exemple de technique de génération de code basique paramétrable d'un «Hello World»}
+\caption{Exemple de technique de génération de code basique paramétrable d'un «\textit{Hello World}»}
 \label{fig:exemple_gen_code_basique_2}
 \end{figure}
 
-\subsubsection{Technique de génération de code par «template»}
+\subsubsection{Technique de génération de code par \textit{template}}
 
 Un moteur de «template» est un outil de modèle structurel qui simplifie la syntaxe pour assurer une bonne maintenabilité et qui est généralement utilisé pour le développement de projet web.
 
@@ -563,9 +577,9 @@ with open("C.py", "w") as f:
 \end{figure}
 
 
-\subsubsection{Générateur de code par template avec Odoo 12}
+\subsubsection{Générateur de code par \textit{template} avec Odoo 12}
 
-La technique utilisée par Odoo 12 est le «scaffold», il gère 2 types de «template» : un module de base «default» et un module thème «theme».
+La technique utilisée par Odoo 12 est le «\textit{scaffold}», il gère 2 types de «\textit{template}» : un module de base «\textit{default}» et un module thème «theme».
 
 Dans Figure~\ref{fig:exemple_odoo_scaffold_module}, tout est presque commenté, rien n’est utilisable, mais nous avons la structure MVC. Le gain d’accélération au développement est minime.
 
@@ -593,7 +607,7 @@ views
 \label{fig:exemple_odoo_scaffold_module}
 \end{figure}
 
-Cette fois-ci, dans Figure~\ref{fig:exemple_odoo_scaffold_theme}, tout est vide, le module «theme\_module» produit une erreur à l'installation. Il est plus efficace de copier et de modifier un thème existant que d'utiliser le «scaffold».
+Cette fois-ci, dans Figure~\ref{fig:exemple_odoo_scaffold_theme}, tout est vide, le module «theme\_module» produit une erreur à l'installation. Il est plus efficace de copier et de modifier un thème existant que d'utiliser le «\textit{scaffold}».
 
 \begin{figure}
 \begin{lstlisting}[language=Python]
@@ -611,7 +625,7 @@ views
     options.xml
     snippets.xml
 \end{lstlisting}
-\caption{Exemple de génération de module thème Odoo avec la technique du Scaffold}
+\caption{Exemple de génération de module thème Odoo avec la technique du \textit{Scaffold}}
 \label{fig:exemple_odoo_scaffold_theme}
 \end{figure}
 
@@ -620,13 +634,6 @@ Le gain d’accélération au développement peut être considéré comme négli
 \subsubsection{Technique de génération de code par rétro-ingénierie}
 
 Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur de code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=5in]{images/Retroingenierie_-_Byrne.png}
-\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie. Image modifiée~\cite{wikipedia_image_retroingenierie}}
-\label{fig:retro_re_ing}
-\end{figure}
 
 Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque AST pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logicielle entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
 
@@ -667,12 +674,12 @@ with open("C.py", "w") as f:
 \begin{lstlisting}[language=Python, upquote=true, caption={C corrigé - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_new_c}]
 print("Hello, World!")
 \end{lstlisting}
-\caption{Exemple de technique de génération de code avec rétro-ingénierie d'un «Hello World»}
+\caption{Exemple de technique de génération de code avec rétro-ingénierie d'un «\textit{Hello World}»}
 \label{fig:exemple_gen_code_retro}
 \end{figure}
 
 \subsection{Tester un générateur de code}
 
-Il existe le test «Output comparison testing»~\cite{wikipedia_test_informatique} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuelle.
+Il existe le test \textit{«Output comparison testing}»~\cite{wikipedia_test_informatique} qui est le principe que le générateur de code crée du code (une sortie en texte lisible par l'humain) et que l'humain valide cette sortie textuelle.
 
 Pour valider si le générateur utilise sa pleine capacité, il suffit de faire des tests de toutes les combinaisons de ses techniques de génération et d'utiliser un outil de couverture de code pour déterminer les lignes qui sont opérées.
