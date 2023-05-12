@@ -86,24 +86,9 @@ Une fois que le générateur de code aura atteint 100\% d’auto-génération, i
 
 \subsubsection{Amélioration de l’architecture}
 
-Voici un survol des améliorations de l'architecture possibles :
+Voici un survol des améliorations de l'architecture possibles : Parallélisation de tout le code, en tout temps, lorsque cela est possible; Automatisation de la configuration pour le déverminage; Automatiser la détection des anomalies; Améliorer l’interface LCNC pour pouvoir accomplir les mêmes étapes que le mode de paramétrisation «Code hook»; Implémenter de l'auto-ingénierie sur le développement des techniques du générateur de code et Génération de code par requis fonctionnel.
 
-\begin{enumerate}
-    \item Parallélisation de tout le code, en tout temps, lorsque cela est possible;
-    \item Automatisation de la configuration pour le déverminage;
-    \item Automatiser la détection des anomalies;
-    \item Améliorer l’interface LCNC pour pouvoir accomplir les mêmes étapes que le mode de paramétrisation «Code hook»;
-    \item Supporter de nouvelles architectures dans la génération de code comme :
-        \begin{enumerate}
-        \item des applications Cordova pour le support mobile natif;
-        \item des extensions Javascript dans Gnome Shell pour étendre les fonctionnalités du ERP directement sur le bureau d’un ordinateur sans passer par un navigateur web;
-        \item d'autres modules sur différents systèmes ERP tels que Tryton ou NextERP;
-        \item générer des scripts de développement dans le projet ERPLibre qui ne dépendent pas d’Odoo;
-        \item supporter des applications embarquées pour contrôler des automates ou des systèmes de production automatisée;
-        \end{enumerate}
-    \item Implémenter de l'auto-ingénierie sur le développement des techniques du générateur de code;
-    \item Génération de code par requis fonctionnel.
-\end{enumerate}
+De plus, il faudrait supporter de nouvelles architectures dans la génération de code comme : des applications Cordova pour le support mobile natif;  des extensions Javascript dans Gnome Shell pour étendre les fonctionnalités du ERP directement sur le bureau d’un ordinateur sans passer par un navigateur web; d'autres modules sur différents systèmes ERP tels que Tryton ou NextERP; générer des scripts de développement dans le projet ERPLibre qui ne dépendent pas d’Odoo; supporter des applications embarquées pour contrôler des automates ou des systèmes de production automatisée.
 
 % Problème d’extraction, il était dans le générateur de code au départ dans le développement, il y a donc une extraction à deux endroits qui rend complexe la gestion du code. Au fil de la progression du développement, l’extraction de données par rétro-ingénierie s’avère plus efficace que les méta-données du module dans le système Odoo.
 
