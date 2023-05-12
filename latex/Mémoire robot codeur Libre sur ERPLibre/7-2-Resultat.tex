@@ -77,7 +77,7 @@ La génération par gabarit était déjà supportée dans la version initiale~\c
 
 \subsection{MVC}
 
-L’architecture MVC était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations tels que les règles de sécurité sont ajustées selon les configurations et personnalisables par la suite et l'ajout de bouton qui ouvre des \textit{Wizard} pour générer les vues, les modèles et les contrôleurs, voir Figure~\ref{fig:dia_gui_mvc}. Ainsi, le développeur peut les configurer et demander de générer les méta-données associées.
+L’architecture MVC était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations tels que les règles de sécurité sont ajustées selon les configurations et personnalisables par la suite et l'ajout de bouton qui ouvre des \textit{Wizard}\footnote{\url{https://github.com/ERPLibre/odoo-code-generator/tree/9d79f67/code_generator/wizards}} pour générer les vues, les modèles et les contrôleurs, voir Figure~\ref{fig:dia_gui_mvc}, Figure~\ref{fig:dia_wizard_mvc} et le tableau~\ref{tab:stat_code_wizard_mvc} sur les statistiques du code. Ainsi, le développeur peut les configurer et demander de générer les méta-données associées.
 
 \begin{figure}[htb]
 \centering
@@ -86,19 +86,49 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 \label{fig:dia_gui_mvc}
 \end{figure}
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=3in]{cg_wizard_mvc.png}
+\caption{Démonstration du code pour le MVC dans la section «wizards» du module du générateur de code}
+\label{fig:dia_wizard_mvc}
+\end{figure}
+
+\begin{table}[htb]
+\caption{Statistiques sur le code des «wizards» sur la GUI qui gère la génération de MVC}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+
+\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Code}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Commentaire}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}}\\\hline
+
+Python & 5 & 55.6 & 1809 & 58.5 & 560 & 17.3\\\hline
+XML & 4 & 44.4 & 178 & 92.7 & 10 & 5.2\\\hline
+Total & 9 & 100.0 & 2068 & 60.4 & 570 & 16.6\\\hline
+
+\end{tabular}
+\label{tab:stat_code_wizard_mvc}
+\end{table}
+
 \subsection{Générer un module à partir d’une base de données externes}
 
 % Un module a été programmé pour suivre la technologie ETL
 % TODO manque le load de https://fr.wikipedia.org/wiki/Extract-transform-load
 % ça devient discussion
 
-La migration de données à partir de SQL était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations tels que l'ajout de type de données, dont celles utilisées par le projet Accorderie, l'ajout d'associations entre les types de données et les différentes personnalisations de l’architecture Odoo, la modification de l'interface qui représente la base de données avec les contrôleurs pour permettre la configuration de la migration sur le modèle de données désiré et la gestion des interdépendances entre modèles. Pour gérer le problème d'interdépendances, il a fallut créer une séquence de création des données avec une seule dépendance et à la toute fin, ajouter l'interdépendance en mettant à jour les données.
+La migration de données à partir de SQL était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations\footnote{\url{https://github.com/ERPLibre/odoo-code-generator/tree/9d79f67/code_generator_db_servers}}, tels que l'ajout de type de données, dont celles utilisées par le projet Accorderie, l'ajout d'associations entre les types de données et les différentes personnalisations de l’architecture Odoo, la modification de l'interface qui représente la base de données avec les contrôleurs pour permettre la configuration de la migration sur le modèle de données désiré et la gestion des interdépendances entre modèles. Pour gérer le problème d'interdépendances, il a fallut créer une séquence de création des données avec une seule dépendance et à la toute fin, ajouter l'interdépendance en mettant à jour les données. Il y a eu au moins 1639 ajouts de lignes de code, voir Figure~\ref{fig:dia_cg_db_servers}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4in]{git_diff_code_generator_db_servers.png}
+\caption{Démonstration des modifications effectués pour adapter le code de la migration de base de données pour supporter plus de fonctionnalités.}
+\label{fig:dia_cg_db_servers}
+\end{figure}
 
 \subsection{Génération de code par des données}
 
 La génération de code par des données a la capacité de prendre les données via les interfaces utilisateurs telles que la GUI et le «Code \textit{hook}». Cela permet la personnalisation pour obtenir un logiciel adapté à ce que l’utilisateur est capable d’exprimer.
 
-Le robot logiciel codeur est une machine qui, grâce à son interface «code \textit{hook}», se fait commander par deux couches de méta-données paramétrables par l’humain. Les deux couches interfèrent entre elles pour permettre l’évolution de la fonctionnalité désirée.
+Le robot logiciel codeur est une machine qui, grâce à son interface «code \textit{hook}», se fait commander par deux couches de méta-données paramétrables par l’humain. Les deux couches interfèrent entre elles pour permettre l’évolution de la fonctionnalité désirée. Pour voir un exemple de génération de code par données, voir Annexe~\ref{annexe_cg_code_uc0}.
 
 % TODO diagramme de couche entrée de l’utilisateur et sortie des fonctionnalités.
 
@@ -119,6 +149,22 @@ De la macro et micro extraction ont été réalisées avec plusieurs techniques 
 Cependant, il était nécessaire, dans certains contextes, de faire de la micro extraction, tel que l’extraction des noms des constantes qui sont transformées en valeurs lors de l’exécution, l’extraction des commentaires qui n’est pas supportée dans la bibliothèque AST de Python 3.7, l’extraction des décorateurs et l’extraction des paramètres sur les méthodes.
 
 De plus, les vues ont été extraites dans le but d'obtenir des méta-données spécifiques qui caractérisent la reconstruction de la vue, ces données n’étaient pas accessibles dans les données d'Odoo.
+
+Tout le code en lien avec l'extraction de données se retrouve dans les fichiers\footnote{\url{https://github.com/ERPLibre/odoo-code-generator/tree/9d79f67/code_generator}} extrator\_controller.py, extractor\_module.py, extrator\_module\_file.py et extractor\_view.py, voir le tableau~\ref{tab:stat_code_extractor} pour comprendre les statistiques sur le code.
+
+\begin{table}[htb]
+\caption{Statistiques sur le code de l'extraction de données de modules Odoo}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+
+\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Code}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Commentaire}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}}\\\hline
+
+Python & 4 & 100.0 & 1415 & 72.6 & 127 & 6.5\\\hline
+
+\end{tabular}
+\label{tab:stat_code_extractor}
+\end{table}
 
 Certaines informations ont été extraites dans le Javascript à l’aide de la bibliothèque «pyjsparser». Pour l’extraction d'un projet externe d'une autre technologie, un extracteur de PHP a été développé via un \textit{parser} de la communauté\footnote{\url{https://github.com/JameelNabbo/PHP-Parsers}}.
 
@@ -203,9 +249,7 @@ En référence à la Figure~\ref{fig:dia_architecture}, les techniques «Modèle
 
 \subsubsection{L'interface «code \textit{hook}»}
 
-% TODO on montre un exemple de code hook?
-
-L'interface «code \textit{hook}» permet d’accéder à la totalité des fonctionnalités du générateur de code via µ$_C^A$ et µ$_C^B$. Elle a été utilisée pour toutes les démonstrations qui servent de test et elle contient la paramétrisation pour des modules désirés. De plus, l'avantage de cette interface est qu'elle nous permet d'ajouter du code pour rendre dynamique la paramétrisation.
+L'interface «code \textit{hook}», voir exemple à l'Annexe~\ref{annexe_cg_code_uc0}, permet d’accéder à la totalité des fonctionnalités du générateur de code via µ$_C^A$ et µ$_C^B$. Elle a été utilisée pour toutes les démonstrations qui servent de test et elle contient la paramétrisation pour des modules désirés. De plus, l'avantage de cette interface est qu'elle nous permet d'ajouter du code pour rendre dynamique la paramétrisation.
 
 \subsection{Interprétation des résultats de SO-3}
 
@@ -236,39 +280,39 @@ Avant de démarrer un projet, nous suggérons au gestionnaire de projet de suivr
 
 \subsection{Projet module «auto\_backup»}
 
-Le module «auto\_backup» est le premier module de la communauté de l'organisation OCA répertoire «server-tools» à avoir été testé dans ce projet, un µ$_C^A$ et µ$_C^B$ a été généré. Le générateur de code a pu modifier le module pour appliquer de la qualité logicielle. Cela a permis de développer la technique de gestion des «Cron», puisqu’il lance des sauvegardes, par SSH ou en local, à des moments spécifiques dans le temps.
+Le module «auto\_backup»\footnote{\url{https://github.com/ERPLibre/server-tools/tree/f6054fc/auto_backup}} est le premier module de la communauté de l'organisation OCA répertoire «server-tools» à avoir été testé dans ce projet, un µ$_C^A$\footnote{\url{https://github.com/ERPLibre/odoo-code-generator-template/tree/b5ae8e/code_generator_template_demo_sysadmin_cron}} et µ$_C^B$\footnote{\url{https://github.com/ERPLibre/odoo-code-generator-template/tree/b5ae8e/code_generator_auto_backup}} a été généré. Le générateur de code a pu modifier le module pour appliquer de la qualité logicielle. Cela a permis de développer la technique de gestion des «Cron», puisqu’il lance des sauvegardes, par SSH ou en local, à des moments spécifiques dans le temps.
 
 \subsection{Projet module workflow design}
 
 C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code qui permet de faire le suivi sur les opportunités, les menaces, les forces, les faiblesses et les objectifs. Il a été utilisé dans le projet Accorderie.
 
-\subsection{Projet module STARS}
+% \subsection{Projet module STARS}
 
-Le module STARS dépend de l’application Projet, il permet de configurer une procédure intégrée dans un projet pour suivre les étapes de STARS, voir Figure~\ref{fig:workflow_stars}.
+% Le module STARS dépend de l’application Projet, il permet de configurer une procédure intégrée dans un projet pour suivre les étapes de STARS, voir Figure~\ref{fig:workflow_stars}.
 
-\begin{figure}
-\centering
-\includegraphics[width=6.535in]{workflow_stars.png}
-\caption{Procédure STARS dans l'application Projet vue Diagramme}
-\label{fig:workflow_stars}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=6.535in]{workflow_stars.png}
+% \caption{Procédure STARS dans l'application Projet vue Diagramme}
+% \label{fig:workflow_stars}
+% \end{figure}
 
-Ainsi, nous pouvons créer un nouveau projet et suivre cette procédure en ajoutant des tâches d'amélioration continue de son organisation, voir Figure~\ref{fig:kanban_stars}.
+% Ainsi, nous pouvons créer un nouveau projet et suivre cette procédure en ajoutant des tâches d'amélioration continue de son organisation, voir Figure~\ref{fig:kanban_stars}.
 
-\begin{figure}
-\centering
-\includegraphics[width=6.535in]{kanban_stars.png}
-\caption{Suivi des tâches de projet avec procédure STARS en vue Kanban}
-\label{fig:kanban_stars}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=6.535in]{kanban_stars.png}
+% \caption{Suivi des tâches de projet avec procédure STARS en vue Kanban}
+% \label{fig:kanban_stars}
+% \end{figure}
 
 \subsection{Projet module SRS}
 
-C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code. Il permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et, finalement, définir les requis fonctionnels d’un projet. Il a été utilisé, entre autres, pour le projet Accorderie et le projet Portail CEPPP.
+C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/code_generator_project_srs}}\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/code_generator_template_project_srs}}\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/project_srs}}. Il permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et, finalement, définir les requis fonctionnels d’un projet. Il a été utilisé, entre autres, pour le projet Accorderie et le projet Portail CEPPP.
 
 \subsection{Projet espace Accorderie}
 
-Le projet a débuté par l'élaboration d'une analyse des besoins fonctionnels, puis un ensemble de requis logiciels ont été rédigés avec un membre du Réseau de l'Accorderie. % TODO faire annexe, voir annexe OIU.
+Le projet\footnote{\url{https://github.com/TechnoLibre/odoo_accorderie/tree/ae5b4c}} a débuté par l'élaboration d'une analyse des besoins fonctionnels, puis un ensemble de requis logiciels ont été rédigés avec un membre du Réseau de l'Accorderie. % TODO faire annexe, voir annexe OIU.
 
 Le générateur de code a permis de créer un module Odoo 12.0 avec leurs modèles de données basés sur leur base de données en SQL de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
 
@@ -285,6 +329,28 @@ Une maquette a été conçue pour un nouvel espace membre. Ainsi, nous avons uti
 Le générateur de code a permis d’aider à créer un diagramme pour afficher le processus d’échange de temps, voir Annexe~\ref{annexe_processus_accorderie_2023}, puis une application en Javascript avec AngularJS a été développée pour afficher ce processus à l’utilisateur, une machine à état, qui permet de revenir selon des paramètres à un état du processus.
 
 Dû à des limitations humaines et de temps, tout le reste du projet a dû être fait manuellement, puisque la technologie a été changée pour faciliter le développement de l’interface.
+
+Les statistiques du travail sont démontrés dans le tableau~\ref{tab:stat_code_accorderie}.
+
+
+\begin{table}[htb]
+\caption{Statistiques sur l'ensemble des modules Odoo pour le projet Accorderie.}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+
+\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{Code}}\\\hline
+
+XML & 79 & 34711\\\hline
+Python & 91 & 19434\\\hline
+Javascript & 14 & 3755\\\hline
+Css & 37 & 2488\\\hline
+Autre & 3 & 57\\\hline
+Total & 224 & 60445\\\hline
+
+\end{tabular}
+\label{tab:stat_code_accorderie}
+\end{table}
 
 \subsection{Projet Portail CEPPP}
 
@@ -332,7 +398,7 @@ Le réseau d’entraide a besoin d’un support technologique libre, puisque per
 
 \subsection{Avancement sur le développement en réseau d'entraide}
 
-Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outils est rendu accessible aux gestionnaires de communauté, aux développeurs de projet. L'outil «No-code/Low-code» est l'interface du générateur de code pour les assister dans leur développement. La section formation sur le développement comprend les exemples de code via les tests qui sont faits pour être facilement transformables pour gérer des nouveaux contextes. La détection des anomalies est mise en place par la révision par les pairs sur l'état du code. L'outil STARS est rendu accessible pour faire de l'amélioration continue au sein des organisations. Des guides de gestion de communauté sont accessibles pour faciliter l'ajout de participants. Enfin, la mise en place de méthodologie Agile avec suivi du développement pour l'adaptation aux changements est mise à disposition.
+Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outils est rendu accessible aux gestionnaires de communauté, aux développeurs de projet. L'outil «No-code/Low-code» est l'interface du générateur de code pour les assister dans leur développement. La section formation sur le développement comprend les exemples de code via les tests qui sont faits pour être facilement transformables pour gérer des nouveaux contextes. La détection des anomalies est mise en place par la révision par les pairs sur l'état du code. Des guides de gestion de communauté sont accessibles pour faciliter l'ajout de participants. Enfin, la mise en place de méthodologie Agile avec suivi du développement pour l'adaptation aux changements est mise à disposition.
 
 \begin{figure}
 \centering
