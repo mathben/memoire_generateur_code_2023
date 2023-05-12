@@ -1,14 +1,8 @@
 \Chapter{REVUE DE LITTÉRATURE}\label{sec:RevLitt}
 
-% TODO faire une intro à la revue littéraire 
-% Le chapitre 2 présente une revue de littérature concernant le terme de robot logiciel développeur, la génération de code, les logiciels libres et open source, la sécurité en lien avec le développement logiciel, la complexité du développement de ERP, le DevOps, les interfaces logiciel no-code / low-code, la création de communauté et la poïèse. 
-%MODIFIER légèrement la phrase pour qu'elle soit un reflet de chaque revue dans ce chapitre, faire une phrase d'intro pour chaque article et un phrase critique à la fin. SI PAS LE TEMPS, faire les plus pertinents selon ta recherche. SUPER IMPORTANT mettre un paragraphe à la fin de la revue littéraire qui résume et qui dit pourquoi tout ça est en relation avec ta recherche. Mettre ce qui manque dans l'article en lien avec ta recherche.
-
 Dans ce chapitre, nous présentons une revue de littérature concernant les termes de robot logiciel développeur, la génération de code, la rétro-ingénierie, les logiciels libres et à \textit{Open Source}, la sécurité en lien avec le développement logiciel, la complexité du développement des \textit{ERP}, le \textit{DevOps}, les interfaces logicielles \textit{no-code / low-code}, la création de communauté et la poïèse.
 
 \section{Caractéristiques de la plateforme Odoo}
-
-% TODO mettre les besoins issues des cas pratique (Accorderie) (CEPPP) et que les propriétés Odoo répondent à leur critère
 
 \subsection{Architecture MVC}
 
@@ -18,7 +12,7 @@ L’architecture MVC permet de séparer les composantes logicielles par le modè
 
 \subsection{Architecture ORM}
 
-L'utilisation de requêtes \textit{Structured Query Language} (SQL) pour communiquer avec des bases de données demande un temps considérable au développeur à implémenter et elles nécessitent la programmation d'interface avec la base de données. L'utilisation d'un \textit{Object-Relational Mapping}(ORM) permet de bonifier la productivité, de faciliter la maintenance et d'augmenter la sécurité d'un logiciel. L’objectif du ORM est de faciliter la manipulation des données stockées dans une base de données relationnelle en les représentant sous forme d’objets dans un langage de programmation orientée objet\footnote{\url{https://fr.wikipedia.org/wiki/Mapping_objet-relationnel}}. Cela permet la simplification de l’architecture en l’écrivant en langage haut niveau, au lieu de directement en SQL, réduisant le nombre d'erreurs et facilite la maintenance.
+L'utilisation de requêtes \textit{Structured Query Language} (SQL) pour communiquer avec des bases de données demande un temps considérable au développeur à implémenter et elles nécessitent la programmation d'interface avec la base de données. L'utilisation d'un \textit{Object-Relational Mapping} (ORM) permet de bonifier la productivité, de faciliter la maintenance et d'augmenter la sécurité d'un logiciel. L’objectif du ORM est de faciliter la manipulation des données stockées dans une base de données relationnelle en les représentant sous forme d’objets dans un langage de programmation orientée objet\footnote{\url{https://fr.wikipedia.org/wiki/Mapping_objet-relationnel}}. Cela permet la simplification de l’architecture en l’écrivant en langage haut niveau, au lieu de directement en SQL, réduisant le nombre d'erreurs et facilite la maintenance.
 
 \subsection{Architecture modulaire par héritage}
 
@@ -32,27 +26,17 @@ Au moment de l’installation d’un module Odoo, il y a des opérations qui peu
 
 \subsection{\textit{Website builder}}
 
-Le \textit{Website Builder} est un outil qui permet une autonomie aux utilisateurs lambda\footnote{Utilisateur semblable à la majorité dans son comportement. \url{https://fr.wiktionary.org/wiki/utilisateur_lambda}} (augmenter l'accessibilité) dans la création et mise à jour de contenus de pages web sur le site vitrine de l'organisation. C’est un mécanisme \textit{Low-Code-No-Code}(LCNC)\footnote{Qui nécessite peu ou pas du tout du code} dans Odoo 12 pour créer et modifier un site web multi-pages par un mécanisme de \textit{drag and drop}\footnote{Glisser-déposer} avec des \textit{snippets}\footnote{Fragment de code} paramétrables. Il permet de modifier une page web en réduisant le besoin de recourir à un expert technique, abaissant ainsi les coûts de développement.
+Le \textit{Website Builder} est un outil qui permet une autonomie aux utilisateurs lambda\footnote{Utilisateur semblable à la majorité dans son comportement. \url{https://fr.wiktionary.org/wiki/utilisateur_lambda}} (augmenter l'accessibilité) dans la création et mise à jour de contenus de pages web sur le site vitrine de l'organisation. C’est un mécanisme \textit{Low-Code-No-Code} (LCNC)\footnote{Qui nécessite peu ou pas du tout du code} dans Odoo 12 pour créer et modifier un site web multi-pages par un mécanisme de \textit{drag and drop}\footnote{Glisser-déposer} avec des \textit{snippets}\footnote{Fragment de code} paramétrables. Il permet de modifier une page web en réduisant le besoin de recourir à un expert technique, abaissant ainsi les coûts de développement.
 
 \subsection{Internationalisation et localisation}
 
-Il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard «Internationalisation et la localisation»(i18n), qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\cite{wikipedia_i18n}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou XML. Le système permet de générer un fichier d'extension «.pot», qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier d'extension «.pot» pour faire un fichier d'extension «.po», sous la nomenclature i18n et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier d'extension «.po» avec les traductions déjà connues par le système, il suffit de le mettre à jour.
+Il est nécessaire de supporter plusieurs langues pour faciliter la compréhension de l'outil informatique à l'utilisation. Pour y arriver, il existe un standard «Internationalisation et la localisation» (i18n), qui a été référencé \cite{i18n_wiley}, qui permet d'adapter les logiciels informatiques à plusieurs langues sur plusieurs localisations\cite{wikipedia_i18n}. Odoo rend accessible plusieurs bibliothèques pour permettre l’extraction de chaînes de caractères au moment de l’exécution, que ce soit dans du Python, Javascript ou XML. Le système permet de générer un fichier d'extension «.pot», qui contient ces chaînes de caractères. Pour supporter une nouvelle langue et une localisation, on copie le fichier d'extension «.pot» pour faire un fichier d'extension «.po», sous la nomenclature i18n et on peut faire la traduction ou l’adaptation linguistique. Le système peut aussi générer la langue existante pour faire un fichier d'extension «.po» avec les traductions déjà connues par le système, il suffit de le mettre à jour.
 
 \subsection{ERPLibre}
 
 Depuis la version 9.0 d'Odoo, une version communautaire et entreprise ont été créées, causant une divergence sur les fonctionnalités, créant le modèle d'affaires \textit{Open Core}\footnote{\url{https://fr.wikipedia.org/wiki/Open_core}}. L'adaptation d'un \textit{ERP} est complexe et nécessite l'intervention d'experts pour bien répondre aux besoins de l'utilisateur pour la personnalisation de la plateforme aux réalités de l'organisation. Bien que l'OCA travaille pour rendre accessible librement ces fonctionnalités, cela vient limiter les réseaux d'entraide à pouvoir se débrouiller de manière souveraine.
 
 La plateforme ERPLibre a ainsi été créée, en début 2020, en encapsulant la version Odoo 12.0, sous licence AGPLv3, en offrant une alternative 100\% libre, dans le but de faciliter le déploiement et le développement pour une organisation en permettant la gestion des dépendances avec Poetry, l'automatisation du déploiement avec les Docker, la gestion de tous les répertoires de module~\ref{tab:nb_module_version_odoo} avec Git Repo\footnote{\url{https://gerrit.googlesource.com/git-repo}}, et plusieurs scripts pour le développement et une documentation propre pour son utilisation. Cela permet de rendre accessible, au même endroit, toute l'information nécessaire à la gestion de l'\textit{ERP} d'une organisation.
-
-% \subsection{Communauté de développement}
-
-% % TODO manque why et how
-% Une communauté de développement va regrouper une communauté de développeurs (qui travaille sur l’aspect technique) et une communauté d’utilisateurs (qui travaille sur l’aspect fonctionnel). Il faut réussir à faire interagir ces deux groupes d'individus et les amener à travailler ensemble.
-
-% \subsubsection{Générateur de code accessible dans la communauté Odoo}
-
-% % TODO REF
-% % Il permet de générer un module simple dans Odoo et faire son modèle de données et vue de base admin
 
 \section{Robot logiciel développeur}\label{robot_logiciel_developpeur_revue}
 
@@ -88,11 +72,6 @@ Le partage de bibliothèque \textit{Open Source} est une méthode utilisée pour
 
 D'ailleurs, comme le mentionne les auteurs Hertel et al. en 2003~\cite{HERTEL20031159}, un des facteurs de motivation important est la perception de l'indispensabilité de ses propres contributions dans une équipe, associée à une évaluation élevée des objectifs de l'équipe et un fort sentiment d'auto-efficacité personnelle. Le générateur de code ne doit pas remplacer l'utilisateur, il doit l'accompagner dans son développement, c'est pourquoi, dans ce mémoire, l'accent est mise sur l'aspect social, en proposant des outils pour accélérer le développement pour les membres de l'équipe.
 
-% \section{Logiciel Libre}
-% Le logiciel libre entrave l’interopérabilité seulement pour les systèmes non compatibles avec la copyleft. Bien qu’elle prône la liberté du code, elle est restrictive.
-
-% Cette restriction est nécessaire à la protection du développeur et de la communauté. 
-
 \section{Sécurité}
 
 Bien qu'il y ait plusieurs aspects de sécurité à considérer, ce qui nous intéresse, ici, est la sécurité logicielle via son développement et ses dépendances.
@@ -121,16 +100,6 @@ Un autre facteur complexe est l'association des processus d'affaires actuels à 
 
 Dans Odoo, le nombre de module augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et pour éviter de réinventer la roue. En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet pour des adaptations futures aux nouveaux processus de l'entreprise.
 
-% Autour de ça, il faut mettre en place une gestion du changement et adapter le développement des affaires.
-
-% Plusieurs de ces étapes ne sont pas prises au sérieux, tel que le financement. De plus, l’implantation se fait sur une longue période de temps.
-
-% Dans Odoo, le nombre de modules augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et à éviter de réinventer la roue.
-
-% Il faut adapter les processus des organisations aux fonctionnalités existantes, sinon il est trop coûteux de tout recréer selon les processus de l’entreprise.
-
-% En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet, cela rend le processus lourd en plus de durer dans le temps.
-
 \section{\textit{DevOps}}\label{devops_ref}
 
 Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le \textit{DevOps} consiste en un développement et une provision de processus commerciaux rapides et flexibles. Il intègre efficacement le développement, la livraison et les opérations, facilitant ainsi une connexion fluide et flexible de ces silos traditionnellement séparés, voir Figure~\ref{fig:devops}. Ce mémoire met l'accent sur la section code du \textit{DevOps}, mais il doit éventuellement s'impliquer à toutes les étapes du \textit{DevOps} pour ainsi automatiser la chaîne de développement au complet.
@@ -147,7 +116,7 @@ Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le \textit{Dev
 
 % Basé sur des templates de code et une interface qui, au besoin, permet la configuration par du code.
 
-Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des segments d'application en utilisant peu ou pas de code. Selon l'auteur Bock en 2021~\cite{LC_bock_2021}, la Figure~\ref{fig:lcnc_plateform} défini un ensemble des fonctionnalités nécessaire pour une plateforme LCNC. Les travaux de ce mémoire supportent : la gestion des rôles; un mécanisme de déploiement et exportation; un mécanisme pour changer le design de l'interface utilisateur; un mécanisme pour coupler l'interface à un modèle et un contrôleur (MVC); un mécanisme pour faire le rendu visuel sur différents types d'appareils; une gestion des processus du système et de la machine; un système de gestion des états et des transitions; un mécanisme de spécification fonctionnel de base; un générateur de code de composantes; un mécanisme d'accès à des \textit{Application Programming Interface}(\textit{API}) externes; des composantes de conception d'un modèle de données; des composantes pour spécifier des structures de données; la gestion de base de données interne et externes par \textit{API}. Ainsi, la plupart des composantes communes sont supportées dans ces travaux, cependant il manquerait un générateur d'algorithme et un générateur d'interface dédiés au générateur de code.
+Le LCNC est un concept qui permet à l’utilisateur de développer une plateforme ou des segments d'application en utilisant peu ou pas de code. Selon l'auteur Bock en 2021~\cite{LC_bock_2021}, la Figure~\ref{fig:lcnc_plateform} défini un ensemble des fonctionnalités nécessaire pour une plateforme LCNC. Les travaux de ce mémoire supportent : la gestion des rôles; un mécanisme de déploiement et exportation; un mécanisme pour changer le design de l'interface utilisateur; un mécanisme pour coupler l'interface à un modèle et un contrôleur (MVC); un mécanisme pour faire le rendu visuel sur différents types d'appareils; une gestion des processus du système et de la machine; un système de gestion des états et des transitions; un mécanisme de spécification fonctionnel de base; un générateur de code de composantes; un mécanisme d'accès à des \textit{Application Programming Interface} (\textit{API}) externes; des composantes de conception d'un modèle de données; des composantes pour spécifier des structures de données; la gestion de base de données interne et externes par \textit{API}. Ainsi, la plupart des composantes communes sont supportées dans ces travaux, cependant il manquerait un générateur d'algorithme et un générateur d'interface dédiés au générateur de code.
 
 \begin{figure}[htb]
 \centering
@@ -199,48 +168,6 @@ Selon l'auteur Apurvanand en 2020~\cite{9226356}, voir Figure~\ref{fig:lcnc_plat
 \label{fig:lcnc_plateform_dev}
 \end{figure}
 
-
-% Selon l'auteur Apurvanand en 2020~\cite{9226356}, il faut les éléments techniques suivants pour supporter une plateforme LCNC :
-% \begin{enumerate}
-%     \item Bases de données;
-%     \item Services externes;
-%     \item Gestion des modèles de données;
-%     \item Plateforme collaborative;
-%     \item Service infonuage (déploiement, audit de performance, gestion des erreurs/traces/événements, gestion des versions);
-%     \item Générateur de code;
-%     \item Compilateur et optimiseur de code;
-%     \item Modeleur d’application;
-%     \begin{enumerate}
-%         \item Widget;
-%         \item Connecteur;
-%         \item Processus de logique métier;
-%         \item Capacité de «drag and drop»;
-%         \item Modèle de données;
-%         \item Règles de sécurité;
-%     \end{enumerate}
-% \end{enumerate}
-
-% L'auteur Apurvanand poursuit en mentionnant les besoins de niveau supérieur d’une plateforme LCNC :
-% \begin{enumerate}
-%     \item GUI;
-%     \item Interoperabilité, support entre services externes et base de données;
-%     \item Support de la sécurité;
-%     \item Support d’une plateforme collaborative;
-%     \item Support sur la réusabilité, pouvoir répété l’utilisation d’une composante dans différents contextes;
-%     \item Support de la capacité d’un système à maintenir ou à améliorer ses performances;
-%     \item Mécanisme de spécification de logique du développement des affaires;
-%     \item Logiciel pour construire des mécanismes;
-%     \item Support au déploiement;
-% \end{enumerate}
-
-% Hors, en supportant l'ensemble de ces mécanismes et éléments techniques, nous devrions obtenir un LCNC intégré dans le robot logiciel codeur.
-
-% \section{Dev ops}
-% Démontrer outil
-% TODO image dev ops
-
-% La partie générateur de code répond seulement au besoin création de code du dev ops.
-
 \section{Création d’une communauté}
 
 «Il est important de comprendre que les logiciels libres et ouverts sont soutenus et entretenus, non pas uniquement par un éditeur logiciel traditionnel mais également par une communauté constituée de ses utilisateurs, qu'il s'agisse d'éditeurs, de sociétés de services spécialisées ou d'utilisateurs. Ce sont ces communautés qui décident de l'orientation technologique, de l'adaptation et de l'évolution du code source ainsi que des versions et des mises à jour qui seront rendues disponibles. Un logiciel libre et ouvert évolue proportionnellement au dynamisme de sa communauté[...]»~\cite{tresor_gouv_logiciels_libres}
@@ -263,13 +190,6 @@ Les conflits arrivent souvent dans une communauté et nous avons moins de filtre
 \subsection{Guide construire une communauté \textit{Open Source}}
 
 Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés en 4 sections avec des titres indicateurs d’orientation : la mise en place de votre projet pour le succès, cultiver votre communauté, résoudre les conflits et la communauté est le coeur de l'\textit{open source}. Il y a beaucoup d'autres guides, mais en général, ils n'intègrent ni les aspects de génie industriel qui est vulgarisé avec le guide fusée et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
-
-% Il faut :
-% \begin{enumerate}
-%     \item rédiger un code de conduite;
-%     \item proposer la contribution directement sur le projet.
-% \end{enumerate}
-% TODO supporter les autres pages https://opensource.guide/fr/metrics/
 
 \subsection{Guide fusée}
 
@@ -313,15 +233,11 @@ Les termes «Allopoïèse», «Autopoïèse», «Sympoïèse» ont été invent�
 
 \subsection{Technopoïèse}
 
-% Un système technologique qui développe. Caractéristique d'une technologie qui fait de la poïèse.
-
-% Un système technologique qui travaille pour la poïèse en mettant en place plusieurs caractéristiques, par exemple : l'«Allo» et l'«Auto».
-
 La technopoïèse peut être décrite comme un système qui développe une technologie.
 
 La technologie est là pour assister l'utilisateur et l'accompagner dans l'évolution de celle-ci. «Parce que l’appareil prend place entre la manifestation de l’œuvre et le travail de l’artiste en les découplant, en leur imposant une langue intermédiaire qui code puis décode. L’artiste produit des lignes de code, que la technologie intègre pour fournir à l’œuvre la source de sa manifestation : elle sépare ontologiquement\footnote{Une ontologie est une représentation formelle et explicite de la connaissance d'un domaine, qui spécifie les concepts, les relations et les entités qui existent dans ce domaine et comment ils sont interconnectés.} le travail de l’un et son résultat dans l’autre.»~\cite{artiste_techno_conf_2012} L'artiste~\footnote{Voir l'artiste de la «Définition de la poïèse»~\ref{poiese_artise}} ici signifie un programmeur informatique dans un processus créatif de fabrication, de production ou de création sur des technologies.
 
-Pour éviter que la machine ne prenne le dessus, il faut l'orienter vers la technopoïèse. «Si la technologie est un médium parasite, alors ne suffit-il pas de compter sur la charge poïétique du médium primaire, pour conserver à la poïèse ses caractères nécessaires – et imaginer l’art technologique comme un art d’abord, agrémenté, partiellement seulement, de technologie?»~\cite{artiste_techno_conf_2012} % Cette machine doit être libre pour respecter l'humain. % TODO référence machine libre respect humain
+Pour éviter que la machine ne prenne le dessus, il faut l'orienter vers la technopoïèse. «Si la technologie est un médium parasite, alors ne suffit-il pas de compter sur la charge poïétique du médium primaire, pour conserver à la poïèse ses caractères nécessaires – et imaginer l’art technologique comme un art d’abord, agrémenté, partiellement seulement, de technologie?»~\cite{artiste_techno_conf_2012}
 
 %«Our main claim in this study is to underline that the biopoetic process organizing technopoiesis involves at least four levels, with emergences and constrains between the levels. Furthermore, we see technopoiesis as the dynamics between these four levels based on mechanisms expressing the relation between biology, poetics and external representations that cognitively and socio-culturally ground the evolution of technology.»~\cite{10553_41343}
 
@@ -356,15 +272,7 @@ Selon l'auteur Nomura en 2000~\cite{tatsuya_computational_autopoiesis_2000}, un 
 
 Le concept de vue sur les entrants et sortants d'un système est une perception des observateurs externes et ne clarifie pas l'organisation ou les opérations de production du système. 
 
-% TODO à valider : Ainsi, le système va opérer sans s'ajuster lui-même en rapport avec son état et le stimulis externe.
-
-% TODO Alors comment fait-il pour se produire lui même en interaction avec son environnement s'il n'a pas d'entrant et sortant?
-
 La conception d'un système autopoïèse, de l'article~\cite{tatsuya_computational_autopoiesis_2000}, devrait comporter les points suivants : les composantes du système sont déterminées par les opérations du système; les opérations du système sont produites avant les conditions initiales; les opérations du système sont seulement exécutées pour leur propre réussite et non pour réaliser la production d'un produit; dans les opérations du système, ce qui se passe à l'intérieur du système est clairement différent des jugements des observateurs externes.
-
-% TODO La Technopoïèse doit être différent de l'autopoïèse, bien qu'il doit être autonome dans son évolution, il doit suivre des principes moraux et respecter des règles de société.
-
-%  L'autopoïèse s'applique aussi à l'être humain, tant en sociologie\footnote{\url{https://fr.wikipedia.org/wiki/Sociologie}}, la science cognitive\footnote{\url{https://fr.wikipedia.org/wiki/Sciences_cognitives}}, la philosophie\footnote{\url{https://fr.wikipedia.org/wiki/Philosophie}} et la psychopathologie\footnote{\url{https://fr.wikipedia.org/wiki/Psychopathologie}}.
 
 Appliquer l'autopoïèse sur un système est de forcer un changement de point de vue vers l'intérieur du système, puisque l'extérieur est matière à interprétation par la distinction de son environnement. En sciences naturelles, ce changement de point de vue est difficilement acceptable, puisque le point de vue est fait par des observateurs externes.
 
@@ -386,9 +294,7 @@ Ainsi, le développement de technologie en collectivité va permettre de gérer 
 La liaison avec ce mémoire, nous tentons de réaliser l'autopoïèse en mettant l'accent sur la collectivité, la collaboration de développement à travers un réseau d'entraide, pour ainsi développer un système de sympoïèse. Cependant, la sympoïèse n'est pas réflétée dans les résultats, c'est plutôt une vision.
 
 % \subsection{Autotechnopoïèse}
-
-% TODO source chatgpt
-
+% seems wrong?
 % L'auto-technopoïèse étend cette idée, de la technopoïèse, en suggérant que les systèmes technologiques peuvent devenir autonomes et se réguler eux-mêmes sans l'intervention humaine.
 
 % L'autotechnopoïèse est un concept qui décrit la capacité des systèmes technologiques à s'auto-organiser et à s'autoréguler. Plus précisément, l'autotechnopoïèse se réfère à la capacité des systèmes technologiques à maintenir leur propre structure, leur fonctionnement et leur évolution, en utilisant des mécanismes internes de régulation et d'adaptation.
@@ -632,7 +538,7 @@ Le gain d’accélération au développement peut être considéré comme négli
 
 Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur de code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
 
-Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque \textit{Abstract Syntax Tree}(\textit{AST}) pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logicielle entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
+Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque \textit{Abstract Syntax Tree} (\textit{AST}) pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logicielle entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
 
 \begin{figure}
 \begin{lstlisting}[language=Python, upquote=true, caption={C mal formaté - fichier C.py de Figure~\ref{fig:exemple_gen_code_retro}}, label={lst:gen_code_retro_c}]

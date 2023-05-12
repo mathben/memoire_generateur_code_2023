@@ -1,5 +1,5 @@
 \Chapter{RÉSULTAT EXPÉRIMENTAUX}\label{sec:Theme2}
-%TODO Mettre intro, dans ce chapitre nous examinerons les résultats, d'abord ..., puis....ensuite....
+
 Nous présentons les résultats en commençant par décrire l’implémentation du modèle conceptuel du robot logiciel codeur présenté dans la sous-section~\ref{subsection_cadre_conceptuel}. Ensuite, nous présenterons successivement les résultats propres à chacun des sous-objectifs décrits dans le chapitre~\ref{chapitre_methode}.
 
 \section{Implémentation: du modèle conceptuel au modèle opérationnel}
@@ -22,8 +22,6 @@ Dans la Figure~\ref{fig:dia_sequence_gc}, µ$_C^0$, µ$_C^A$, µ$_C^B$, $C$ et $
 \end{figure}
 
 Au départ d’un nouveau module code, µ$_C^0$ génère µ$_C^A$ qui génère µ$_C^B$ qui génère $C$. Il existe un script qui automatise un nouveau code, le développeur peut paramétrer le nom des modules et leurs emplacements. Ensuite, le développement commence en itérations agiles, les actions de 3 à 6 peuvent être exécutées dans l’ordre du choix du développeur.
-
-% TODO expliquer raison/avantage de modifier soit µ$_C^A$, µ$_C^B$ ou le code directement.
 
 Passer par l’étape 3 permet de mettre à jour l’étape 4, selon l’état du code, grâce à la rétro-ingénierie. L’étape 4 permet de mettre à jour le code selon le générateur. Il est possible de générer de nouvelles sections, comme la vue portail. Passer à l’étape 5 permet de personnaliser le code directement alors que l’étape 6 permet de mettre à jour le i18n de manière automatique.
 
@@ -60,13 +58,6 @@ La sécurité dépend du modèle, le contrôleur dépend du modèle et la vue d�
 On arrive à l'auto-générateur représenté par µ$_C^0$, voir Annexe~\ref{annexe_cg_code_uc0}. Au moment de l'installation de celui-ci, il génère le même code que lui-même, au même endroit dans le système de fichiers. Une légère modification va créer une autre entité qui sera une déviation dans l’objectif de démarrer une chaîne de production logicielle.
 
 C'est le module $M$ qui contient les méta-données de µ$_C^0$. Ainsi, exécuter µ$_C^0$ devient un test de fonctionnalité et on obtient un succès lorsqu'il n'y a pas de différence. Cependant, sa programmation est actuellement spécifique à sa génération, aucun autre module n’a besoin de cette fonctionnalité unique.
-
-% TODO TODO calcul code unique. HOW. Regarder le nombre de ligne exécuter avec ce module VS le nombre de ligne pour un autre module simple même type -> son µ$_C^A$ avec aucun modèle et un hook.
-% TODO mettre référence vers le code
-
-% Il pourrait être plus petit, faire appel à des méthodes extérieures. De plus, il pourrait y avoir moins de paramètre, on est pris entre la faciliter de paramétrer rapidement et la gestion de la lourdeur de beaucoup de paramètres. Présentement, la machine est limitée en fonctionnalité, mais plus que ça va avancer, plus il y aura de paramètres et il en aura trop pour tous les ajouter.
-
-% TODO le terme chaine est nouveau, il faudrait le définir
 
 L'auto-générateur est utilisé pour générer des µ$_C^A$ avec une légère modification dans les paramètres. Même s'il a la capacité de générer un µ$_C^B$, mieux vaut créer la chaîne proposée pour faire de l'amélioration continue.
 
@@ -112,10 +103,6 @@ Total & 9 & 100.0 & 2068 & 60.4 & 570 & 16.6\\\hline
 
 \subsection{Générer un module à partir d’une base de données externes}
 
-% Un module a été programmé pour suivre la technologie ETL
-% TODO manque le load de https://fr.wikipedia.org/wiki/Extract-transform-load
-% ça devient discussion
-
 La migration de données à partir de SQL était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, cependant il y a eu des améliorations\footnote{\url{https://github.com/ERPLibre/odoo-code-generator/tree/9d79f67/code_generator_db_servers}}, telles que l'ajout de types de données, dont ceux utilisés par le projet Accorderie, l'ajout d'associations entre les types de données et les différentes personnalisations de l’architecture Odoo, la modification de l'interface qui représente la base de données avec les contrôleurs pour permettre la configuration de la migration sur le modèle de données désiré et la gestion des interdépendances entre modèles. Pour gérer le problème d'interdépendances, il a fallut créer une séquence de création des données avec une seule dépendance et, à la toute fin, ajouter l'interdépendance en mettant à jour les données. Il y a eu au moins 1639 ajouts de lignes de code, voir Figure~\ref{fig:dia_cg_db_servers}.
 
 \begin{figure}[htb]
@@ -130,8 +117,6 @@ La migration de données à partir de SQL était déjà supportée dans la versi
 La génération de code par des données a la capacité de prendre les données via les interfaces utilisateurs telles que la GUI et le «Code \textit{hook}». Cela permet la personnalisation pour obtenir un logiciel adapté à ce que l’utilisateur est capable d’exprimer.
 
 Le robot logiciel codeur est une machine qui, grâce à son interface «code \textit{hook}», se fait commander par deux couches de méta-données paramétrables par l’humain. Les deux couches interfèrent entre elles pour permettre l’évolution de la fonctionnalité désirée. Pour voir un exemple de génération de code par données, voir Annexe~\ref{annexe_cg_code_uc0}.
-
-% TODO diagramme de couche entrée de l’utilisateur et sortie des fonctionnalités.
 
 \subsection{Interprétation des résultats de SO-1}
 
@@ -313,13 +298,13 @@ Le module de spécification des exigences logiciels (SRS), c’est un module de 
 
 \subsection{Projet espace Accorderie}
 
-Le projet\footnote{\url{https://github.com/TechnoLibre/odoo_accorderie/tree/ae5b4c}} a débuté par l'élaboration d'une analyse des besoins fonctionnels, puis un ensemble de requis logiciels ont été rédigés avec un membre du Réseau de l'Accorderie. % TODO faire annexe, voir annexe OIU.
+Le projet\footnote{\url{https://github.com/TechnoLibre/odoo_accorderie/tree/ae5b4c}} a débuté par l'élaboration d'une analyse des besoins fonctionnels, puis un ensemble de requis logiciels ont été rédigés avec un membre du Réseau de l'Accorderie.
 
 Le générateur de code a permis de créer un module Odoo 12.0 avec les modèles de données de l'Accorderie calqués sur leur base de données en SQL de MariadB, voir Annexe~\ref{annexe_db_accorderie_2019}.
 
 Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «\textit{True}» était exprimé par la valeur «-1» dans un type «\textit{int}», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçu pour de l’automatisation, mais plutôt pour que les échanges de services soient validés par des membres de la communauté.
 
-Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre \textit{Open Source Routing Machine}(OSRM).
+Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre \textit{Open Source Routing Machine} (OSRM).
 
 La migration du modèle de données a été faite dans un module qui dépend de la technique \textit{Migration DB }qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migrée vers une mise en production.
 
@@ -357,7 +342,7 @@ Total & 224 & 60445\\\hline
 
 Dans le second cas d'étude pour le Projet Portail CEPPP, l'objectif était de faire une section portail pour les patients et une section administrative pour les recruteurs, les partenaires et les administrateurs de la plateforme, de rendre accessible des formulaires et d'anonymiser les données. Le mandat était de migrer les fonctionnalités de la plateforme qui a été développée sur SuiteCRM en PHP.
 
-Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code et, puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en \textit{Comma-separated values}(CSV) et un module d'importation des données a été développé. Au total, il y a eu 23 fichiers analysés et 2851 données extraites.
+Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code et, puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en \textit{Comma-separated values} (CSV) et un module d'importation des données a été développé. Au total, il y a eu 23 fichiers analysés et 2851 données extraites.
 
 Voici les statistiques du Tableau~\ref{tab:stat_code_portail_ceppp} du code après ré-ingénierie et adaptation des fonctionnalités à livraison de la plateforme en début septembre 2023\footnote{\url{https://portailppp.ca}}.
 
@@ -409,7 +394,6 @@ Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outils est re
 \end{figure}
 
 \subsection{Avancement de la technopoïèse}\label{avancement_technopoiese}
-% TODO résultat, séparer réseau d'entraide en développement
 Voir Figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine, lorsque cette dernière est en dehors des techniques maîtrisées par le robot logiciel codeur.
 
 Pour l'Allopoïèse, le robot logiciel codeur vient assister l'intervention humaine à $H_0$ et $H_1$, qui permet de passer des méta-données, sur le module désiré, à une nouvelle version de ce module. Après une modification, il faut boucler avec le mode direct et le mode indirect du générateur de code pour avoir une version stable.
@@ -423,10 +407,7 @@ Pour l'Autopoïèse, la génération de code se fait directement sur le module d
 \label{fig:dia_auto_machine_discussion}
 \end{figure}
 
-% Le développement est au centre d'un réseau d'entraide avec des guides pour gérer son projet technologique.
-
 \subsection{Réalisation du robot logiciel générateur de code}
-% TODO résultat
 Dans la revue littérature section~\ref{robot_logiciel_developpeur_revue}, nous avons déterminé 4 critères pour définir un robot logiciel codeur :
 
 \subsubsection{Autonomie}
