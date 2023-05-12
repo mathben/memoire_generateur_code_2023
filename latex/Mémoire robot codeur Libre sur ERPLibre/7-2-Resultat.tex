@@ -12,7 +12,7 @@ Le noyau prend les paramètres issus de l’interface pour créer des méta-donn
 
 \subsection{Développement et amélioration continue}
 
-Dans la Figure~\ref{fig:dia_sequence_gc}, µ$_C^0$, µ$_C^A$, µ$_C^B$, C et M sont tous des modules installables sur Odoo. $M^i$ et $M^d$ sont des sections de code dans le module M. µ$_C^0$, µ$_C^A$ et µ$_C^B$ dépendent de M. µ$_C^A$, ce sont les macro-méta-données, alors que µ$_C^B$, sont les micro-méta-données.
+Dans la Figure~\ref{fig:dia_sequence_gc}, µ$_C^0$, µ$_C^A$, µ$_C^B$, $C$ et $M$ sont tous des modules installables sur Odoo. $M^i$ et $M^d$ sont des sections de code dans le module $M$. µ$_C^0$, µ$_C^A$ et µ$_C^B$ dépendent de $M$. µ$_C^A$, ce sont les macro-méta-données, alors que µ$_C^B$, sont les micro-méta-données.
 
 \begin{figure}
 \centering
@@ -21,7 +21,7 @@ Dans la Figure~\ref{fig:dia_sequence_gc}, µ$_C^0$, µ$_C^A$, µ$_C^B$, C et M s
 \label{fig:dia_sequence_gc}
 \end{figure}
 
-Au départ d’un nouveau module code, µ$_C^0$ génère µ$_C^A$ qui génère µ$_C^B$ qui génère C. Il existe un script qui automatise un nouveau code, le développeur peut paramétrer le nom des modules et leurs emplacements. Ensuite, le développement commence en itérations agiles, les actions de 3 à 6 peuvent être exécutées dans l’ordre du choix du développeur.
+Au départ d’un nouveau module code, µ$_C^0$ génère µ$_C^A$ qui génère µ$_C^B$ qui génère $C$. Il existe un script qui automatise un nouveau code, le développeur peut paramétrer le nom des modules et leurs emplacements. Ensuite, le développement commence en itérations agiles, les actions de 3 à 6 peuvent être exécutées dans l’ordre du choix du développeur.
 
 % TODO expliquer raison/avantage de modifier soit µ$_C^A$, µ$_C^B$ ou le code directement.
 
@@ -59,7 +59,7 @@ La sécurité dépend du modèle, le contrôleur dépend du modèle et la vue d�
 
 On arrive à l'auto-générateur représenté par µ$_C^0$, voir Annexe~\ref{annexe_cg_code_uc0}. Au moment de l'installation de celui-ci, il génère le même code que lui-même, au même endroit dans le système de fichiers. Une légère modification va créer une autre entité qui sera une déviation dans l’objectif de démarrer une chaîne de production logicielle.
 
-C'est le module \texttt{M} qui contient les méta-données de µ$_C^0$. Ainsi, exécuter µ$_C^0$ devient un test de fonctionnalité et on obtient un succès lorsqu'il n'y a pas de différence. Cependant, sa programmation est actuellement spécifique à sa génération, aucun autre module n’a besoin de cette fonctionnalité unique.
+C'est le module $M$ qui contient les méta-données de µ$_C^0$. Ainsi, exécuter µ$_C^0$ devient un test de fonctionnalité et on obtient un succès lorsqu'il n'y a pas de différence. Cependant, sa programmation est actuellement spécifique à sa génération, aucun autre module n’a besoin de cette fonctionnalité unique.
 
 % TODO TODO calcul code unique. HOW. Regarder le nombre de ligne exécuter avec ce module VS le nombre de ligne pour un autre module simple même type -> son µ$_C^A$ avec aucun modèle et un hook.
 % TODO mettre référence vers le code
@@ -76,7 +76,7 @@ Nous examinerons maintenant les résultats propores à chaque sous-objectif déc
 
 La génération par gabarit était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations telles que l'utilisation des \textit{f-strings} au lieu d'utiliser la fonction \textit{format} de \textit{String}, l'utilisation de la bibliothèque Code-writer en Python\footnote{\url{https://pypi.org/project/code-writer/}} et l'utilisation de la bibliothèque lxml\footnote{\url{https://pypi.org/project/lxml/}}.
 
-\subsection{MVC}
+\subsection{Génération de l'architecture MVC}
 
 L’architecture MVC était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations telles que les règles de sécurité sont ajustées selon les configurations et personnalisables par la suite et l'ajout de bouton qui ouvre des \textit{Wizard}\footnote{\url{https://github.com/ERPLibre/odoo-code-generator/tree/9d79f67/code_generator/wizards}} pour générer les vues, les modèles et les contrôleurs, voir Figure~\ref{fig:dia_gui_mvc}, Figure~\ref{fig:dia_wizard_mvc} et le tableau~\ref{tab:stat_code_wizard_mvc} sur les statistiques du code. Ainsi, le développeur peut les configurer et demander de générer les méta-données associées.
 
@@ -145,9 +145,9 @@ La brève feuille de route du premier sous-objectif se résume à implémenter l
 
 \subsection {Extraction de code et reproduction}
 
-De la macro et micro extraction ont été réalisées avec plusieurs techniques combinées. Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération directe de générer le code qui a été copié. L’utilisation de l’AST a servi à déterminer quelle ligne de code était à découper pour la recopier.
+De la macro et micro extraction ont été réalisées avec plusieurs techniques combinées. Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération directe de générer le code qui a été copié. L’utilisation de l’\textit{AST} a servi à déterminer quelle ligne de code était à découper pour la recopier.
 
-Cependant, il était nécessaire, dans certains contextes, de faire de la micro extraction, telles que l’extraction des noms des constantes, qui sont transformées en valeurs, lors de l’exécution, l’extraction des commentaires qui n’est pas supportée dans la bibliothèque AST de Python 3.7, l’extraction des décorateurs et l’extraction des paramètres sur les méthodes.
+Cependant, il était nécessaire, dans certains contextes, de faire de la micro extraction, telles que l’extraction des noms des constantes, qui sont transformées en valeurs, lors de l’exécution, l’extraction des commentaires qui n’est pas supportée dans la bibliothèque \textit{AST} de Python 3.7, l’extraction des décorateurs et l’extraction des paramètres sur les méthodes.
 
 De plus, les vues ont été extraites dans le but d'obtenir des méta-données spécifiques qui caractérisent la reconstruction de la vue, ces données n’étaient pas accessibles dans les données d'Odoo.
 
@@ -208,7 +208,7 @@ La brève feuille de route du second sous-objectif se résume à finaliser l’i
 
 \subsection{Classification des techniques développées}\label{result_technique_developpe}
 
-En référence à la Figure~\ref{fig:dia_architecture}, les techniques «Modèle», «\textit{Form}», «\textit{Tree}», «Contrôleur» et «Migration \textit{DB}» étaient déjà implémentées dans la version initiale~\cite{bluiksnot_repo}, mais elles ont reçu des améliorations pour s’agencer aux autres techniques. Les autres techniques ont été développées pour permettre une modularité aux modules à générer, puis supporter de nouvelles fonctionnalités telles que la gestion des cartes interactives avec le géospatial.
+En référence à la Figure~\ref{fig:dia_architecture}, les techniques «Modèle», «\textit{Form}», «\textit{Tree}», «Contrôleur» et «Migration \textit{DB}~\footnote{Module de migration de base de données}», étaient déjà implémentées dans la version initiale~\cite{bluiksnot_repo}, mais elles ont reçu des améliorations pour s’agencer aux autres techniques. Les autres techniques ont été développées pour permettre une modularité aux modules à générer, puis supporter de nouvelles fonctionnalités telles que la gestion des cartes interactives avec le géospatial.
 
 % TODO faire un diagramme des dépendances
 % Les techniques :
@@ -309,7 +309,7 @@ Le module «auto\_backup»\footnote{\url{https://github.com/ERPLibre/server-tool
 
 \subsection{Projet module SRS}
 
-C’est un module de gestion de projet qui a été développé entièrement avec le générateur de code\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/code_generator_project_srs}}\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/code_generator_template_project_srs}}\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/project_srs}}. Il permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et, finalement, définir les requis fonctionnels d’un projet. Il a été utilisé, entre autres, pour le projet Accorderie et le projet Portail CEPPP.
+Le module de spécification des exigences logiciels (SRS), c’est un module de gestion de projet qui a été développé entièrement avec le générateur de code\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/code_generator_project_srs}}\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/code_generator_template_project_srs}}\footnote{\url{https://github.com/ERPLibre/scrummer/tree/45ef25/project_srs}}. Il permet de faire l’analyse des besoins pour ensuite passer à l’analyse fonctionnelle et, finalement, définir les requis fonctionnels d’un projet. Il a été utilisé, entre autres, pour le projet Accorderie et le projet Portail CEPPP.
 
 \subsection{Projet espace Accorderie}
 
@@ -319,7 +319,7 @@ Le générateur de code a permis de créer un module Odoo 12.0 avec les modèles
 
 Plusieurs corrections ont été effectuées avant la migration : correction des noms des champs pour les uniformiser; correction des types de champs (exemple le «\textit{True}» était exprimé par la valeur «-1» dans un type «\textit{int}», ainsi ce type a été transformé en booléen); enlever les doubles dépendances par changement de l’architecture; correction des données erronées (un champs est requis, mais il manque des données pour certaines entrées). De plus, le modèle de données n’a pas été conçu pour de l’automatisation, mais plutôt pour que les échanges de services soient validés par des membres de la communauté.
 
-Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre OSRM.
+Dans l'Annexe~\ref{annexe_db_accorderie_2023}, on peut observer les adaptations des champs. Par exemple, avec la table «accorderie\_echange\_service», il y a l'ajout des champs : «nb\_heure\_estime» pour avoir une prévision des heures à effectuer, «nb\_heure\_dure\_trajet» pour reconnaître le temps de déplacement, «distance\_trajet» pour connaître la distance qui sera calculée avec le projet libre \textit{Open Source Routing Machine}(OSRM).
 
 La migration du modèle de données a été faite dans un module qui dépend de la technique \textit{Migration DB }qui permet d'importer le modèle. Certaines données nécessitent la création d’un fichier de données XML. Pour les autres données, un autre module a été créé pour ajouter les données directement dans une base de données qui sera migrée vers une mise en production.
 
@@ -357,7 +357,7 @@ Total & 224 & 60445\\\hline
 
 Dans le second cas d'étude pour le Projet Portail CEPPP, l'objectif était de faire une section portail pour les patients et une section administrative pour les recruteurs, les partenaires et les administrateurs de la plateforme, de rendre accessible des formulaires et d'anonymiser les données. Le mandat était de migrer les fonctionnalités de la plateforme qui a été développée sur SuiteCRM en PHP.
 
-Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code et, puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en CSV et un module d'importation des données a été développé. Au total, il y a eu 23 fichiers analysés et 2851 données extraites.
+Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code et, puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en \textit{Comma-separated values}(CSV) et un module d'importation des données a été développé. Au total, il y a eu 23 fichiers analysés et 2851 données extraites.
 
 Voici les statistiques du Tableau~\ref{tab:stat_code_portail_ceppp} du code après ré-ingénierie et adaptation des fonctionnalités à livraison de la plateforme en début septembre 2023\footnote{\url{https://portailppp.ca}}.
 
