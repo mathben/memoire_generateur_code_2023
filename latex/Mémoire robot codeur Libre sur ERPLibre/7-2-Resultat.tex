@@ -62,7 +62,10 @@ C'est le module $M$ qui contient les méta-données de µ$_C^0$. Ainsi, exécute
 L'auto-générateur est utilisé pour générer des µ$_C^A$ avec une légère modification dans les paramètres. Même s'il a la capacité de générer un µ$_C^B$, mieux vaut créer la chaîne proposée pour faire de l'amélioration continue.
 
 \section{Résultats propres à SO-1}
-Nous examinerons maintenant les résultats propores à chaque sous-objectif décrit dans le chapitre 3, méthode.
+Nous examinerons maintenant les résultats propres à chaque sous-objectif décrit dans le chapitre 3, méthode.
+
+À l'intérieur de cette section, le code généré est fonctionnel et utilisable selon des techniques désirées. Cependant, ce code existe et est fonctionnel dans certaines limitations. En effet, la génération de code est peu paramétrable, elle sert de base au développeur pour qu'il personnalise ce code à ses propres contextes fonctionnels. En pratique, le développeur doit toujours faire de la réingénierie sur le code généré. L'avantage est que le développement est accéléré, puisqu'une base fonctionnelle solide est créée.
+
 \subsection{Génération par gabarit}
 
 La génération par gabarit était déjà supportée dans la version initiale~\cite{bluiksnot_repo}, de plus, il y a eu des améliorations telles que l'utilisation des \textit{f-strings} au lieu d'utiliser la fonction \textit{format} de \textit{String}, l'utilisation de la bibliothèque Code-writer en Python\footnote{\url{https://pypi.org/project/code-writer/}} et l'utilisation de la bibliothèque lxml\footnote{\url{https://pypi.org/project/lxml/}}.
@@ -91,11 +94,11 @@ L’architecture MVC était déjà supportée dans la version initiale~\cite{blu
 \begin{tabular}{|l|l|l|l|l|l|l|}
 
 \hline
-\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Code}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Commentaire}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Lignes de code}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Commentaire}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}}\\\hline
 
 Python & 5 & 55.6 & 1809 & 58.5 & 560 & 17.3\\\hline
 XML & 4 & 44.4 & 178 & 92.7 & 10 & 5.2\\\hline
-Total & 9 & 100.0 & 2068 & 60.4 & 570 & 16.6\\\hline
+\textbf{Total} & \textbf{9} & \textbf{100.0} & \textbf{2068} & \textbf{60.4} & \textbf{570} & \textbf{16.6}\\\hline
 
 \end{tabular}
 \label{tab:stat_code_wizard_mvc}
@@ -144,7 +147,7 @@ Tout le code en lien avec l'extraction de données se retrouve dans les fichiers
 \begin{tabular}{|l|l|l|l|l|l|l|}
 
 \hline
-\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Code}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Commentaire}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Lignes de code}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}} & \cellcolor[HTML]{d9d9d9}{\textbf{Commentaire}} & \cellcolor[HTML]{d9d9d9}{\textbf{\%}}\\\hline
 
 Python & 4 & 100.0 & 1415 & 72.6 & 127 & 6.5\\\hline
 
@@ -260,7 +263,7 @@ Le cinquième sous-objectif met en relation le générateur de code avec la comm
 
 % Un guide hybride a été produit pour comprendre les aspects cités du démarrage d’un projet, de gestion d’une communauté autour d’un projet libre et des règles d'hébergement libres. 
 
-Avant de démarrer un projet, nous suggérons au gestionnaire de projet de suivre le guide en 7 étapes, voir Annexe~\ref{annexe_demarrer_projet_7_etape}, qui permet de démarrer rapidement un projet et de s'assurer que les membres impliqués du réseau d'entraide comprennent les mêmes enjeux et s'alignent dans la même direction. Par la suite, nous proposons le guide suivant pour gérer l'intégration d'un membre en communauté, voir Annexe~\ref{annexe_guide_integration_membre}. De plus, nous encourageons les bonnes habitudes en communauté avec le guide suivant pour la gestion du comportement en communauté, voir Annexe~\ref{annexe_guide_comportement}. Ensuite, pour se préparer au développement public, nous conseillons le guide suivant, voir Annexe~\ref{annexe_guide_dev_public}. Les problèmes peuvent survenir entre les membres de la communauté, c'est pourquoi nous suggérons le guide suivant pour faciliter la résolution de problème, voir Annexe~\ref{annexe_guide_resolution_probleme}. La communauté a besoin ensuite de formation technique et fonctionnelle, voir Annexe~\ref{annexe_guide_documentation}. Puis la sécurité est importante pour protéger les données dans la communauté, ce pourquoi nous suggérons les étapes suivantes à intégrer au projet communautaire, voir Annexe~\ref{annexe_guide_securite}. Puis au niveau de la communication, nous suggérons de faire un suivi des émotions et des sentiments des membres lors des réunions relatives au projet et mettre en place des outils favorisant la communication non violente. Finalement, en lien avec le développement libre, nous suggérons les étapes suivantes, voir Annexe~\ref{annexe_guide_libre}.
+Avant de démarrer un projet, nous suggérons au gestionnaire de projet de suivre le guide en 7 étapes, voir Annexe~\ref{annexe_demarrer_projet_7_etape}, qui permet de démarrer rapidement un projet et de s'assurer que les membres impliqués du réseau d'entraide comprennent les mêmes enjeux et s'alignent dans la même direction. Par la suite, nous proposons le guide suivant pour gérer l'intégration d'un membre en communauté, voir Annexe~\ref{annexe_guide_integration_membre}. De plus, nous encourageons les bonnes habitudes en communauté avec le guide suivant pour la gestion du comportement en communauté, voir Annexe~\ref{annexe_guide_comportement}. Ensuite, pour se préparer au développement public, nous conseillons le guide suivant, voir Annexe~\ref{annexe_guide_dev_public}. Les problèmes peuvent survenir entre les membres de la communauté, c'est pourquoi nous suggérons le guide suivant pour faciliter la résolution de problème, voir Annexe~\ref{annexe_guide_resolution_probleme}. La communauté a besoin ensuite de formation technique et fonctionnelle, voir Annexe~\ref{annexe_guide_documentation}. Puis la sécurité est importante pour protéger les données dans la communauté, ce pourquoi nous suggérons les étapes suivantes à intégrer au projet communautaire, voir Annexe~\ref{annexe_guide_securite}. Finalement, en lien avec le développement libre, nous suggérons les étapes suivantes, voir Annexe~\ref{annexe_guide_libre}.
 
 % \section{Projets divers}
 
@@ -325,14 +328,14 @@ Les statistiques du travail sont démontrées dans le tableau~\ref{tab:stat_code
 \begin{tabular}{|l|l|l|l|l|l|l|}
 
 \hline
-\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{Code}}\\\hline
+\cellcolor[HTML]{d9d9d9}{\textbf{Langage}} & \cellcolor[HTML]{d9d9d9}{\textbf{Fichiers}} & \cellcolor[HTML]{d9d9d9}{\textbf{Lignes de code}}\\\hline
 
 XML & 79 & 34711\\\hline
 Python & 91 & 19434\\\hline
 Javascript & 14 & 3755\\\hline
 Css & 37 & 2488\\\hline
 Autre & 3 & 57\\\hline
-Total & 224 & 60445\\\hline
+\textbf{Total} & \textbf{224} & \textbf{60445}\\\hline
 
 \end{tabular}
 \label{tab:stat_code_accorderie}
@@ -344,10 +347,10 @@ Dans le second cas d'étude pour le Projet Portail CEPPP, l'objectif était de f
 
 Un module d'extraction de PHP a été développé, mais il n'est pas accessible dans les techniques du générateur de code. Le modèle de données était directement dans le code et, puisqu'il est dynamique, il n'est pas dans la base de données. La base de données n'a pas été extraite, les données ont été exportées en \textit{Comma-separated values} (CSV) et un module d'importation des données a été développé. Au total, il y a eu 23 fichiers analysés et 2851 données extraites.
 
-Voici les statistiques du Tableau~\ref{tab:stat_code_portail_ceppp} du code après ré-ingénierie et adaptation des fonctionnalités à livraison de la plateforme en début septembre 2023\footnote{\url{https://portailppp.ca}}.
+Voici les statistiques du Tableau~\ref{tab:stat_code_portail_ceppp} du code après réingénierie et adaptation des fonctionnalités à livraison de la plateforme en début septembre 2023\footnote{\url{https://portailppp.ca}}.
 
 \begin{table}[htb]
-\caption{L'évolution entre la génération et la ré-ingénierie des statistiques sur les langages du portail CEPPP}
+\caption{L'évolution entre la génération et la réingénierie des statistiques sur les langages du portail CEPPP}
 \centering
 \begin{tabular}{|l|l|l|l|}
 
@@ -367,7 +370,7 @@ L'anonymisation n'est pas supportée par le générateur de code, puis la person
 
 Le modèle de données du portail CEPPP dans Odoo 12 contient 24 modèles Annexe~\ref{annexe_db_ceppp_2022}. L'interface administrateur Annexe~\ref{annexe_form_ceppp_2022} contient la fiche du patient dont les partenaires ont accès seulement qu'à la partie anonymisée Annexe~\ref{annexe_form_anonyme_ceppp_2022}.
 
-Le nombre de lignes de XML a diminué car le générateur de code génère, de base, toutes les vues de tous les champs. Au moment de la ré-ingénierie, il y a eu beaucoup de nettoyage et de données XML effacées. Cependant, le développeur va mettre plus de code Python pour développer des logiques qui ne sont pas supportées par le robot logiciel codeur. Le Javascript ajouté sert à supporter les dates dans le portail. L’ajout de CSV permet l’ajout de permissions et rôles pour l’anonymisation.
+Le nombre de lignes de XML a diminué car le générateur de code génère, de base, toutes les vues de tous les champs. Au moment de la réingénierie, il y a eu beaucoup de nettoyage et de données XML effacées. Cependant, le développeur va mettre plus de code Python pour développer des logiques qui ne sont pas supportées par le robot logiciel codeur. Le Javascript ajouté sert à supporter les dates dans le portail. L’ajout de CSV permet l’ajout de permissions et rôles pour l’anonymisation.
 
 \subsection{Interprétation des résultats de SO-5}
 
@@ -379,8 +382,17 @@ La brève feuille de route du cinquième sous-objectif se résume à supporter l
 
 \section{Discussion}
 
+\subsection{Limitations}
+
+D'abord, il faut noter que le générateur de code comporte certaines limitations: il est peu paramétrable, il manque de tests sur son fonctionnement, il n'y a pas de gestion des combinaisons entre les techniques. De plus, le migrateur de bases de données ne supporte pas tous les types, certains contextes ne sont pas supportés. Il manque aussi un migrateur de données à la volée, afin de transférer les données directement dans la base de données. Pour ce faire, il faut programmer un script manuellement. Enfin, l'interface graphique a été peu testée, l'accent ayant été mis sur le \textit{code hook}, ce dernier ne supporte pas tous les cas.
+
+En ce qui concerne la rétro-ingénierie, le générateur ne permet pas de tout comprendre, il manque de développement, il ne gère pas tous les cas. Il est efficace seulement avec la partie nommée Web et la lecture de sécurité n'est pas supportée, ni les groupes d'utilisateurs. 
+
+Enfin, l'autopoïèse n'est pas complète, il n'est pas possible de profiter des fonctionnalités du générateur à son plein potentiel, mais que partiellement.
+
+
 \subsection{Comment les résultats obtenus soutiennent-ils le libre?}
-Le réseau d’entraide a besoin d’un support technologique libre, puisque permettre aux participants de suivre leurs 4 libertés vont faciliter l'adaptation à des situations d’urgence et apporter des solutions rapidement. Les 4 libertés sont : étudier, copier, modifier et utiliser. La liberté d'étudier est représentée par la rétro-ingénierie qui a permis au générateur de code de comprendre certaines fonctionnalités pour pouvoir recréer les méta-données adéquatement pour la reproduction. La liberté de copier est représentée par l’auto-générateur qui a été mis en place, il reste à auto-reproduire le robot logiciel codeur, par son module principal de générateur de code. La liberté de modifier est représentée au moment d'une ré-ingénierie, la rétro-ingénierie est accessible pour permettre une génération de code automatique en appliquant une mise en forme de code et une validation de la qualité logicielle. Puis la liberté d'utiliser est représentée par le robot logiciel codeur qui a la capacité d’utiliser ses fonctionnalités générées et d’exécuter des scripts d’automatisation à des périodes de temps adaptables.
+Le réseau d’entraide a besoin d’un support technologique libre, puisque permettre aux participants de suivre leurs 4 libertés vont faciliter l'adaptation à des situations d’urgence et apporter des solutions rapidement. Les 4 libertés sont : étudier, copier, modifier et utiliser. La liberté d'étudier est représentée par la rétro-ingénierie qui a permis au générateur de code de comprendre certaines fonctionnalités pour pouvoir recréer les méta-données adéquatement pour la reproduction. La liberté de copier est représentée par l’auto-générateur qui a été mis en place, il reste à auto-reproduire le robot logiciel codeur, par son module principal de générateur de code. La liberté de modifier est représentée au moment d'une réingénierie, la rétro-ingénierie est accessible pour permettre une génération de code automatique en appliquant une mise en forme de code et une validation de la qualité logicielle. Puis la liberté d'utiliser est représentée par le robot logiciel codeur qui a la capacité d’utiliser ses fonctionnalités générées et d’exécuter des scripts d’automatisation à des périodes de temps adaptables.
 
 \subsection{Avancement sur le développement en réseau d'entraide}
 
@@ -394,7 +406,7 @@ Voir Figure~\ref{fig:dia_outil_dev_reseau_entraide}, un ensemble d'outils est re
 \end{figure}
 
 \subsection{Avancement de la technopoïèse}\label{avancement_technopoiese}
-Voir Figure~\ref{fig:dia_auto_machine_discussion}, la ré-ingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine, lorsque cette dernière est en dehors des techniques maîtrisées par le robot logiciel codeur.
+Voir Figure~\ref{fig:dia_auto_machine_discussion}, la réingénierie manuelle est le processus habituel d'un développeur. Avec ce projet, nous avons une autopoïèse fonctionnelle semi-automatique, avec intervention humaine, puis une allopoïèse complète avec intervention humaine, lorsque cette dernière est en dehors des techniques maîtrisées par le robot logiciel codeur.
 
 Pour l'Allopoïèse, le robot logiciel codeur vient assister l'intervention humaine à $H_0$ et $H_1$, qui permet de passer des méta-données, sur le module désiré, à une nouvelle version de ce module. Après une modification, il faut boucler avec le mode direct et le mode indirect du générateur de code pour avoir une version stable.
 
@@ -429,8 +441,6 @@ Le robot logiciel codeur contient plusieurs compétences techniques qui sont dé
 Le robot logiciel codeur donne accès à des outils pour le développeur. Il y a une interface graphique LCNC qui permet la paramétrisation pour la génération de code. Il y a aussi une interface de code pour paramétrer le fonctionnement de la génération accompagnée de la rétro-ingénierie et il permet d'accompagner le développeur dans l'évolution de son module. Il contient aussi une fonctionnalité pour afficher les différences de code entre la version précédente et la version générée, il permet de créer des statistiques sur les lignes de codes et il permet de montrer la couverture de code.
 
 % TODO manque l'outil en temps réel, ce n'est pas supporté dans Odoo, il faut utiliser une application tierce tel que Etherpad et ajouter les méthodes de synchronisation des mises à jour sur les données. Il manque l'accès directe aux script à la racine du projet ERPLibre pour contrôler les outils de contrôle de la qualité. Collaboration, conscience professionnelle, résolutions de problèmes en équipe, communication efficace, adaptivité sur les livrables et exigences clientes
-
-
 
 % \subsection{DevOps}
 % Il faudrait mettre en place les outils de dev ops.

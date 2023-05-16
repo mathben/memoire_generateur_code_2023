@@ -53,7 +53,7 @@ Utiliser un générateur de code dans un contexte d'application web est efficace
 Dans un autre projet de les auteurs Pichidtienthum et al. en 2021~\cite{9436754}, en ajoutant une interface LCNC sur un générateur de code sur Odoo, obtiennent 20\% de réduction de temps pour le développement de module, puis des utilisateurs non développeurs peuvent utiliser cet outil pour faire des modules. Cette recherche est similaire à celle expérimentée dans ce mémoire, en excluant l'aspect de la rétro-ingénierie qui est manquante. De plus, la solution LCNC utilisé est un logiciel propriétaire non compatible avec la licence de ERPLibre, qui fait le choix de développer une solution entièrement libre pour la rendre accessible à la communauté.
 
 \section{Rétro-ingénierie}
-La rétro-ingénierie\footnote{Terme en anglais : \textit{reverse engineering}} est de l'ingénierie inversée, c'est-à-dire qu'on étudie un objet, ou une technologie, pour comprendre son fonctionnement interne, sa méthode de fabrication. Une fois que le système existant est compris, passant de l'implémentation à la conception, on peut débuter la ré-ingénierie, au besoin, pour altérer le code source et développement un nouveau système cible, voir Figure~\ref{fig:retro_re_ing}. Il y a plusieurs domaines de rétro-ingénierie, tout dépend de quel type d'information ou manipulation dont on a besoin. Dans ce mémoire, l'objectif est d'extraire des informations pour permettre la reproduction de code via le générateur de code. Les techniques diffèrent selon le type d'information à extraire, que ce soit en Python, en Javascript, en XML pour différent type de vue. Les manipulations effectuées sur l'extraction sont pour trouver des modèles spécifiques et, ainsi réduire, la quantité de paramètres à la génération.
+La rétro-ingénierie\footnote{Terme en anglais : \textit{reverse engineering}} est de l'ingénierie inversée, c'est-à-dire qu'on étudie un objet, ou une technologie, pour comprendre son fonctionnement interne, sa méthode de fabrication. Une fois que le système existant est compris, passant de l'implémentation à la conception, on peut débuter la réingénierie, au besoin, pour altérer le code source et développement un nouveau système cible, voir Figure~\ref{fig:retro_re_ing}. Il y a plusieurs domaines de rétro-ingénierie, tout dépend de quel type d'information ou manipulation dont on a besoin. Dans ce mémoire, l'objectif est d'extraire des informations pour permettre la reproduction de code via le générateur de code. Les techniques diffèrent selon le type d'information à extraire, que ce soit en Python, en Javascript, en XML pour différent type de vue. Les manipulations effectuées sur l'extraction sont pour trouver des modèles spécifiques et, ainsi réduire, la quantité de paramètres à la génération.
 
 Dans le travail de El Idrissi en 2022~\cite{elthesis_2022}, il démontre de la rétro-ingénierie pour comprendre le niveau de variabilité des modules dans Odoo, en examinant les dépendances entre les modules. Ces travaux pourraient être pertinents pour notre recherche avec le générateur de code, mais nous ne sommes pas rendu à inspecter un ensemble de module, nous travaillons sur des modules individuels.
 
@@ -62,7 +62,7 @@ De plus, ce mémoire ne fait pas de vérification sur les algorithmes, le travai
 \begin{figure}[htb]
 \centering
 \includegraphics[width=5in]{images/Retroingenierie_-_Byrne.png}
-\caption{Altération du code avec la rétro-ingénierie et la ré-ingénierie. Image modifiée~\cite{wikipedia_image_retroingenierie}}
+\caption{Altération du code avec la rétro-ingénierie et la réingénierie. Image modifiée~\cite{wikipedia_image_retroingenierie}}
 \label{fig:retro_re_ing}
 \end{figure}
 
@@ -86,7 +86,7 @@ Ainsi, il serait pertinent de développer un robot codeur qui soit en mesure de 
 
 \section{Les complexités de développer \textit{ERP}}
 
-L'auteur Pitetti mentionne, en 2010 : «Le choix d’un \textit{ERP} libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{Ré-ingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet»~\cite{pitetti2010implementation}. C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement, voir Figure~\ref{fig:erp_implantation_cinq_etape} qui démontre un processus d'implantation d'un \textit{ERP} en cinq étape proposé par l'auteur Braud en 2008~\cite{uqam_erp_benefice_2008}. À ce jour, les travaux du générateur de code viennent n'accélérer que la partie développement de ce processus, mais ils apporteraient un gain considérable si nous pouvions l'appliquer à toutes ces étapes.
+L'auteur Pitetti mentionne, en 2010 : «Le choix d’un \textit{ERP} libre n’implique pas nécessairement une diminution des coûts dans la mesure ou le reengineering\footnote{réingénierie} n’a pas été correctement effectué[...] Un guide des bonnes pratiques permet d’éviter ces erreurs, de limiter les coûts du projet ou de se renseigner sur les différentes phases du projet»~\cite{pitetti2010implementation}. C'est pourquoi il est important de suivre les différentes étapes de réalisation du projet pour réduire les erreurs d'ingénierie sur le développement, voir Figure~\ref{fig:erp_implantation_cinq_etape} qui démontre un processus d'implantation d'un \textit{ERP} en cinq étape proposé par l'auteur Braud en 2008~\cite{uqam_erp_benefice_2008}. À ce jour, les travaux du générateur de code viennent n'accélérer que la partie développement de ce processus, mais ils apporteraient un gain considérable si nous pouvions l'appliquer à toutes ces étapes.
 
 \begin{figure}[htb]
 \centering
@@ -96,7 +96,7 @@ L'auteur Pitetti mentionne, en 2010 : «Le choix d’un \textit{ERP} libre n’i
 \end{figure}
 
 
-Un autre facteur complexe est l'association des processus d'affaires actuels à la ré-ingénierie vers un nouveau modèle de processus d'affaires adapté aux contraintes technologiques, ainsi que les fonctionnalités déjà existantes sur la plateforme choisie. Comme on peut le constater dans le travail des auteurs Medjek et al. en 2018~\cite{kenza2018conception}, un travail a été effectué pour énumérer les fonctionnalités de la plateforme, ainsi que de faire du développement personnalisé, avec tous les diagrammes de conception génie logiciel.
+Un autre facteur complexe est l'association des processus d'affaires actuels à la réingénierie vers un nouveau modèle de processus d'affaires adapté aux contraintes technologiques, ainsi que les fonctionnalités déjà existantes sur la plateforme choisie. Comme on peut le constater dans le travail des auteurs Medjek et al. en 2018~\cite{kenza2018conception}, un travail a été effectué pour énumérer les fonctionnalités de la plateforme, ainsi que de faire du développement personnalisé, avec tous les diagrammes de conception génie logiciel.
 
 Dans Odoo, le nombre de module augmente avec le temps et diffère entre les versions, une recherche fastidieuse doit être effectuée pour réduire le temps de développement et pour éviter de réinventer la roue. En plus de suivre toutes ces étapes, il faut mettre en place une pérennité pour l’amélioration continue sur le projet pour des adaptations futures aux nouveaux processus de l'entreprise.
 
@@ -107,7 +107,7 @@ Comme le mentionne l'auteur Ebert en 2016~\cite{ebert2016devops}, le \textit{Dev
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{devops.png}
-\caption{Le processus \textit{DevOps}. Source: Pease, 2017.~\cite{devops_illustration}}
+\caption{Le processus \textit{DevOps}. Source: inconnue}
 \label{fig:devops}
 \end{figure}
 
@@ -176,31 +176,31 @@ Selon l'auteur Meyer et al. en 2007, «La conviction selon laquelle la créativi
 
 Un logiciel libre est en vie tant qu'il y a une communauté active qui le maintient. De plus, il est important de mettre l'humain au centre des opérations et ça serait une erreur de vouloir automatiser, rendre 100\% autonome le générateur de code, puisqu'il doit rester au service des communautés.
 
-\subsection{Communication non violente}
+% \subsection{Communication non violente}
 
-Les conflits arrivent souvent dans une communauté et nous avons moins de filtre lorsque nous sommes en situation de communiquer via une technologique n'ayant pas un retour physique dans nos échanges. La mise en place d’une méthode de communication non violente~\footnote{\url{https://fr.wikipedia.org/wiki/Communication_non_violente}} formalisée par Rosenberg en 2015~\cite{rosenberg2015nonviolent}, voir Figure~\ref{fig:communication_non_violente}, permettrait de réduire les frictions et faciliter l'intégration entre les participants du réseau d’entraide.
+% Les conflits arrivent souvent dans une communauté et nous avons moins de filtre lorsque nous sommes en situation de communiquer via une technologique n'ayant pas un retour physique dans nos échanges. La mise en place d’une méthode de communication non violente~\footnote{\url{https://fr.wikipedia.org/wiki/Communication_non_violente}} formalisée par Rosenberg en 2015~\cite{rosenberg2015nonviolent}, voir Figure~\ref{fig:communication_non_violente}, permettrait de réduire les frictions et faciliter l'intégration entre les participants du réseau d’entraide.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=4in]{OSBD_en_CNV.jpg}
-\caption{Communication non violente en 4 étapes et 2 modes. Dessin réalisé par Célia Portail~\cite{wikipedia_image_non_violente}}
-\label{fig:communication_non_violente}
-\end{figure}
+% \begin{figure}[htb]
+% \centering
+% \includegraphics[width=4in]{OSBD_en_CNV.jpg}
+% \caption{Communication non violente en 4 étapes et 2 modes. Dessin réalisé par Célia Portail~\cite{wikipedia_image_non_violente}}
+% \label{fig:communication_non_violente}
+% \end{figure}
 
 \subsection{Guide construire une communauté \textit{Open Source}}
 
-Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés en 4 sections avec des titres indicateurs d’orientation : la mise en place de votre projet pour le succès, cultiver votre communauté, résoudre les conflits et la communauté est le coeur de l'\textit{open source}. Il y a beaucoup d'autres guides, mais en général, ils n'intègrent ni les aspects de génie industriel qui est vulgarisé avec le guide fusée et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
+Un guide~\cite{url_open_source_guide} est accessible publiquement pour aider les gestionnaires de communautés en 4 sections avec des titres indicateurs d’orientation : la mise en place de votre projet pour le succès, cultiver votre communauté, résoudre les conflits et la communauté est le coeur de l'\textit{open source}. Il y a beaucoup d'autres guides, mais en général, ils n'intègrent ni les aspects de génie industriel et ni les critères éthiques de GNU concernant l’hébergement de logiciel.
 
-\subsection{Guide fusée}
+% \subsection{Guide fusée}
 
-Un guide en 7 étapes du guide Fusée de CimarLab en 2023~\cite{guide_fusee}, voir Figure ~\ref{fig:guide_fusee} pour les gestionnaires de projet. Il permet de démarrer un projet rapidement qui nécessite une équipe de personnes pour les rendre efficaces dans la réalisation de leur participation dans le réseau d’entraide. Ce guide est réutilisé dans ce mémoire et offert en suggestion.
+% Un guide en 7 étapes du guide Fusée de CimarLab en 2023~\cite{guide_fusee}, voir Figure ~\ref{fig:guide_fusee} pour les gestionnaires de projet. Il permet de démarrer un projet rapidement qui nécessite une équipe de personnes pour les rendre efficaces dans la réalisation de leur participation dans le réseau d’entraide. Ce guide est réutilisé dans ce mémoire et offert en suggestion.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=2.5in]{guide_fusee_definition.png}
-\caption{Guide fusée en 7 étapes pour démarrer un projet pour un gestionnaire de communauté, de CimarLab~\cite{guide_fusee}}
-\label{fig:guide_fusee}
-\end{figure}
+% \begin{figure}[htb]
+% \centering
+% \includegraphics[width=2.5in]{guide_fusee_definition.png}
+% \caption{Guide fusée en 7 étapes pour démarrer un projet pour un gestionnaire de communauté, de CimarLab~\cite{guide_fusee}}
+% \label{fig:guide_fusee}
+% \end{figure}
 
 \subsection{Critères éthiques de GNU concernant l'hébergement de logiciel}
 
@@ -220,6 +220,8 @@ Ce mémoire ne réutilise pas ce guide et n'en propose pas une version adaptée,
 % \end{enumerate}
 
 \section{Poïèse}
+
+La génération de code est proche des concepts de systèmes qui se copient, reproduisent et s’entretiennent. Ainsi, l’analogie avec le vivant passe par l’emploi de termes des approches systémiques courantes en biologie. Nous allons mieux définir ces termes dans cette section.
 
 \subsection{Définition de la poïèse}
 
@@ -536,7 +538,7 @@ Le gain d’accélération au développement peut être considéré comme négli
 
 \subsubsection{Technique de génération de code par rétro-ingénierie}
 
-Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur de code, l'objectif est de faire de la ré-ingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
+Lorsqu'on veut faire de la rétro-ingénierie~\cite{wikipedia_retroingenierie} avec un générateur de code, l'objectif est de faire de la réingénierie sur la partie génération, ainsi on altère le code, voir Figure~\ref{fig:retro_re_ing}.
 
 Dans Figure~\ref{fig:exemple_gen_code_retro}, le code~\ref{lst:gen_code_retro_m} utilise la bibliothèque \textit{Abstract Syntax Tree} (\textit{AST}) pour analyser l’arbre de syntaxe abstraite du code source. La difficulté avec la rétro-ingénierie est de savoir précisément ce qu’on cherche à extraire; il faut avoir un cas d’utilisation spécifique. Ici, le cas d’utilisation est la recherche d’un nœud de type expression qui contient des paramètres. L’avantage est de permettre de corriger des problèmes de qualité logicielle entre l’extraction d’information et la génération du code. Dans ce contexte, le résultat~\ref{lst:gen_code_retro_new_c} du code source original~\ref{lst:gen_code_retro_c} devient formaté en PEP8~\cite{python_pep8}.
 
