@@ -133,7 +133,7 @@ La brève feuille de route du premier sous-objectif se résume à implémenter l
 
 \subsection {Extraction de code et reproduction}
 
-De la macro et micro extraction ont été réalisées avec plusieurs techniques combinées. Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à -dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération directe de générer le code qui a été copié. L’utilisation de l’\textit{AST} a servi à déterminer quelle ligne de code était à découper pour la recopier.
+De la macro et micro extraction ont été réalisées avec plusieurs techniques combinées. Pour pouvoir faire de la reproduction, il a suffit de faire de la macro extraction, c'est-à-dire faire une recherche dans toutes les classes pour copier le contenu de chaque méthode pour le transformer en méta-données et pouvoir faire l’opération directe de générer le code qui a été copié. L’utilisation de l’\textit{AST} a servi à déterminer quelle ligne de code était à découper pour la recopier.
 
 Cependant, il était nécessaire, dans certains contextes, de faire de la micro extraction, telles que l’extraction des noms des constantes, qui sont transformées en valeurs, lors de l’exécution, l’extraction des commentaires qui n’est pas supportée dans la bibliothèque \textit{AST} de Python 3.7, l’extraction des décorateurs et l’extraction des paramètres sur les méthodes.
 
